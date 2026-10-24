@@ -1,6 +1,7 @@
 {
   // Cloudflare 部署设置：网站文件都在 public 文件夹里
-  "name": "taesaniphone",
+  "name": "taesaniphoneax",
   "compatibility_date": "2025-09-01",
+  "workers_dev": true,
   "assets": { "directory": "./public" }
 }
