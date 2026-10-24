@@ -290,6 +290,23 @@ body.short .grid{row-gap:calc(6px * var(--k))}
 body.short .widget .wbox{height:calc(160px * var(--k))}
 
 /* =========================================================
+   锁屏：按 17 Pro Max 真机截图量的尺寸（440 宽，其他宽度按 --k 缩放）
+   日期 y≈67 · 时间 y≈100–194 · 通知卡 411×65 圆角 24 · 底部按钮 57 圆，中心离底 87
+   ========================================================= */
+.lock .lk{position:absolute;top:calc(22px * var(--k));margin:0}
+.lock .date{position:absolute;left:0;right:0;top:calc(64px * var(--k));margin:0;text-align:center;font-size:calc(21px * var(--k));font-weight:700;letter-spacing:0;opacity:.95}
+.lock .bigtime{position:absolute;left:0;right:0;top:calc(90px * var(--k));text-align:center;font-size:calc(132px * var(--k));line-height:1;font-weight:800;letter-spacing:calc(-5px * var(--k));transform:scaleX(.84);transform-origin:center}
+.lock .notifs{width:auto;align-self:stretch;margin:auto calc(14px * var(--k)) calc(150px * var(--k));gap:calc(10px * var(--k))}
+.lock .notifs .notif{min-height:calc(65px * var(--k));border-radius:calc(24px * var(--k));padding:calc(12px * var(--k)) calc(15px * var(--k)) calc(12px * var(--k)) calc(13px * var(--k));gap:calc(13px * var(--k));align-items:center;box-sizing:border-box;background:rgba(255,255,255,.24)}
+.lock .notifs .notif .icon{width:calc(38px * var(--k));height:calc(38px * var(--k));border-radius:calc(9px * var(--k))}
+.lock .notifs .notif .t{font-size:calc(15px * var(--k));line-height:1.3}
+.lock .notifs .notif .t b{font-size:calc(15px * var(--k));font-weight:700}
+.lock .notifs .notif .t b span{font-size:calc(14px * var(--k));font-weight:400;opacity:.7}
+.qbtn{width:calc(57px * var(--k));height:calc(57px * var(--k));bottom:calc(58px * var(--k));background:rgba(30,30,30,.45)}
+.qbtn svg{transform:scale(calc(1.1 * var(--k)))}
+.qbtn.fl{left:calc(54px * var(--k))}.qbtn.cam{right:calc(55px * var(--k))}
+
+/* =========================================================
    APP STYLES — iOS 字号体系（pt = px，393 宽母版）
    Large Title 34 · Title2 22 · Title3 20 · Headline/Body 17 · Callout 16
    Subhead 15 · Footnote 13 · Caption1 12 · Caption2 11
@@ -1527,6 +1544,30 @@ body.standalone .island.np-on{display:flex!important}
 .ar-card.wide>i{aspect-ratio:16/9}
 .ar-card b{display:block;font-size:13px;font-weight:600;margin-top:7px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .ar-card small{display:block;font-size:13px;color:var(--app-sub);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+/* 底部播放条 + 标签栏：按真机截图（播放条 397×45、封面 30；标签栏 326×58；搜索 60；离底 23） */
+.mu-bar1{bottom:calc(23px * var(--k));padding:0 calc(22px * var(--k));gap:calc(11px * var(--k))}
+.mu-mini3{flex:none;height:calc(45px * var(--k));border-radius:calc(23px * var(--k));gap:calc(10px * var(--k));padding:0 calc(14px * var(--k)) 0 calc(8px * var(--k));background:rgba(40,40,42,.72)}
+.mm-art{width:calc(30px * var(--k))!important;height:calc(30px * var(--k))!important;border-radius:calc(6px * var(--k))!important;font-size:13px}
+.mm-tx{flex:1;min-width:0;display:flex;flex-direction:column;line-height:1.2}
+.mm-tx b{font-size:calc(13.5px * var(--k));font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mm-tx small{font-size:calc(13.5px * var(--k));font-weight:500;color:rgba(255,255,255,.85);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mu-mini3 .mm-b{width:calc(32px * var(--k));height:calc(32px * var(--k))}
+.mu-mini3 .mm-b svg{width:calc(17px * var(--k));height:calc(17px * var(--k))}.mu-mini3 .mm-b.nx svg{width:calc(25px * var(--k))}
+.mu-tabrow{gap:calc(11px * var(--k))}
+.mu-tabs3{height:calc(58px * var(--k));border-radius:calc(29px * var(--k));padding:0 calc(4px * var(--k));background:rgba(40,40,42,.72)}
+.mu-tabs3 div{height:calc(50px * var(--k));border-radius:calc(25px * var(--k));font-size:calc(10px * var(--k));gap:1px}
+.mu-tabs3 svg{width:calc(24px * var(--k));height:calc(24px * var(--k))}
+.mu-circ.big{width:calc(58px * var(--k));height:calc(58px * var(--k));background:rgba(40,40,42,.72)}
+.mu-circ.big svg{width:calc(22px * var(--k));height:calc(22px * var(--k))}
+.mu-bar2{bottom:calc(23px * var(--k));padding:0 calc(22px * var(--k));gap:calc(10px * var(--k))}
+.mu-bar2 .mu-circ{width:calc(50px * var(--k));height:calc(50px * var(--k))}
+.mu-bar2 .mu-mini3{flex:1;height:calc(50px * var(--k));border-radius:calc(25px * var(--k))}
+/* 艺人页热门歌曲：左边不再被切掉，行高按截图 52 */
+.ar-top,.ar-row{scroll-padding-inline:calc(20px * var(--k))}
+.ar-ts>div{padding:calc(5px * var(--k)) 0;min-height:calc(43px * var(--k));display:flex;flex-direction:column;justify-content:center}
+.ar-ts{height:calc(52px * var(--k))}
+.ar-ts b{font-size:calc(15.5px * var(--k))}.ar-ts small{font-size:calc(14px * var(--k))}
 
 @media (prefers-reduced-motion: reduce){*{transition-duration:.01s!important;animation:none!important}}
 </style>
@@ -3883,7 +3924,7 @@ function mpIsland(){
 /* iOS 26 风格：玻璃质感的悬浮播放条 + 悬浮标签栏 + 独立搜索按钮；进入二级页面后标签栏收成一个圆 */
 const MU_TABS = [['主页','<path d="M12 3.2 3 10.4V21h6.2v-6.4h5.6V21H21V10.4z"/>'],['新发现','<rect x="3" y="3" width="8" height="8" rx="2.4"/><rect x="13" y="3" width="8" height="8" rx="2.4"/><rect x="3" y="13" width="8" height="8" rx="2.4"/><rect x="13" y="13" width="8" height="8" rx="2.4"/>'],['广播','<circle cx="12" cy="12" r="2.3"/><path d="M8 8a5.6 5.6 0 0 0 0 8M16 8a5.6 5.6 0 0 1 0 8M5.2 5.2a9.6 9.6 0 0 0 0 13.6M18.8 5.2a9.6 9.6 0 0 1 0 13.6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>'],['资料库','<path d="M6 6.5h12M7.5 3.8h9"  stroke="currentColor" stroke-width="1.8" stroke-linecap="round" fill="none"/><rect x="3.5" y="9" width="17" height="12.5" rx="3"/><path d="M13.6 11.6v5.2a1.6 1.6 0 1 1-1.2-1.5v-3.1l3-.7" stroke="#000" stroke-width="1.3" fill="none"/>']];
 const muSearch = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg>';
-const muMini = () => { const s = mpSong(), on = MP.playing || MP.pos > 0; return `<div class="mu-mini3" data-go="nowplaying"><i class="mu-art mm-art" data-mp="art" style="background:${on ? (s.art ? `url(${s.art}) center/cover` : s.bg) : '#3a3a3c'}">${on ? '' : '♫'}</i><b data-mp="t">${on ? s.t : '未在播放'}</b><span class="mm-b" data-mpc="pp" data-mp="pp">${MP.playing ? MPI.pause : MPI.play}</span><span class="mm-b nx" data-mpc="next">${MPI.next}</span></div>`; };
+const muMini = () => { const s = mpSong(), on = MP.playing || MP.pos > 0; return `<div class="mu-mini3" data-go="nowplaying"><i class="mu-art mm-art" data-mp="art" style="background:${on ? (s.art ? `url(${s.art}) center/cover` : s.bg) : '#3a3a3c'}">${on ? '' : '♫'}</i><span class="mm-tx"><b data-mp="t">${on ? s.t : '未在播放'}</b>${on ? `<small data-mp="a">${s.a}</small>` : ''}</span><span class="mm-b" data-mpc="pp" data-mp="pp">${MP.playing ? MPI.pause : MPI.play}</span><span class="mm-b nx" data-mpc="next">${MPI.next}</span></div>`; };
 const muTab = (compact) => compact
   ? `<div class="mu-bar2"><span class="mu-circ lib" data-back><svg viewBox="0 0 24 24" fill="currentColor">${MU_TABS[3][1]}</svg></span>${muMini()}<span class="mu-circ" data-toast="搜索暂未制作">${muSearch}</span></div>`
   : `<div class="mu-bar1">${muMini()}<div class="mu-tabrow"><div class="mu-tabs3">${MU_TABS.map(([l, p]) => `<div class="${l === '资料库' ? 'on' : ''}" ${l === '资料库' ? '' : `data-toast="${l}暂未制作"`}><svg viewBox="0 0 24 24" fill="currentColor">${p}</svg><span>${l}</span></div>`).join('')}</div><span class="mu-circ big" data-toast="搜索暂未制作">${muSearch}</span></div></div>`;
