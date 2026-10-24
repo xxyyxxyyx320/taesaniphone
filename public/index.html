@@ -4021,7 +4021,8 @@ function fit(){
     document.body.classList.toggle('standalone', !!standalone);
     const vv = window.visualViewport;
     let vw = vv ? vv.width : innerWidth, vh = vv ? vv.height : innerHeight;
-    if (standalone) { const portrait = innerHeight >= innerWidth; vw = portrait ? Math.min(screen.width, screen.height) : Math.max(screen.width, screen.height); vh = portrait ? Math.max(screen.width, screen.height) : Math.min(screen.width, screen.height); vh = Math.max(vh, innerHeight, document.documentElement.clientHeight); }
+    if (standalone) { const portrait = innerHeight >= innerWidth; const sw = window.screen.width, sh = window.screen.height; vw = portrait ? Math.min(sw, sh) : Math.max(sw, sh); vh = portrait ? Math.max(sw, sh) : Math.min(sw, sh); vh = Math.max(vh, innerHeight, document.documentElement.clientHeight); }
+    if (!(vw > 0 && vh > 0)) { vw = innerWidth; vh = innerHeight; }
     let s = vw / 393; H = Math.round(Math.max(640, Math.min(1000, vh / s)));
     if (vh / s < 640) { s = vh / 640; H = 640; }
     document.documentElement.style.setProperty('--sh', H + 'px');
