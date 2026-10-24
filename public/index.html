@@ -42,7 +42,7 @@ body{background:var(--stage);color:var(--stage-fg);font-family:var(--font);overf
 .hw{position:absolute;background:linear-gradient(90deg,#2b2b2b,#555 50%,#2b2b2b);border-radius:3px;cursor:pointer;border:0;padding:0}
 .hw.l{left:-3px;width:4px}.hw.r{right:-3px;width:4px}
 .hw:active{filter:brightness(1.4)}
-.screen{position:relative;width:393px;height:852px;border-radius:55px;overflow:hidden;background:#000;color:#fff;
+.screen{position:relative;width:var(--sw,393px);height:852px;border-radius:55px;overflow:hidden;background:#000;color:#fff;
   font-family:var(--font);-webkit-font-smoothing:antialiased;touch-action:none;isolation:isolate}
 .wall{position:absolute;inset:0;background:
   radial-gradient(120% 60% at 15% 10%,#ff8a5c 0%,rgba(255,138,92,0) 55%),
@@ -54,7 +54,7 @@ body{background:var(--stage);color:var(--stage-fg);font-family:var(--font);overf
 
 /* status bar + island */
 .status{position:absolute;left:0;right:0;top:0;height:54px;z-index:60;display:flex;justify-content:space-between;align-items:center;padding:0 30px 0 0;pointer-events:none;transition:color .25s}
-.status .time{width:140px;text-align:center;font-weight:600;font-size:17px;letter-spacing:-.2px;padding-top:4px;font-variant-numeric:tabular-nums}
+.status .time{width:142px;text-align:center;font-family:-apple-system,"SF Pro Text","SF Pro Display",system-ui,sans-serif;font-weight:600;font-size:17px;letter-spacing:-.4px;padding-top:3px}
 .status .right{display:flex;gap:6px;align-items:center;padding-top:4px}
 .status svg{display:block;fill:currentColor}
 .screen.dark-status .status{color:#000}
@@ -75,8 +75,8 @@ body{background:var(--stage);color:var(--stage-fg);font-family:var(--font);overf
 .home{z-index:10;transition:transform .45s cubic-bezier(.2,.8,.2,1),opacity .35s,filter .45s}
 .screen.locked .home{transform:scale(1.12);opacity:0;pointer-events:none}
 .screen.in-app .home{transform:scale(.9);opacity:.0;pointer-events:none}
-.pages{position:absolute;left:0;top:0;height:100%;display:flex;width:786px;transition:transform .4s cubic-bezier(.2,.8,.2,1)}
-.page{width:393px;height:100%;box-sizing:border-box;padding:70px 25px 0}
+.pages{position:absolute;left:0;top:0;height:100%;display:flex;width:calc(var(--sw,393px) * 2);transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+.page{width:var(--sw,393px);height:100%;box-sizing:border-box;padding:70px 25px 0}
 .grid{display:grid;grid-template-columns:repeat(4,64px);justify-content:space-between;grid-auto-rows:86px;row-gap:22px}
 .app{display:flex;flex-direction:column;align-items:center;gap:6px;cursor:pointer;-webkit-tap-highlight-color:transparent}
 .app .lbl{font-size:12px;line-height:14px;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.25);white-space:nowrap;letter-spacing:-.1px}
@@ -136,7 +136,7 @@ body{background:var(--stage);color:var(--stage-fg);font-family:var(--font);overf
 .screen.locked .hint.show{opacity:.7}
 
 /* app container */
-.appwin{position:absolute;left:0;top:0;width:393px;height:852px;z-index:30;overflow:hidden;transform-origin:0 0;border-radius:55px;
+.appwin{position:absolute;left:0;top:0;width:var(--sw,393px);height:852px;z-index:30;overflow:hidden;transform-origin:0 0;border-radius:55px;
   background:var(--app-bg);color:var(--app-fg);display:none}
 .appwin.anim{transition:transform .48s cubic-bezier(.25,.9,.25,1),border-radius .48s,opacity .3s}
 .appwin .cover{position:absolute;inset:0;z-index:5;transition:opacity .25s .12s;pointer-events:none}
@@ -244,7 +244,7 @@ body{background:var(--stage);color:var(--stage-fg);font-family:var(--font);overf
 body.mobile{padding:0!important;background:#000}
 body.mobile .stage{gap:0;justify-content:center;align-items:center}
 body.mobile .caption,body.mobile .hw{display:none}
-body.mobile .phone{width:393px;height:852px;padding:0;border-radius:0;background:#000;box-shadow:none}
+body.mobile .phone{width:var(--sw,393px);height:852px;padding:0;border-radius:0;background:#000;box-shadow:none}
 body.mobile .screen{border-radius:0}
 body.mobile .appwin{border-radius:0!important}
 body.mobile{margin:0;height:100dvh}body.mobile .stage{height:100dvh}
@@ -253,7 +253,7 @@ body.mobile{margin:0;height:100dvh}body.mobile .stage{height:100dvh}
 body.mobile .phone,body.mobile .screen,body.mobile .appwin{height:var(--sh,852px)}
 body.mobile .hbar{bottom:14px;height:26px;width:180px;margin-left:-90px;padding-bottom:9px}
 /* 全屏 App：小手机的横条放到系统横条上方，避免两条重叠 */
-body.standalone .hbar{bottom:30px}
+body.standalone .hbar{display:none}
 
 /* 屏幕较矮时（浏览器里打开）压缩主屏幕和正在播放的间距 */
 body.short .page{padding-top:56px}
@@ -478,7 +478,7 @@ body.mobile .status,body.mobile .island{display:none}
 .ig-av{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:var(--fs-foot);font-weight:600;flex:none;font-style:normal}
 .ig-av.lg{width:56px;height:56px;font-size:var(--fs-t3)}
 .ig-av.sm2{width:26px;height:26px;font-size:var(--fs-cap);display:inline-flex}
-.ig-img{width:393px;height:393px}
+.ig-img{width:var(--sw,393px);height:var(--sw,393px)}
 .ig-act{display:flex;gap:16px;padding:10px 12px 6px}
 .ig-cap{padding:0 12px;font-size:var(--fs-foot);line-height:18px}
 .ig-cap p{margin:3px 0}.ig-cap b{font-weight:600}.ig-cap small{color:#8e8e8e;font-size:var(--fs-cap2)}
@@ -586,7 +586,7 @@ body.mobile .status,body.mobile .island{display:none}
 .al-row b{display:block;font-size:var(--fs-sub);font-weight:400;margin-top:6px;line-height:19px}.al-row small{color:var(--app-sub);font-size:var(--fs-sub)}
 .mem-hero{height:320px;display:flex;flex-direction:column;justify-content:flex-end;padding:20px;box-sizing:border-box;color:#fff}
 .mem-hero b{font-size:var(--fs-lt);font-weight:700}.mem-hero small{font-size:var(--fs-sub)}
-.pd-img{width:393px;height:393px;margin-top:60px;position:relative}
+.pd-img{width:var(--sw,393px);height:var(--sw,393px);margin-top:60px;position:relative}
 .pd-img .live{position:absolute;left:10px;top:10px;font-style:normal;font-size:var(--fs-cap);background:rgba(0,0,0,.35);color:#fff;padding:3px 9px;border-radius:12px}
 .pd-cap{padding:18px 16px;color:#fff;display:flex;flex-direction:column;gap:10px;align-items:flex-start}
 .pd-cap>b{font-size:var(--fs-body);font-weight:600;line-height:23px}
@@ -946,7 +946,7 @@ body.mobile .status,body.mobile .island{display:none}
 .igp-media{position:relative}
 .igp-car{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;touch-action:pan-x pan-y}
 .igp-car::-webkit-scrollbar{display:none}
-.igp-img{flex:none;width:393px;height:491px;scroll-snap-align:start}
+.igp-img{flex:none;width:var(--sw,393px);height:491px;scroll-snap-align:start}
 .igp-cnt{position:absolute;right:12px;top:12px;background:rgba(0,0,0,.6);color:#fff;font-size:var(--fs-cap);padding:3px 9px;border-radius:12px}
 .igp-pop{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) scale(0);opacity:0;pointer-events:none}
 .igp-pop svg{width:100px;height:100px;filter:drop-shadow(0 4px 14px rgba(0,0,0,.35))}
@@ -1382,6 +1382,81 @@ body.mobile .status,body.mobile .island{display:none}
 .mu-bnd b{color:#fff;font-size:9px;font-weight:700;line-height:1.1;margin:0!important}
 .mu-g2 .mu-bnd b{font-size:15px}
 
+/* =========================================================
+   Apple Music · iOS 26 深色 + 玻璃
+   ========================================================= */
+.mu26{--app-bg:#000;--app-cell:#1c1c1e;--app-fg:#fff;--app-sub:#8d8d93;--app-sep:rgba(84,84,88,.55);--mu-red:#fa2d48;color:#fff}
+.mu26 .nb{background:rgba(0,0,0,.6)}
+.mu-glass{background:rgba(44,44,46,.62);backdrop-filter:blur(22px) saturate(1.8);-webkit-backdrop-filter:blur(22px) saturate(1.8);box-shadow:inset 0 0 0 .6px rgba(255,255,255,.16),0 6px 20px rgba(0,0,0,.35)}
+.mu-lt{display:flex;justify-content:space-between;align-items:center;padding:58px 20px 10px}
+.mu-lt>b{font-size:34px;font-weight:800;letter-spacing:-.4px}
+.mu-ltr{display:flex;align-items:center;gap:10px}
+.mu-pillb{display:flex;align-items:center;height:44px;border-radius:22px;padding:0 6px;background:rgba(44,44,46,.62);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);box-shadow:inset 0 0 0 .6px rgba(255,255,255,.16)}
+.mu-pillb i{width:44px;height:44px;display:flex;align-items:center;justify-content:center;font-style:normal;cursor:pointer;color:#fff}
+.mu-pillb svg{width:21px;height:21px}
+.mu-me{width:42px;height:42px;border-radius:50%;flex:none;box-shadow:inset 0 0 0 .6px rgba(255,255,255,.2)}
+.mu-lib3{padding-left:20px}
+.mu-lib3>div{display:flex;align-items:center;gap:16px;cursor:pointer}
+.mu-lib3>div>svg{width:24px;height:24px;color:var(--mu-red);flex:none}
+.mu-lib3>div>span{flex:1;display:flex;justify-content:space-between;align-items:center;font-size:20px;padding:13px 20px 13px 0;border-bottom:.5px solid var(--app-sep)}
+.mu-lib3 .chev{stroke:#5a5a5e}
+.mu-h3{font-size:22px;font-weight:800;padding:26px 20px 10px}
+.mu-g3{display:grid;grid-template-columns:1fr 1fr;gap:20px 14px;padding:0 20px}
+.mu-g3>div{cursor:pointer;min-width:0}
+.mu-g3 b{display:block;font-size:13px;font-weight:600;margin-top:7px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mu-g3 small{display:block;font-size:13px;color:var(--app-sub);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+/* bottom bars */
+.mu-bar1{position:absolute;left:0;right:0;bottom:24px;z-index:5;display:flex;flex-direction:column;gap:8px;padding:0 20px}
+.mu-mini3{flex:1;height:52px;border-radius:26px;display:flex;align-items:center;gap:11px;padding:0 10px 0 8px;cursor:pointer;min-width:0;
+  background:rgba(44,44,46,.62);backdrop-filter:blur(22px) saturate(1.8);-webkit-backdrop-filter:blur(22px) saturate(1.8);box-shadow:inset 0 0 0 .6px rgba(255,255,255,.16),0 6px 20px rgba(0,0,0,.35)}
+.mm-art{width:36px!important;height:36px!important;border-radius:8px!important;display:flex;align-items:center;justify-content:center;color:#8d8d93;font-size:16px}
+.mu-mini3 b{flex:1;font-size:15px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.mu-mini3 .mm-b{width:34px;height:34px;color:#fff}.mu-mini3 .mm-b svg{width:20px;height:20px}.mu-mini3 .mm-b.nx svg{width:26px}
+.mu-tabrow{display:flex;align-items:center;gap:10px}
+.mu-tabs3{flex:1;height:60px;border-radius:30px;display:flex;align-items:center;justify-content:space-around;padding:0 4px;
+  background:rgba(44,44,46,.62);backdrop-filter:blur(22px) saturate(1.8);-webkit-backdrop-filter:blur(22px) saturate(1.8);box-shadow:inset 0 0 0 .6px rgba(255,255,255,.16),0 6px 20px rgba(0,0,0,.35)}
+.mu-tabs3 div{flex:1;height:52px;border-radius:26px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;font-size:10px;font-weight:600;color:#fff;cursor:pointer}
+.mu-tabs3 svg{width:23px;height:23px}
+.mu-tabs3 .on{background:rgba(120,120,128,.32);color:var(--mu-red)}
+.mu-circ{width:44px;height:44px;border-radius:50%;flex:none;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#fff;
+  background:rgba(44,44,46,.62);backdrop-filter:blur(22px) saturate(1.8);-webkit-backdrop-filter:blur(22px) saturate(1.8);box-shadow:inset 0 0 0 .6px rgba(255,255,255,.16),0 6px 20px rgba(0,0,0,.35)}
+.mu-circ svg{width:20px;height:20px}
+.mu-circ.big{width:60px;height:60px}.mu-circ.big svg{width:24px;height:24px}
+.mu-circ.md{width:48px;height:48px;box-shadow:inset 0 0 0 .6px rgba(255,255,255,.12)}
+.mu-circ.lib{color:var(--mu-red)}.mu-circ.lib svg{width:22px;height:22px}
+.mu-bar2{position:absolute;left:0;right:0;bottom:24px;z-index:5;display:flex;align-items:center;gap:10px;padding:0 18px}
+.mu-bar2 .mu-circ{width:52px;height:52px}
+/* playlist page */
+.mu-pl .vs{background:transparent}
+.mu-pltop{position:absolute;left:0;right:0;top:0;z-index:4;display:flex;justify-content:space-between;align-items:center;padding:56px 18px 0;pointer-events:none}
+.mu-pltop>*{pointer-events:auto}
+.mu-hero3{width:min(304px,72%);margin:116px auto 0}
+.mu-hero3 .mu-art{box-shadow:0 18px 40px rgba(0,0,0,.4)}
+.mu-n3{text-align:center;font-size:20px;font-weight:700;margin-top:18px;padding:0 24px}
+.mu-by3{text-align:center;font-size:17px;color:rgba(255,255,255,.62);margin-top:2px}
+.mu-btns3{display:flex;justify-content:center;align-items:center;gap:12px;padding:18px 20px 16px}
+.mu-btns3 .mu-circ{background:rgba(255,255,255,.12)}
+.mu-playb{width:160px;height:48px;border-radius:24px;background:#fff;color:#000;display:flex;align-items:center;justify-content:center;gap:7px;font-size:17px;font-weight:700;cursor:pointer}
+.mu-playb svg{width:18px;height:18px}
+.mu-songs3{padding-left:20px;border-top:.5px solid rgba(255,255,255,.12);margin-left:20px;padding-left:0}
+.mu26 .mu-song{min-height:56px;gap:12px}
+.mu26 .mu-song b{font-size:16px;font-weight:500}
+.mu26 .mu-song small{font-size:14px;color:rgba(255,255,255,.55)}
+.mu26 .mu-song>div,.mu26 .mu-dur,.mu26 .mu-more{border-bottom-color:rgba(255,255,255,.12)}
+.mu26 .mu-dur{font-size:13px;color:rgba(255,255,255,.45)}
+.mu26 .mu-more{color:#fff;padding-right:20px}.mu26 .mu-more svg{width:18px;height:18px}
+.mu26 .mu-song.cur b{color:#fff}
+.mu26 .mu-foot2{color:rgba(255,255,255,.5)}
+/* dynamic island while playing (iOS) */
+.island.np-on{width:190px;margin-left:-95px;padding:0 10px 0 7px}
+.isl-art{width:24px;height:24px;border-radius:7px;display:block}
+.isl-wave{display:flex;align-items:center;gap:2px;height:16px}
+.isl-wave i{width:2.5px;border-radius:2px;background:rgba(255,255,255,.75);height:4px;animation:eq .8s ease-in-out infinite alternate}
+.isl-wave i:nth-child(1),.isl-wave i:nth-child(6){background:rgba(255,255,255,.4);animation-duration:1.1s}
+.isl-wave i:nth-child(2){animation-delay:-.3s}.isl-wave i:nth-child(3){animation-delay:-.6s}.isl-wave i:nth-child(4){animation-delay:-.15s}.isl-wave i:nth-child(5){animation-delay:-.45s}
+/* 全屏 App 时：真手机的灵动岛就在这个位置，播放时让它“展开”成音乐样式 */
+body.standalone .island.np-on{display:flex!important}
+
 @media (prefers-reduced-motion: reduce){*{transition-duration:.01s!important;animation:none!important}}
 </style>
 
@@ -1478,7 +1553,7 @@ body.mobile .status,body.mobile .island{display:none}
 (() => {
 const $ = s => document.querySelector(s);
 const screen = $('#screen'), home = $('#home'), appwin = $('#appwin'), appbody = $('#appbody');
-const W = 393; let H = 852;   // 手机上打开时 H 会按玩家屏幕比例调整
+let W = 393, H = 852;   // 手机上打开时 H 会按玩家屏幕比例调整
 const state = { locked:true, app:null, page:0, cc:false, airplane:false, wifi:true, bt:true, cell:true, dark:false, flash:false, vol:.5, jiggle:false };
 
 /* ---------- icon art ---------- */
@@ -3341,13 +3416,13 @@ const igTab = on => `<div class="igt-wrap"><div class="igt">${[['home','ig',on =
 /* ---------- post ---------- */
 function igPost(p, key, mine){
   const u = mine && !p.co ? IG_ME : p.u, n = p.scenes.length;
-  const f0 = p.scenes[0].startsWith('img:') && IMG_SIZE[p.scenes[0].slice(4)], fh = f0 ? Math.round(393 * Math.min(1.25, Math.max(.5236, f0[1] / f0[0]))) : 491;
+  const f0 = p.scenes[0].startsWith('img:') && IMG_SIZE[p.scenes[0].slice(4)], fh = f0 ? Math.round(W * Math.min(1.25, Math.max(.5236, f0[1] / f0[0]))) : 491;
   p.likes0 ??= p.likes; p.cc ??= p.comments.reduce((n, c) => n + 1 + ((c[4] || []).length), 0);
   return `<article class="igp" data-post="${key}">
     <header class="igp-h">${p.co ? `<span class="igp-duo">${igAv(u, 30)}${igAv(p.co, 30)}</span>` : `<span data-go="igstory|${u}">${igAv(u, 34, igRing(u))}</span>`}
       <div class="igp-hu"><b data-go="iguser|${u}">${u}${igBadge(u)}${p.co ? ` 和 ${p.co}` : ''}</b>${p.music ? `<small>${IGI.note} ${p.music}</small>` : p.loc ? `<small>${p.loc}</small>` : ''}</div>
       ${p.suggest ? `<span class="ig-fbtn ${p.following ? 'on' : ''}" data-follow>${p.following ? '已关注' : '关注'}</span>` : ''}<span class="igp-more" data-toast="更多选项暂未制作">${IGI.dots}</span></header>
-    <div class="igp-media"><div class="igp-car">${p.scenes.map(s => `<div class="igp-img" style="height:${fh}px;background:${fitBg(s, fh / 393)}"></div>`).join('')}</div>${n > 1 ? `<span class="igp-cnt">1/${n}</span>` : ''}<i class="igp-pop">${IGI.heartF}</i></div>
+    <div class="igp-media"><div class="igp-car">${p.scenes.map(s => `<div class="igp-img" style="height:${fh}px;background:${fitBg(s, fh / W)}"></div>`).join('')}</div>${n > 1 ? `<span class="igp-cnt">1/${n}</span>` : ''}<i class="igp-pop">${IGI.heartF}</i></div>
     ${n > 1 ? `<div class="igp-dots">${p.scenes.map((_, i) => `<i class="${i ? '' : 'on'}"></i>`).join('')}</div>` : '<div class="igp-dots"></div>'}
     <div class="igp-act"><span data-like>${p.liked ? IGI.heartF : IGI.heart}<b>${igNum(p.likes)}</b></span><span data-cmt>${IGI.cmt}<b>${p.cc || ''}</b></span><span data-repost>${IGI.repost}<b>${p.reposts || ''}</b></span><span data-share>${IGI.send}<b>${p.sends || ''}</b></span><span class="sp"></span><span data-save>${p.saved ? IGI.saveF : IGI.save}</span></div>
     ${p.likedBy ? `<div class="igp-lb"><span class="igp-lbav">${igAv(p.likedBy, 20)}${igAv('keke.zz', 20)}${igAv('minji.k', 20)}</span><span><b data-go="iguser|${p.likedBy}">${p.likedBy}</b> 和<b>其他人</b>赞了</span></div>` : ''}
@@ -3648,7 +3723,7 @@ const secs = s => { const [m, x] = s.split(':').map(Number); return m * 60 + x; 
 const mmss = n => `${Math.floor(n / 60)}:${String(Math.floor(n % 60)).padStart(2, '0')}`;
 
 /* 添加的歌单：taesan's playlist（来自 hee） */
-const MU_ADDED = { id:'taesan', n:'🐈‍⬛', by:'ovo', cover:'assets/mu/cat_cover.jpg', mod:'1天前更新', added:1,
+const MU_ADDED = { id:'taesan', n:'🐈‍⬛', by:'ovo', cover:'assets/mu/cat_cover.jpg', tint:'#33382d', mod:'1天前更新', added:1,
   songs:[
     ['Let There Be Love','Oasis','5:27'], ['Hailey','Justin Bieber','3:13'], ['Altogether Alone','BE THE VOICE','4:03'],
     ['Count of three (You can eat $#@!)','underscores','2:39'], ["Don't Go Breaking My Heart",'Backstreet Boys','3:37'],
@@ -3659,7 +3734,7 @@ const MU_ADDED = { id:'taesan', n:'🐈‍⬛', by:'ovo', cover:'assets/mu/cat_c
 const MU_PLAYLISTS = [MU_ADDED, ...PL.map(p => ({ id:p.id, n:p.n, by:ME, bg:p.bg, mod:p.mod, created:p.created,
   songs:p.s.map((k, i) => ({ t:SONGS[k][0], a:SONGS[k][1], d:150 + ((k.length * 37 + i * 23) % 110), bg:PL[(i + 1) % PL.length].bg })) }))];
 const muArt = (s, size, r = 6) => s.art ? `<i class="mu-art" style="width:${size}px;height:${size}px;border-radius:${r}px;background:url(${s.art}) center/cover"></i>` : `<i class="mu-art" style="width:${size}px;height:${size}px;border-radius:${r}px;background:${s.bg}"></i>`;
-const muCover = (p, size, r = 10) => p.cover ? `<i class="mu-art" style="width:${size}px;height:${size}px;border-radius:${r}px;background:url(${p.cover}) center/cover"></i>` : `<i class="mu-art mu-gen" style="width:${size}px;height:${size}px;border-radius:${r}px;background:${p.bg}"><b>${p.n}</b></i>`;
+const muCover = (p, size, r = 10) => { const sz = size ? `width:${size}px;height:${size}px;` : 'width:100%;aspect-ratio:1;'; return p.cover ? `<i class="mu-art" style="${sz}border-radius:${r}px;background:url(${p.cover}) center/cover"></i>` : `<i class="mu-art mu-gen" style="${sz}border-radius:${r}px;background:${p.bg}"><b>${p.n}</b></i>`; };
 
 /* 资料库里的艺人：BOYNEXTDOOR（真实发行的歌名和专辑，不含歌词） */
 const MU_BND = { n:'BOYNEXTDOOR',
@@ -3714,7 +3789,7 @@ function mpSync(onlyTime){
   document.querySelectorAll('[data-mp="shuf"]').forEach(e => e.classList.toggle('on', MP.shuffle));
   document.querySelectorAll('[data-mp="rep"]').forEach(e => { e.classList.toggle('on', MP.repeat > 0); e.classList.toggle('one', MP.repeat === 2); });
   document.querySelectorAll('[data-song]').forEach(r => { const [pl, i] = r.dataset.song.split(':'); const on = pl === MP.pl && +i === MP.i; r.classList.toggle('cur', on); r.classList.toggle('playing', on && MP.playing); });
-  document.querySelectorAll('.mu-mini2').forEach(e => e.hidden = false);
+  document.querySelectorAll('.mm-art').forEach(e => { e.textContent = ''; });
   mpIsland();
 }
 function mpIsland(){
@@ -3722,13 +3797,17 @@ function mpIsland(){
   if (il.classList.contains('big') || il.classList.contains('pill')) return;
   const show = MP.playing && state.app !== 'music';
   il.classList.toggle('np-on', show);
-  if (show) { const s = mpSong(); $('#ilL').innerHTML = `<i class="isl-art" style="background:${s.art ? `url(${s.art}) center/cover` : s.bg}"></i>`; $('#ilR').innerHTML = eq; }
+  if (show) { const s = mpSong(); $('#ilL').innerHTML = `<i class="isl-art" style="background:${s.art ? `url(${s.art}) center/cover` : s.bg}"></i>`; $('#ilR').innerHTML = '<span class="isl-wave"><i></i><i></i><i></i><i></i><i></i><i></i></span>'; }
 }
 
 /* ---------- views ---------- */
-const muTab = () => `<div class="mu-mini2" data-go="nowplaying"><i class="mu-art" data-mp="art" style="width:40px;height:40px;border-radius:6px;background:${mpSong().art ? `url(${mpSong().art}) center/cover` : mpSong().bg}"></i><b data-mp="t">${mpSong().t}</b><span class="mm-b" data-mpc="pp" data-mp="pp">${MP.playing ? MPI.pause : MPI.play}</span><span class="mm-b" data-mpc="next">${MPI.next}</span></div>
-  <div class="mu-tabs">${[['主页','<path d="M12 3 3 10v11h6v-6h6v6h6V10z"/>'],['新发现','<rect x="3" y="3" width="8" height="8" rx="2"/><rect x="13" y="3" width="8" height="8" rx="2"/><rect x="3" y="13" width="8" height="8" rx="2"/><rect x="13" y="13" width="8" height="8" rx="2"/>'],['广播','<circle cx="12" cy="12" r="2.5"/><path d="M7.5 7.5a6.4 6.4 0 0 0 0 9M16.5 7.5a6.4 6.4 0 0 1 0 9M4.6 4.6a10.5 10.5 0 0 0 0 14.8M19.4 4.6a10.5 10.5 0 0 1 0 14.8" fill="none" stroke="currentColor" stroke-width="2"/>'],['资料库','<rect x="3" y="3" width="18" height="18" rx="4"/><path d="M10 7v8.5a2 2 0 1 1-1.5-1.9V9l6-1.5v6.5a2 2 0 1 1-1.5-1.9V7.8" fill="#fff"/>'],['搜索','<circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="m15.5 15.5 5 5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>']]
-    .map(([l, p]) => `<div class="${l === '资料库' ? 'on' : ''}" ${l === '资料库' ? '' : `data-toast="${l}暂未制作"`}><svg viewBox="0 0 24 24" fill="currentColor">${p}</svg><span>${l}</span></div>`).join('')}</div>`;
+/* iOS 26 风格：玻璃质感的悬浮播放条 + 悬浮标签栏 + 独立搜索按钮；进入二级页面后标签栏收成一个圆 */
+const MU_TABS = [['主页','<path d="M12 3.2 3 10.4V21h6.2v-6.4h5.6V21H21V10.4z"/>'],['新发现','<rect x="3" y="3" width="8" height="8" rx="2.4"/><rect x="13" y="3" width="8" height="8" rx="2.4"/><rect x="3" y="13" width="8" height="8" rx="2.4"/><rect x="13" y="13" width="8" height="8" rx="2.4"/>'],['广播','<circle cx="12" cy="12" r="2.3"/><path d="M8 8a5.6 5.6 0 0 0 0 8M16 8a5.6 5.6 0 0 1 0 8M5.2 5.2a9.6 9.6 0 0 0 0 13.6M18.8 5.2a9.6 9.6 0 0 1 0 13.6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>'],['资料库','<path d="M6 6.5h12M7.5 3.8h9"  stroke="currentColor" stroke-width="1.8" stroke-linecap="round" fill="none"/><rect x="3.5" y="9" width="17" height="12.5" rx="3"/><path d="M13.6 11.6v5.2a1.6 1.6 0 1 1-1.2-1.5v-3.1l3-.7" stroke="#000" stroke-width="1.3" fill="none"/>']];
+const muSearch = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg>';
+const muMini = () => { const s = mpSong(), on = MP.playing || MP.pos > 0; return `<div class="mu-mini3" data-go="nowplaying"><i class="mu-art mm-art" data-mp="art" style="background:${on ? (s.art ? `url(${s.art}) center/cover` : s.bg) : '#3a3a3c'}">${on ? '' : '♫'}</i><b data-mp="t">${on ? s.t : '未在播放'}</b><span class="mm-b" data-mpc="pp" data-mp="pp">${MP.playing ? MPI.pause : MPI.play}</span><span class="mm-b nx" data-mpc="next">${MPI.next}</span></div>`; };
+const muTab = (compact) => compact
+  ? `<div class="mu-bar2"><span class="mu-circ lib" data-back><svg viewBox="0 0 24 24" fill="currentColor">${MU_TABS[3][1]}</svg></span>${muMini()}<span class="mu-circ" data-toast="搜索暂未制作">${muSearch}</span></div>`
+  : `<div class="mu-bar1">${muMini()}<div class="mu-tabrow"><div class="mu-tabs3">${MU_TABS.map(([l, p]) => `<div class="${l === '资料库' ? 'on' : ''}" ${l === '资料库' ? '' : `data-toast="${l}暂未制作"`}><svg viewBox="0 0 24 24" fill="currentColor">${p}</svg><span>${l}</span></div>`).join('')}</div><span class="mu-circ big" data-toast="搜索暂未制作">${muSearch}</span></div></div>`;
 function muWire(v){
   v.addEventListener('click', e => {
     const c = e.target.closest('[data-mpc]'); if (c) { e.stopPropagation(); const k = c.dataset.mpc;
@@ -3740,32 +3819,35 @@ function muWire(v){
   });
 }
 Object.assign(R, {
-  music: () => ({ tone:'auto', cls:'music mu2', top:`<div class="nb plain"><div class="nbl"></div><div class="nbt"></div><div class="nbr" style="color:#fa2d48">编辑</div></div>`,
-    body:`${largeTitle('资料库')}<div class="mu-lib">${['歌单','艺人','专辑','歌曲','已下载'].map(x => `<div ${x === '歌单' ? 'data-go="mulists"' : x === '艺人' ? 'data-go="muartists"' : `data-toast="${x}暂未制作"`}><span>${x}</span>${chev}</div>`).join('')}<div data-go="recent"><span>最近播放</span>${chev}</div></div>
-      ${big('最近添加')}<div class="mu-g2">${MU_PLAYLISTS.map(p => `<div data-go="pl|${p.id}">${muCover(p, 172, 8)}<b>${p.n}</b><small>${p.added ? p.by : '歌单'}</small></div>`).join('')}</div><div style="height:150px"></div>`,
+  music: () => ({ tone:'dark', bg:'#000', cls:'music mu2 mu26',
+    body:`<div class="mu-lt"><b>资料库</b><span class="mu-ltr"><span class="mu-pillb"><i data-toast="新建歌单暂未制作"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h9M4 12h9M4 17h7M17 4v6M14 7h6"/></svg></i><i data-toast="更多选项暂未制作">${MPI.dots}</i></span><span class="mu-me" style="background:url(assets/avatar_anran.jpg) center/cover"></span></span></div>
+      <div class="mu-lib3">${[['歌单','mulists','<path d="M3 6h11M3 11h11M3 16h7" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/><path d="M17 5v10.5a2.5 2.5 0 1 1-1.6-2.3V5.6l4.6-1.2v2.4z"/>'],['艺人','muartists','<path d="M14.5 3.5a4.5 4.5 0 1 1-3 7.9L4 19.2 3 18.4l7.4-7.8a4.5 4.5 0 0 1 4.1-7.1z"/><path d="M5 21l2-2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>'],['专辑','','<rect x="5" y="8" width="14" height="13" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M7 5h10M9 2.5h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>'],['歌曲','','<path d="M15 3v12.5a3 3 0 1 1-2-2.8V3z"/>'],['已下载','','<circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v9M8 12.5l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>']]
+        .map(([l, go, ic]) => `<div ${go ? `data-go="${go}"` : `data-toast="${l}暂未制作"`}><svg viewBox="0 0 24 24" fill="currentColor">${ic}</svg><span>${l}${chev}</span></div>`).join('')}</div>
+      <div class="mu-h3">最近添加</div><div class="mu-g3">${MU_PLAYLISTS.map(p => `<div data-go="pl|${p.id}">${muCover(p, 0, 8)}<b>${p.n}</b><small>${p.added ? p.by : '歌单'}</small></div>`).join('')}</div><div style="height:190px"></div>`,
     over:muTab(), mount:v => { muWire(v); mpSync(); } }),
   muartists: () => { const names = [...new Set([MU_BND.n, ...MU_ADDED.songs.map(s => s.a)])].sort((a, b) => a === MU_BND.n ? -1 : b === MU_BND.n ? 1 : a.localeCompare(b, 'en', { sensitivity:'base' }));
-    return { tone:'auto', cls:'music mu2', top:nb('艺人', { back:'资料库', tint:'#fa2d48' }),
+    return { tone:'dark', bg:'#000', cls:'music mu2 mu26', top:nb('艺人', { back:'资料库', tint:'#fa2d48' }),
       body:`<div class="mu-arts">${names.map(n => { const s = MU_ADDED.songs.find(x => x.a === n); return `<div ${n === MU_BND.n ? 'data-go="muartist"' : `data-toast="${n} · 资料库中 1 首歌曲"`}><i class="mu-aav" style="${n === MU_BND.n ? 'background:#111' : s && s.art ? `background:url(${s.art}) center/cover` : 'background:#ccc'}">${n === MU_BND.n ? '<b>BND</b>' : ''}</i><span>${n}</span>${chev}</div>`; }).join('')}</div><div style="height:150px"></div>`,
-      over:muTab(), mount:v => { muWire(v); mpSync(); } }; },
-  muartist: () => ({ tone:'auto', cls:'music mu2', top:nb('', { back:'艺人', tint:'#fa2d48', right:`<span class="mu-hd"><i class="mu-dl">${MPI.dots}</i></span>` }),
+      over:muTab(true), mount:v => { muWire(v); mpSync(); } }; },
+  muartist: () => ({ tone:'dark', bg:'#000', cls:'music mu2 mu26', top:nb('', { back:'艺人', tint:'#fa2d48', right:`<span class="mu-hd"><i class="mu-dl">${MPI.dots}</i></span>` }),
     body:`<div class="mu-ahero"><i class="mu-aav big"><b>BOYNEXTDOOR</b></i><div class="mu-n2">${MU_BND.n}</div><div class="mu-sub2">${MU_BND.songs.length} 首歌曲</div></div>
       ${big('热门歌曲')}<div class="mu-songs">${MU_BND.songs.map(([t, al]) => `<div class="mu-song" data-toast="${t} · ${al}"><span class="mu-sa"><i class="mu-art mu-bnd" style="width:48px;height:48px;border-radius:5px"><b>${al}</b></i></span><div><b>${t}</b><small>${al}</small></div><span class="mu-more">${MPI.dots}</span></div>`).join('')}</div>
       ${big('专辑')}<div class="mu-g2">${MU_BND.albums.map(([n, y]) => `<div data-toast="${n} · ${y}"><i class="mu-art mu-bnd" style="width:172px;height:172px;border-radius:8px"><b>${n}</b></i><b>${n}</b><small>${y}</small></div>`).join('')}</div><div style="height:150px"></div>`,
-    over:muTab(), mount:v => { muWire(v); mpSync(); } }),
-  mulists: () => ({ tone:'auto', cls:'music mu2', top:nb('歌单', { back:'资料库', tint:'#fa2d48' }),
+    over:muTab(true), mount:v => { muWire(v); mpSync(); } }),
+  mulists: () => ({ tone:'dark', bg:'#000', cls:'music mu2 mu26', top:nb('歌单', { back:'资料库', tint:'#fa2d48' }),
     body:`<div class="mu-plist">${MU_PLAYLISTS.map(p => `<div data-go="pl|${p.id}">${muCover(p, 56, 6)}<div><b>${p.n}</b><small>${p.by}</small></div>${chev}</div>`).join('')}</div><div style="height:150px"></div>`,
-    over:muTab(), mount:v => { muWire(v); mpSync(); } }),
+    over:muTab(true), mount:v => { muWire(v); mpSync(); } }),
   pl: id => { const p = MU_PLAYLISTS.find(x => x.id === id); const total = p.songs.reduce((n, s) => n + s.d, 0);
-    return { tone:'auto', cls:'music mu2', top:nb('', { back:'资料库', tint:'#fa2d48', right:`<span class="mu-hd">${p.added ? `<i class="mu-dl">${MPI.down}</i>` : ''}<i class="mu-dl">${MPI.dots}</i></span>` }),
-      body:`<div class="mu-hero2">${muCover(p, 248, 10)}</div><div class="mu-n2">${p.n}</div><div class="mu-by">${p.by}</div><div class="mu-sub2">${p.mod.replace('修改于 ', '更新于 ')}</div>
-        <div class="mu-btns2"><span data-mpc="play:${p.id}">${MPI.play}播放</span><span data-mpc="play:${p.id}:sh">${MPI.shuffle}随机播放</span></div>
-        <div class="mu-songs">${p.songs.map((s, i) => `<div class="mu-song" data-song="${p.id}:${i}"><span class="mu-sa">${muArt(s, 48, 5)}${eq}</span><div><b>${s.t}</b><small>${s.a}</small></div><span class="mu-dur">${mmss(s.d)}</span><span class="mu-more" data-toast="更多选项暂未制作">${MPI.dots}</span></div>`).join('')}</div>
-        <div class="mu-foot2">${p.songs.length} 首歌曲，${Math.round(total / 60)} 分钟</div><div style="height:150px"></div>`,
-      over:muTab(), mount:v => { muWire(v); mpSync(); } }; },
-  recent: () => ({ tone:'auto', cls:'music mu2', top:nb('最近播放', { back:'资料库', tint:'#fa2d48' }),
+    return { tone:'dark', bg:`linear-gradient(${p.tint || '#2a2a2c'} 0, ${p.tint || '#2a2a2c'} 420px, #141414 900px)`, cls:'music mu2 mu26 mu-pl',
+      top:`<div class="mu-pltop"><span class="mu-circ sm" data-back><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5 8 12l7 7"/></svg></span><span class="mu-pillb"><i data-toast="分享暂未制作"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15V3M8 7l4-4 4 4M6 11H5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-8a1 1 0 0 0-1-1h-1"/></svg></i><i data-toast="更多选项暂未制作">${MPI.dots}</i></span></div>`,
+      body:`<div class="mu-hero3">${muCover(p, 0, 10)}</div><div class="mu-n3">${p.n}</div><div class="mu-by3">${p.by}</div>
+        <div class="mu-btns3"><span class="mu-circ md" data-mpc="play:${p.id}:sh">${MPI.shuffle}</span><span class="mu-playb" data-mpc="play:${p.id}">${MPI.play}播放</span><span class="mu-circ md" data-toast="已下载到这台 iPhone">${MPI.down}</span></div>
+        <div class="mu-songs3">${p.songs.map((s, i) => `<div class="mu-song" data-song="${p.id}:${i}"><span class="mu-sa">${muArt(s, 48, 5)}${eq}</span><div><b>${s.t}</b><small>${s.a}</small></div><span class="mu-dur">${mmss(s.d)}</span><span class="mu-more" data-toast="更多选项暂未制作">${MPI.dots}</span></div>`).join('')}</div>
+        <div class="mu-foot2">${p.songs.length} 首歌曲，${Math.round(total / 60)} 分钟</div><div style="height:170px"></div>`,
+      over:muTab(true), mount:v => { muWire(v); mpSync(); } }; },
+  recent: () => ({ tone:'dark', bg:'#000', cls:'music mu2 mu26', top:nb('最近播放', { back:'资料库', tint:'#fa2d48' }),
     body:`<div class="mu-plist">${RECENT_PLAY.map(([k, d]) => `<div>${muArt({ bg:PL[k.length % PL.length].bg }, 56, 6)}<div><b>${SONGS[k][0]}</b><small>${SONGS[k][1]} · ${d}</small></div></div>`).join('')}</div><div class="mu-foot2">同一首歌在 2022 年和 2026 年都出现在这里。</div><div style="height:150px"></div>`,
-    over:muTab(), mount:v => { muWire(v); mpSync(); } }),
+    over:muTab(true), mount:v => { muWire(v); mpSync(); } }),
   nowplaying: () => { const s = mpSong();
     return { tone:'dark', bg:'#1c1c1e', cls:'np' + (MP.playing ? '' : ' paused'),
       body:`<div class="np-bg" data-mp="bg" style="background-image:${s.art ? `url(${s.art})` : 'none'}"></div><div class="np-in">
@@ -4064,15 +4146,16 @@ function fit(){
     let vw = vv ? vv.width : innerWidth, vh = vv ? vv.height : innerHeight;
     if (standalone) { const portrait = innerHeight >= innerWidth; const sw = window.screen.width, sh = window.screen.height; vw = portrait ? Math.min(sw, sh) : Math.max(sw, sh); vh = portrait ? Math.max(sw, sh) : Math.min(sw, sh); vh = Math.max(vh, innerHeight, document.documentElement.clientHeight); }
     if (!(vw > 0 && vh > 0)) { vw = innerWidth; vh = innerHeight; }
-    let s = vw / 393; H = Math.round(Math.max(640, Math.min(1000, vh / s)));
-    if (vh / s < 640) { s = vh / 640; H = 640; }
+    // 按真实屏幕的点数排版（1:1，不放大）：宽度 = 屏幕宽度
+    W = Math.round(Math.max(320, Math.min(480, vw))); let s = vw / W; H = Math.round(Math.max(560, Math.min(1000, vh / s)));
+    document.documentElement.style.setProperty('--sw', W + 'px');
     document.documentElement.style.setProperty('--sh', H + 'px');
     document.body.classList.toggle('short', H < 780);
     $('#phone').style.transform = `scale(${s})`;
-    const f = $('#fit'); f.style.width = 393*s + 'px'; f.style.height = H*s + 'px';
+    const f = $('#fit'); f.style.width = W*s + 'px'; f.style.height = H*s + 'px'; $('#pages').style.transform = `translateX(${-state.page*W}px)`;
     document.body.style.overflow = 'hidden'; return;
   }
-  H = 852; document.documentElement.style.removeProperty('--sh'); document.body.classList.remove('short');
+  W = 393; H = 852; document.documentElement.style.removeProperty('--sh'); document.documentElement.style.removeProperty('--sw'); document.body.classList.remove('short');
   const availH = innerHeight - 60, availW = innerWidth - 32;
   const s = actual ? 1 : Math.min(1, availH/880, availW/421);
   $('#phone').style.transform = `scale(${s})`;
