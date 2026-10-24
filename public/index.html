@@ -891,6 +891,14 @@ body.mobile .status,body.mobile .island{display:none}
 .chev{width:8px;height:14px;fill:none;stroke:#c4c4c7;stroke-width:2;flex:none}
 .mr-h{gap:10px}.mr-h b{min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.mr-h small{white-space:nowrap;flex:none}
 
+/* KakaoTalk 头像（默认头像 / 照片 / 群聊拼图） */
+.k-av.img,.k-av.grp{background:transparent!important;padding:0}
+.k-av.img i,.k-av.grp i{display:block;width:100%;height:100%;font-style:normal;overflow:hidden}
+.k-av.img i svg,.k-av.grp i svg{display:block;width:100%;height:100%}
+.k-av.grp{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:1.5px;background:#fff!important}
+.k-av.grp.n2{grid-template-rows:1fr}
+.k-av.grp.n3 i:first-child{grid-row:span 2}
+
 /* =========================================================
    INSTAGRAM（深色）
    ========================================================= */
@@ -1360,6 +1368,19 @@ body.mobile .status,body.mobile .island{display:none}
 
 .view.np{touch-action:none;cursor:grab}
 .np-grab{width:44px;height:6px;margin:58px 0 24px;padding:10px 30px;background-clip:content-box;box-sizing:content-box}
+
+.mu-dur{align-self:stretch;display:flex;align-items:center;padding-left:8px;font-size:var(--fs-foot);color:var(--app-sub);font-variant-numeric:tabular-nums;border-bottom:.5px solid var(--app-sep)}
+.mu-song .mu-more{padding-left:10px}
+.mu-arts>div{display:flex;align-items:center;gap:12px;padding:5px 20px 5px 20px;cursor:pointer}
+.mu-arts>div>span{flex:1;font-size:var(--fs-call);border-bottom:.5px solid var(--app-sep);padding:14px 0;align-self:stretch;display:flex;align-items:center}
+.mu-arts>div>.chev{margin-left:-20px}
+.mu-aav{width:48px;height:48px;border-radius:50%;flex:none;display:flex;align-items:center;justify-content:center;font-style:normal;background:#111}
+.mu-aav b{color:#fff;font-size:10px;font-weight:800;letter-spacing:.04em}
+.mu-aav.big{width:180px;height:180px;margin:6px auto 0;background:radial-gradient(circle at 30% 30%,#3a3a3a,#0d0d0d)}.mu-aav.big b{font-size:18px}
+.mu-ahero{text-align:center;padding-bottom:10px}
+.mu-bnd{display:flex;align-items:flex-end;padding:6px;box-sizing:border-box;background:linear-gradient(135deg,#1b1b1b,#4a4a4a)}
+.mu-bnd b{color:#fff;font-size:9px;font-weight:700;line-height:1.1;margin:0!important}
+.mu-g2 .mu-bnd b{font-size:15px}
 
 @media (prefers-reduced-motion: reduce){*{transition-duration:.01s!important;animation:none!important}}
 </style>
@@ -2464,7 +2485,13 @@ const silhouette = '<svg viewBox="0 0 40 40" width="100%" height="100%"><rect wi
 const MEMBER_COLORS = { 东旼:'#c5d0dd', 成淏:'#f2c48d', 宰铉:'#9ec5f2', 常赫:'#b8c4b0', 桐儇:'#c7b3e6', 云鹤:'#ffd27a', 书妍:'#f4a7b9', 敏智:'#f2c48d', 俊浩:'#a7d0e6', 智安:'#d6c1a8', 智浩:'#a9c7a1', 妈妈:'#e9b07a', 爸爸:'#d9b48a', 助教:'#9aa7b8', 小雨:'#b8d0e8' };
 const avColor = (who, c) => MEMBER_COLORS[who] || c.color || '#c5d0dd';
 const kav = (c, who) => (c.id === 'dongmin' && !who) || who === '东旼' && false ? silhouette : (who || c.name).slice(0, 1);
-const avHTML = (c, who, cls = '') => { const isD = c.id === 'dongmin' && !who; return `<div class="k-av ${cls}" style="background:${isD ? 'transparent' : avColor(who || '', c)}">${isD ? silhouette : (who || c.name).slice(0, 1)}</div>`; };
+/* KakaoTalk 头像：大多数人用 Kakao 默认头像；书妍用自己的照片；群聊头像由成员头像拼成 */
+const KK_IMG = { '书妍':'assets/kk_shuyan.jpg' };
+const kkOne = n => KK_IMG[n] ? `<i style="background:url(${KK_IMG[n]}) center/cover"></i>` : `<i>${silhouette}</i>`;
+const kkMembers = c => { const m = [...new Set(c.list.filter(x => x.t === 'm' && x.who).map(x => x.who))]; while (m.length < 2) m.push(''); return m.slice(0, 4); };
+const avHTML = (c, who, cls = '') => {
+  if (!who && c.group) { const m = kkMembers(c); return `<div class="k-av grp n${m.length} ${cls}">${m.map(kkOne).join('')}</div>`; }
+  return `<div class="k-av img ${cls}">${kkOne(who || c.name)}</div>`; };
 function bubble(text, me){
   let m;
   if (text === '[call-miss]') return `<div class="k-b k-call"><i class="ci miss">${SVGI.phone}</i><span>语音通话<small>${me ? '未接通' : '未接来电'}</small></span></div>`;
@@ -2536,14 +2563,14 @@ const R = {
       mount:v => v.querySelectorAll('.k-row').forEach(r => r.addEventListener('click', () => { const c = CHATS.find(x => x.id === r.dataset.go.split('|')[1]); if (c.unread) { c.unread = 0; setTimeout(() => { r.querySelector('.k-r i')?.remove(); }, 400); updateBadges(); } })) }; },
   kfriends: () => ({ tone:'light', bg:'#fff', cls:'kakao',
     top:`<div class="k-top"><b>好友</b><span>${SVGI.search}<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="10" cy="8" r="4"/><path d="M3 20c0-4 3-6 7-6M18 13v6M15 16h6"/></svg></span></div>`,
-    body:`<div class="k-row me-prof"><div class="k-av lg" style="background:#bfa6d9">${ME[0]}</div><div class="k-mid"><b>${ME}</b><p>somewhere between here and home</p></div></div>
-      <div class="k-sec">生日的好友</div><div class="k-row"><div class="k-av" style="background:#f4a7b9">书</div><div class="k-mid"><b>书妍</b><p>10月31日 · 7天后</p></div><span class="k-gift" data-toast="礼物功能暂未制作">送礼物</span></div>
-      <div class="k-sec">好友 ${KAKAO_FRIENDS.length}</div>${KAKAO_FRIENDS.map(([n, s, c]) => `<div class="k-row" ${n === '韩东旼' ? 'data-go="kprof|dongmin"' : `data-go="kprof|${n}"`}>${n === '韩东旼' ? `<div class="k-av" style="background:transparent">${silhouette}</div>` : `<div class="k-av" style="background:${c}">${n[0]}</div>`}<div class="k-mid"><b>${n}</b>${s ? `<p>${s}</p>` : ''}</div></div>`).join('')}<div style="height:20px"></div>`,
+    body:`<div class="k-row me-prof"><div class="k-av lg img">${kkOne(ME)}</div><div class="k-mid"><b>${ME}</b><p>somewhere between here and home</p></div></div>
+      <div class="k-sec">生日的好友</div><div class="k-row"><div class="k-av img">${kkOne('书妍')}</div><div class="k-mid"><b>书妍</b><p>10月31日 · 7天后</p></div><span class="k-gift" data-toast="礼物功能暂未制作">送礼物</span></div>
+      <div class="k-sec">好友 ${KAKAO_FRIENDS.length}</div>${KAKAO_FRIENDS.map(([n, s, c]) => `<div class="k-row" ${n === '韩东旼' ? 'data-go="kprof|dongmin"' : `data-go="kprof|${n}"`}><div class="k-av img">${kkOne(n)}</div><div class="k-mid"><b>${n}</b>${s ? `<p>${s}</p>` : ''}</div></div>`).join('')}<div style="height:20px"></div>`,
     bottom:kTab('kfriends') }),
   kprof: who => { const isD = who === 'dongmin'; const name = isD ? '韩东旼' : who; const f = KAKAO_FRIENDS.find(x => x[0] === name || x[0].startsWith(name));
     return { tone:'dark', bg:isD ? '#8c97a4' : 'linear-gradient(#7d8b9c,#4f5966)', cls:'kakao kprof',
       top:`<div class="kp-top"><span data-back>✕</span><span>${SVGI.dots}</span></div>`,
-      body:`<div class="kp-main">${isD ? `<div class="k-av xl" style="background:transparent">${silhouette}</div>` : `<div class="k-av xl" style="background:${f ? f[2] : avColor(name, {})}">${name[0]}</div>`}<b>${name}</b><p>${f && f[1] ? f[1] : ''}</p></div>`,
+      body:`<div class="kp-main"><div class="k-av xl img">${kkOne(name)}</div><b>${name}</b><p>${f && f[1] ? f[1] : ''}</p></div>`,
       bottom:`<div class="kp-btns"><span data-back>${SVGI.reply}<em>1:1 聊天</em></span><span data-toast="原型中不能通话">${SVGI.phone}<em>语音通话</em></span><span data-toast="原型中不能通话">${SVGI.video}<em>视频通话</em></span></div>` }; },
   kchat: id => { const c = CHATS.find(x => x.id === id); return { tone:'light', bg:'#b2c7d9', cls:'kakao kchat',
     top:nb(`${c.name}${c.group ? ` <span class="k-cnt">${c.group}</span>` : ''}`, { tint:'#1f1f1f', bg:'rgba(178,199,217,.94)', fg:'#111', right:`<span class="k-hd"><span class="k-sbtn">${SVGI.search}</span><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg></span>` }) +
@@ -3634,6 +3661,11 @@ const MU_PLAYLISTS = [MU_ADDED, ...PL.map(p => ({ id:p.id, n:p.n, by:ME, bg:p.bg
 const muArt = (s, size, r = 6) => s.art ? `<i class="mu-art" style="width:${size}px;height:${size}px;border-radius:${r}px;background:url(${s.art}) center/cover"></i>` : `<i class="mu-art" style="width:${size}px;height:${size}px;border-radius:${r}px;background:${s.bg}"></i>`;
 const muCover = (p, size, r = 10) => p.cover ? `<i class="mu-art" style="width:${size}px;height:${size}px;border-radius:${r}px;background:url(${p.cover}) center/cover"></i>` : `<i class="mu-art mu-gen" style="width:${size}px;height:${size}px;border-radius:${r}px;background:${p.bg}"><b>${p.n}</b></i>`;
 
+/* 资料库里的艺人：BOYNEXTDOOR（真实发行的歌名和专辑，不含歌词） */
+const MU_BND = { n:'BOYNEXTDOOR',
+  songs:[['One and Only','WHO!'], ['Serenade','WHO!'], ['돌아버리겠다 (But I Like You)','WHO!'], ['뭣 같아 (But Sometimes)','WHY..'], ['Earth, Wind & Fire','HOW?'], ['부모님 관람불가 (Dangerous)','19.99'], ['Nice Guy','19.99'], ['오늘만 I LOVE YOU','오늘만 I LOVE YOU'], ['I Feel Good','No Genre']],
+  albums:[['No Genre','2025'], ['오늘만 I LOVE YOU','2025 · 单曲'], ['19.99','2024'], ['HOW?','2024'], ['WHY..','2023'], ['WHO!','2023 · 单曲']] };
+
 /* ---------- player state ---------- */
 const MP = { list:MU_ADDED.songs, pl:'taesan', i:0, pos:22, playing:false, shuffle:false, repeat:0, order:null };
 const mpSong = () => MP.list[MP.i];
@@ -3709,8 +3741,17 @@ function muWire(v){
 }
 Object.assign(R, {
   music: () => ({ tone:'auto', cls:'music mu2', top:`<div class="nb plain"><div class="nbl"></div><div class="nbt"></div><div class="nbr" style="color:#fa2d48">编辑</div></div>`,
-    body:`${largeTitle('资料库')}<div class="mu-lib">${['歌单','艺人','专辑','歌曲','已下载'].map(x => `<div ${x === '歌单' ? 'data-go="mulists"' : `data-toast="${x}暂未制作"`}><span>${x}</span>${chev}</div>`).join('')}<div data-go="recent"><span>最近播放</span>${chev}</div></div>
+    body:`${largeTitle('资料库')}<div class="mu-lib">${['歌单','艺人','专辑','歌曲','已下载'].map(x => `<div ${x === '歌单' ? 'data-go="mulists"' : x === '艺人' ? 'data-go="muartists"' : `data-toast="${x}暂未制作"`}><span>${x}</span>${chev}</div>`).join('')}<div data-go="recent"><span>最近播放</span>${chev}</div></div>
       ${big('最近添加')}<div class="mu-g2">${MU_PLAYLISTS.map(p => `<div data-go="pl|${p.id}">${muCover(p, 172, 8)}<b>${p.n}</b><small>${p.added ? p.by : '歌单'}</small></div>`).join('')}</div><div style="height:150px"></div>`,
+    over:muTab(), mount:v => { muWire(v); mpSync(); } }),
+  muartists: () => { const names = [...new Set([MU_BND.n, ...MU_ADDED.songs.map(s => s.a)])].sort((a, b) => a === MU_BND.n ? -1 : b === MU_BND.n ? 1 : a.localeCompare(b, 'en', { sensitivity:'base' }));
+    return { tone:'auto', cls:'music mu2', top:nb('艺人', { back:'资料库', tint:'#fa2d48' }),
+      body:`<div class="mu-arts">${names.map(n => { const s = MU_ADDED.songs.find(x => x.a === n); return `<div ${n === MU_BND.n ? 'data-go="muartist"' : `data-toast="${n} · 资料库中 1 首歌曲"`}><i class="mu-aav" style="${n === MU_BND.n ? 'background:#111' : s && s.art ? `background:url(${s.art}) center/cover` : 'background:#ccc'}">${n === MU_BND.n ? '<b>BND</b>' : ''}</i><span>${n}</span>${chev}</div>`; }).join('')}</div><div style="height:150px"></div>`,
+      over:muTab(), mount:v => { muWire(v); mpSync(); } }; },
+  muartist: () => ({ tone:'auto', cls:'music mu2', top:nb('', { back:'艺人', tint:'#fa2d48', right:`<span class="mu-hd"><i class="mu-dl">${MPI.dots}</i></span>` }),
+    body:`<div class="mu-ahero"><i class="mu-aav big"><b>BOYNEXTDOOR</b></i><div class="mu-n2">${MU_BND.n}</div><div class="mu-sub2">${MU_BND.songs.length} 首歌曲</div></div>
+      ${big('热门歌曲')}<div class="mu-songs">${MU_BND.songs.map(([t, al]) => `<div class="mu-song" data-toast="${t} · ${al}"><span class="mu-sa"><i class="mu-art mu-bnd" style="width:48px;height:48px;border-radius:5px"><b>${al}</b></i></span><div><b>${t}</b><small>${al}</small></div><span class="mu-more">${MPI.dots}</span></div>`).join('')}</div>
+      ${big('专辑')}<div class="mu-g2">${MU_BND.albums.map(([n, y]) => `<div data-toast="${n} · ${y}"><i class="mu-art mu-bnd" style="width:172px;height:172px;border-radius:8px"><b>${n}</b></i><b>${n}</b><small>${y}</small></div>`).join('')}</div><div style="height:150px"></div>`,
     over:muTab(), mount:v => { muWire(v); mpSync(); } }),
   mulists: () => ({ tone:'auto', cls:'music mu2', top:nb('歌单', { back:'资料库', tint:'#fa2d48' }),
     body:`<div class="mu-plist">${MU_PLAYLISTS.map(p => `<div data-go="pl|${p.id}">${muCover(p, 56, 6)}<div><b>${p.n}</b><small>${p.by}</small></div>${chev}</div>`).join('')}</div><div style="height:150px"></div>`,
@@ -3719,7 +3760,7 @@ Object.assign(R, {
     return { tone:'auto', cls:'music mu2', top:nb('', { back:'资料库', tint:'#fa2d48', right:`<span class="mu-hd">${p.added ? `<i class="mu-dl">${MPI.down}</i>` : ''}<i class="mu-dl">${MPI.dots}</i></span>` }),
       body:`<div class="mu-hero2">${muCover(p, 248, 10)}</div><div class="mu-n2">${p.n}</div><div class="mu-by">${p.by}</div><div class="mu-sub2">${p.mod.replace('修改于 ', '更新于 ')}</div>
         <div class="mu-btns2"><span data-mpc="play:${p.id}">${MPI.play}播放</span><span data-mpc="play:${p.id}:sh">${MPI.shuffle}随机播放</span></div>
-        <div class="mu-songs">${p.songs.map((s, i) => `<div class="mu-song" data-song="${p.id}:${i}"><span class="mu-sa">${muArt(s, 48, 5)}${eq}</span><div><b>${s.t}</b><small>${s.a}</small></div><span class="mu-more" data-toast="更多选项暂未制作">${MPI.dots}</span></div>`).join('')}</div>
+        <div class="mu-songs">${p.songs.map((s, i) => `<div class="mu-song" data-song="${p.id}:${i}"><span class="mu-sa">${muArt(s, 48, 5)}${eq}</span><div><b>${s.t}</b><small>${s.a}</small></div><span class="mu-dur">${mmss(s.d)}</span><span class="mu-more" data-toast="更多选项暂未制作">${MPI.dots}</span></div>`).join('')}</div>
         <div class="mu-foot2">${p.songs.length} 首歌曲，${Math.round(total / 60)} 分钟</div><div style="height:150px"></div>`,
       over:muTab(), mount:v => { muWire(v); mpSync(); } }; },
   recent: () => ({ tone:'auto', cls:'music mu2', top:nb('最近播放', { back:'资料库', tint:'#fa2d48' }),
