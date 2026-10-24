@@ -251,8 +251,9 @@ body.mobile{margin:0;height:100dvh}body.mobile .stage{height:100dvh}
 
 /* 手机模式：高度跟随玩家屏幕；底部横条往上挪，避开真手机的上滑手势区，并可直接点按 */
 body.mobile .phone,body.mobile .screen,body.mobile .appwin{height:var(--sh,852px)}
-body.mobile .hbar{bottom:18px;height:44px;width:240px;margin-left:-120px;padding-bottom:12px}
-body.mobile .hbar::before{content:"";position:absolute;inset:0}
+body.mobile .hbar{bottom:14px;height:26px;width:180px;margin-left:-90px;padding-bottom:9px}
+/* 全屏 App：小手机的横条放到系统横条上方，避免两条重叠 */
+body.standalone .hbar{bottom:30px}
 
 /* 屏幕较矮时（浏览器里打开）压缩主屏幕和正在播放的间距 */
 body.short .page{padding-top:56px}
@@ -3899,6 +3900,19 @@ function startUp(e, from){
   if (from === 'app'){ appwin.className = 'appwin open'; }
   if (from === 'lock'){ $('#lock').style.transition = 'none'; }
 }
+/* 手机上：在底部区域（系统手势条上方）往上滑也能回主屏幕；轻点不拦截，下面的按钮照常能点 */
+let zone = null;
+screen.addEventListener('pointerdown', e => {
+  if (!document.body.classList.contains('mobile') || up || e.target.closest('#hbar')) return;
+  const p = localPt(e); if (p.y < H - 96) return;
+  zone = { y0:p.y, id:e.pointerId, e };
+}, true);
+window.addEventListener('pointermove', e => {
+  if (!zone || e.pointerId !== zone.id || up) return;
+  const p = localPt(e);
+  if (zone.y0 - p.y > 22) { const z = zone; zone = null; startUp(z.e, state.cc ? 'cc' : state.locked ? 'lock' : state.app ? 'app' : 'home'); up.y0 = z.y0; up.bar = false; }
+}, true);
+window.addEventListener('pointerup', e => { if (zone && e.pointerId === zone.id) zone = null; }, true);
 $('#hbar').addEventListener('pointerdown', e => { e.stopPropagation(); startUp(e, state.cc ? 'cc' : state.locked ? 'lock' : state.app ? 'app' : 'home'); });
 $('#notifs').addEventListener('click', e => { const n = e.target.closest('[data-deep]'); if (!n) return; const [a, r, x] = n.dataset.deep.split('|'); openDeep(a, r, x); });
 $('#lock').addEventListener('pointerdown', e => {
@@ -4002,7 +4016,12 @@ function fit(){
   const mobile = Math.min(innerWidth, innerHeight) < 520 || (matchMedia('(pointer: coarse)').matches && innerWidth < 900);
   document.body.classList.toggle('mobile', mobile);
   if (mobile) {
-    const vv = window.visualViewport, vw = vv ? vv.width : innerWidth, vh = vv ? vv.height : innerHeight;
+    // 从主屏幕图标打开（全屏网页 App）时，iPhone 报告的高度会少算底部，直接用整块屏幕的尺寸
+    const standalone = navigator.standalone || matchMedia('(display-mode: standalone), (display-mode: fullscreen)').matches;
+    document.body.classList.toggle('standalone', !!standalone);
+    const vv = window.visualViewport;
+    let vw = vv ? vv.width : innerWidth, vh = vv ? vv.height : innerHeight;
+    if (standalone) { const portrait = innerHeight >= innerWidth; vw = portrait ? Math.min(screen.width, screen.height) : Math.max(screen.width, screen.height); vh = portrait ? Math.max(screen.width, screen.height) : Math.min(screen.width, screen.height); vh = Math.max(vh, innerHeight, document.documentElement.clientHeight); }
     let s = vw / 393; H = Math.round(Math.max(640, Math.min(1000, vh / s)));
     if (vh / s < 640) { s = vh / 640; H = 640; }
     document.documentElement.style.setProperty('--sh', H + 'px');
