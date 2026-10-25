@@ -1635,6 +1635,249 @@ body.standalone .island.np-on{display:flex!important}
 .rem-new input{border:0;outline:0;background:transparent;font:400 var(--fs-body) var(--font);color:var(--app-fg);width:100%;padding:0}
 .rem-i i{cursor:pointer}
 .nt-search{min-width:0}.nt-search input{width:0}
+/* ===== X（深色）· 尺寸写成 NK = N × --k，构建时展开 ===== */
+.xx{--xt:#e7e9ea;--xg:#71767b;--xl:#2f3336;--xb:#1d9bf0;background:#000;color:var(--xt);font-size:calc(15px * var(--k));line-height:1.33;-webkit-font-smoothing:antialiased}
+.xx svg{display:block;flex:none}
+.xx .vs{overscroll-behavior:contain}
+.xx input,.xx textarea{font:inherit;color:var(--xt);background:none;border:0;outline:0;min-width:0;-webkit-appearance:none}
+.xx input::placeholder,.xx textarea::placeholder{color:var(--xg)}
+.xx-av{width:calc(40px * var(--k));height:calc(40px * var(--k));border-radius:50%;object-fit:cover;display:block;flex:none;background:#333}
+.xx-av.s{width:calc(32px * var(--k));height:calc(32px * var(--k))}.xx-av.xs{width:calc(22px * var(--k));height:calc(22px * var(--k))}.xx-av.l{width:calc(64px * var(--k));height:calc(64px * var(--k))}
+.xx-vf{width:calc(17px * var(--k));height:calc(17px * var(--k));margin-left:calc(2px * var(--k))}
+.xx-lnk{color:var(--xb);font-style:normal}
+.xx-cb{width:calc(36px * var(--k));height:calc(36px * var(--k));border-radius:50%;display:flex;align-items:center;justify-content:center;flex:none}
+.xx-cb svg{width:calc(22px * var(--k));height:calc(22px * var(--k))}
+.xx-cb.dark{background:rgba(0,0,0,.55);width:calc(34px * var(--k));height:calc(34px * var(--k))}.xx-cb.dark svg{width:calc(19px * var(--k));height:calc(19px * var(--k))}
+.xx-end{height:calc(110px * var(--k))}
+
+/* 顶栏 */
+.xx-top{flex:none;padding-top:calc(52px * var(--k));background:rgba(0,0,0,.88);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);border-bottom:.5px solid var(--xl);position:relative;z-index:3}
+.xx-hd{height:calc(44px * var(--k));display:flex;align-items:center;justify-content:space-between;padding:0 calc(16px * var(--k))}
+.xx-hd .xx-av{width:calc(32px * var(--k));height:calc(32px * var(--k))}
+.xx-me,.xx-hr{width:calc(36px * var(--k));display:flex;align-items:center}
+.xx-hr{justify-content:flex-end}.xx-hr svg{width:calc(21px * var(--k));height:calc(21px * var(--k))}
+.xx-logo svg{width:calc(27px * var(--k));height:calc(27px * var(--k))}
+.xx-ttl{font-size:calc(17px * var(--k));font-weight:700}
+.xx-tabs{display:flex;height:calc(48px * var(--k))}
+.xx-tabs b{flex:1;display:flex;align-items:center;justify-content:center;color:var(--xg);font-weight:500;font-size:calc(15px * var(--k))}
+.xx-tabs b:last-child:has(.add){flex:.62}
+.xx-tabs span{position:relative;display:flex;align-items:center;gap:calc(3px * var(--k));height:100%}
+.xx-tabs span i svg{width:calc(15px * var(--k));height:calc(15px * var(--k))}
+.xx-tabs b.on{color:var(--xt);font-weight:700}
+.xx-tabs b.on span:after{content:'';position:absolute;left:0;right:0;bottom:0;height:calc(4px * var(--k));border-radius:calc(2px * var(--k));background:var(--xb)}
+.xx-tabs .add{color:var(--xg);font-weight:500}
+
+/* 帖子 */
+.xx-post{padding:calc(12px * var(--k)) calc(16px * var(--k)) 0;border-bottom:.5px solid var(--xl)}
+.xx-post.th{border-bottom:0}
+.xx-pr{display:flex;gap:calc(9px * var(--k))}
+.xx-avc{width:calc(40px * var(--k));flex:none;display:flex;flex-direction:column;align-items:center}
+.xx-ln{flex:1;width:calc(2px * var(--k));background:#333639;margin-top:calc(4px * var(--k));min-height:calc(12px * var(--k))}
+.xx-c{flex:1;min-width:0;padding-bottom:calc(10px * var(--k))}
+.xx-h{display:flex;align-items:center;gap:calc(4px * var(--k));white-space:nowrap;min-width:0;line-height:calc(20px * var(--k))}
+.xx-h b{font-weight:700;overflow:hidden;text-overflow:ellipsis;flex:none;max-width:55%}
+.xx-h span{color:var(--xg);overflow:hidden;text-overflow:ellipsis;min-width:0}
+.xx-more{margin-left:auto;color:var(--xg);padding-left:calc(6px * var(--k))}.xx-more svg{width:calc(17px * var(--k));height:calc(17px * var(--k))}
+.xx-t{line-height:calc(20px * var(--k));word-break:break-word;margin-top:calc(1px * var(--k))}
+.xx-t.big{font-size:calc(17px * var(--k));line-height:calc(24px * var(--k));margin-top:calc(12px * var(--k))}
+.xx-rto{color:var(--xg);margin:calc(1px * var(--k)) 0 calc(2px * var(--k))}.xx-rto em{color:var(--xb);font-style:normal}
+.xx-rtl{display:flex;align-items:center;gap:calc(10px * var(--k));color:var(--xg);font-size:calc(13px * var(--k));font-weight:700;padding-left:calc(24px * var(--k));margin:calc(-2px * var(--k)) 0 calc(4px * var(--k))}
+.xx-rtl svg{width:calc(15px * var(--k));height:calc(15px * var(--k))}
+.xx-media{margin-top:calc(10px * var(--k));display:grid;gap:calc(2px * var(--k));border-radius:calc(16px * var(--k));overflow:hidden;border:.5px solid var(--xl)}
+.xx-img{width:100%;background-size:cover!important;background-position:center!important}
+.xx-acts{display:flex;align-items:center;justify-content:space-between;margin-top:calc(10px * var(--k));color:var(--xg);font-size:calc(13px * var(--k));padding-right:calc(2px * var(--k))}
+.xx-acts span{display:flex;align-items:center;gap:calc(3px * var(--k));min-width:calc(44px * var(--k))}
+.xx-acts svg{width:calc(18.5px * var(--k));height:calc(18.5px * var(--k))}
+.xx-acts em{font-style:normal;min-width:1px}
+.xx-acts .r{display:flex;gap:calc(16px * var(--k));min-width:0}
+.xx-acts .on-lk{color:#f91880}.xx-acts .on-rt{color:#00ba7c}.xx-acts .on-bm{color:var(--xb)}
+.xx-acts .pop svg{animation:xxpop .35s}
+@keyframes xxpop{40%{transform:scale(1.35)}100%{transform:scale(1)}}
+.xx-acts.big{margin:0;padding:calc(11px * var(--k)) calc(4px * var(--k));border-top:.5px solid var(--xl);border-bottom:.5px solid var(--xl)}
+.xx-acts.big svg{width:calc(22px * var(--k));height:calc(22px * var(--k))}.xx-acts.big em{display:none}.xx-acts.big span{min-width:0}
+
+/* 悬浮按钮、底栏 */
+.xx-fab{position:absolute;right:calc(16px * var(--k));bottom:calc(104px * var(--k));width:calc(56px * var(--k));height:calc(56px * var(--k));border-radius:50%;background:var(--xb);color:#fff;display:flex;align-items:center;justify-content:center;z-index:6;box-shadow:0 calc(4px * var(--k)) calc(14px * var(--k)) rgba(0,0,0,.45)}
+.xx-fab svg{width:calc(26px * var(--k));height:calc(26px * var(--k))}
+.xx-tab{flex:none;height:calc(86px * var(--k));display:flex;justify-content:space-around;padding-top:calc(12px * var(--k));box-sizing:border-box;border-top:.5px solid var(--xl);background:rgba(0,0,0,.94);position:relative;z-index:4}
+.xx-tab span{position:relative;width:calc(44px * var(--k));height:calc(30px * var(--k));display:flex;justify-content:center;color:var(--xt)}
+.xx-tab svg{width:calc(26px * var(--k));height:calc(26px * var(--k))}
+.xx-tab i{position:absolute;left:calc(24px * var(--k));top:calc(-6px * var(--k));min-width:calc(17px * var(--k));height:calc(17px * var(--k));padding:0 calc(4px * var(--k));box-sizing:border-box;border-radius:calc(9px * var(--k));background:var(--xb);color:#fff;font:700 calc(11px * var(--k))/calc(17px * var(--k)) var(--font);font-style:normal;text-align:center;border:calc(1.5px * var(--k)) solid #000}
+
+/* 侧边栏 */
+.xx-drw{position:absolute;inset:0;z-index:20;pointer-events:none}
+.xx-dscrim{position:absolute;inset:0;background:rgba(91,112,131,.4);opacity:0;transition:opacity .3s}
+.xx-dp{position:absolute;left:0;top:0;bottom:0;width:80%;background:#000;transform:translateX(-100%);transition:transform .32s cubic-bezier(.3,.9,.3,1);padding:calc(62px * var(--k)) calc(24px * var(--k)) 0;box-sizing:border-box;display:flex;flex-direction:column}
+.xx-drw.on{pointer-events:auto}.xx-drw.on .xx-dscrim{opacity:1}.xx-drw.on .xx-dp{transform:none}
+.xx-dh{display:flex;justify-content:space-between;align-items:flex-start}
+.xx-dh .xx-av.l{width:calc(42px * var(--k));height:calc(42px * var(--k))}
+.xx-dn{display:block;font-size:calc(19px * var(--k));font-weight:800;margin-top:calc(10px * var(--k))}
+.xx-dhd{color:var(--xg);font-size:calc(15px * var(--k))}
+.xx-dc{display:flex;gap:calc(16px * var(--k));margin-top:calc(12px * var(--k));color:var(--xg);font-size:calc(14px * var(--k))}.xx-dc b{color:var(--xt)}
+.xx-dm{margin-top:calc(22px * var(--k))}
+.xx-dm div{display:flex;align-items:center;gap:calc(22px * var(--k));height:calc(54px * var(--k));font-size:calc(21px * var(--k));font-weight:800}
+.xx-dm svg{width:calc(25px * var(--k));height:calc(25px * var(--k))}
+.xx-dm2{margin-top:auto;padding-bottom:calc(40px * var(--k));border-top:.5px solid var(--xl);padding-top:calc(12px * var(--k))}
+.xx-dm2 div{display:flex;align-items:center;gap:calc(14px * var(--k));height:calc(44px * var(--k));font-size:calc(15px * var(--k));font-weight:700}
+.xx-dm2 svg{width:calc(20px * var(--k));height:calc(20px * var(--k))}
+
+/* 导航栏（二级页） */
+.xx-nb{flex:none;padding:calc(52px * var(--k)) calc(10px * var(--k)) 0;height:calc(44px * var(--k));box-sizing:content-box;display:flex;align-items:center;background:rgba(0,0,0,.88);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);position:relative;z-index:3}
+.xx-nbt{flex:1;text-align:center;display:flex;flex-direction:column;align-items:center}
+.xx-nbt b{font-size:calc(17px * var(--k));font-weight:700}.xx-nbt small{color:var(--xg);font-size:calc(12px * var(--k))}
+.xx-nbt.c{gap:calc(2px * var(--k))}.xx-nbt.c b{font-size:calc(14px * var(--k))}
+.xx-nbr{width:calc(36px * var(--k));display:flex;justify-content:center}.xx-nbr svg{width:calc(22px * var(--k));height:calc(22px * var(--k))}
+
+/* 帖子详情 */
+.xx-main{padding:calc(4px * var(--k)) calc(16px * var(--k)) 0;border-bottom:.5px solid var(--xl)}
+.xx-detail .xx-post.th+.xx-main{padding-top:0}
+.xx-mh{display:flex;align-items:center;gap:calc(10px * var(--k))}
+.xx-mn{flex:1;min-width:0;display:flex;flex-direction:column}
+.xx-mn b{display:flex;align-items:center;font-weight:700}.xx-mn small{color:var(--xg);font-size:calc(15px * var(--k))}
+.xx-fb{flex:none;height:calc(32px * var(--k));padding:0 calc(16px * var(--k));border-radius:calc(16px * var(--k));background:var(--xt);color:#0f1419;font-weight:700;font-size:calc(14px * var(--k));display:flex;align-items:center;border:1px solid var(--xt)}
+.xx-fb.on{background:none;color:var(--xt);border-color:#536471}
+.xx-fb.sm{height:calc(30px * var(--k));padding:0 calc(14px * var(--k))}
+.xx-main .xx-media{margin-top:calc(12px * var(--k))}
+.xx-meta{color:var(--xg);margin:calc(14px * var(--k)) 0 0;padding-bottom:calc(13px * var(--k))}.xx-meta b{color:var(--xt)}
+.xx-stats{display:flex;gap:calc(18px * var(--k));color:var(--xg);border-top:.5px solid var(--xl);padding:calc(12px * var(--k)) 0}.xx-stats b{color:var(--xt);font-weight:700}
+.xx-rbar{flex:none;display:flex;align-items:center;gap:calc(10px * var(--k));padding:calc(8px * var(--k)) calc(14px * var(--k)) calc(30px * var(--k));border-top:.5px solid var(--xl);background:#000}
+.xx-rbar input{flex:1;height:calc(36px * var(--k))}
+.xx-pill{height:calc(32px * var(--k));padding:0 calc(16px * var(--k));border-radius:calc(16px * var(--k));background:var(--xb);color:#fff;font-weight:700;font-size:calc(14px * var(--k));display:flex;align-items:center;opacity:.5;transition:opacity .15s}
+.xx-pill.on{opacity:1}
+
+/* 发帖 */
+.xx-cmpt{flex:none;display:flex;align-items:center;justify-content:space-between;padding:calc(56px * var(--k)) calc(16px * var(--k)) calc(10px * var(--k));font-size:calc(16px * var(--k))}
+.xx-cmpt b{font-size:calc(17px * var(--k));font-weight:700}
+.xx-save{height:calc(30px * var(--k));padding:0 calc(16px * var(--k));border-radius:calc(15px * var(--k));background:var(--xt);color:#000;font-weight:700;font-size:calc(14px * var(--k));display:flex;align-items:center}
+.xx-cpar{display:flex;gap:calc(10px * var(--k));padding:calc(6px * var(--k)) calc(16px * var(--k)) 0}
+.xx-cpar .xx-c{padding-bottom:calc(16px * var(--k))}
+.xx-cin{display:flex;gap:calc(10px * var(--k));padding:calc(4px * var(--k)) calc(16px * var(--k))}
+.xx-cin>div{flex:1;min-width:0}
+.xx-cin textarea{width:100%;font-size:calc(18px * var(--k));line-height:calc(24px * var(--k));resize:none;min-height:calc(96px * var(--k));padding:calc(7px * var(--k)) 0 0;display:block}
+.xx-quote{border:.5px solid var(--xl);border-radius:calc(14px * var(--k));padding:calc(10px * var(--k)) calc(12px * var(--k));margin-top:calc(8px * var(--k))}
+.xx-quote .xx-h{gap:calc(5px * var(--k))}
+.xx-ctools{flex:none;border-top:.5px solid var(--xl)}
+.xx-who{display:flex;align-items:center;gap:calc(6px * var(--k));color:var(--xb);font-weight:700;font-size:calc(14px * var(--k));padding:calc(10px * var(--k)) calc(16px * var(--k));border-bottom:.5px solid var(--xl)}
+.xx-who svg{width:calc(15px * var(--k));height:calc(15px * var(--k))}
+.xx-ctb{display:flex;align-items:center;gap:calc(22px * var(--k));padding:calc(10px * var(--k)) calc(16px * var(--k)) calc(32px * var(--k));color:var(--xb)}
+.xx-ctb svg{width:calc(22px * var(--k));height:calc(22px * var(--k))}
+.xx-ring{--p:0;margin-left:auto;width:calc(22px * var(--k));height:calc(22px * var(--k));border-radius:50%;background:conic-gradient(var(--xb) calc(var(--p) * 360deg),#2f3336 0);-webkit-mask:radial-gradient(circle,transparent calc(8.5px * var(--k)),#000 calc(9px * var(--k)));mask:radial-gradient(circle,transparent calc(8.5px * var(--k)),#000 calc(9px * var(--k)))}
+
+/* 图片查看 */
+.xx-imgv .vs{display:flex}
+.xx-imgf{flex:1}
+.xx-imgt{position:absolute;top:calc(52px * var(--k));left:calc(10px * var(--k));z-index:3}
+.xx-imgt .xx-cb{background:rgba(0,0,0,.5)}
+
+/* 个人资料 */
+.xx-pft{position:absolute;left:0;right:0;top:0;z-index:5;display:flex;align-items:center;gap:calc(10px * var(--k));padding:calc(52px * var(--k)) calc(12px * var(--k)) calc(8px * var(--k));transition:background .2s}
+.xx-pft .sp{flex:1}
+.xx-pft.solid{background:rgba(0,0,0,.85);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px)}
+.xx-ban{height:calc(150px * var(--k));position:relative;overflow:hidden;background-color:#333639}
+.xx-ban i{position:absolute;inset:calc(-20px * var(--k));-webkit-backdrop-filter:blur(26px) brightness(.75);backdrop-filter:blur(26px) brightness(.75)}
+.xx-pfh{display:flex;justify-content:space-between;align-items:flex-end;padding:0 calc(16px * var(--k));margin-top:calc(-38px * var(--k));position:relative}
+.xx-pav{width:calc(80px * var(--k));height:calc(80px * var(--k));border-radius:50%;border:calc(4px * var(--k)) solid #000;object-fit:cover;background:#333}
+.xx-pbtn{display:flex;gap:calc(8px * var(--k));padding-bottom:calc(2px * var(--k))}
+.xx-ob{width:calc(32px * var(--k));height:calc(32px * var(--k));border-radius:50%;border:1px solid #536471;display:flex;align-items:center;justify-content:center}.xx-ob svg{width:calc(18px * var(--k));height:calc(18px * var(--k))}
+.xx-pinfo{padding:calc(8px * var(--k)) calc(16px * var(--k)) 0}
+.xx-pn{display:flex;align-items:center;gap:calc(6px * var(--k))}
+.xx-pn b{font-size:calc(21px * var(--k));font-weight:800}
+.xx-gv{display:flex;align-items:center;gap:calc(4px * var(--k));border:1px solid #536471;border-radius:calc(14px * var(--k));padding:calc(3px * var(--k)) calc(10px * var(--k)) calc(3px * var(--k)) calc(6px * var(--k));font-size:calc(13px * var(--k));font-weight:700;margin-left:calc(4px * var(--k))}
+.xx-gv .xx-vf{width:calc(15px * var(--k));height:calc(15px * var(--k));margin:0}
+.xx-ph{color:var(--xg);display:flex;align-items:center}
+.xx-fy{background:#202327;color:var(--xg);font-size:calc(12px * var(--k));padding:calc(1px * var(--k)) calc(5px * var(--k));border-radius:calc(4px * var(--k));margin-left:calc(6px * var(--k))}
+.xx-bio{margin-top:calc(10px * var(--k));line-height:calc(20px * var(--k))}
+.xx-pm{display:flex;flex-wrap:wrap;gap:calc(4px * var(--k)) calc(14px * var(--k));color:var(--xg);margin-top:calc(10px * var(--k))}
+.xx-pm span{display:flex;align-items:center;gap:calc(4px * var(--k))}.xx-pm svg{width:calc(16px * var(--k));height:calc(16px * var(--k))}
+.xx-pc{display:flex;gap:calc(18px * var(--k));color:var(--xg);margin-top:calc(10px * var(--k))}.xx-pc b{color:var(--xt);font-weight:700}
+.xx-pact{display:flex;gap:calc(10px * var(--k));margin-top:calc(14px * var(--k))}
+.xx-pact span{flex:1;height:calc(34px * var(--k));border:1px solid #536471;border-radius:calc(17px * var(--k));display:flex;align-items:center;justify-content:center;font-weight:700;font-size:calc(14px * var(--k))}
+.xx-ptabs{display:flex;height:calc(48px * var(--k));border-bottom:.5px solid var(--xl);margin-top:calc(10px * var(--k))}
+.xx-ptabs.sm{margin-top:0}
+.xx-ptabs b{flex:1;display:flex;justify-content:center;color:var(--xg);font-weight:500}
+.xx-ptabs span{position:relative;display:flex;align-items:center;height:100%}
+.xx-ptabs b.on{color:var(--xt);font-weight:700}
+.xx-ptabs b.on span:after{content:'';position:absolute;left:0;right:0;bottom:0;height:calc(4px * var(--k));border-radius:calc(2px * var(--k));background:var(--xb)}
+.xx-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:calc(2px * var(--k));padding:calc(2px * var(--k)) 0}
+.xx-grid div{aspect-ratio:1;background-size:cover!important;background-position:center!important}
+.xx-empty{padding:calc(36px * var(--k)) calc(32px * var(--k));display:flex;flex-direction:column;gap:calc(8px * var(--k))}
+.xx-empty b{font-size:calc(26px * var(--k));font-weight:800;line-height:1.2}.xx-empty small{color:var(--xg);font-size:calc(15px * var(--k))}
+
+/* 编辑资料 */
+.xx-edit .xx-pfh{margin-bottom:calc(8px * var(--k))}
+.xx-fld{display:block;padding:calc(12px * var(--k)) calc(16px * var(--k));border-bottom:.5px solid var(--xl)}
+.xx-fld small{display:block;color:var(--xg);font-size:calc(13px * var(--k));margin-bottom:calc(4px * var(--k))}
+.xx-fld input,.xx-fld textarea{width:100%;font-size:calc(16px * var(--k));resize:none;display:block;padding:0}
+.xx-fld.ro span{color:var(--xg)}
+
+/* 搜索 */
+.xx-st{flex:none;display:flex;align-items:center;gap:calc(14px * var(--k));padding:calc(52px * var(--k)) calc(16px * var(--k)) calc(8px * var(--k));border-bottom:.5px solid var(--xl)}
+.xx-st .xx-av{width:calc(32px * var(--k));height:calc(32px * var(--k))}
+.xx-sbar{flex:1;height:calc(38px * var(--k));border-radius:calc(19px * var(--k));background:#202327;display:flex;align-items:center;gap:calc(8px * var(--k));padding:0 calc(14px * var(--k));color:var(--xg)}
+.xx-sbar svg{width:calc(16px * var(--k));height:calc(16px * var(--k))}.xx-sbar input{flex:1;height:100%;font-size:calc(15px * var(--k))}
+.xx-sbar.dm{margin:calc(6px * var(--k)) calc(16px * var(--k)) calc(6px * var(--k));flex:none}
+.xx-sec{font-size:calc(20px * var(--k));font-weight:800;padding:calc(14px * var(--k)) calc(16px * var(--k)) calc(6px * var(--k));display:flex;justify-content:space-between;align-items:center}
+.xx-sec span{color:var(--xb);font-size:calc(14px * var(--k));font-weight:500}
+.xx-rs{display:flex;align-items:center;gap:calc(14px * var(--k));padding:calc(11px * var(--k)) calc(16px * var(--k));color:var(--xt)}
+.xx-rs>svg{width:calc(20px * var(--k));height:calc(20px * var(--k));color:var(--xg)}
+.xx-rs span{flex:1}.xx-rs i{color:var(--xg)}.xx-rs i svg{width:calc(16px * var(--k));height:calc(16px * var(--k))}
+.xx-tr{padding:calc(11px * var(--k)) calc(16px * var(--k));position:relative;display:flex;flex-direction:column;gap:calc(1px * var(--k))}
+.xx-tr small{color:var(--xg);font-size:calc(13px * var(--k))}.xx-tr b{font-weight:700}
+.xx-tr i{position:absolute;right:calc(16px * var(--k));top:calc(12px * var(--k));color:var(--xg)}.xx-tr i svg{width:calc(16px * var(--k));height:calc(16px * var(--k))}
+.xx-urow{display:flex;gap:calc(10px * var(--k));padding:calc(12px * var(--k)) calc(16px * var(--k));align-items:flex-start}
+.xx-urow>div{flex:1;min-width:0}
+.xx-urow b{display:flex;align-items:center;font-weight:700}
+.xx-urow small{color:var(--xg);display:flex;align-items:center}
+.xx-urow p{margin:calc(4px * var(--k)) 0 0;line-height:calc(19px * var(--k))}
+
+/* 通知 */
+.xx-push{display:flex;align-items:center;gap:calc(12px * var(--k));padding:calc(14px * var(--k)) calc(16px * var(--k));border-bottom:.5px solid var(--xl)}
+.xx-push>div{flex:1}.xx-push b{display:block;font-weight:700}.xx-push small{color:var(--xg);font-size:calc(14px * var(--k))}
+.xx-sw{width:calc(51px * var(--k));height:calc(31px * var(--k));border-radius:calc(16px * var(--k));background:#39393d;position:relative;flex:none;transition:background .2s}
+.xx-sw:after{content:'';position:absolute;left:calc(2px * var(--k));top:calc(2px * var(--k));width:calc(27px * var(--k));height:calc(27px * var(--k));border-radius:50%;background:#fff;transition:transform .2s}
+.xx-sw.on{background:var(--xb)}.xx-sw.on:after{transform:translateX(calc(20px * var(--k)))}
+.xx-nt{display:flex;gap:calc(9px * var(--k));padding:calc(12px * var(--k)) calc(16px * var(--k));border-bottom:.5px solid var(--xl)}
+.xx-ni{width:calc(40px * var(--k));flex:none;display:flex;justify-content:flex-end}.xx-ni svg{width:calc(28px * var(--k));height:calc(28px * var(--k))}
+.xx-nw{margin-top:calc(8px * var(--k));line-height:calc(20px * var(--k))}.xx-nw b{font-weight:700}.xx-nw span{color:var(--xg)}
+.xx-ns{color:var(--xg);margin-top:calc(6px * var(--k));line-height:calc(20px * var(--k));display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.xx-nimg{height:calc(120px * var(--k));border-radius:calc(12px * var(--k));margin-top:calc(8px * var(--k));background-size:cover!important}
+
+/* 聊天 */
+.xx-dmf{padding:calc(6px * var(--k)) calc(16px * var(--k)) calc(4px * var(--k))}
+.xx-dmf span{display:inline-flex;align-items:center;gap:calc(4px * var(--k));border:1px solid #536471;border-radius:calc(16px * var(--k));padding:calc(5px * var(--k)) calc(12px * var(--k));font-weight:700;font-size:calc(14px * var(--k))}
+.xx-dmf svg{width:calc(14px * var(--k));height:calc(14px * var(--k))}
+.xx-dr{display:flex;align-items:center;gap:calc(12px * var(--k));padding:calc(12px * var(--k)) calc(16px * var(--k))}
+.xx-dr .xx-av{width:calc(48px * var(--k));height:calc(48px * var(--k))}
+.xx-dr>div{flex:1;min-width:0}
+.xx-drh{display:flex;align-items:center;gap:calc(4px * var(--k));white-space:nowrap}
+.xx-drh b{font-weight:700;flex:none}.xx-drh span{color:var(--xg);overflow:hidden;text-overflow:ellipsis}
+.xx-dr p{margin:calc(2px * var(--k)) 0 0;color:var(--xg);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.xx-dr.un p{color:var(--xt);font-weight:600}
+.xx-dot{width:calc(10px * var(--k));height:calc(10px * var(--k));border-radius:50%;background:var(--xb);flex:none}
+.xx-chd{display:flex;flex-direction:column;align-items:center;padding:calc(20px * var(--k)) calc(16px * var(--k)) calc(22px * var(--k));border-bottom:.5px solid var(--xl);gap:calc(2px * var(--k))}
+.xx-chd b{font-size:calc(17px * var(--k));font-weight:800;margin-top:calc(8px * var(--k));display:flex;align-items:center}
+.xx-chd small{color:var(--xg);font-size:calc(14px * var(--k))}
+.xx-md{text-align:center;color:var(--xg);font-size:calc(13px * var(--k));margin:calc(18px * var(--k)) 0 calc(10px * var(--k))}
+.xx-m{display:flex;flex-direction:column;align-items:flex-start;padding:calc(1.5px * var(--k)) calc(16px * var(--k))}
+.xx-m.out{align-items:flex-end}
+.xx-bub{max-width:76%;padding:calc(10px * var(--k)) calc(14px * var(--k));border-radius:calc(22px * var(--k));line-height:calc(20px * var(--k));word-break:break-word;background:#2f3336}
+.xx-m.out .xx-bub{background:var(--xb);color:#fff}
+.xx-m.in.tail .xx-bub{border-bottom-left-radius:calc(5px * var(--k))}.xx-m.out.tail .xx-bub{border-bottom-right-radius:calc(5px * var(--k))}
+.xx-m small{color:var(--xg);font-size:calc(12px * var(--k));margin:calc(4px * var(--k)) calc(2px * var(--k)) calc(8px * var(--k))}
+.xx-min{flex:none;display:flex;align-items:center;gap:calc(10px * var(--k));padding:calc(8px * var(--k)) calc(12px * var(--k)) calc(30px * var(--k));border-top:.5px solid var(--xl);background:#000}
+.xx-min label{flex:1;height:calc(40px * var(--k));border-radius:calc(20px * var(--k));background:#202327;display:flex;align-items:center;padding:0 calc(14px * var(--k))}
+.xx-min input{flex:1;height:100%}
+.xx-mi,.xx-ms{color:var(--xb);display:flex}.xx-mi svg,.xx-ms svg{width:calc(22px * var(--k));height:calc(22px * var(--k))}
+.xx-ms{opacity:.4}.xx-ms.on{opacity:1}
+
+/* 底部菜单 */
+.xx-sheet{position:absolute;inset:0;z-index:30}
+.xx-shb{position:absolute;inset:0;background:rgba(91,112,131,.4);opacity:0;transition:opacity .25s}
+.xx-shp{position:absolute;left:0;right:0;bottom:0;background:#000;border-radius:calc(16px * var(--k)) calc(16px * var(--k)) 0 0;padding:calc(8px * var(--k)) 0 calc(34px * var(--k));transform:translateY(100%);transition:transform .28s cubic-bezier(.3,.9,.3,1);box-shadow:0 0 calc(12px * var(--k)) rgba(255,255,255,.12)}
+.xx-sheet.on .xx-shb{opacity:1}.xx-sheet.on .xx-shp{transform:none}
+.xx-grab{display:block;width:calc(36px * var(--k));height:calc(4px * var(--k));border-radius:calc(2px * var(--k));background:#536471;margin:0 auto calc(6px * var(--k))}
+.xx-shi{padding:calc(15px * var(--k)) calc(20px * var(--k));font-weight:700;font-size:calc(16px * var(--k))}.xx-shi.red{color:#f4212e}
+.xx-shc{margin:calc(8px * var(--k)) calc(16px * var(--k)) 0;height:calc(44px * var(--k));border:1px solid #536471;border-radius:calc(22px * var(--k));display:flex;align-items:center;justify-content:center;font-weight:700}
 
 @media (prefers-reduced-motion: reduce){*{transition-duration:.01s!important;animation:none!important}}
 </style>
@@ -4321,9 +4564,555 @@ const _settings = R.settings;
 R.settings = () => { const s = _settings();
   s.body = s.body.replace(/<div style="height:40px"><\/div>\s*$/, `<div class="group"><div class="row" data-reset><div class="rt" style="color:#ff3b30">还原到初始剧情</div></div></div><div class="ph-note">清除这台手机上的所有操作记录（备忘录、消息、点赞、评论等），从头开始。</div><div style="height:40px"></div>`);
   const m0 = s.mount; s.mount = v => { m0 && m0(v); const r = v.querySelector('[data-reset]'); if (!r) return; let armed = false;
-    r.addEventListener('click', () => { if (!armed) { armed = true; r.querySelector('.rt').textContent = '再点一次确认还原'; return; } resetting = true; try { localStorage.removeItem(SAVE_KEY); } catch (e) {} location.reload(); }); };
+    r.addEventListener('click', () => { if (!armed) { armed = true; r.querySelector('.rt').textContent = '再点一次确认还原'; return; } resetting = true; try { Object.keys(localStorage).filter(k => k.startsWith('taesan-phone')).forEach(k => localStorage.removeItem(k)); } catch (e) {} location.reload(); }); };
   return s; };
 ROOT.settings = () => R.settings();
+
+/* =========================================================
+   X DATA — 女主的碎碎念小号（2021 年 9 月开号）
+   不公开的号：几乎不认识的人在看，想说什么就说什么
+   ========================================================= */
+const X_ME = 'quietrain_21';
+// 账号：handle → [显示名, 头像图片, 认证, 简介]
+const XU = {
+  'quietrain_21':['ㅇㅇ', 'assets/av/x_me.jpg', 0, '碎碎念 · 认识我的人请假装没看到'],
+  'BOYNEXTDOOR_KOZ':['BOYNEXTDOOR', 'assets/bnd/ts5.jpg', 1, 'BOYNEXTDOOR Official X'],
+  'stage_archive':['舞台存档', 'assets/bnd/ts4.jpg', 0, '舞台 / 直拍 / 回看 · 只存不评'],
+  'tsn_0810':['小太阳的窝 ☀︎', 'assets/mu/t10.jpg', 0, 'TAESAN only · 写歌的人最好了'],
+  'music_notes':['music notes', 'assets/av/soyo.music.jpg', 0, '关于写歌的人和他们写的歌'],
+  'bnd_daily':['bnd daily', 'assets/bnd/ts7.jpg', 0, '每天一点 BOYNEXTDOOR'],
+  'seoul_cnstu':['首尔留学生互助', 'assets/av/seoul.daily.jpg', 0, '首尔中国留学生信息互助'],
+  'typo_daily':['每日字体', 'assets/av/type.archive.jpg', 0, '一天一张字体海报'],
+  'sy_kkk':['ㅅㅇ', 'assets/kk_shuyan.jpg', 0, '设计系 · 甜点是正义'],
+  'meme_design':['设计梗图', 'assets/av/memes.design.jpg', 0, '设计生的精神状态'],
+  'mint_0322':['薄荷', 'assets/av/x_rand2.jpg', 0, ''],
+  'onigiri_s':['饭团', 'assets/av/x_rand1.jpg', 0, ''],
+  'vip_ticket_kr':['售票 VIP 代抢', 'assets/av/gift.kr.jpg', 0, '演唱会门票 · 私信'],
+};
+const X_PROFILE = { name:'ㅇㅇ', loc:'Seoul', joined:'2021年9月加入', born:'', banner:'assets/ig_sunset.jpg', following:41, followers:4 };
+const X_FOLLOWING = ['BOYNEXTDOOR_KOZ','stage_archive','tsn_0810','music_notes','bnd_daily','seoul_cnstu','typo_daily','meme_design','sy_kkk'];
+const X_FOLLOWERS = ['sy_kkk','tsn_0810','mint_0322','onigiri_s'];
+
+/* 她发的帖子：[日期, 时间, 内容, 图片(可选), 回复, 转帖, 喜欢, 查看] */
+const X_MINE_SRC = [
+  ['2021-09-01','22:10','转学第一天。韩语老师说话好快 我只听懂了 안녕하세요'],
+  ['2021-09-03','19:44','首尔的公交卡要自己去便利店充值 研究了二十分钟 后面排队的大叔叹气了'],
+  ['2021-09-12','16:02','第一次自己换乘成功 记录一下', ['subway']],
+  ['2021-09-20','21:30','外国人登录证终于办下来了 照片丑到不想看第二眼'],
+  ['2021-10-02','23:15','班上的人都好吵 但是没人跟我说话\n两件事同时成立'],
+  ['2021-10-09','22:48','被拉去放学饭局 好多人 我只会笑'],
+  ['2021-10-10','00:12','有个学长帮我把椅子挪开了 我说谢谢 他就说了一个 네 然后没了\n好冷漠哈哈哈'],
+  ['2021-11-02','22:31','今天第三次被问 "你是哪里来的"'],
+  ['2021-11-28','18:05','首尔第一场雪\n原来下雪是有声音的', ['snow']],
+  ['2021-12-31','23:58','2021 最后一天 一个人在出租屋吃泡面\n也还行吧'],
+  ['2022-01-20','17:40','寒假美术室没人 好安静\n对面练习室的灯一直亮着'],
+  ['2022-03-14','12:40','食堂没饭了 便利店最后两个三角饭团 赢了', ['store']],
+  ['2022-04-21','22:35','忘带伞\n然后有人送伞来了（不说是谁）', ['rain']],
+  ['2022-05-18','21:10','等车的时候不说话也不尴尬的人 很少见'],
+  ['2022-06-09','21:15','被说只买饮料不吃饭\n管得好宽 （去买了饭团）'],
+  ['2022-07-14','01:40','凌晨一点被发来一段没有名字的旋律\n副歌前面那个停顿 好喜欢 循环到现在'],
+  ['2022-08-26','23:12','夜里的便利店门口 风好舒服', ['img:assets/w_cat.jpg']],
+  ['2022-08-30','22:01','被问 "跟你一起走到公交站的人是谁"\n同班同学啊？？为什么要问这个'],
+  ['2022-09-10','23:50','男生到底喜欢什么礼物 搜了一整晚 眼睛要瞎了'],
+  ['2022-10-28','23:55','到了。'],
+  ['2022-10-29','02:13','睡不着\n但是是好的那种睡不着'],
+  ['2022-11-19','18:20','', ['img:assets/sp_walk.jpg']],
+  ['2022-12-24','22:30','下雪的便利店圣诞 🎄', ['img:assets/sp_snow.jpg']],
+  ['2023-01-08','09:20','帮人排了歌词的版式 副歌用了蓝色\n他说好 ☺︎'],
+  ['2023-02-14','23:40','巧克力失败了两次 第三次终于能吃了', ['img:assets/sp_choco.jpg']],
+  ['2023-03-02','08:10','高三开始了 想逃'],
+  ['2023-05-29','23:59','明天。'],
+  ['2023-05-30','18:44','你真的站在那里了', ['img:assets/sp_heart.jpg']],
+  ['2023-05-31','00:30','看了十遍\n不 十一遍'],
+  ['2023-06-18','22:15','想见一个人 但是他的日程表比我的作业还满'],
+  ['2023-07-15','19:02','一个人等公交 也不是第一次了', ['bus']],
+  ['2023-08-17','21:20','今天作品被说 "只是好看"\n只是。'],
+  ['2023-09-07','16:50','打了三个电话 都没接\n没关系 我知道他在忙\n（真的没关系吗）'],
+  ['2023-10-29','21:30','蛋糕太甜了', ['cake']],
+  ['2023-11-05','23:20','补过了。\n以后有话直接说 约好了', ['img:assets/sp_cake.jpg']],
+  ['2023-11-21','22:40','新歌第二段那句 是写给谁的'],
+  ['2023-12-15','23:30','说了很过分的话 收不回来了'],
+  ['2023-12-24','22:10','圣诞夜一个人走回家', ['snow']],
+  ['2024-01-14','01:05','我是不是变了'],
+  ['2024-02-15','19:30','展示结束了 会场好空', ['img:assets/ig_dog.jpg']],
+  ['2024-02-15','21:50','为什么不先问我今天过得怎么样'],
+  ['2024-02-17','22:45','嗯。'],
+  ['2024-02-20','03:10','"分手后多久才能好" 这种东西也会去搜\n搜索记录太丢人了 删了'],
+  ['2024-03-01','00:40','把一个人从置顶取消了\n没删'],
+  ['2024-05-30','23:10','今天是什么日子 我不记得了\n（骗人的）'],
+  ['2024-09-30','23:59','作品集交了 不管结果了 睡觉'],
+  ['2024-11-28','15:20','录取了！！！！！！！\n妈妈在电话那头哭了 我也哭了'],
+  ['2025-01-22','20:10','回家了 上海的灯还是那么亮', ['home']],
+  ['2025-03-04','09:30','大学第一天 下雨', ['campus']],
+  ['2025-07-18','14:00','京都 和妈妈', ['temple']],
+  ['2025-08-10','23:40','今天也只是普通的一天。'],
+  ['2025-12-31','23:59','2026 快点来吧', ['snow']],
+  ['2026-04-12','21:30','海云台的夜樱 🌸', ['img:assets/ig_blossom.jpg']],
+  ['2026-05-30','01:20','随手刷到出道舞台的回看\n手比脑子快 点了收藏'],
+  ['2026-08-09','17:00','釜山的海', ['sea']],
+  ['2026-09-15','23:10','again and again', ['img:assets/st_4.jpg']],
+  ['2026-10-03','22:20','在整理旧照片\n没什么'],
+  ['2026-10-22','11:40','字体课教授说 "留白是让读者有地方站"\n不知道为什么听着有点想哭'],
+  ['2026-10-23','23:58','作品集 D-4 我还活着吗', ['img:assets/ig_cat.jpg']],
+  ['2026-10-24','00:47','明天三个考试\n我升天了'],
+];
+/* 别人的帖子 */
+const X_OTHERS_SRC = [
+  ['BOYNEXTDOOR_KOZ','2026-09-28','13:00','BOYNEXTDOOR \'HOME: DELUXE\'\nOUT NOW 🏠', ['img:assets/bnd/home_deluxe.jpg'], [3200,18000,92000,'210万']],
+  ['BOYNEXTDOOR_KOZ','2026-06-10','18:00','BOYNEXTDOOR \'HOME\'\n#VIRAL', ['img:assets/bnd/ts1.jpg'], [2800,15000,81000,'180万']],
+  ['stage_archive','2026-05-30','09:00','今天回看出道舞台还是会起鸡皮疙瘩……从出道到现在真的长大好多。', ['stage'], [48,183,'1.2K','4.1万']],
+  ['tsn_0810','2026-10-22','23:10','他说写歌的时候会先想一个画面\n公交站 便利店 很晚的路\n总觉得这些画面里有一个人', [], [61,240,'2.3K','5.6万']],
+  ['music_notes','2026-09-02','20:00','每次看他聊写歌，都觉得他对那些没法直接说出口的情绪特别敏感。', [], [36,92,880,'2.6万']],
+  ['bnd_daily','2026-10-20','12:00','今天的 bnd：练习室的灯又亮到凌晨', ['studio'], [21,64,'1,010','3.3万']],
+  ['tsn_0810','2026-10-24','02:13','睡不着的时候就听那首 Humming\n副歌前面那个停顿 是故意的吧', [], [12,40,433,'9,880']],
+  ['seoul_cnstu','2026-10-21','10:00','期中周 弘大附近 24 小时自习室整理，作品集周的同学收藏一下。', [], [34,120,389,'1.2万']],
+  ['typo_daily','2026-10-20','09:00','今天的海报：《等候》。', ['art'], [8,41,662,'2.3万']],
+  ['meme_design','2026-10-23','22:00','设计生的周末：\n周六 改稿\n周日 改稿\n周一 交的是第一版', [], [88,1200,'9,302','30万']],
+  ['sy_kkk','2026-10-23','23:40','有些人 在我旁边说自己升天了 然后又开了一包薯片', [], [1,0,3,48]],
+];
+/* 她的回复：[回复的帖子(作者:序号)，日期, 时间, 内容] —— 序号指上面 X_OTHERS_SRC 的位置 */
+const X_REPLIES_SRC = [
+  ['3','2026-10-22','23:31','公交站那段我也很喜欢'],
+  ['6','2026-10-24','02:30','是故意的。'],
+  ['4','2026-09-02','21:15','他写歌真的很认真'],
+  ['9','2026-10-23','22:10','周一交的是第一版 这句太真实了'],
+  ['10','2026-10-23','23:42','？？？我没有'],
+];
+/* 她转发的：别人帖子的序号 */
+const X_REPOSTS_SRC = [['2','2026-05-30'], ['6','2026-10-24'], ['0','2026-09-28']];
+/* 别人回复她的帖子 */
+const X_REPLIES_TO_ME = {
+  '2024-02-15 21:50':[['sy_kkk','我在。'], ['mint_0322','抱抱']],
+  '2026-10-24 00:47':[['sy_kkk','升天之前先把我的笔还我']],
+  '2026-10-23 23:58':[['onigiri_s','活着！！']],
+  '2022-10-28 23:55':[['sy_kkk','？？？？？']],
+};
+/* 私信 */
+const X_DM_SRC = [
+  { u:'sy_kkk', msgs:[
+    ['2024-02-16','01:20','in','你又在这里发 emo 了'], ['2024-02-16','01:21','out','没有'], ['2024-02-16','01:21','in','我看到了 "为什么不先问我今天过得怎么样"'], ['2024-02-16','01:22','in','明天我去找你 你别一个人'],
+    ['2026-10-24','09:41','in','明天几点到学校？'], ['2026-10-24','09:42','in','笔还我'] ] },
+  { u:'tsn_0810', msgs:[
+    ['2025-05-30','22:00','in','你好～之前你回过我的帖子 感觉你也是很早就喜欢他了吧'], ['2025-05-30','22:30','out','嗯 很早'], ['2025-05-30','22:31','in','从练习生时期？'], ['2025-05-30','22:40','out','差不多'],
+    ['2026-06-11','00:10','in','巡演抢到了吗'], ['2026-06-11','09:00','out','没抢 不去了'], ['2026-06-11','09:01','in','诶 为什么'], ['2026-06-11','09:20','out','就是 远远看着就好了'] ] },
+  { u:'vip_ticket_kr', msgs:[ ['2026-09-30','03:12','in','【售】BOYNEXTDOOR 巡演 VIP 内场 代抢成功率 99% 私信详聊'] ] },
+  { u:'mint_0322', msgs:[ ['2024-02-18','10:00','in','我不认识你 但是看到你的帖子了 要好好吃饭哦'], ['2024-02-18','12:30','out','谢谢 会的'] ] },
+];
+const X_NOTIFS = [
+  ['spark','BOYNEXTDOOR_KOZ','BOYNEXTDOOR 的新帖子','BOYNEXTDOOR \'HOME: DELUXE\' OUT NOW','img:assets/bnd/home_deluxe.jpg','9月28日'],
+  ['like','onigiri_s','赞了你的帖子','作品集 D-4 我还活着吗','','9小时'],
+  ['reply','sy_kkk','回复了你','升天之前先把我的笔还我','','8小时'],
+  ['spark','tsn_0810','你关注的人发帖了','睡不着的时候就听那首 Humming…','','7小时'],
+  ['like','tsn_0810','赞了你的回复','是故意的。','','20小时'],
+  ['follow','onigiri_s','关注了你','','','3周'],
+  ['spark','stage_archive','你关注的人发帖了','今天回看出道舞台还是会起鸡皮疙瘩……','img:assets/bnd/ts4.jpg','5月30日'],
+];
+
+/* =========================================================
+   X — 女主的碎碎念小号（iOS X 深色模式）
+   能点赞 / 转帖 / 书签 / 回复 / 发帖 / 删帖 / 关注 / 私信，
+   所有操作都保存在玩家自己的浏览器里（X_SAVE_KEY）。
+   ========================================================= */
+const X_SAVE_KEY = 'taesan-phone-x-v1';
+const XI = {
+  logo:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.2 2.3h3.3l-7.2 8.2 8.5 11.2h-6.6l-5.2-6.8-6 6.8H1.7l7.7-8.8L1.3 2.3h6.8l4.7 6.2zm-1.2 17.5h1.9L7.1 4.1h-2z"/></svg>',
+  home:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"><path d="M3 10.2 12 3l9 7.2V21h-6v-6.5H9V21H3z"/></svg>',
+  homeOn:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.4 2.2 10.2V22h7.6v-6.6h4.4V22h7.6V10.2z"/></svg>',
+  search:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="7"/><path d="m16 16 5 5"/></svg>',
+  searchOn:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.6"/><path d="m16 16 5 5"/></svg>',
+  grok:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="4.5"/><path d="M8.5 16.5 16 7.5"/></svg>',
+  bell:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"><path d="M5.5 17.5V11a6.5 6.5 0 0 1 13 0v6.5l1.8 2H3.7z"/><path d="M9.8 21.6h4.4" stroke-linecap="round"/></svg>',
+  bellOn:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M5.5 17.5V11a6.5 6.5 0 0 1 13 0v6.5l1.8 2H3.7z"/><path d="M9.8 21.6h4.4" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg>',
+  mail:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"><rect x="2.8" y="5" width="18.4" height="14" rx="2.5"/><path d="m3.5 6.5 8.5 6.4 8.5-6.4"/></svg>',
+  mailOn:'<svg viewBox="0 0 24 24"><rect x="2.8" y="5" width="18.4" height="14" rx="2.5" fill="currentColor"/><path d="m3.5 6.5 8.5 6.4 8.5-6.4" fill="none" stroke="#000" stroke-width="1.9"/></svg>',
+  reply:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M9.5 4.5h5a6.5 6.5 0 0 1 0 13H12l-4.5 3.2v-3.5A6.5 6.5 0 0 1 9.5 4.5z"/></svg>',
+  rt:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 15V7.5a2 2 0 0 1 2-2H13M1.8 12.3l2.7 2.9 2.7-2.9M19.5 9v7.5a2 2 0 0 1-2 2H11M22.2 11.7l-2.7-2.9-2.7 2.9"/></svg>',
+  heart:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M12 20.2s-8-4.6-9.2-10C2 6.7 4.3 4 7.3 4c2 0 3.6 1.2 4.7 2.9C13.1 5.2 14.7 4 16.7 4c3 0 5.3 2.7 4.5 6.2-1.2 5.4-9.2 10-9.2 10z"/></svg>',
+  heartOn:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 20.2s-8-4.6-9.2-10C2 6.7 4.3 4 7.3 4c2 0 3.6 1.2 4.7 2.9C13.1 5.2 14.7 4 16.7 4c3 0 5.3 2.7 4.5 6.2-1.2 5.4-9.2 10-9.2 10z"/></svg>',
+  views:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M5 20.5v-7M10 20.5V8.5M15 20.5v-4.5M20 20.5V4"/></svg>',
+  bm:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M6 3.5h12v17.5l-6-4.3-6 4.3z"/></svg>',
+  bmOn:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 3.5h12v17.5l-6-4.3-6 4.3z"/></svg>',
+  share:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12.5M7.5 7.5 12 3l4.5 4.5M4.5 14v5.5a1.5 1.5 0 0 0 1.5 1.5h12a1.5 1.5 0 0 0 1.5-1.5V14"/></svg>',
+  plus:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 4.5v15M4.5 12h15"/></svg>',
+  dots:'<svg viewBox="0 0 24 24" fill="currentColor"><circle cx="5" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="19" cy="12" r="1.6"/></svg>',
+  back:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12H4.5M10.5 5.5 4 12l6.5 6.5"/></svg>',
+  pin:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 21s-6.5-6.1-6.5-11a6.5 6.5 0 0 1 13 0c0 4.9-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/></svg>',
+  cal:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M3.5 9.5h17M8 3v4M16 3v4"/></svg>',
+  gear:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.8v2.4M12 18.8v2.4M2.8 12h2.4M18.8 12h2.4M5.5 5.5l1.7 1.7M16.8 16.8l1.7 1.7M5.5 18.5l1.7-1.7M16.8 7.2l1.7-1.7"/></svg>',
+  person:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="8" r="4"/><path d="M4 21c.8-4.2 4-6.5 8-6.5s7.2 2.3 8 6.5z" stroke-linejoin="round"/></svg>',
+  personOn:'<svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="8" r="4"/><path d="M4 21c.8-4.2 4-6.5 8-6.5s7.2 2.3 8 6.5z"/></svg>',
+  star:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1.8 14.4 9.6 22.2 12l-7.8 2.4L12 22.2l-2.4-7.8L1.8 12l7.8-2.4z"/></svg>',
+  list:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"><path d="M5 3.5h14v17H5z"/><path d="M8.5 8.5h7M8.5 12h7M8.5 15.5h4" stroke-linecap="round"/></svg>',
+  clock:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="12" r="8.8"/><path d="M12 7v5.3l3.4 2"/></svg>',
+  people:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="9" cy="8.5" r="3.4"/><path d="M2.8 19.5c.6-3.4 3.1-5.3 6.2-5.3s5.6 1.9 6.2 5.3z" stroke-linejoin="round"/><path d="M15.5 5.3a3.4 3.4 0 0 1 0 6.4M17.4 14.4c2 .6 3.4 2.4 3.8 5.1h-3" stroke-linecap="round"/></svg>',
+  mic:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><rect x="8.5" y="2.8" width="7" height="12" rx="3.5"/><path d="M5 11.5a7 7 0 0 0 14 0M12 18.5v3"/></svg>',
+  studio:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><path d="M4 20V4M4 20h16M8.5 16v-4M12.5 16V8M16.5 16v-6"/></svg>',
+  help:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="12" r="8.8"/><path d="M9.6 9.5a2.5 2.5 0 1 1 3.4 2.3c-.7.3-1 .8-1 1.5v.6"/><circle cx="12" cy="16.9" r=".4" fill="currentColor"/></svg>',
+  addAcc:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="10" cy="8" r="4"/><path d="M2.8 20.5c.7-3.9 3.6-6 7.2-6 1.4 0 2.6.3 3.7.9M18.5 14v7M15 17.5h7"/></svg>',
+  img:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="16" rx="2.5"/><circle cx="8.5" cy="9.5" r="1.7"/><path d="m3.5 17.5 5-5 4 4 2.5-2.5 5.5 5" stroke-linejoin="round"/></svg>',
+  gif:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="16" rx="2.5"/><text x="12" y="15.3" font-size="7.5" font-weight="700" text-anchor="middle" fill="currentColor" stroke="none" font-family="-apple-system,sans-serif">GIF</text></svg>',
+  poll:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6.5h12M6 12h7M6 17.5h10"/></svg>',
+  emoji:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="8.8"/><path d="M8.3 14.3a4.5 4.5 0 0 0 7.4 0"/><circle cx="9" cy="9.8" r=".6" fill="currentColor"/><circle cx="15" cy="9.8" r=".6" fill="currentColor"/></svg>',
+  send:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 20.5 21.5 12 3 3.5l1.6 7.1L13 12l-8.4 1.4z"/></svg>',
+  info:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="8.8"/><path d="M12 11v5.5"/><circle cx="12" cy="7.8" r=".5" fill="currentColor"/></svg>',
+  newdm:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M14 5H5.5A2.5 2.5 0 0 0 3 7.5v9A2.5 2.5 0 0 0 5.5 19h11a2.5 2.5 0 0 0 2.5-2.5V11"/><path d="m3.5 8 7.5 5.2L14 11M19 2.5v6M16 5.5h6" stroke-linecap="round"/></svg>',
+  close:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"><path d="M5.5 5.5l13 13M18.5 5.5l-13 13"/></svg>',
+  chevD:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6.5 9.5 5.5 5.5 5.5-5.5"/></svg>',
+  lock:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 10V7.5a5 5 0 0 1 10 0V10h1.2c.7 0 1.3.6 1.3 1.3v8.4c0 .7-.6 1.3-1.3 1.3H5.8c-.7 0-1.3-.6-1.3-1.3v-8.4c0-.7.6-1.3 1.3-1.3zm2.2 0h5.6V7.5a2.8 2.8 0 0 0-5.6 0z"/></svg>',
+  badge:'<svg class="xx-vf" viewBox="0 0 22 22"><path fill="#e2b719" d="M20.4 11c0-1.4-.8-2.6-2-3.2.4-1.3.1-2.8-.9-3.8s-2.4-1.3-3.7-.9C13.3 1.9 12.1 1 10.7 1S8.1 1.9 7.5 3.1c-1.3-.4-2.8-.1-3.8.9s-1.3 2.5-.9 3.8C1.6 8.4.8 9.6.8 11s.8 2.6 2 3.2c-.4 1.3-.1 2.8.9 3.8s2.5 1.3 3.8.9c.6 1.2 1.8 2.1 3.2 2.1s2.6-.8 3.2-2.1c1.3.4 2.8.1 3.8-.9s1.3-2.5.9-3.8c1.2-.6 2-1.8 2-3.2z"/><path d="m6.9 11.2 2.6 2.6 5.5-5.6" stroke="#000" stroke-width="1.9" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+};
+/* 其他账号的资料：[正在关注, 粉丝, 加入时间, 位置] */
+const XU_META = {
+  'BOYNEXTDOOR_KOZ':[12,'210万','2023年4月','KOZ ENTERTAINMENT'], 'stage_archive':[88,'3.1万','2023年5月',''], 'tsn_0810':[143,'1.8万','2023年6月','♡'],
+  'music_notes':[301,'4.6万','2020年3月','Seoul'], 'bnd_daily':[52,'2.2万','2023年7月',''], 'seoul_cnstu':[210,'1.4万','2019年8月','Seoul'],
+  'typo_daily':[9,'8,021','2018年1月',''], 'sy_kkk':[37,22,'2021年10月','Seoul'], 'meme_design':[5,'31万','2017年9月',''],
+  'mint_0322':[120,88,'2022年3月',''], 'onigiri_s':[64,41,'2024年11月',''], 'vip_ticket_kr':[0,12,'2026年9月',''],
+};
+const X_SEARCH_HIST = ['BOYNEXTDOOR 巡演', '태산 humming', '作品集 排版 参考', '首尔 初雪', '弘大 自习室 24小时'];
+const X_TRENDS = [['娱乐 · 韩国的趋势', 'BOYNEXTDOOR', '9.8万 帖子'], ['音乐 · 趋势', '#HOME_DELUXE', '4.2万 帖子'], ['韩国的趋势', '#중간고사', '1.1万 帖子'], ['首尔 · 趋势', '첫눈', '5,920 帖子'], ['设计 · 趋势', '#作品集周', '2,410 帖子']];
+
+/* ---------- 数字与时间 ---------- */
+const xNum = v => { if (typeof v === 'number') return v; const s = String(v).replace(/,/g, ''); if (s.endsWith('万')) return Math.round(parseFloat(s) * 1e4); if (/K$/i.test(s)) return Math.round(parseFloat(s) * 1e3); return +s || 0; };
+const xFmt = n => n <= 0 ? '' : n < 1e4 ? n.toLocaleString('en-US') : (Math.round(n / 1e3) / 10) + '万';
+const xHash = s => { let h = 7; for (const c of s) h = (h * 31 + c.charCodeAt(0)) % 9973; return h; };
+function xAgo(p){
+  if (p.ts) { const m = Math.floor((Date.now() - p.ts) / 6e4); if (m < 1) return '刚刚'; if (m < 60) return m + '分钟'; if (m < 1440) return Math.floor(m / 60) + '小时'; return md(p.d); }
+  if (p.d === TODAY) { const n = new Date(), [h, mm] = p.t.split(':').map(Number); let m = n.getHours() * 60 + n.getMinutes() - h * 60 - mm; if (m < 1) m = 1; return m < 60 ? m + '分钟' : Math.floor(m / 60) + '小时'; }
+  const [y, mo, d] = p.d.split('-'); return y === '2026' ? `${+mo}月${+d}日` : `${y}年${+mo}月${+d}日`;
+}
+const xFull = p => { const [y, mo, d] = p.d.split('-'); return `${fmtT(p.t)} · ${y}年${+mo}月${+d}日`; };
+
+/* ---------- 帖子库 ---------- */
+const XP = {};
+function xMk(id, u, d, t, txt, media, st, extra){ const p = Object.assign({ id, u, d, t, txt, media:media || [], rp:xNum(st[0]), rts:xNum(st[1]), lk:xNum(st[2]), vw:xNum(st[3]), kids:[] }, extra || {}); XP[id] = p; return p; }
+X_MINE_SRC.forEach(([d, t, txt, m], i) => { const h = xHash(d + txt); xMk('m' + i, X_ME, d, t, txt, m, [0, 0, h % 4, 6 + h % 31]); });
+X_OTHERS_SRC.forEach(([u, d, t, txt, m, st], i) => xMk('o' + i, u, d, t, txt, m, st));
+X_REPLIES_SRC.forEach(([oi, d, t, txt], i) => { const par = XP['o' + oi]; const p = xMk('r' + i, X_ME, d, t, txt, [], [0, 0, i === 1 ? 1 : 2, 30 + i * 17], { replyTo:par.id }); par.kids.push(p.id); });
+Object.entries(X_REPLIES_TO_ME).forEach(([k, arr], j) => { const par = Object.values(XP).find(p => p.u === X_ME && !p.replyTo && p.d + ' ' + p.t === k); if (!par) return;
+  arr.forEach(([u, txt], i) => { const p = xMk(`q${j}_${i}`, u, par.d, par.t, txt, [], [0, 0, 1, 4 + i], { replyTo:par.id }); par.kids.push(p.id); par.rp++; }); });
+/* 她原本就点过赞 / 转过 / 存过书签的帖子 */
+['o0', 'o1', 'o3', 'o4', 'o6', 'o9', 'q0_0'].forEach(id => { if (XP[id]) XP[id].liked = true; });
+X_REPOSTS_SRC.forEach(([oi, d]) => { const p = XP['o' + oi]; p.rted = d; });
+['o8', 'm55'].forEach(id => { if (XP[id]) XP[id].bm = true; });
+const XDM = X_DM_SRC.map(c => ({ u:c.u, msgs:c.msgs.map(([d, t, dir, txt]) => ({ d, t, dir, txt })), unread:c.u === 'sy_kkk' ? 2 : c.u === 'vip_ticket_kr' ? 1 : 0 }));
+const XFOLLOW = new Set(X_FOLLOWING);
+let XNOTIF_NEW = 3;
+
+/* ---------- 保存 / 读取 ---------- */
+const XS = { like:{}, rt:{}, bm:{}, follow:{}, created:[], deleted:[], dm:{}, read:{}, notif:0, prof:null };
+const XBASE = {}; Object.values(XP).forEach(p => { XBASE[p.id] = { liked:!!p.liked, rted:p.rted || '', bm:!!p.bm }; });
+const XFOL0 = new Set(XFOLLOW);
+let xSaveT; const xSave = () => { clearTimeout(xSaveT); xSaveT = setTimeout(() => { if (typeof resetting !== 'undefined' && resetting) return; try { localStorage.setItem(X_SAVE_KEY, JSON.stringify(XS)); } catch (e) {} }, 250); };
+function xAdd(o){ // 新帖子 / 回复
+  const p = xMk(o.id, X_ME, o.d, o.t, o.txt, [], [0, 0, 0, 0], { ts:o.ts, replyTo:o.replyTo || null });
+  if (p.replyTo && XP[p.replyTo]) { XP[p.replyTo].kids.push(p.id); XP[p.replyTo].rp++; }
+  return p;
+}
+function xDel(id){ const p = XP[id]; if (!p) return; if (p.replyTo && XP[p.replyTo]) { const par = XP[p.replyTo]; par.kids = par.kids.filter(k => k !== id); par.rp = Math.max(0, par.rp - 1); } delete XP[id]; }
+(function xRestore(){
+  let d; try { d = JSON.parse(localStorage.getItem(X_SAVE_KEY) || 'null'); } catch (e) { d = null; }
+  if (!d) return;
+  try {
+    Object.assign(XS, d);
+    Object.entries(XS.like).forEach(([id, v]) => { const p = XP[id]; if (p && !!p.liked !== v) { p.liked = v; p.lk += v ? 1 : -1; } });
+    Object.entries(XS.rt).forEach(([id, v]) => { const p = XP[id]; if (p && !!p.rted !== !!v) { p.rts += v ? 1 : -1; p.rted = v || ''; } });
+    Object.entries(XS.bm).forEach(([id, v]) => { if (XP[id]) XP[id].bm = v; });
+    Object.entries(XS.follow).forEach(([u, v]) => v ? XFOLLOW.add(u) : XFOLLOW.delete(u));
+    XS.created.forEach(xAdd);
+    XS.deleted.forEach(xDel);
+    Object.entries(XS.dm).forEach(([u, arr]) => { let c = XDM.find(x => x.u === u); if (!c) { c = { u, msgs:[], unread:0 }; XDM.unshift(c); } arr.forEach(m => c.msgs.push(Object.assign({ dir:'out' }, m))); });
+    Object.keys(XS.read).forEach(u => { const c = XDM.find(x => x.u === u); if (c) c.unread = 0; });
+    if (XS.notif) XNOTIF_NEW = 0;
+    if (XS.prof) xApplyProf();
+  } catch (e) { console.warn('x restore failed', e); }
+})();
+function xApplyProf(){ const p = XS.prof; if (!p) return; XU[X_ME][0] = p.name || XU[X_ME][0]; XU[X_ME][3] = p.bio ?? XU[X_ME][3]; X_PROFILE.loc = p.loc ?? X_PROFILE.loc; }
+
+/* ---------- 渲染零件 ---------- */
+const xName = u => XU[u] ? XU[u][0] : u;
+const xAvSrc = u => XU[u] ? XU[u][1] : 'assets/av_default.jpg';
+const xAv = (u, cls = '') => `<img class="xx-av ${cls}" src="${xAvSrc(u)}" alt="" data-go="xprof|${u}">`;
+const xVf = u => XU[u] && XU[u][2] ? XI.badge : '';
+const xText = s => esc(s).replace(/\n/g, '<br>').replace(/(^|[\s>])([#@][\w가-힣一-龥_]+)/g, '$1<em class="xx-lnk">$2</em>');
+const xRatio = s => { if (s.startsWith('img:')) { const z = IMG_SIZE[s.slice(4)]; if (z) return Math.max(.8, Math.min(1.9, z[0] / z[1])).toFixed(3); return '1'; } return '1.6'; };
+const xMedia = p => p.media.length ? `<div class="xx-media">${p.media.map(s => `<div class="xx-img" style="background:${tileBg(s)};aspect-ratio:${xRatio(s)}" data-go="ximg|${encodeURIComponent(s)}"></div>`).join('')}</div>` : '';
+const xActs = (p, big) => `<div class="xx-acts ${big ? 'big' : ''}">
+  <span data-xa="reply|${p.id}">${XI.reply}<em>${xFmt(p.rp)}</em></span>
+  <span class="${p.rted ? 'on-rt' : ''}" data-xa="rt|${p.id}">${XI.rt}<em>${xFmt(p.rts)}</em></span>
+  <span class="${p.liked ? 'on-lk' : ''}" data-xa="like|${p.id}">${p.liked ? XI.heartOn : XI.heart}<em>${xFmt(p.lk)}</em></span>
+  ${big ? '' : `<span data-xa="views|${p.id}">${XI.views}<em>${xFmt(p.vw)}</em></span>`}
+  <span class="r"><i class="${p.bm ? 'on-bm' : ''}" data-xa="bm|${p.id}">${p.bm ? XI.bmOn : XI.bm}</i><i data-xa="share|${p.id}">${XI.share}</i></span></div>`;
+function xRow(p, o = {}){
+  const par = p.replyTo && XP[p.replyTo];
+  return `<div class="xx-post ${o.line ? 'th' : ''}" data-go="xpost|${p.id}">
+    ${o.rt ? `<div class="xx-rtl">${XI.rt}<span>${o.rt}</span></div>` : ''}
+    <div class="xx-pr"><div class="xx-avc">${xAv(p.u)}${o.line ? '<i class="xx-ln"></i>' : ''}</div>
+    <div class="xx-c"><div class="xx-h"><b>${esc(xName(p.u))}</b>${xVf(p.u)}<span>@${p.u} · ${xAgo(p)}</span><i class="xx-more" data-xa="more|${p.id}">${XI.dots}</i></div>
+      ${par && !o.noRto ? `<div class="xx-rto">回复 <em>@${par.u}</em></div>` : ''}
+      ${p.txt ? `<div class="xx-t">${xText(p.txt)}</div>` : ''}${xMedia(p)}${xActs(p)}</div></div></div>`;
+}
+const xSort = arr => arr.sort((a, b) => (b.ts || Date.parse(b.d + 'T' + b.t)) - (a.ts || Date.parse(a.d + 'T' + a.t)));
+const xMine = () => xSort(Object.values(XP).filter(p => p.u === X_ME && !p.replyTo));
+const xTabBar = on => { const nUn = XDM.filter(c => c.unread).length;
+  return `<div class="xx-tab">${[['x', 'home'], ['xs', 'search'], ['', 'grok'], ['xn', 'bell'], ['xdm', 'mail']].map(([r, k]) => `<span class="${on === k ? 'on' : ''}" ${r ? `data-tab="${r}"` : 'data-toast="Grok 暂时不能用"'}>${XI[on === k && XI[k + 'On'] ? k + 'On' : k]}${k === 'bell' && XNOTIF_NEW ? `<i>${XNOTIF_NEW}</i>` : ''}${k === 'mail' && nUn ? `<i>${nUn}</i>` : ''}</span>`).join('')}</div>`; };
+const xNb = (title, right = '', sub = '') => `<div class="xx-nb"><span class="xx-cb" data-back>${XI.back}</span><div class="xx-nbt"><b>${title}</b>${sub ? `<small>${sub}</small>` : ''}</div><span class="xx-nbr">${right}</span></div>`;
+
+/* ---------- 交互：点赞、转帖、书签、更多 ---------- */
+function xSheet(v, items){
+  const sh = document.createElement('div'); sh.className = 'xx-sheet';
+  sh.innerHTML = `<div class="xx-shb"></div><div class="xx-shp"><i class="xx-grab"></i>${items.map(([l, cls], i) => `<div class="xx-shi ${cls || ''}" data-i="${i}">${l}</div>`).join('')}<div class="xx-shc">取消</div></div>`;
+  v.append(sh); requestAnimationFrame(() => sh.classList.add('on'));
+  const close = () => { sh.classList.remove('on'); setTimeout(() => sh.remove(), 300); };
+  sh.addEventListener('click', e => { e.stopPropagation(); const it = e.target.closest('[data-i]'); if (it) { close(); items[+it.dataset.i][2](); } else if (e.target.closest('.xx-shb,.xx-shc')) close(); });
+}
+function xSync(v, p){
+  v.querySelectorAll(`[data-xa$="|${p.id}"]`).forEach(el => {
+    const k = el.dataset.xa.split('|')[0], em = el.querySelector('em');
+    if (k === 'like') { el.classList.toggle('on-lk', !!p.liked); el.innerHTML = (p.liked ? XI.heartOn : XI.heart) + `<em>${xFmt(p.lk)}</em>`; if (p.liked) { el.classList.remove('pop'); void el.offsetWidth; el.classList.add('pop'); } }
+    if (k === 'rt') { el.classList.toggle('on-rt', !!p.rted); em.textContent = xFmt(p.rts); }
+    if (k === 'bm') { el.classList.toggle('on-bm', !!p.bm); el.innerHTML = p.bm ? XI.bmOn : XI.bm; }
+    if (k === 'reply' && em) em.textContent = xFmt(p.rp);
+  });
+  v.querySelectorAll(`[data-xc$="|${p.id}"]`).forEach(el => { const k = el.dataset.xc.split('|')[0]; el.textContent = xFmt(k === 'lk' ? p.lk : k === 'rt' ? p.rts : k === 'bm' ? (p.bm ? 1 : 0) : p.rp) || '0'; });
+}
+function xAct(v, e){
+  const a = e.target.closest('[data-xa]'); if (!a) return; e.stopPropagation();
+  const [k, id] = a.dataset.xa.split('|'), p = XP[id]; if (!p && k !== 'views') return;
+  if (k === 'like') { p.liked = !p.liked; p.lk += p.liked ? 1 : -1; XS.like[id] = p.liked; xSync(v, p); xSave(); }
+  else if (k === 'bm') { p.bm = !p.bm; XS.bm[id] = p.bm; xSync(v, p); toast(p.bm ? '已添加到书签' : '已从书签中移除'); xSave(); }
+  else if (k === 'rt') xSheet(v, [[p.rted ? '撤销转帖' : '转帖', '', () => { p.rted = p.rted ? '' : TODAY; p.rts += p.rted ? 1 : -1; XS.rt[id] = p.rted; xSync(v, p); toast(p.rted ? '已转帖' : '已撤销转帖'); xSave(); }], ['引用', '', () => pushView(R.xcompose('q:' + id))]]);
+  else if (k === 'reply') pushView(R.xcompose(id));
+  else if (k === 'share') xSheet(v, [['复制链接', '', () => toast('已复制到剪贴板')], ['通过私信发送', '', () => pushView(R.xnewdm('share:' + id))]]);
+  else if (k === 'views') toast('查看次数：看过这个帖子的次数');
+  else if (k === 'more') {
+    if (p.u === X_ME) xSheet(v, [['删除帖子', 'red', () => { xDel(id); XS.created = XS.created.filter(c => c.id !== id); if (!id.startsWith('c')) XS.deleted.push(id); xSave(); toast('你的帖子已删除'); const top = topView(); if (top._spec.xpost === id) popView(); else replaceView(top._spec.refresh()); }], ['置顶到个人资料', '', () => toast('已置顶')]]);
+    else { const f = XFOLLOW.has(p.u); xSheet(v, [[`${f ? '取消关注' : '关注'} @${p.u}`, '', () => xFollow(p.u)], [`隐藏 @${p.u}`, '', () => toast(`已隐藏 @${p.u}`)], ['屏蔽', 'red', () => toast('原型中不能屏蔽')], ['举报帖子', 'red', () => toast('已收到你的举报')]]); }
+  }
+}
+function xFollow(u){ const f = !XFOLLOW.has(u); f ? XFOLLOW.add(u) : XFOLLOW.delete(u); XS.follow[u] = f; xSave(); toast(f ? `已关注 @${u}` : `已取消关注 @${u}`); }
+/* 所有 X 页面都走这里：返回时自动刷新，统一处理点赞等 */
+function XV(r, a, s){
+  s.tone = 'dark'; s.bg = '#000'; s.cls = 'xx ' + (s.cls || ''); s.refresh = () => R[r](a);
+  const m0 = s.mount; s.mount = v => { v.addEventListener('click', e => xAct(v, e)); m0 && m0(v); };
+  return s;
+}
+
+/* ---------- 页面 ---------- */
+Object.assign(R, {
+  /* 首页 */
+  x: tab => { tab = tab || 'foryou';
+    const mine = xSort(Object.values(XP).filter(p => p.u === X_ME && !p.replyTo && (p.ts || p.d >= '2026-10-22')));
+    let feed;
+    if (tab === 'following') feed = xSort(Object.values(XP).filter(p => !p.replyTo && (XFOLLOW.has(p.u) || p.u === X_ME) && (p.u !== X_ME || p.d >= '2026-09-01')));
+    else feed = xSort(Object.values(XP).filter(p => !p.replyTo && p.u !== X_ME)).concat([]);
+    const items = tab === 'following' ? feed.map(p => xRow(p)) : [...mine.slice(0, 2).map(p => xRow(p)), ...feed.map(p => xRow(p, p.rted ? { rt:'你已转帖' } : {}))];
+    const pr = XU[X_ME];
+    return XV('x', tab, { cls:'xx-home',
+      top:`<div class="xx-top"><div class="xx-hd"><span class="xx-me" data-drawer><img class="xx-av" src="${pr[1]}" alt=""></span><span class="xx-logo">${XI.logo}</span><span class="xx-hr"></span></div>
+        <div class="xx-tabs">${[['foryou', '为你推荐'], ['following', '正在关注']].map(([k, l]) => `<b class="${tab === k ? 'on' : ''}" data-tab="x|${k}"><span>${l}${k === 'foryou' ? `<i>${XI.chevD}</i>` : ''}</span></b>`).join('')}<b data-toast="可以把感兴趣的话题添加为标签页"><span class="add">+ 添加</span></b></div></div>`,
+      body:items.join('') + '<div class="xx-end"></div>',
+      bottom:`<div class="xx-fab" data-go="xcompose">${XI.plus}</div>` + xTabBar('home'),
+      over:xDrawer(),
+      mount:v => xDrawerMount(v) });
+  },
+  /* 帖子详情 */
+  xpost: id => { const p = XP[id]; if (!p) return R.x();
+    const par = p.replyTo && XP[p.replyTo], f = XFOLLOW.has(p.u);
+    const kids = p.kids.map(k => XP[k]).filter(Boolean).sort((a, b) => (a.u === p.u) - (b.u === p.u) || (a.ts || 0) - (b.ts || 0));
+    const s = XV('xpost', id, { cls:'xx-detail', xpost:id,
+      top:xNb('帖子'),
+      body:(par ? xRow(par, { line:true }) : '') + `<div class="xx-main">
+        <div class="xx-mh">${xAv(p.u, 'm')}<div class="xx-mn" data-go="xprof|${p.u}"><b>${esc(xName(p.u))}${xVf(p.u)}</b><small>@${p.u}</small></div>
+          ${p.u === X_ME ? '' : `<span class="xx-fb ${f ? 'on' : ''}" data-xf="${p.u}">${f ? '正在关注' : '关注'}</span>`}<i class="xx-more" data-xa="more|${p.id}">${XI.dots}</i></div>
+        ${par ? `<div class="xx-rto">回复 <em>@${par.u}</em></div>` : ''}
+        ${p.txt ? `<div class="xx-t big">${xText(p.txt)}</div>` : ''}${xMedia(p)}
+        <div class="xx-meta">${xFull(p)} · <b>${xFmt(p.vw) || 1}</b> 查看</div>
+        <div class="xx-stats"><span><b data-xc="rt|${p.id}">${xFmt(p.rts) || 0}</b> 转帖</span><span><b data-xc="lk|${p.id}">${xFmt(p.lk) || 0}</b> 喜欢</span><span><b data-xc="bm|${p.id}">${p.bm ? 1 : 0}</b> 书签</span></div>
+        ${xActs(p, true)}</div>` + kids.map(k => xRow(k, { noRto:true })).join('') + '<div class="xx-end"></div>',
+      bottom:`<div class="xx-rbar"><img class="xx-av s" src="${xAvSrc(X_ME)}" alt=""><input id="xrin" placeholder="发布你的回复" autocomplete="off" enterkeyhint="send"><span class="xx-pill" id="xrsend">回复</span></div>`,
+      mount:v => {
+        const inp = v.querySelector('#xrin'), b = v.querySelector('#xrsend');
+        inp.addEventListener('input', () => b.classList.toggle('on', !!inp.value.trim()));
+        const send = () => { const t = inp.value.trim(); if (!t) return; xPostNew(t, id); replaceView(R.xpost(id)); const nv = topView().querySelector('.vs'); nv.scrollTop = nv.scrollHeight; toast('你的回复已发送'); };
+        b.addEventListener('click', send); inp.addEventListener('keydown', e => { if (e.key === 'Enter' && !e.isComposing) { e.preventDefault(); send(); } });
+        const fb = v.querySelector('[data-xf]'); fb && fb.addEventListener('click', e => { e.stopPropagation(); xFollow(p.u); const on = XFOLLOW.has(p.u); fb.classList.toggle('on', on); fb.textContent = on ? '正在关注' : '关注'; });
+        if (par) requestAnimationFrame(() => { const m = v.querySelector('.xx-main'); v.querySelector('.vs').scrollTop = m.offsetTop - v.querySelector('.xx-nb').offsetHeight; });
+      } });
+    return s; },
+  /* 发帖 / 回复 / 引用 */
+  xcompose: rid => { const quote = rid && rid.startsWith('q:') ? XP[rid.slice(2)] : null, par = !quote && rid ? XP[rid] : null;
+    return XV('xcompose', rid, { cls:'xx-cmp',
+      top:`<div class="xx-cmpt"><span data-back>取消</span><span class="xx-pill" id="xpost">${par ? '回复' : '发帖'}</span></div>`,
+      body:(par ? `<div class="xx-cpar"><div class="xx-avc">${xAv(par.u)}<i class="xx-ln"></i></div><div class="xx-c"><div class="xx-h"><b>${esc(xName(par.u))}</b>${xVf(par.u)}<span>@${par.u} · ${xAgo(par)}</span></div><div class="xx-t">${xText(par.txt || '[图片]')}</div><div class="xx-rto">回复 <em>@${par.u}</em></div></div></div>` : '') +
+        `<div class="xx-cin"><img class="xx-av" src="${xAvSrc(X_ME)}" alt=""><div><textarea id="xta" rows="3" placeholder="${par ? '发布你的回复' : quote ? '添加评论' : '有什么新鲜事？'}"></textarea>
+        ${quote ? `<div class="xx-quote"><div class="xx-h"><img class="xx-av xs" src="${xAvSrc(quote.u)}" alt=""><b>${esc(xName(quote.u))}</b><span>@${quote.u} · ${xAgo(quote)}</span></div><div class="xx-t">${xText(quote.txt)}</div></div>` : ''}</div></div>`,
+      bottom:`<div class="xx-ctools">${par ? '' : `<div class="xx-who">${XI.lock}<span>只有关注你的人可以看到</span></div>`}<div class="xx-ctb">${['img', 'gif', 'poll', 'emoji', 'pin'].map(k => `<span data-toast="原型中不能添加">${XI[k]}</span>`).join('')}<i class="xx-ring"></i></div></div>`,
+      mount:v => {
+        const ta = v.querySelector('#xta'), b = v.querySelector('#xpost'), ring = v.querySelector('.xx-ring');
+        ta.addEventListener('input', () => { b.classList.toggle('on', !!ta.value.trim()); ta.style.height = 'auto'; ta.style.height = ta.scrollHeight + 'px'; ring.style.setProperty('--p', Math.min(1, ta.value.length / 280)); });
+        b.addEventListener('click', e => { e.stopPropagation(); let t = ta.value.trim(); if (!t) return; if (quote) t += `\n\n「@${quote.u}：${quote.txt.split('\n')[0]}」`; xPostNew(t, par ? par.id : null); popView(); toast(par ? '你的回复已发送' : '你的帖子已发送'); });
+        setTimeout(() => ta.focus(), 350);
+      } }); },
+  /* 图片 */
+  ximg: s => { s = decodeURIComponent(s);
+    return { tone:'dark', bg:'#000', cls:'xx xx-imgv', top:`<div class="xx-imgt"><span class="xx-cb" data-back>${XI.close}</span></div>`,
+      body:`<div class="xx-imgf" style="background:${s.startsWith('img:') ? `url(${s.slice(4)}) center/contain no-repeat` : tileBg(s)}" data-back></div>` }; },
+  /* 个人资料 */
+  xprof: a => { const [u, tab0] = (a || X_ME).split('~'), me = u === X_ME, info = XU[u] || [u, xAvSrc(u), 0, ''], meta = XU_META[u] || [0, 0, '2021年', ''];
+    const tabs = me ? [['posts', '帖子'], ['replies', '回复'], ['reposts', '转帖'], ['media', '媒体']] : [['posts', '帖子'], ['replies', '回复'], ['media', '媒体']];
+    const tab = tab0 || 'posts', f = XFOLLOW.has(u);
+    const all = Object.values(XP).filter(p => p.u === u);
+    let list = '';
+    if (tab === 'posts') list = xSort(all.filter(p => !p.replyTo)).map(p => xRow(p)).join('');
+    else if (tab === 'replies') list = xSort(all.filter(p => p.replyTo && XP[p.replyTo])).map(p => xRow(XP[p.replyTo], { line:true }) + xRow(p, { noRto:true })).join('');
+    else if (tab === 'reposts') list = Object.values(XP).filter(p => p.rted).sort((a, b) => (b.rted > a.rted) - (b.rted < a.rted)).map(p => xRow(p, { rt:'你已转帖' })).join('');
+    else list = `<div class="xx-grid">${xSort(all.filter(p => p.media.length)).map(p => `<div style="background:${tileBg(p.media[0])}" data-go="xpost|${p.id}"></div>`).join('')}</div>`;
+    if (!list || list === '<div class="xx-grid"></div>') list = `<div class="xx-empty"><b>${tab === 'replies' ? '还没有回复' : tab === 'media' ? '还没有媒体' : '还没有帖子'}</b><small>${me ? '发生的事情会出现在这里。' : `@${u} 发帖后会显示在这里。`}</small></div>`;
+    const nFollowing = me ? XFOLLOW.size : meta[0], nFollowers = me ? X_FOLLOWERS.length : meta[1];
+    const banner = me ? X_PROFILE.banner : null;
+    return XV('xprof', a, { cls:'xx-prof',
+      top:`<div class="xx-pft"><span class="xx-cb dark" data-back>${XI.back}</span><span class="sp"></span><span class="xx-cb dark" data-tab="xs">${XI.search}</span><span class="xx-cb dark" data-toast="原型中暂不可用">${XI.dots}</span></div>`,
+      body:`<div class="xx-ban" style="background:${banner ? `url(${banner}) center/cover` : `url(${info[1]}) center/cover`}">${banner ? '' : '<i></i>'}</div>
+        <div class="xx-pfh"><img class="xx-pav" src="${info[1]}" alt="">
+          <div class="xx-pbtn">${me ? '' : `<span class="xx-ob" data-go="xchat|${u}">${XI.mail}</span><span class="xx-fb ${f ? 'on' : ''}" data-xf="${u}">${f ? '正在关注' : '关注'}</span>`}</div></div>
+        <div class="xx-pinfo"><div class="xx-pn"><b>${esc(info[0])}</b>${info[2] ? XI.badge : ''}${me ? `<span class="xx-gv" data-toast="原型中不能订阅">${XI.badge.replace('#e2b719', '#1d9bf0')}获取认证</span>` : ''}</div><div class="xx-ph">@${u}${!me && X_FOLLOWERS.includes(u) ? '<span class="xx-fy">关注了你</span>' : ''}</div>
+          ${info[3] ? `<div class="xx-bio">${xText(info[3])}</div>` : ''}
+          <div class="xx-pm">${(me ? X_PROFILE.loc : meta[3]) ? `<span>${XI.pin}${esc(me ? X_PROFILE.loc : meta[3])}</span>` : ''}<span>${XI.cal}${me ? X_PROFILE.joined : meta[2] + '加入'}</span></div>
+          <div class="xx-pc"><span ${me ? `data-go="xfol|following"` : 'data-toast="对方设置了不公开"'}><b>${typeof nFollowing === 'number' ? nFollowing.toLocaleString('en-US') : nFollowing}</b> 正在关注</span><span ${me ? `data-go="xfol|followers"` : 'data-toast="对方设置了不公开"'}><b>${nFollowers}</b> 关注者</span></div>
+          ${me ? `<div class="xx-pact"><span data-toast="已复制个人资料链接">分享个人资料</span><span data-go="xedit">编辑个人资料</span></div>` : ''}</div>
+        <div class="xx-ptabs">${tabs.map(([k, l]) => `<b class="${tab === k ? 'on' : ''}" data-tab="xprof|${u}~${k}"><span>${l}</span></b>`).join('')}</div>${list}<div class="xx-end"></div>`,
+      bottom:(me ? `<div class="xx-fab" data-go="xcompose">${XI.plus}</div>` : '') + xTabBar(''),
+      mount:v => {
+        const fb = v.querySelector('[data-xf]'); fb && fb.addEventListener('click', e => { e.stopPropagation(); if (XFOLLOW.has(u)) xSheet(v, [[`取消关注 @${u}`, 'red', () => { xFollow(u); fb.classList.remove('on'); fb.textContent = '关注'; }]]); else { xFollow(u); fb.classList.add('on'); fb.textContent = '正在关注'; } });
+        const vs = v.querySelector('.vs'), top = v.querySelector('.xx-pft'); vs.addEventListener('scroll', () => top.classList.toggle('solid', vs.scrollTop > 90), { passive:true });
+      } }); },
+  /* 编辑个人资料 */
+  xedit: () => { const me = XU[X_ME];
+    return XV('xedit', '', { cls:'xx-edit',
+      top:`<div class="xx-cmpt"><span data-back>取消</span><b>编辑个人资料</b><span class="xx-save" id="xsave">保存</span></div>`,
+      body:`<div class="xx-ban" style="background:url(${X_PROFILE.banner}) center/cover"></div><div class="xx-pfh"><img class="xx-pav" src="${me[1]}" alt=""></div>
+        ${[['name', '名称', me[0], 50], ['bio', '简介', me[3], 160], ['loc', '位置', X_PROFILE.loc, 30]].map(([k, l, val, mx]) => `<label class="xx-fld"><small>${l}</small><${k === 'bio' ? 'textarea rows="2"' : 'input'} data-k="${k}" maxlength="${mx}" ${k === 'bio' ? '' : `value="${esc(val)}"`}>${k === 'bio' ? esc(val) + '</textarea>' : ''}</label>`).join('')}
+        <label class="xx-fld"><small>网站</small><input placeholder="添加你的网站"></label><div class="xx-fld ro"><small>生日</small><span>只有你可以看到 · 不公开</span></div>`,
+      mount:v => v.querySelector('#xsave').addEventListener('click', e => { e.stopPropagation(); const g = k => v.querySelector(`[data-k="${k}"]`).value.trim();
+        XS.prof = { name:g('name') || me[0], bio:g('bio'), loc:g('loc') }; xApplyProf(); xSave(); popView(); toast('已保存'); }) }); },
+  /* 关注 / 关注者 */
+  xfol: kind => { const list = kind === 'followers' ? X_FOLLOWERS : [...new Set([...X_FOLLOWING, ...XFOLLOW])];
+    return XV('xfol', kind, { cls:'xx-fol',
+      top:xNb(esc(xName(X_ME)), '', '@' + X_ME) + `<div class="xx-ptabs sm">${[['followers', '关注者'], ['following', '正在关注']].map(([k, l]) => `<b class="${kind === k ? 'on' : ''}" data-tab="xfol|${k}"><span>${l}</span></b>`).join('')}</div>`,
+      body:list.map(u => { const f = XFOLLOW.has(u); return `<div class="xx-urow" data-go="xprof|${u}">${xAv(u)}<div><b>${esc(xName(u))}${xVf(u)}</b><small>@${u}${X_FOLLOWERS.includes(u) && kind !== 'followers' ? '<span class="xx-fy">关注了你</span>' : ''}</small>${XU[u] && XU[u][3] ? `<p>${esc(XU[u][3])}</p>` : ''}</div><span class="xx-fb sm ${f ? 'on' : ''}" data-xf="${u}">${f ? '正在关注' : '回关'}</span></div>`; }).join(''),
+      mount:v => v.querySelectorAll('[data-xf]').forEach(b => b.addEventListener('click', e => { e.stopPropagation(); const u = b.dataset.xf; xFollow(u); const on = XFOLLOW.has(u); b.classList.toggle('on', on); b.textContent = on ? '正在关注' : '回关'; })) }); },
+  /* 书签 */
+  xbm: () => XV('xbm', '', { top:xNb('书签', '', '@' + X_ME), body:(xSort(Object.values(XP).filter(p => p.bm)).map(p => xRow(p)).join('') || '<div class="xx-empty"><b>保存帖子以便稍后查看</b><small>点帖子下面的书签图标就能存到这里。</small></div>') + '<div class="xx-end"></div>' }),
+  /* 搜索：真的能搜 */
+  xs: () => XV('xs', '', { cls:'xx-search',
+    top:`<div class="xx-st"><span class="xx-me" data-go="xprof|${X_ME}"><img class="xx-av" src="${xAvSrc(X_ME)}" alt=""></span><label class="xx-sbar">${XI.search}<input id="xq" placeholder="搜索" autocomplete="off" enterkeyhint="search"></label><span class="xx-cb" data-toast="原型中暂不可用">${XI.gear}</span></div>`,
+    body:`<div id="xsr"></div><div id="xsd"><div class="xx-sec">最近<span data-xclr>清除全部</span></div>${X_SEARCH_HIST.map(q => `<div class="xx-rs" data-q="${esc(q)}">${XI.clock}<span>${esc(q)}</span><i data-xrm>${XI.close}</i></div>`).join('')}
+      <div class="xx-sec">为你推荐的趋势</div>${X_TRENDS.map(([a, b, c]) => `<div class="xx-tr" data-q="${esc(b)}"><small>${a}</small><b>${esc(b)}</b><small>${c}</small><i>${XI.dots}</i></div>`).join('')}</div><div class="xx-end"></div>`,
+    bottom:xTabBar('search'),
+    mount:v => {
+      const q = v.querySelector('#xq'), res = v.querySelector('#xsr'), def = v.querySelector('#xsd');
+      const run = () => { const w = q.value.trim().toLowerCase(); def.hidden = !!w; if (!w) { res.innerHTML = ''; return; }
+        const us = Object.keys(XU).filter(u => u !== X_ME && (u.toLowerCase().includes(w) || XU[u][0].toLowerCase().includes(w)));
+        const ps = xSort(Object.values(XP).filter(p => (p.txt || '').toLowerCase().includes(w) || p.u.toLowerCase().includes(w)));
+        res.innerHTML = us.map(u => `<div class="xx-urow" data-go="xprof|${u}">${xAv(u)}<div><b>${esc(xName(u))}${xVf(u)}</b><small>@${u}</small></div></div>`).join('') + (ps.length ? ps.map(p => xRow(p)).join('') : us.length ? '' : `<div class="xx-empty"><b>没有“${esc(q.value.trim())}”的结果</b><small>试试搜索别的内容。</small></div>`); };
+      q.addEventListener('input', run);
+      v.addEventListener('click', e => {
+        const rm = e.target.closest('[data-xrm]'); if (rm) { e.stopPropagation(); rm.parentElement.remove(); return; }
+        if (e.target.closest('[data-xclr]')) { e.stopPropagation(); v.querySelectorAll('.xx-rs').forEach(x => x.remove()); return; }
+        const it = e.target.closest('[data-q]'); if (it) { q.value = it.dataset.q; run(); }
+      });
+    } }),
+  /* 通知 */
+  xn: tab => { tab = tab || 'all'; if (XNOTIF_NEW) { XNOTIF_NEW = 0; XS.notif = 1; xSave(); }
+    const target = s => Object.values(XP).find(p => p.txt && s && p.txt.startsWith(s.replace(/…$/, '')));
+    const mentions = xSort(Object.values(XP).filter(p => p.u !== X_ME && p.replyTo && XP[p.replyTo] && XP[p.replyTo].u === X_ME));
+    const icon = { like:['heartOn', '#f91880'], follow:['personOn', '#1d9bf0'], spark:['star', '#a970ff'] };
+    const all = X_NOTIFS.map(([k, u, what, txt, img, when]) => {
+      if (k === 'reply') { const p = mentions.find(x => x.txt === txt); return p ? xRow(p) : ''; }
+      const p = target(txt), [ic, col] = icon[k];
+      return `<div class="xx-nt" ${p ? `data-go="xpost|${p.id}"` : `data-go="xprof|${u}"`}><span class="xx-ni" style="color:${col}">${XI[ic]}</span><div class="xx-c">${xAv(u, 's')}
+        <div class="xx-nw"><b>${esc(xName(u))}</b> ${what}<span> · ${when}</span></div>${txt ? `<div class="xx-ns">${esc(txt)}</div>` : ''}${img ? `<div class="xx-nimg" style="background:${tileBg(img)}"></div>` : ''}</div></div>`; });
+    return XV('xn', tab, { cls:'xx-notif',
+      top:`<div class="xx-top"><div class="xx-hd"><span class="xx-me" data-go="xprof|${X_ME}"><img class="xx-av" src="${xAvSrc(X_ME)}" alt=""></span><b class="xx-ttl">通知</b><span class="xx-hr" data-toast="原型中暂不可用">${XI.gear}</span></div>
+        <div class="xx-tabs">${[['all', '全部'], ['verified', '认证'], ['mentions', '提及']].map(([k, l]) => `<b class="${tab === k ? 'on' : ''}" data-tab="xn|${k}"><span>${l}</span></b>`).join('')}</div></div>`,
+      body:tab === 'all' ? `<div class="xx-push"><div><b>通知已关闭</b><small>打开通知，及时了解关注的人发了什么。</small></div><span class="xx-sw" data-xsw></span></div>` + all.join('') :
+        tab === 'mentions' ? (mentions.map(p => xRow(p)).join('') || '<div class="xx-empty"><b>还没有提及</b></div>') :
+        `<div class="xx-empty"><b>还没有内容</b><small>来自认证账号的赞、提及、转帖等都会显示在这里。</small></div>`,
+      bottom:xTabBar('bell'),
+      mount:v => { const sw = v.querySelector('[data-xsw]'); sw && sw.addEventListener('click', e => { e.stopPropagation(); sw.classList.toggle('on'); toast(sw.classList.contains('on') ? '已打开通知' : '已关闭通知'); }); } }); },
+  /* 聊天列表 */
+  xdm: () => { const list = XDM.filter(c => c.msgs.length).sort((a, b) => { const la = a.msgs[a.msgs.length - 1], lb = b.msgs[b.msgs.length - 1]; return (lb.ts || Date.parse(lb.d + 'T' + lb.t)) - (la.ts || Date.parse(la.d + 'T' + la.t)); });
+    return XV('xdm', '', { cls:'xx-dml',
+      top:`<div class="xx-top"><div class="xx-hd"><span class="xx-me" data-go="xprof|${X_ME}"><img class="xx-av" src="${xAvSrc(X_ME)}" alt=""></span><b class="xx-ttl">聊天</b><span class="xx-hr" data-toast="原型中暂不可用">${XI.gear}</span></div></div>`,
+      body:`<div class="xx-dmf"><span>全部 ${XI.chevD}</span></div><label class="xx-sbar dm">${XI.search}<input id="xdq" placeholder="搜索" autocomplete="off"></label>
+        <div id="xdl">${list.map(c => { const l = c.msgs[c.msgs.length - 1]; return `<div class="xx-dr ${c.unread ? 'un' : ''}" data-go="xchat|${c.u}" data-name="${esc(xName(c.u) + c.u)}">${xAv(c.u)}<div><div class="xx-drh"><b>${esc(xName(c.u))}</b>${xVf(c.u)}<span>@${c.u} · ${l.ts ? xAgo(l) : shortD(l.d)}</span></div><p>${l.dir === 'out' ? '你：' : ''}${esc(l.txt)}</p></div>${c.unread ? '<i class="xx-dot"></i>' : ''}</div>`; }).join('')}</div><div class="xx-end"></div>`,
+      bottom:`<div class="xx-fab" data-go="xnewdm">${XI.newdm}</div>` + xTabBar('mail'),
+      mount:v => { const q = v.querySelector('#xdq'); q.addEventListener('input', () => { const w = q.value.trim().toLowerCase(); v.querySelectorAll('.xx-dr').forEach(r => { r.hidden = w && !r.dataset.name.toLowerCase().includes(w); }); }); } }); },
+  /* 新消息：选人 */
+  xnewdm: share => XV('xnewdm', share, { cls:'xx-fol',
+    top:`<div class="xx-cmpt"><span data-back>取消</span><b>${share ? '发送帖子' : '新消息'}</b><span></span></div><label class="xx-sbar dm">${XI.search}<input id="xnq" placeholder="搜索用户" autocomplete="off"></label>`,
+    body:[...new Set([...XDM.map(c => c.u), ...XFOLLOW, ...X_FOLLOWERS])].filter(u => XU[u]).map(u => `<div class="xx-urow" data-pick="${u}" data-name="${esc(xName(u) + u)}">${xAv(u).replace(/ data-go="[^"]*"/, '')}<div><b>${esc(xName(u))}${xVf(u)}</b><small>@${u}</small></div></div>`).join(''),
+    mount:v => {
+      const q = v.querySelector('#xnq'); q.addEventListener('input', () => { const w = q.value.trim().toLowerCase(); v.querySelectorAll('[data-pick]').forEach(r => { r.hidden = w && !r.dataset.name.toLowerCase().includes(w); }); });
+      v.addEventListener('click', e => { const r = e.target.closest('[data-pick]'); if (!r) return; const u = r.dataset.pick;
+        if (share) { const p = XP[share.slice(6)]; if (p) xDmSend(u, `${p.txt ? p.txt.split('\n')[0] : '[帖子]'}\n— @${p.u}`); popView(); toast(`已发送给 ${xName(u)}`); }
+        else { popView(); setTimeout(() => pushView(R.xchat(u)), 60); } });
+    } }),
+  /* 聊天：真的能发 */
+  xchat: u => { let c = XDM.find(x => x.u === u); if (!c) { c = { u, msgs:[], unread:0 }; XDM.push(c); }
+    if (c.unread) { c.unread = 0; XS.read[u] = 1; xSave(); }
+    const meta = XU_META[u] || [0, 0, '', ''];
+    return XV('xchat', u, { cls:'xx-chat',
+      top:`<div class="xx-nb"><span class="xx-cb" data-back>${XI.back}</span><div class="xx-nbt c" data-go="xprof|${u}"><img class="xx-av xs" src="${xAvSrc(u)}" alt=""><b>${esc(xName(u))}</b></div><span class="xx-nbr" data-go="xprof|${u}">${XI.info}</span></div>`,
+      body:`<div class="xx-chd" data-go="xprof|${u}"><img class="xx-av l" src="${xAvSrc(u)}" alt=""><b>${esc(xName(u))}${xVf(u)}</b><small>@${u}</small><small>${meta[2] ? meta[2] + '加入 · ' : ''}${typeof meta[1] === 'number' ? meta[1] : meta[1]} 关注者</small></div><div id="xml">${xMsgs(c)}</div>`,
+      bottom:`<div class="xx-min"><span class="xx-mi" data-toast="原型中不能发送图片">${XI.img}</span><label><input id="xmin" placeholder="开始一条新消息" autocomplete="off" enterkeyhint="send"></label><span class="xx-ms" id="xmsend">${XI.send}</span></div>`,
+      mount:v => {
+        const inp = v.querySelector('#xmin'), b = v.querySelector('#xmsend'), sc = v.querySelector('.vs');
+        sc.scrollTop = sc.scrollHeight;
+        inp.addEventListener('input', () => b.classList.toggle('on', !!inp.value.trim()));
+        const send = () => { const t = inp.value.trim(); if (!t) return; xDmSend(u, t); v.querySelector('#xml').innerHTML = xMsgs(c); inp.value = ''; b.classList.remove('on'); sc.scrollTop = sc.scrollHeight; };
+        b.addEventListener('click', e => { e.stopPropagation(); send(); inp.focus(); });
+        inp.addEventListener('keydown', e => { if (e.key === 'Enter' && !e.isComposing) { e.preventDefault(); send(); } });
+      } }); },
+});
+function xMsgs(c){
+  let h = '', lastD = '';
+  c.msgs.forEach((m, i) => {
+    if (m.d !== lastD) { h += `<div class="xx-md">${m.d === TODAY ? '今天' : m.d === YESTERDAY ? '昨天' : ymd(m.d)}</div>`; lastD = m.d; }
+    const nx = c.msgs[i + 1], tail = !nx || nx.dir !== m.dir || nx.d !== m.d;
+    h += `<div class="xx-m ${m.dir} ${tail ? 'tail' : ''}"><div class="xx-bub">${esc(m.txt).replace(/\n/g, '<br>')}</div>${tail ? `<small>${fmtT(m.t)}${m.dir === 'out' && i === c.msgs.length - 1 ? ' · 已发送' : ''}</small>` : ''}</div>`;
+  });
+  return h;
+}
+function xDmSend(u, txt){
+  let c = XDM.find(x => x.u === u); if (!c) { c = { u, msgs:[], unread:0 }; XDM.push(c); }
+  const m = { d:TODAY, t:nowHM(), txt, ts:Date.now() }; c.msgs.push(Object.assign({ dir:'out' }, m));
+  (XS.dm[u] = XS.dm[u] || []).push(m); xSave();
+}
+function xPostNew(txt, replyTo){
+  const o = { id:'c' + Date.now(), d:TODAY, t:nowHM(), ts:Date.now(), txt, replyTo:replyTo || null };
+  xAdd(o); XS.created.push(o); xSave();
+}
+/* 侧边栏（点左上角头像） */
+function xDrawer(){ const pr = XU[X_ME];
+  return `<div class="xx-drw"><div class="xx-dscrim" data-dclose></div><div class="xx-dp">
+    <div class="xx-dh"><img class="xx-av l" src="${pr[1]}" alt="" data-dgo="xprof|${X_ME}"><span class="xx-cb" data-toast="只有这一个账号">${XI.addAcc}</span></div>
+    <b class="xx-dn" data-dgo="xprof|${X_ME}">${esc(pr[0])}</b><small class="xx-dhd">@${X_ME}</small>
+    <div class="xx-dc"><span data-dgo="xfol|following"><b>${XFOLLOW.size}</b> 正在关注</span><span data-dgo="xfol|followers"><b>${X_FOLLOWERS.length}</b> 关注者</span></div>
+    <div class="xx-dm">${[['person', '个人资料', 'xprof|' + X_ME], ['logo', 'Premium', ''], ['bm', '书签', 'xbm'], ['clock', '历史记录', ''], ['people', '社群', ''], ['list', '列表', ''], ['mic', '空间', ''], ['studio', '创作者工作室', '']].map(([i, l, g]) => `<div ${g ? `data-dgo="${g}"` : `data-toast="${l}暂未开通"`}>${XI[i]}<span>${l}</span></div>`).join('')}</div>
+    <div class="xx-dm2"><div data-toast="原型中暂不可用">${XI.gear}<span>设置和隐私</span></div><div data-toast="原型中暂不可用">${XI.help}<span>帮助中心</span></div></div>
+  </div></div>`; }
+function xDrawerMount(v){
+  const d = v.querySelector('.xx-drw');
+  v.querySelector('[data-drawer]').addEventListener('click', e => { e.stopPropagation(); d.classList.add('on'); });
+  d.addEventListener('click', e => {
+    if (e.target.closest('[data-dclose]')) { e.stopPropagation(); d.classList.remove('on'); return; }
+    const g = e.target.closest('[data-dgo]'); if (g) { e.stopPropagation(); d.classList.remove('on'); const [r, a] = route(g.dataset.dgo); setTimeout(() => pushView(R[r](a)), 180); }
+  });
+  let sx = null; d.addEventListener('touchstart', e => { sx = e.touches[0].clientX; }, { passive:true });
+  d.addEventListener('touchend', e => { if (sx != null && sx - e.changedTouches[0].clientX > 50) d.classList.remove('on'); sx = null; });
+}
+ROOT.x = () => R.x();
 
 /* ---------- calculator ---------- */
 function mountCalc(){
