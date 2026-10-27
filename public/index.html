@@ -1770,7 +1770,7 @@ body.standalone .island.np-on{display:flex!important}
 .xx-imgt .xx-cb{background:rgba(0,0,0,.5)}
 
 /* 个人资料 */
-.xx-pft{position:absolute;left:0;right:0;top:0;z-index:5;display:flex;align-items:center;gap:calc(10px * var(--k));padding:calc(52px * var(--k)) calc(12px * var(--k)) calc(8px * var(--k));transition:background .2s}
+.xx-pft{position:absolute;left:0;right:0;top:0;z-index:5;display:flex;align-items:center;gap:calc(13px * var(--k));padding:calc(58px * var(--k)) calc(12px * var(--k)) calc(8px * var(--k));transition:background .2s}
 .xx-pft .sp{flex:1}
 .xx-pft.solid{background:rgba(0,0,0,.85);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px)}
 .xx-ban{height:calc(150px * var(--k));position:relative;overflow:hidden;background-color:#333639}
@@ -1878,6 +1878,28 @@ body.standalone .island.np-on{display:flex!important}
 .xx-grab{display:block;width:calc(36px * var(--k));height:calc(4px * var(--k));border-radius:calc(2px * var(--k));background:#536471;margin:0 auto calc(6px * var(--k))}
 .xx-shi{padding:calc(15px * var(--k)) calc(20px * var(--k));font-weight:700;font-size:calc(16px * var(--k))}.xx-shi.red{color:#f4212e}
 .xx-shc{margin:calc(8px * var(--k)) calc(16px * var(--k)) 0;height:calc(44px * var(--k));border:1px solid #536471;border-radius:calc(22px * var(--k));display:flex;align-items:center;justify-content:center;font-weight:700}
+
+/* 别人的主页（按官方号截图） */
+.xx-pfn{display:flex;flex-direction:column;min-width:0;margin-left:calc(6px * var(--k));opacity:0;transition:opacity .2s}
+.xx-pfn b{display:flex;align-items:center;font-size:calc(17px * var(--k));font-weight:800;white-space:nowrap}.xx-pfn small{color:var(--xt);font-size:calc(12px * var(--k));opacity:.8}
+.xx-pft.solid .xx-pfn{opacity:1}
+.xx-pff{display:none}.xx-pft.named .xx-pff{display:block}
+.xx-pft.named .xx-cb[data-tab],.xx-pft.named .xx-cb[data-toast="已刷新"]{display:none}
+.xx-pff .xx-fb{height:calc(32px * var(--k))}
+.xx-pft .sp{flex:1}
+.xx-pbtn .xx-ob{width:calc(34px * var(--k));height:calc(34px * var(--k))}
+.xx-pact .xx-fb.w{flex:1;height:calc(34px * var(--k));justify-content:center;border-radius:calc(17px * var(--k))}
+.xx-pact .xx-fb.w.on{background:none}
+.xx-pm .lk em{color:var(--xb);font-style:normal}
+.xx-pby{display:flex;align-items:center;gap:calc(8px * var(--k));color:var(--xg);font-size:calc(13px * var(--k));margin-top:calc(14px * var(--k))}
+.xx-pby .xx-av{width:calc(24px * var(--k));height:calc(24px * var(--k))}
+.xx-ptabs.ic span{gap:calc(6px * var(--k))}.xx-ptabs.ic svg{width:calc(21px * var(--k));height:calc(21px * var(--k))}
+.xx-ptabs.ic b:first-child span svg:last-child{width:calc(14px * var(--k));height:calc(14px * var(--k));color:var(--xg)}
+.xx-avv .vs{display:flex;align-items:center;justify-content:center}
+.xx-avbig{width:100%;padding:0 calc(30px * var(--k));box-sizing:border-box}.xx-avbig img{width:100%;aspect-ratio:1;border-radius:50%;object-fit:cover;display:block}
+.xx-avb{flex:none;display:flex;justify-content:center;gap:calc(14px * var(--k));padding:0 0 calc(46px * var(--k))}
+.xx-avb span{height:calc(36px * var(--k));padding:0 calc(22px * var(--k));border-radius:calc(18px * var(--k));background:#16181c;border:1px solid var(--xl);display:flex;align-items:center;gap:calc(6px * var(--k));font-weight:700;font-size:calc(14px * var(--k))}
+.xx-avb svg{width:calc(17px * var(--k));height:calc(17px * var(--k))}
 
 @media (prefers-reduced-motion: reduce){*{transition-duration:.01s!important;animation:none!important}}
 </style>
@@ -2771,7 +2793,7 @@ const BANK = [
 ];
 
 /* 图片原始尺寸（用于按真实比例显示） */
-const IMG_SIZE = {"assets/av_default.jpg": [240, 240], "assets/av_jian.jpg": [240, 240], "assets/av_keke.jpg": [240, 240], "assets/av_minji.jpg": [240, 240], "assets/av_shuyan.jpg": [240, 240], "assets/av_spam.jpg": [240, 240], "assets/avatar_anran.jpg": [320, 320], "assets/ig_blossom.jpg": [736, 736], "assets/ig_cat.jpg": [736, 981], "assets/ig_chat.jpg": [1080, 1072], "assets/ig_dog.jpg": [735, 824], "assets/ig_pasta.jpg": [1080, 1440], "assets/ig_sunset.jpg": [736, 981], "assets/sp_cake.jpg": [902, 1200], "assets/sp_choco.jpg": [498, 660], "assets/sp_heart.jpg": [921, 1152], "assets/sp_snow.jpg": [736, 981], "assets/sp_walk.jpg": [736, 981], "assets/st_1.jpg": [736, 1307], "assets/st_2.jpg": [736, 1308], "assets/st_3.jpg": [736, 1308], "assets/st_4.jpg": [736, 981], "assets/st_5.jpg": [828, 1470], "assets/st_6.jpg": [737, 1600], "assets/sy_cup.jpg": [963, 1200], "assets/sy_hand.jpg": [900, 1200], "assets/w_bday.jpg": [736, 632], "assets/w_booth.jpg": [740, 1280], "assets/w_cat.jpg": [736, 1308], "assets/w_hair.jpg": [736, 1308], "assets/w_hs.jpg": [828, 1064], "assets/w_ramen.jpg": [736, 981], "assets/wall_home.jpg": [736, 1308], "assets/wall_lock.jpg": [608, 1081]};
+const IMG_SIZE = {"assets/av_default.jpg": [240, 240], "assets/av_jian.jpg": [240, 240], "assets/av_keke.jpg": [240, 240], "assets/av_minji.jpg": [240, 240], "assets/av_shuyan.jpg": [240, 240], "assets/av_spam.jpg": [240, 240], "assets/avatar_anran.jpg": [320, 320], "assets/ig_blossom.jpg": [736, 736], "assets/ig_cat.jpg": [736, 981], "assets/ig_chat.jpg": [1080, 1072], "assets/ig_dog.jpg": [735, 824], "assets/ig_pasta.jpg": [1080, 1440], "assets/ig_sunset.jpg": [736, 981], "assets/sp_cake.jpg": [902, 1200], "assets/sp_choco.jpg": [498, 660], "assets/sp_heart.jpg": [921, 1152], "assets/sp_snow.jpg": [736, 981], "assets/sp_walk.jpg": [736, 981], "assets/st_1.jpg": [736, 1307], "assets/st_2.jpg": [736, 1308], "assets/st_3.jpg": [736, 1308], "assets/st_4.jpg": [736, 981], "assets/st_5.jpg": [828, 1470], "assets/st_6.jpg": [737, 1600], "assets/sy_cup.jpg": [963, 1200], "assets/sy_hand.jpg": [900, 1200], "assets/w_bday.jpg": [736, 632], "assets/w_booth.jpg": [740, 1280], "assets/w_cat.jpg": [736, 1308], "assets/w_hair.jpg": [736, 1308], "assets/w_hs.jpg": [828, 1064], "assets/w_ramen.jpg": [736, 981], "assets/wall_home.jpg": [736, 1308], "assets/wall_lock.jpg": [608, 1081], "assets/x/ts_archive.jpg": [400, 400], "assets/x/bnd_banner.jpg": [924, 318], "assets/x/bnd_party.jpg": [600, 780], "assets/x/bnd_av.jpg": [360, 360], "assets/x/bnd_animal.jpg": [640, 352], "assets/x/x_me.jpg": [320, 320], "assets/x/clover.jpg": [400, 400], "assets/x/twt.jpg": [120, 120], "assets/x/fan_cat.jpg": [400, 400]};
 
 /* =========================================================
    APP VIEWS — 每个 App 的页面（结构与交互）
@@ -4575,12 +4597,13 @@ ROOT.settings = () => R.settings();
 const X_ME = 'quietrain_21';
 // 账号：handle → [显示名, 头像图片, 认证, 简介]
 const XU = {
-  'quietrain_21':['ㅇㅇ', 'assets/av/x_me.jpg', 0, '碎碎念 · 认识我的人请假装没看到'],
-  'BOYNEXTDOOR_KOZ':['BOYNEXTDOOR', 'assets/bnd/ts5.jpg', 1, 'BOYNEXTDOOR Official X'],
-  'stage_archive':['舞台存档', 'assets/bnd/ts4.jpg', 0, '舞台 / 直拍 / 回看 · 只存不评'],
-  'tsn_0810':['小太阳的窝 ☀︎', 'assets/mu/t10.jpg', 0, 'TAESAN only · 写歌的人最好了'],
-  'music_notes':['music notes', 'assets/av/soyo.music.jpg', 0, '关于写歌的人和他们写的歌'],
-  'bnd_daily':['bnd daily', 'assets/bnd/ts7.jpg', 0, '每天一点 BOYNEXTDOOR'],
+  'quietrain_21':['ㅇㅇ', 'assets/x/x_me.jpg', 0, '碎碎念 · 认识我的人请假装没看到'],
+  'BOYNEXTDOOR_KOZ':['BOYNEXTDOOR', 'assets/x/bnd_av.jpg', 1, "BOYNEXTDOOR Official X (Twitter)\n1st Studio Album Repackage 'HOME: DELUXE' 🏠"],
+  'BOYNEXTDOOR_twt':['BOYNEXTDOOR_twt', 'assets/x/twt.jpg', 1, ''],
+  'tsarchive':['태산이', 'assets/x/ts_archive.jpg', 0, 'ts'],
+  'tsn_0810':['🐈‍⬛', 'assets/x/fan_cat.jpg', 0, 'TAESAN only'],
+  'music_notes':['넥도 음원 기록', 'assets/av/soyo.music.jpg', 0, 'BOYNEXTDOOR 음원 · 차트 · 크레딧 정리'],
+  'bnd_daily':['🍀 hyeon', 'assets/x/clover.jpg', 0, 'ONEDOOR · 넥도 보면서 버팀'],
   'seoul_cnstu':['首尔留学生互助', 'assets/av/seoul.daily.jpg', 0, '首尔中国留学生信息互助'],
   'typo_daily':['每日字体', 'assets/av/type.archive.jpg', 0, '一天一张字体海报'],
   'sy_kkk':['ㅅㅇ', 'assets/kk_shuyan.jpg', 0, '设计系 · 甜点是正义'],
@@ -4590,7 +4613,7 @@ const XU = {
   'vip_ticket_kr':['售票 VIP 代抢', 'assets/av/gift.kr.jpg', 0, '演唱会门票 · 私信'],
 };
 const X_PROFILE = { name:'ㅇㅇ', loc:'Seoul', joined:'2021年9月加入', born:'', banner:'assets/ig_sunset.jpg', following:41, followers:4 };
-const X_FOLLOWING = ['BOYNEXTDOOR_KOZ','stage_archive','tsn_0810','music_notes','bnd_daily','seoul_cnstu','typo_daily','meme_design','sy_kkk'];
+const X_FOLLOWING = ['BOYNEXTDOOR_KOZ','tsarchive','tsn_0810','music_notes','bnd_daily','seoul_cnstu','typo_daily','meme_design','sy_kkk'];
 const X_FOLLOWERS = ['sy_kkk','tsn_0810','mint_0322','onigiri_s'];
 
 /* 她发的帖子：[日期, 时间, 内容, 图片(可选), 回复, 转帖, 喜欢, 查看] */
@@ -4658,28 +4681,33 @@ const X_MINE_SRC = [
 ];
 /* 别人的帖子 */
 const X_OTHERS_SRC = [
-  ['BOYNEXTDOOR_KOZ','2026-09-28','13:00','BOYNEXTDOOR \'HOME: DELUXE\'\nOUT NOW 🏠', ['img:assets/bnd/home_deluxe.jpg'], [3200,18000,92000,'210万']],
-  ['BOYNEXTDOOR_KOZ','2026-06-10','18:00','BOYNEXTDOOR \'HOME\'\n#VIRAL', ['img:assets/bnd/ts1.jpg'], [2800,15000,81000,'180万']],
-  ['stage_archive','2026-05-30','09:00','今天回看出道舞台还是会起鸡皮疙瘩……从出道到现在真的长大好多。', ['stage'], [48,183,'1.2K','4.1万']],
-  ['tsn_0810','2026-10-22','23:10','他说写歌的时候会先想一个画面\n公交站 便利店 很晚的路\n总觉得这些画面里有一个人', [], [61,240,'2.3K','5.6万']],
-  ['music_notes','2026-09-02','20:00','每次看他聊写歌，都觉得他对那些没法直接说出口的情绪特别敏感。', [], [36,92,880,'2.6万']],
-  ['bnd_daily','2026-10-20','12:00','今天的 bnd：练习室的灯又亮到凌晨', ['studio'], [21,64,'1,010','3.3万']],
+  ['BOYNEXTDOOR_KOZ','2026-09-28','18:00',"BOYNEXTDOOR 'ANIMAL' Official MV\n\n🔗 youtu.be/Wl4__7z_dJw\n\n🎧 Stream now on your favorite platform!\n🔗 bnd.lnk.to/homedeluxe\n\n#BOYNEXTDOOR #보이넥스트도어 #BND\n#HOME_DELUXE #ANIMAL", ['img:assets/x/bnd_animal.jpg'], [146,'7.5K','13K','50.8万'], 1],
+  ['BOYNEXTDOOR_KOZ','2026-10-19','18:30','261019 [HOME: DELUXE] HOME Party 🏠📸\n\n#BOYNEXTDOOR #보이넥스트도어 #BND\n#HOME_DELUXE\n#BOYNOW', ['img:assets/x/bnd_party.jpg'], [38,'3.3K','18K','19.4万']],
+  ['BOYNEXTDOOR_KOZ','2026-10-19','19:50','잠시 후 8PM (KST) ⏰\n\n#BOYNEXTDOOR #보이넥스트도어 #BND\n#HOME_DELUXE', [], [52,'2.1K','9.8K','13.2万']],
+  ['tsarchive','2026-05-30','21:00','230530 데뷔 쇼케이스\n3년 전 오늘', [], [12,'1.1K','4.2K','8.8万']],
+  ['tsarchive','2026-10-20','23:40','261019 HOME Party\n웃을 때 눈 없어지는 거', [], [8,320,'2.1K','3.9万']],
+  ['tsn_0810','2026-10-22','23:10','【翻译】261022 태산 위버스 라이브\n\n"요즘 곡 쓰다 보면 새벽이에요"\n最近写着写着歌就到凌晨了\n\n…那你倒是早点睡啊', [], [61,240,'2.3K','5.6万']],
   ['tsn_0810','2026-10-24','02:13','睡不着的时候就听那首 Humming\n副歌前面那个停顿 是故意的吧', [], [12,40,433,'9,880']],
+  ['tsn_0810','2026-10-19','21:05','【搬运】261019 HOME Party 🏠\n这次的发色真的好适合他 ㅠㅠ\ncr. @BOYNEXTDOOR_KOZ', [], [4,88,'1,032','2.1万']],
+  ['music_notes','2026-10-21','12:00',"HOME: DELUXE 크레딧 정리 📝\n\n'Humming' 작사 · 작곡 참여 태산\n태산이 이름 올라간 곡이 벌써 이만큼", [], [36,92,880,'2.6万']],
+  ['music_notes','2026-09-29','10:00',"'ANIMAL' MV 공개 하루 만에 1,000만 뷰 🎉\n#BOYNEXTDOOR #ANIMAL", [], [20,310,'1,804','4.4万']],
+  ['bnd_daily','2026-10-20','22:30','HOME Party 사진 보고 하루종일 웃음 ㅋㅋㅋㅋ\n넥도는 사진 찍을 때 왜 다 장난쳐', [], [3,12,140,'4,020']],
+  ['bnd_daily','2026-10-23','19:10','앨범깡 했는데 태산 포카 나옴……\n일곱 장 만에 드디어 🍀', [], [9,30,412,'1.1万']],
   ['seoul_cnstu','2026-10-21','10:00','期中周 弘大附近 24 小时自习室整理，作品集周的同学收藏一下。', [], [34,120,389,'1.2万']],
   ['typo_daily','2026-10-20','09:00','今天的海报：《等候》。', ['art'], [8,41,662,'2.3万']],
   ['meme_design','2026-10-23','22:00','设计生的周末：\n周六 改稿\n周日 改稿\n周一 交的是第一版', [], [88,1200,'9,302','30万']],
   ['sy_kkk','2026-10-23','23:40','有些人 在我旁边说自己升天了 然后又开了一包薯片', [], [1,0,3,48]],
 ];
-/* 她的回复：[回复的帖子(作者:序号)，日期, 时间, 内容] —— 序号指上面 X_OTHERS_SRC 的位置 */
+/* 她的回复：[回复的帖子序号(X_OTHERS_SRC), 日期, 时间, 内容] */
 const X_REPLIES_SRC = [
-  ['3','2026-10-22','23:31','公交站那段我也很喜欢'],
+  ['5','2026-10-22','23:31','早点睡吧'],
   ['6','2026-10-24','02:30','是故意的。'],
-  ['4','2026-09-02','21:15','他写歌真的很认真'],
-  ['9','2026-10-23','22:10','周一交的是第一版 这句太真实了'],
-  ['10','2026-10-23','23:42','？？？我没有'],
+  ['8','2026-10-21','12:20','Humming 真的写得很好'],
+  ['14','2026-10-23','22:10','周一交的是第一版 这句太真实了'],
+  ['15','2026-10-23','23:42','？？？我没有'],
 ];
 /* 她转发的：别人帖子的序号 */
-const X_REPOSTS_SRC = [['2','2026-05-30'], ['6','2026-10-24'], ['0','2026-09-28']];
+const X_REPOSTS_SRC = [['3','2026-05-30'], ['6','2026-10-24'], ['0','2026-09-28']];
 /* 别人回复她的帖子 */
 const X_REPLIES_TO_ME = {
   '2024-02-15 21:50':[['sy_kkk','我在。'], ['mint_0322','抱抱']],
@@ -4699,13 +4727,13 @@ const X_DM_SRC = [
   { u:'mint_0322', msgs:[ ['2024-02-18','10:00','in','我不认识你 但是看到你的帖子了 要好好吃饭哦'], ['2024-02-18','12:30','out','谢谢 会的'] ] },
 ];
 const X_NOTIFS = [
-  ['spark','BOYNEXTDOOR_KOZ','BOYNEXTDOOR 的新帖子','BOYNEXTDOOR \'HOME: DELUXE\' OUT NOW','img:assets/bnd/home_deluxe.jpg','9月28日'],
+  ['spark','BOYNEXTDOOR_KOZ','BOYNEXTDOOR 的新帖子','261019 [HOME: DELUXE] HOME Party 🏠📸','img:assets/x/bnd_party.jpg','10月19日'],
   ['like','onigiri_s','赞了你的帖子','作品集 D-4 我还活着吗','','9小时'],
   ['reply','sy_kkk','回复了你','升天之前先把我的笔还我','','8小时'],
   ['spark','tsn_0810','你关注的人发帖了','睡不着的时候就听那首 Humming…','','7小时'],
   ['like','tsn_0810','赞了你的回复','是故意的。','','20小时'],
   ['follow','onigiri_s','关注了你','','','3周'],
-  ['spark','stage_archive','你关注的人发帖了','今天回看出道舞台还是会起鸡皮疙瘩……','img:assets/bnd/ts4.jpg','5月30日'],
+  ['spark','tsarchive','你关注的人发帖了','230530 데뷔 쇼케이스','','5月30日'],
 ];
 
 /* =========================================================
@@ -4713,18 +4741,19 @@ const X_NOTIFS = [
    能点赞 / 转帖 / 书签 / 回复 / 发帖 / 删帖 / 关注 / 私信，
    所有操作都保存在玩家自己的浏览器里（X_SAVE_KEY）。
    ========================================================= */
-const X_SAVE_KEY = 'taesan-phone-x-v1';
+const X_SAVE_KEY = 'taesan-phone-x-v2';
 const XI = {
   logo:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.2 2.3h3.3l-7.2 8.2 8.5 11.2h-6.6l-5.2-6.8-6 6.8H1.7l7.7-8.8L1.3 2.3h6.8l4.7 6.2zm-1.2 17.5h1.9L7.1 4.1h-2z"/></svg>',
   home:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"><path d="M3 10.2 12 3l9 7.2V21h-6v-6.5H9V21H3z"/></svg>',
   homeOn:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.4 2.2 10.2V22h7.6v-6.6h4.4V22h7.6V10.2z"/></svg>',
   search:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="7"/><path d="m16 16 5 5"/></svg>',
   searchOn:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.6"/><path d="m16 16 5 5"/></svg>',
-  grok:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="4.5"/><path d="M8.5 16.5 16 7.5"/></svg>',
+  grok:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><path d="M17.5 5.2A8.5 8.5 0 0 0 5.2 17.5M6.5 18.8A8.5 8.5 0 0 0 18.8 6.5"/><path d="M7.5 16.5 17 7"/></svg>',
   bell:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"><path d="M5.5 17.5V11a6.5 6.5 0 0 1 13 0v6.5l1.8 2H3.7z"/><path d="M9.8 21.6h4.4" stroke-linecap="round"/></svg>',
   bellOn:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M5.5 17.5V11a6.5 6.5 0 0 1 13 0v6.5l1.8 2H3.7z"/><path d="M9.8 21.6h4.4" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg>',
-  mail:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"><rect x="2.8" y="5" width="18.4" height="14" rx="2.5"/><path d="m3.5 6.5 8.5 6.4 8.5-6.4"/></svg>',
-  mailOn:'<svg viewBox="0 0 24 24"><rect x="2.8" y="5" width="18.4" height="14" rx="2.5" fill="currentColor"/><path d="m3.5 6.5 8.5 6.4 8.5-6.4" fill="none" stroke="#000" stroke-width="1.9"/></svg>',
+  mail:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"><path d="M12 3.5c5 0 9 3.5 9 8s-4 8-9 8c-1.2 0-2.3-.2-3.3-.5L4 20.5l1.3-3.8A7.6 7.6 0 0 1 3 11.5c0-4.5 4-8 9-8z"/></svg>',
+  env:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"><rect x="2.8" y="5" width="18.4" height="14" rx="2.5"/><path d="m3.5 6.5 8.5 6.4 8.5-6.4"/></svg>',
+  mailOn:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3.5c5 0 9 3.5 9 8s-4 8-9 8c-1.2 0-2.3-.2-3.3-.5L4 20.5l1.3-3.8A7.6 7.6 0 0 1 3 11.5c0-4.5 4-8 9-8z"/></svg>',
   reply:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M9.5 4.5h5a6.5 6.5 0 0 1 0 13H12l-4.5 3.2v-3.5A6.5 6.5 0 0 1 9.5 4.5z"/></svg>',
   rt:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 15V7.5a2 2 0 0 1 2-2H13M1.8 12.3l2.7 2.9 2.7-2.9M19.5 9v7.5a2 2 0 0 1-2 2H11M22.2 11.7l-2.7-2.9-2.7 2.9"/></svg>',
   heart:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M12 20.2s-8-4.6-9.2-10C2 6.7 4.3 4 7.3 4c2 0 3.6 1.2 4.7 2.9C13.1 5.2 14.7 4 16.7 4c3 0 5.3 2.7 4.5 6.2-1.2 5.4-9.2 10-9.2 10z"/></svg>',
@@ -4756,15 +4785,23 @@ const XI = {
   send:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 20.5 21.5 12 3 3.5l1.6 7.1L13 12l-8.4 1.4z"/></svg>',
   info:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="8.8"/><path d="M12 11v5.5"/><circle cx="12" cy="7.8" r=".5" fill="currentColor"/></svg>',
   newdm:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M14 5H5.5A2.5 2.5 0 0 0 3 7.5v9A2.5 2.5 0 0 0 5.5 19h11a2.5 2.5 0 0 0 2.5-2.5V11"/><path d="m3.5 8 7.5 5.2L14 11M19 2.5v6M16 5.5h6" stroke-linecap="round"/></svg>',
+  refresh:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12a7 7 0 1 1-2.1-5M19.5 4v4h-4"/></svg>',
+  bellPlus:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M5.5 17.5V11a6.5 6.5 0 0 1 9-6M18.5 13v4.5l1.8 2H3.7"/><path d="M9.8 21.6h4.4M18.5 3v6M15.5 6h6" stroke-linecap="round"/></svg>',
+  link:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M10 14a4 4 0 0 0 5.7 0l3.5-3.5a4 4 0 0 0-5.7-5.7L12 6.3M14 10a4 4 0 0 0-5.7 0l-3.5 3.5a4 4 0 0 0 5.7 5.7l1.5-1.5"/></svg>',
+  t_doc:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"><rect x="4" y="3.5" width="16" height="17" rx="3"/><path d="M8.5 8.5h3.5v3.5H8.5z"/></svg>',
+  t_reply:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"><path d="M9.5 4.5h5a6.5 6.5 0 0 1 0 13H12l-4.5 3.2v-3.5A6.5 6.5 0 0 1 9.5 4.5z"/></svg>',
+  t_rt:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 15V7.5a2 2 0 0 1 2-2H13M1.8 12.3l2.7 2.9 2.7-2.9M19.5 9v7.5a2 2 0 0 1-2 2H11M22.2 11.7l-2.7-2.9-2.7 2.9"/></svg>',
+  t_media:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"><rect x="3" y="6" width="18" height="14" rx="3"/><path d="M6 3.5h12M9.5 10.5l5 2.5-5 2.5z"/></svg>',
+  pinned:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M15.5 3 21 8.5l-2.2.6-3.4 3.4.5 4.4-1.6 1.6-3.6-3.6L5.5 20 4 20l.1-1.4 5-5.3-3.6-3.6 1.6-1.6 4.4.5 3.4-3.4z"/></svg>',
   close:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"><path d="M5.5 5.5l13 13M18.5 5.5l-13 13"/></svg>',
   chevD:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6.5 9.5 5.5 5.5 5.5-5.5"/></svg>',
   lock:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 10V7.5a5 5 0 0 1 10 0V10h1.2c.7 0 1.3.6 1.3 1.3v8.4c0 .7-.6 1.3-1.3 1.3H5.8c-.7 0-1.3-.6-1.3-1.3v-8.4c0-.7.6-1.3 1.3-1.3zm2.2 0h5.6V7.5a2.8 2.8 0 0 0-5.6 0z"/></svg>',
-  badge:'<svg class="xx-vf" viewBox="0 0 22 22"><path fill="#e2b719" d="M20.4 11c0-1.4-.8-2.6-2-3.2.4-1.3.1-2.8-.9-3.8s-2.4-1.3-3.7-.9C13.3 1.9 12.1 1 10.7 1S8.1 1.9 7.5 3.1c-1.3-.4-2.8-.1-3.8.9s-1.3 2.5-.9 3.8C1.6 8.4.8 9.6.8 11s.8 2.6 2 3.2c-.4 1.3-.1 2.8.9 3.8s2.5 1.3 3.8.9c.6 1.2 1.8 2.1 3.2 2.1s2.6-.8 3.2-2.1c1.3.4 2.8.1 3.8-.9s1.3-2.5.9-3.8c1.2-.6 2-1.8 2-3.2z"/><path d="m6.9 11.2 2.6 2.6 5.5-5.6" stroke="#000" stroke-width="1.9" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  badge:'<svg class="xx-vf" viewBox="0 0 22 22"><path fill="#1d9bf0" d="M20.4 11c0-1.4-.8-2.6-2-3.2.4-1.3.1-2.8-.9-3.8s-2.4-1.3-3.7-.9C13.3 1.9 12.1 1 10.7 1S8.1 1.9 7.5 3.1c-1.3-.4-2.8-.1-3.8.9s-1.3 2.5-.9 3.8C1.6 8.4.8 9.6.8 11s.8 2.6 2 3.2c-.4 1.3-.1 2.8.9 3.8s2.5 1.3 3.8.9c.6 1.2 1.8 2.1 3.2 2.1s2.6-.8 3.2-2.1c1.3.4 2.8.1 3.8-.9s1.3-2.5.9-3.8c1.2-.6 2-1.8 2-3.2z"/><path d="m6.9 11.2 2.6 2.6 5.5-5.6" stroke="#000" stroke-width="1.9" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>',
 };
 /* 其他账号的资料：[正在关注, 粉丝, 加入时间, 位置] */
 const XU_META = {
-  'BOYNEXTDOOR_KOZ':[12,'210万','2023年4月','KOZ ENTERTAINMENT'], 'stage_archive':[88,'3.1万','2023年5月',''], 'tsn_0810':[143,'1.8万','2023年6月','♡'],
-  'music_notes':[301,'4.6万','2020年3月','Seoul'], 'bnd_daily':[52,'2.2万','2023年7月',''], 'seoul_cnstu':[210,'1.4万','2019年8月','Seoul'],
+  'BOYNEXTDOOR_KOZ':[3,'87.8万','2023年1月','',{ link:'linktr.ee/boynextdoor_official', by:'BOYNEXTDOOR_twt', posts:'6.8K', banner:'assets/x/bnd_banner.jpg' }], 'BOYNEXTDOOR_twt':[5,'64.1万','2023年1月',''], 'tsarchive':[41,'2.6万','2023年5月',''], 'tsn_0810':[143,'1.8万','2023年6月',''],
+  'music_notes':[12,'3.9万','2023年6月',''], 'bnd_daily':[88,'1,204','2024年2月',''], 'seoul_cnstu':[210,'1.4万','2019年8月','Seoul'],
   'typo_daily':[9,'8,021','2018年1月',''], 'sy_kkk':[37,22,'2021年10月','Seoul'], 'meme_design':[5,'31万','2017年9月',''],
   'mint_0322':[120,88,'2022年3月',''], 'onigiri_s':[64,41,'2024年11月',''], 'vip_ticket_kr':[0,12,'2026年9月',''],
 };
@@ -4786,14 +4823,14 @@ const xFull = p => { const [y, mo, d] = p.d.split('-'); return `${fmtT(p.t)} · 
 const XP = {};
 function xMk(id, u, d, t, txt, media, st, extra){ const p = Object.assign({ id, u, d, t, txt, media:media || [], rp:xNum(st[0]), rts:xNum(st[1]), lk:xNum(st[2]), vw:xNum(st[3]), kids:[] }, extra || {}); XP[id] = p; return p; }
 X_MINE_SRC.forEach(([d, t, txt, m], i) => { const h = xHash(d + txt); xMk('m' + i, X_ME, d, t, txt, m, [0, 0, h % 4, 6 + h % 31]); });
-X_OTHERS_SRC.forEach(([u, d, t, txt, m, st], i) => xMk('o' + i, u, d, t, txt, m, st));
+X_OTHERS_SRC.forEach(([u, d, t, txt, m, st, pin], i) => xMk('o' + i, u, d, t, txt, m, st, { pin:!!pin }));
 X_REPLIES_SRC.forEach(([oi, d, t, txt], i) => { const par = XP['o' + oi]; const p = xMk('r' + i, X_ME, d, t, txt, [], [0, 0, i === 1 ? 1 : 2, 30 + i * 17], { replyTo:par.id }); par.kids.push(p.id); });
 Object.entries(X_REPLIES_TO_ME).forEach(([k, arr], j) => { const par = Object.values(XP).find(p => p.u === X_ME && !p.replyTo && p.d + ' ' + p.t === k); if (!par) return;
   arr.forEach(([u, txt], i) => { const p = xMk(`q${j}_${i}`, u, par.d, par.t, txt, [], [0, 0, 1, 4 + i], { replyTo:par.id }); par.kids.push(p.id); par.rp++; }); });
 /* 她原本就点过赞 / 转过 / 存过书签的帖子 */
-['o0', 'o1', 'o3', 'o4', 'o6', 'o9', 'q0_0'].forEach(id => { if (XP[id]) XP[id].liked = true; });
+['o0', 'o1', 'o3', 'o5', 'o6', 'o8', 'o14', 'q0_0'].forEach(id => { if (XP[id]) XP[id].liked = true; });
 X_REPOSTS_SRC.forEach(([oi, d]) => { const p = XP['o' + oi]; p.rted = d; });
-['o8', 'm55'].forEach(id => { if (XP[id]) XP[id].bm = true; });
+['o12', 'm55'].forEach(id => { if (XP[id]) XP[id].bm = true; });
 const XDM = X_DM_SRC.map(c => ({ u:c.u, msgs:c.msgs.map(([d, t, dir, txt]) => ({ d, t, dir, txt })), unread:c.u === 'sy_kkk' ? 2 : c.u === 'vip_ticket_kr' ? 1 : 0 }));
 const XFOLLOW = new Set(X_FOLLOWING);
 let XNOTIF_NEW = 3;
@@ -4845,7 +4882,7 @@ const xActs = (p, big) => `<div class="xx-acts ${big ? 'big' : ''}">
 function xRow(p, o = {}){
   const par = p.replyTo && XP[p.replyTo];
   return `<div class="xx-post ${o.line ? 'th' : ''}" data-go="xpost|${p.id}">
-    ${o.rt ? `<div class="xx-rtl">${XI.rt}<span>${o.rt}</span></div>` : ''}
+    ${o.rt ? `<div class="xx-rtl">${XI.rt}<span>${o.rt}</span></div>` : ''}${o.pin ? `<div class="xx-rtl">${XI.pinned}<span>已置顶</span></div>` : ''}
     <div class="xx-pr"><div class="xx-avc">${xAv(p.u)}${o.line ? '<i class="xx-ln"></i>' : ''}</div>
     <div class="xx-c"><div class="xx-h"><b>${esc(xName(p.u))}</b>${xVf(p.u)}<span>@${p.u} · ${xAgo(p)}</span><i class="xx-more" data-xa="more|${p.id}">${XI.dots}</i></div>
       ${par && !o.noRto ? `<div class="xx-rto">回复 <em>@${par.u}</em></div>` : ''}
@@ -4958,34 +4995,43 @@ Object.assign(R, {
     return { tone:'dark', bg:'#000', cls:'xx xx-imgv', top:`<div class="xx-imgt"><span class="xx-cb" data-back>${XI.close}</span></div>`,
       body:`<div class="xx-imgf" style="background:${s.startsWith('img:') ? `url(${s.slice(4)}) center/contain no-repeat` : tileBg(s)}" data-back></div>` }; },
   /* 个人资料 */
-  xprof: a => { const [u, tab0] = (a || X_ME).split('~'), me = u === X_ME, info = XU[u] || [u, xAvSrc(u), 0, ''], meta = XU_META[u] || [0, 0, '2021年', ''];
-    const tabs = me ? [['posts', '帖子'], ['replies', '回复'], ['reposts', '转帖'], ['media', '媒体']] : [['posts', '帖子'], ['replies', '回复'], ['media', '媒体']];
+  xprof: a => { const [u, tab0] = (a || X_ME).split('~'), me = u === X_ME, info = XU[u] || [u, xAvSrc(u), 0, ''], meta = XU_META[u] || [0, 0, '2021年', ''], ex = meta[4] || {};
+    const tabs = me ? [['posts', '帖子'], ['replies', '回复'], ['reposts', '转帖'], ['media', '媒体']] : [['posts', '帖子', 'doc'], ['replies', '回复', 'reply'], ['reposts', '转帖', 'rt'], ['media', '媒体', 'media']];
     const tab = tab0 || 'posts', f = XFOLLOW.has(u);
     const all = Object.values(XP).filter(p => p.u === u);
     let list = '';
-    if (tab === 'posts') list = xSort(all.filter(p => !p.replyTo)).map(p => xRow(p)).join('');
+    if (tab === 'posts') { const ps = xSort(all.filter(p => !p.replyTo)); list = [...ps.filter(p => p.pin), ...ps.filter(p => !p.pin)].map(p => xRow(p, p.pin ? { pin:1 } : {})).join(''); }
     else if (tab === 'replies') list = xSort(all.filter(p => p.replyTo && XP[p.replyTo])).map(p => xRow(XP[p.replyTo], { line:true }) + xRow(p, { noRto:true })).join('');
-    else if (tab === 'reposts') list = Object.values(XP).filter(p => p.rted).sort((a, b) => (b.rted > a.rted) - (b.rted < a.rted)).map(p => xRow(p, { rt:'你已转帖' })).join('');
+    else if (tab === 'reposts') list = me ? Object.values(XP).filter(p => p.rted).sort((a, b) => (b.rted > a.rted) - (b.rted < a.rted)).map(p => xRow(p, { rt:'你已转帖' })).join('') : '';
     else list = `<div class="xx-grid">${xSort(all.filter(p => p.media.length)).map(p => `<div style="background:${tileBg(p.media[0])}" data-go="xpost|${p.id}"></div>`).join('')}</div>`;
-    if (!list || list === '<div class="xx-grid"></div>') list = `<div class="xx-empty"><b>${tab === 'replies' ? '还没有回复' : tab === 'media' ? '还没有媒体' : '还没有帖子'}</b><small>${me ? '发生的事情会出现在这里。' : `@${u} 发帖后会显示在这里。`}</small></div>`;
+    if (!list || list === '<div class="xx-grid"></div>') list = `<div class="xx-empty"><b>${tab === 'replies' ? '还没有回复' : tab === 'media' ? '还没有媒体' : tab === 'reposts' ? '还没有转帖' : '还没有帖子'}</b><small>${me ? '发生的事情会出现在这里。' : `@${u} 发帖后会显示在这里。`}</small></div>`;
     const nFollowing = me ? XFOLLOW.size : meta[0], nFollowers = me ? X_FOLLOWERS.length : meta[1];
-    const banner = me ? X_PROFILE.banner : null;
+    const banner = me ? X_PROFILE.banner : ex.banner, nPosts = ex.posts || (all.filter(p => !p.replyTo).length + '');
+    const fbtn = big => `<span class="xx-fb ${big ? 'w' : ''} ${f ? 'on' : ''}" data-xf="${u}">${f ? '正在关注' : '关注'}</span>`;
     return XV('xprof', a, { cls:'xx-prof',
-      top:`<div class="xx-pft"><span class="xx-cb dark" data-back>${XI.back}</span><span class="sp"></span><span class="xx-cb dark" data-tab="xs">${XI.search}</span><span class="xx-cb dark" data-toast="原型中暂不可用">${XI.dots}</span></div>`,
+      top:`<div class="xx-pft"><span class="xx-cb dark" data-back>${XI.back}</span><div class="xx-pfn"><b>${esc(info[0])}${info[2] ? XI.badge : ''}</b><small>${nPosts} 帖子</small></div><span class="sp"></span>${me ? '' : `<span class="xx-cb dark" data-toast="已刷新">${XI.refresh}</span>`}<span class="xx-cb dark" data-tab="xs">${XI.search}</span><span class="xx-cb dark" data-toast="原型中暂不可用">${XI.dots}</span>${me ? '' : `<span class="xx-pff">${fbtn()}</span>`}</div>`,
       body:`<div class="xx-ban" style="background:${banner ? `url(${banner}) center/cover` : `url(${info[1]}) center/cover`}">${banner ? '' : '<i></i>'}</div>
-        <div class="xx-pfh"><img class="xx-pav" src="${info[1]}" alt="">
-          <div class="xx-pbtn">${me ? '' : `<span class="xx-ob" data-go="xchat|${u}">${XI.mail}</span><span class="xx-fb ${f ? 'on' : ''}" data-xf="${u}">${f ? '正在关注' : '关注'}</span>`}</div></div>
-        <div class="xx-pinfo"><div class="xx-pn"><b>${esc(info[0])}</b>${info[2] ? XI.badge : ''}${me ? `<span class="xx-gv" data-toast="原型中不能订阅">${XI.badge.replace('#e2b719', '#1d9bf0')}获取认证</span>` : ''}</div><div class="xx-ph">@${u}${!me && X_FOLLOWERS.includes(u) ? '<span class="xx-fy">关注了你</span>' : ''}</div>
+        <div class="xx-pfh"><img class="xx-pav" src="${info[1]}" alt="" data-go="xavv|${u}">
+          <div class="xx-pbtn">${me ? '' : `<span class="xx-ob" data-toast="已开启通知">${XI.bellPlus}</span><span class="xx-ob" data-toast="已复制个人资料链接">${XI.share}</span>`}</div></div>
+        <div class="xx-pinfo"><div class="xx-pn"><b>${esc(info[0])}</b>${info[2] ? XI.badge : ''}${me ? `<span class="xx-gv" data-toast="原型中不能订阅">${XI.badge}获取认证</span>` : ''}</div><div class="xx-ph">@${u}${!me && X_FOLLOWERS.includes(u) ? '<span class="xx-fy">关注了你</span>' : ''}</div>
           ${info[3] ? `<div class="xx-bio">${xText(info[3])}</div>` : ''}
-          <div class="xx-pm">${(me ? X_PROFILE.loc : meta[3]) ? `<span>${XI.pin}${esc(me ? X_PROFILE.loc : meta[3])}</span>` : ''}<span>${XI.cal}${me ? X_PROFILE.joined : meta[2] + '加入'}</span></div>
+          <div class="xx-pm">${(me ? X_PROFILE.loc : meta[3]) ? `<span>${XI.pin}${esc(me ? X_PROFILE.loc : meta[3])}</span>` : ''}${ex.link ? `<span class="lk" data-toast="原型中不能打开外部链接">${XI.link}<em>${ex.link.slice(0, 22)}…</em></span>` : ''}<span>${XI.cal}${me ? X_PROFILE.joined : meta[2] + '加入'}${me ? '' : ' ›'}</span></div>
           <div class="xx-pc"><span ${me ? `data-go="xfol|following"` : 'data-toast="对方设置了不公开"'}><b>${typeof nFollowing === 'number' ? nFollowing.toLocaleString('en-US') : nFollowing}</b> 正在关注</span><span ${me ? `data-go="xfol|followers"` : 'data-toast="对方设置了不公开"'}><b>${nFollowers}</b> 关注者</span></div>
-          ${me ? `<div class="xx-pact"><span data-toast="已复制个人资料链接">分享个人资料</span><span data-go="xedit">编辑个人资料</span></div>` : ''}</div>
-        <div class="xx-ptabs">${tabs.map(([k, l]) => `<b class="${tab === k ? 'on' : ''}" data-tab="xprof|${u}~${k}"><span>${l}</span></b>`).join('')}</div>${list}<div class="xx-end"></div>`,
-      bottom:(me ? `<div class="xx-fab" data-go="xcompose">${XI.plus}</div>` : '') + xTabBar(''),
+          ${ex.by ? `<div class="xx-pby" data-go="xprof|${ex.by}"><img class="xx-av" src="${xAvSrc(ex.by)}" alt=""><span>${ex.by} 关注了</span></div>` : ''}
+          ${me ? `<div class="xx-pact"><span data-toast="已复制个人资料链接">分享个人资料</span><span data-go="xedit">编辑个人资料</span></div>` : `<div class="xx-pact"><span data-go="xchat|${u}">私信</span>${fbtn(1)}</div>`}</div>
+        <div class="xx-ptabs ${me ? '' : 'ic'}">${tabs.map(([k, l, ic]) => `<b class="${tab === k ? 'on' : ''}" data-tab="xprof|${u}~${k}"><span>${ic ? XI['t_' + ic] + (k === 'posts' ? `${l}${XI.chevD}` : '') : l}</span></b>`).join('')}</div>${list}<div class="xx-end"></div>`,
+      bottom:`<div class="xx-fab" data-go="xcompose">${XI.plus}</div>` + xTabBar(''),
       mount:v => {
-        const fb = v.querySelector('[data-xf]'); fb && fb.addEventListener('click', e => { e.stopPropagation(); if (XFOLLOW.has(u)) xSheet(v, [[`取消关注 @${u}`, 'red', () => { xFollow(u); fb.classList.remove('on'); fb.textContent = '关注'; }]]); else { xFollow(u); fb.classList.add('on'); fb.textContent = '正在关注'; } });
-        const vs = v.querySelector('.vs'), top = v.querySelector('.xx-pft'); vs.addEventListener('scroll', () => top.classList.toggle('solid', vs.scrollTop > 90), { passive:true });
+        v.querySelectorAll('[data-xf]').forEach(fb => fb.addEventListener('click', e => { e.stopPropagation();
+          const upd = () => v.querySelectorAll('[data-xf]').forEach(b => { const on = XFOLLOW.has(u); b.classList.toggle('on', on); b.textContent = on ? '正在关注' : '关注'; });
+          if (XFOLLOW.has(u)) xSheet(v, [[`取消关注 @${u}`, 'red', () => { xFollow(u); upd(); }]]); else { xFollow(u); upd(); } }));
+        const vs = v.querySelector('.vs'), top = v.querySelector('.xx-pft'), ph = v.querySelector('.xx-ptabs');
+        vs.addEventListener('scroll', () => { top.classList.toggle('solid', vs.scrollTop > 90); top.classList.toggle('named', vs.scrollTop > ph.offsetTop - 140); }, { passive:true });
       } }); },
+  /* 头像大图 */
+  xavv: u => ({ tone:'dark', bg:'#000', cls:'xx xx-avv', top:`<div class="xx-imgt"><span class="xx-cb" data-back>${XI.back}</span></div>`,
+    body:`<div class="xx-avbig" data-back><img src="${xAvSrc(u)}" alt=""></div>`,
+    bottom:`<div class="xx-avb"><span data-toast="已复制个人资料链接">${XI.share}分享</span>${u === X_ME ? '<span data-go="xedit">编辑</span>' : `<span data-back>${XFOLLOW.has(u) ? '正在关注' : '关注'}</span>`}</div>` }),
   /* 编辑个人资料 */
   xedit: () => { const me = XU[X_ME];
     return XV('xedit', '', { cls:'xx-edit',
