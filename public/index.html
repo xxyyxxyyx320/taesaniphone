@@ -2056,6 +2056,39 @@ body.standalone .island.np-on{display:flex!important}
 .pp-slide{flex:none;width:100%;height:100%;scroll-snap-align:center;scroll-snap-stop:always;display:flex;align-items:center;justify-content:center}
 .pp-slide img{width:100%;height:100%;object-fit:contain;display:block;user-select:none;-webkit-user-drag:none}
 .pp-one.info .pp-slide img{object-fit:cover}
+/* ===== 相机（黑屏取景器）===== */
+.cm{background:#000;color:#fff}
+.cm .vs{overflow:hidden;position:relative}
+.cm-vf{position:absolute;left:0;right:0;top:calc(159px * var(--k));bottom:calc(210px * var(--k));background:#000}
+.cm-flash{position:absolute;inset:0;background:#000;opacity:0;pointer-events:none}
+.cm-flash.go{animation:cmflash .28s}
+@keyframes cmflash{0%{opacity:0;background:#fff}10%{opacity:.85;background:#fff}100%{opacity:0}}
+.cm:before{content:'';position:absolute;left:0;right:0;top:0;height:calc(159px * var(--k));background:#0d0d0d;z-index:1}
+.cm:after{content:'';position:absolute;left:0;right:0;bottom:0;height:calc(210px * var(--k));background:#0d0d0d;z-index:0}
+.cm-tools{position:absolute;right:calc(16px * var(--k));top:calc(92px * var(--k));z-index:3;height:calc(35px * var(--k));display:flex;align-items:center;gap:calc(18px * var(--k));padding:0 calc(16px * var(--k));border-radius:calc(18px * var(--k));background:rgba(58,58,62,.7);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px)}
+.cm-tools span{position:relative;display:flex;color:#fff}
+.cm-tools svg{width:calc(19px * var(--k));height:calc(19px * var(--k))}
+.cm-tools span.on{color:#ffd60a}
+.cm-tools span b{position:absolute;right:calc(-4px * var(--k));bottom:calc(-3px * var(--k));width:calc(10px * var(--k));height:calc(10px * var(--k));border-radius:50%;background:#fff;color:#000;font-size:calc(7.5px * var(--k));display:flex;align-items:center;justify-content:center;font-weight:800}
+.cm-tools span b:empty{display:none}
+.cm-tools span.cmoff:after{content:'';position:absolute;left:calc(-2px * var(--k));right:calc(-2px * var(--k));top:50%;height:calc(1.6px * var(--k));background:#fff;transform:rotate(-45deg);box-shadow:0 0 0 calc(1px * var(--k)) rgba(58,58,62,.9)}
+.cm-rec{position:absolute;left:50%;top:calc(104px * var(--k));transform:translateX(-50%);z-index:3;background:#ff3b30;border-radius:calc(5px * var(--k));padding:calc(2px * var(--k)) calc(7px * var(--k));font:600 calc(15px * var(--k))/1.2 var(--font-num,var(--font));font-variant-numeric:tabular-nums}
+.cm-zoom{position:absolute;left:0;right:0;bottom:calc(226px * var(--k));z-index:3;display:flex;justify-content:center;align-items:center;gap:calc(10px * var(--k))}
+.cm-zoom span{width:calc(30px * var(--k));height:calc(30px * var(--k));display:flex;align-items:center;justify-content:center;font-size:calc(12.5px * var(--k));font-weight:600;border-radius:50%;color:#fff}
+.cm-zoom span.on{width:calc(38px * var(--k));height:calc(38px * var(--k));background:rgba(58,58,62,.75);color:#ffd60a;font-size:calc(13.5px * var(--k))}
+.cm-bot{position:absolute;left:0;right:0;bottom:0;height:calc(210px * var(--k));z-index:3}
+.cm-shut{position:absolute;left:50%;top:calc(21px * var(--k));width:calc(76px * var(--k));height:calc(76px * var(--k));margin-left:calc(-38px * var(--k));border-radius:50%;border:calc(3.5px * var(--k)) solid #fff;box-sizing:border-box;display:flex;align-items:center;justify-content:center}
+.cm-shut i{width:calc(62px * var(--k));height:calc(62px * var(--k));border-radius:50%;background:#fff;transition:all .2s}
+.cm-shut.press i{transform:scale(.88)}
+.cm.video .cm-shut i{background:#ff3b30}
+.cm-shut.rec i{width:calc(28px * var(--k));height:calc(28px * var(--k));border-radius:calc(6px * var(--k))}
+.cm-row{position:absolute;left:calc(16px * var(--k));right:calc(16px * var(--k));bottom:calc(34px * var(--k));display:flex;align-items:center;justify-content:space-between}
+.cm-thumb{width:calc(48px * var(--k));height:calc(48px * var(--k));border-radius:50%;background:#222 center/cover;flex:none}
+.cm-modes{display:flex;height:calc(44px * var(--k));padding:calc(3px * var(--k));box-sizing:border-box;border-radius:calc(22px * var(--k));background:rgba(58,58,62,.6);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px)}
+.cm-modes span{padding:0 calc(18px * var(--k));border-radius:calc(19px * var(--k));display:flex;align-items:center;font-size:calc(14px * var(--k));font-weight:700;letter-spacing:calc(.5px * var(--k))}
+.cm-modes span.on{background:rgba(120,120,128,.45);color:#ffd60a}
+.cm-flip{width:calc(48px * var(--k));height:calc(48px * var(--k));border-radius:50%;background:rgba(58,58,62,.7);display:flex;align-items:center;justify-content:center;transition:transform .4s}
+.cm-flip svg{width:calc(24px * var(--k));height:calc(24px * var(--k))}.cm-flip.spin{transform:rotate(180deg)}
 
 @media (prefers-reduced-motion: reduce){*{transition-duration:.01s!important;animation:none!important}}
 </style>
@@ -5355,20 +5388,28 @@ const PH_SAVE_KEY = 'taesan-phone-photos-v1';
 const PH_SRC = [
   [67,'2021-09-12 16:03','首尔 中区','地铁 车厢','','首尔'],
   [76,'2021-09-12 16:31','首尔 中区','公交车','','首尔'],
+  [23,'2021-10-15 12:33','首尔 西大门区','汤 午饭','','吃吃喝喝'],
   [20,'2021-10-23 07:52','首尔 西大门区','地铁 站台','','首尔'],
+  [22,'2021-11-20 15:04','首尔 钟路区','砖墙 长椅','','首尔'],
   [77,'2022-02-18 07:41','首尔 麻浦区','清晨 小巷','','首尔'],
   [68,'2022-04-02 14:05','首尔 西大门区','冰淇淋','','吃吃喝喝'],
+  [26,'2022-05-21 11:20','首尔 城东区','牛油果吐司 早午餐','','吃吃喝喝'],
+  [75,'2022-07-23 01:12','首尔 麻浦区','饮料 深夜','','朋友'],
   [43,'2022-08-26 23:12','首尔 麻浦区','猫 便利店','f',''],
+  [21,'2022-09-17 18:12','首尔 麻浦区','日落 街道','f','首尔'],
   [57,'2022-11-12 22:40','首尔 龙山区','牵手 车里','f','🖤'],
   [64,'2022-11-19 17:52','首尔 汉江公园','影子 爱心','f','🖤'],
   [49,'2022-12-03 15:21','首尔 麻浦区','睡着 沙发','','🖤'],
   [31,'2022-12-10 23:06','首尔 麻浦区','帽子','','🖤'],
   [56,'2022-12-17 01:12','首尔 西大门区','头发','e','🖤'],
+  [69,'2022-12-22 23:21','首尔 西大门区','泡面 宿舍','','朋友'],
   [38,'2023-01-07 20:33','首尔 麻浦区','卫衣','','🖤'],
   [46,'2023-01-21 21:44','首尔 麻浦区','捂脸','','🖤'],
   [30,'2023-02-02 02:15','首尔 江南区','录音室 电脑','','🖤'],
   [42,'2023-02-02 02:21','首尔 江南区','耳机 麦克风','','🖤'],
   [59,'2023-02-19 23:32','首尔 江南区','黑白 麦克风','f','🖤'],
+  [73,'2023-03-04 20:34','首尔 西大门区','聚会','','朋友'],
+  [74,'2023-03-04 23:52','首尔 西大门区','外卖 聚会','','朋友'],
   [52,'2023-03-11 16:42','首尔 西大门区','趴在桌上 睡觉','','🖤'],
   [33,'2023-03-18 14:10','首尔 麻浦区','头发','','🖤'],
   [53,'2023-03-25 15:12','首尔 麻浦区','咖啡店 睡着','','🖤'],
@@ -5377,13 +5418,16 @@ const PH_SRC = [
   [60,'2023-05-06 18:03','首尔 西大门区','剪刀手 影子','','🖤'],
   [55,'2023-05-29 23:41','首尔 江南区','夜晚','','🖤'],
   [66,'2023-05-30 19:24','首尔 江南区','比心 涂鸦墙','f','🖤'],
+  [70,'2023-06-10 00:31','首尔 麻浦区','夜晚 朋友','','朋友'],
   [34,'2023-06-24 21:12','首尔 江南区','健身房 对镜自拍','','🖤'],
   [44,'2023-07-08 20:11','首尔 麻浦区','街道','f','🖤'],
   [39,'2023-07-08 22:34','首尔 麻浦区','夜晚','','🖤'],
   [32,'2023-08-10 00:12','首尔 麻浦区','HBD 生日','f','🖤'],
+  [79,'2023-08-26 18:22','首尔 麻浦区','散步 购物袋','',''],
   [36,'2023-09-16 19:33','首尔 松坡区','体育场 毛线帽','','🖤'],
   [37,'2023-09-23 23:52','首尔 西大门区','视频通话','','🖤'],
   [45,'2023-10-14 14:22','首尔 城东区','咖啡店 剪刀手','f','🖤'],
+  [65,'2023-10-21 15:02','首尔 龙山区','卫衣','','朋友'],
   [50,'2023-10-29 01:33','首尔 麻浦区','睡着','','🖤'],
   [54,'2023-11-05 16:04','首尔 麻浦区','眼镜','e','🖤'],
   [40,'2023-11-21 22:02','首尔 江南区','剪刀手','','🖤'],
@@ -5395,22 +5439,11 @@ const PH_SRC = [
   [41,'2024-02-08 19:40','','截屏 推特','s',''],
   [78,'2024-02-15 22:31','首尔 西大门区','夜晚 路口','',''],
   [62,'2024-02-17 23:11','首尔 西大门区','路灯','',''],
-  [69,'2024-06-14 23:21','首尔 西大门区','泡面 宿舍','','朋友'],
-  [75,'2024-08-03 01:12','首尔 麻浦区','饮料 深夜','','朋友'],
-  [73,'2025-03-14 20:34','首尔 城北区','聚会','','朋友'],
-  [74,'2025-03-14 23:52','首尔 城北区','外卖 聚会','','朋友'],
-  [65,'2025-05-03 15:02','首尔 龙山区','卫衣','','朋友'],
-  [70,'2025-06-07 00:31','首尔 麻浦区','夜晚 朋友','','朋友'],
-  [72,'2025-09-20 16:12','首尔 城北区','卫衣','','朋友'],
+  [72,'2024-04-13 16:12','首尔 西大门区','卫衣','','朋友'],
+  [80,'2024-12-20 19:44','首尔 西大门区','火锅','f','朋友'],
   [71,'2025-10-31 21:03','首尔 城北区','零食','','朋友'],
-  [80,'2025-12-20 19:44','首尔 城北区','火锅','f','朋友'],
   [82,'2026-05-23 20:02','首尔 汉江公园','野餐 拉面','','朋友'],
   [81,'2026-07-18 22:11','首尔 汉江公园','拉面 夜晚','','朋友'],
-  [26,'2026-08-30 11:20','首尔 城东区','牛油果吐司 早午餐','','吃吃喝喝'],
-  [79,'2026-09-05 18:22','首尔 城北区','散步 购物袋','',''],
-  [22,'2026-09-27 15:04','首尔 钟路区','砖墙 长椅','','首尔'],
-  [21,'2026-10-03 18:12','首尔 麻浦区','日落 街道','f','首尔'],
-  [23,'2026-10-14 12:33','首尔 城北区','汤 午饭','','吃吃喝喝'],
   [18,'2026-10-18 19:42','首尔 江南区','夜晚 街道','','首尔'],
   [19,'2026-10-18 20:31','首尔 江南区','炸鸡 啤酒','l','吃吃喝喝'],
   [27,'2026-10-18 21:51','首尔 江南区','순하리 烧酒','l','吃吃喝喝'],
@@ -5565,6 +5598,44 @@ ROOT.photos = () => R.photos();
 /* 旧入口（主屏小组件、快捷操作）跳到新相簿 */
 R.album = n => R.phalb(n === '最近项目' || n === '个人收藏' ? n : '最近项目');
 R.memory = () => R.phmem('night');
+
+/* =========================================================
+   CAMERA — iOS 26 相机（取景器黑屏），按真机截图排版
+   ========================================================= */
+const CMI = {
+  night:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M10.5 3.2A8.6 8.6 0 1 0 20.8 13.5 7 7 0 0 1 10.5 3.2z"/><circle cx="17" cy="4.5" r="1"/><circle cx="20" cy="7" r=".8"/><circle cx="16.5" cy="8.5" r=".8"/><circle cx="20.5" cy="3" r=".6"/></svg>',
+  flash:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 2 5 13.5h6L9.5 22 18 10.5h-6z"/></svg>',
+  live:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="6.3"/><circle cx="12" cy="12" r="9.6" stroke-dasharray="1.5 2.1"/></svg>',
+  more:'<svg viewBox="0 0 24 24" fill="currentColor">' + [5, 12, 19].map(x => [8, 16].map(y => `<circle cx="${x}" cy="${y}" r="2.1"/>`).join('')).join('') + '</svg>',
+  flip:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 11a7.5 7.5 0 0 1 13.2-4.5M19.5 13a7.5 7.5 0 0 1-13.2 4.5"/><path d="M18.5 3v4h-4M5.5 21v-4h4"/></svg>',
+};
+R.camera = () => { const last = phVis().slice(-1)[0];
+  return { tone:'dark', bg:'#000', cls:'cm',
+    body:`<div class="cm-vf"><i class="cm-flash"></i></div>
+      <div class="cm-tools"><span data-cm="night" class="on">${CMI.night}</span><span data-cm="flash">${CMI.flash}<b>A</b></span><span data-cm="live" class="cmoff">${CMI.live}</span><span data-cm="more">${CMI.more}</span></div>
+      <div class="cm-rec" hidden>00:00:00</div>
+      <div class="cm-zoom">${['.5', '1×', '2', '4', '8'].map(z => `<span class="${z === '1×' ? 'on' : ''}">${z}</span>`).join('')}</div>
+      <div class="cm-bot"><div class="cm-shut"><i></i></div>
+        <div class="cm-row"><span class="cm-thumb" ${last ? `style="background-image:url(assets/ph/t/${last.n}.jpg)" data-go="photo|${last.id}"` : ''}></span>
+          <div class="cm-modes"><span data-mode="video">视频</span><span data-mode="photo" class="on">照片</span></div>
+          <span class="cm-flip">${CMI.flip}</span></div></div>`,
+    mount:v => {
+      let mode = 'photo', rec = null, t0 = 0;
+      const shut = v.querySelector('.cm-shut'), recEl = v.querySelector('.cm-rec');
+      v.querySelectorAll('.cm-zoom span').forEach(z => z.addEventListener('click', () => { v.querySelectorAll('.cm-zoom span').forEach(x => { x.classList.remove('on'); x.textContent = x.textContent.replace('×', ''); }); z.classList.add('on'); z.textContent += '×'; }));
+      v.querySelectorAll('[data-cm]').forEach(b => b.addEventListener('click', () => { const k = b.dataset.cm;
+        if (k === 'more') return toast('原型中暂不可用');
+        if (k === 'flash') { const on = b.querySelector('b'); on.textContent = on.textContent === 'A' ? '' : 'A'; b.classList.toggle('cmoff', !on.textContent); toast(on.textContent ? '闪光灯：自动' : '闪光灯：关闭'); return; }
+        b.classList.toggle(k === 'night' ? 'on' : 'cmoff'); if (k === 'live') toast(b.classList.contains('cmoff') ? '实况：关闭' : '实况：打开'); }));
+      v.querySelectorAll('[data-mode]').forEach(m => m.addEventListener('click', () => { if (rec) return; mode = m.dataset.mode; v.querySelectorAll('[data-mode]').forEach(x => x.classList.toggle('on', x === m)); v.classList.toggle('video', mode === 'video'); }));
+      shut.addEventListener('click', () => {
+        if (mode === 'photo') { const f = v.querySelector('.cm-flash'); f.classList.remove('go'); void f.offsetWidth; f.classList.add('go'); shut.classList.add('press'); setTimeout(() => shut.classList.remove('press'), 160); return; }
+        if (!rec) { t0 = Date.now(); recEl.hidden = false; shut.classList.add('rec'); rec = setInterval(() => { const s = Math.floor((Date.now() - t0) / 1000); recEl.textContent = `00:${String(Math.floor(s / 60)).padStart(2, '0')}:${String(s % 60).padStart(2, '0')}`; }, 250); }
+        else { clearInterval(rec); rec = null; recEl.hidden = true; recEl.textContent = '00:00:00'; shut.classList.remove('rec'); }
+      });
+      v.querySelector('.cm-flip').addEventListener('click', e => e.currentTarget.classList.toggle('spin'));
+    } }; };
+ROOT.camera = () => R.camera();
 
 /* ---------- calculator ---------- */
 function mountCalc(){
