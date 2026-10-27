@@ -2089,6 +2089,31 @@ body.standalone .island.np-on{display:flex!important}
 .cm-modes span.on{background:rgba(120,120,128,.45);color:#ffd60a}
 .cm-flip{width:calc(48px * var(--k));height:calc(48px * var(--k));border-radius:50%;background:rgba(58,58,62,.7);display:flex;align-items:center;justify-content:center;transition:transform .4s}
 .cm-flip svg{width:calc(24px * var(--k));height:calc(24px * var(--k))}.cm-flip.spin{transform:rotate(180deg)}
+/* 图库顶部：独立的黑色标题区（按截图），照片从下面开始 */
+.pp-lib .pp-hdr{position:relative;flex:none;background:#000;padding:calc(58px * var(--k)) calc(16px * var(--k)) calc(12px * var(--k));align-items:center}
+.pp-lib .pp-hdr b{font-size:calc(34px * var(--k))}
+.pp-lib .pp-hdr small{font-size:calc(15px * var(--k));font-weight:700;color:#fff;margin-top:calc(1px * var(--k))}
+.pp-hdr .pp-cb,.pp-hdr .pp-pill{height:calc(44px * var(--k))}
+.pp-hdr .pp-cb{width:calc(44px * var(--k))}.pp-hdr .pp-cb.w{width:calc(52px * var(--k));border-radius:calc(22px * var(--k))}
+.pp-hdr .pp-cb svg{width:calc(22px * var(--k));height:calc(22px * var(--k))}
+.pp-hdr .pp-pill{border-radius:calc(22px * var(--k));padding:0 calc(17px * var(--k));font-size:calc(16px * var(--k));font-weight:500}
+.pp-grid.c5{gap:calc(1.5px * var(--k))}
+/* 精选集：段标题、横向三行网格 */
+.pp-st b{font-size:calc(21px * var(--k));font-weight:800}
+.pp-st i{background:#16233a;color:var(--blue)}.pp-st i svg{width:calc(15px * var(--k));height:calc(15px * var(--k));transition:transform .2s}
+.pp-st i.r svg{width:calc(14px * var(--k));height:calc(14px * var(--k))}
+.pp-sec.folded>:not(.pp-st){display:none}.pp-sec.folded .pp-st i svg{transform:rotate(-90deg)}
+.pp-g3{display:grid;grid-auto-flow:column;grid-template-rows:repeat(3,calc(38px * var(--k)));grid-auto-columns:calc(257px * var(--k));gap:calc(6px * var(--k)) calc(12px * var(--k));overflow-x:auto;padding:0 calc(16px * var(--k));scrollbar-width:none;touch-action:pan-x pan-y;scroll-snap-type:x proximity;scroll-padding-inline:calc(16px * var(--k))}
+.pp-g3::-webkit-scrollbar{display:none}
+.pp-g3 div{background:#1c1c1e;border-radius:calc(10px * var(--k));display:flex;align-items:center;gap:calc(12px * var(--k));padding:0 calc(12px * var(--k));scroll-snap-align:start}
+.pp-g3 i{display:flex;color:#aeaeb2}.pp-g3 i svg{width:calc(19px * var(--k));height:calc(19px * var(--k))}
+.pp-g3 span{flex:1;font-size:calc(15.5px * var(--k));white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pp-g3 em{color:#8e8e93;display:flex}.pp-g3 em svg{width:calc(13px * var(--k));height:calc(13px * var(--k))}
+.pp-trip{margin:0 calc(16px * var(--k));height:calc(146px * var(--k));box-sizing:border-box;border-radius:calc(26px * var(--k));background:#1c1c1e;padding:calc(18px * var(--k)) calc(20px * var(--k));display:flex;flex-direction:column;color:#98989f}
+.pp-trip i{display:flex;color:#636366;flex:1}.pp-trip i svg{width:calc(26px * var(--k));height:calc(26px * var(--k))}
+.pp-trip b{font-size:calc(14px * var(--k));font-weight:700}.pp-trip small{font-size:calc(12.5px * var(--k));line-height:1.3;margin-top:calc(2px * var(--k))}
+.pp-line{border-top:.5px solid #38383a;margin:calc(14px * var(--k)) calc(16px * var(--k)) 0}
+.pp-reorder{font-size:calc(21px * var(--k));font-weight:800;padding:calc(12px * var(--k)) calc(16px * var(--k)) calc(8px * var(--k))}
 
 @media (prefers-reduced-motion: reduce){*{transition-duration:.01s!important;animation:none!important}}
 </style>
@@ -5483,6 +5508,31 @@ const PHI = {
   lock:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 10V7.5a5 5 0 0 1 10 0V10h.5A1.5 1.5 0 0 1 19 11.5v8a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 5 19.5v-8A1.5 1.5 0 0 1 6.5 10zm2 0h6V7.5a3 3 0 0 0-6 0z"/></svg>',
   live:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="9.5" stroke-dasharray="1.6 2.2"/></svg>',
 };
+const PHU = (() => { const S = d => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">${d}</svg>`;
+  return {
+    video:S('<rect x="2.5" y="6" width="13.5" height="12" rx="2.5"/><path d="m16 10.5 5.5-3v9l-5.5-3"/>'),
+    selfie:S('<rect x="3.5" y="3.5" width="17" height="17" rx="3"/><circle cx="12" cy="10" r="3"/><path d="M6.5 20c.8-3 3-4.5 5.5-4.5s4.7 1.5 5.5 4.5"/>'),
+    live:S('<circle cx="12" cy="12" r="2.5"/><circle cx="12" cy="12" r="5.5"/><circle cx="12" cy="12" r="9" stroke-dasharray="1.4 2"/>'),
+    portrait:S('<circle cx="12" cy="12" r="9"/><path d="M14.5 7.5c-1.5-.5-3 .2-3.3 1.8L10 16c-.3 1.4-1.5 2-2.8 1.6M9 11.5h5"/>'),
+    pano:S('<path d="M2.5 6.5c6 1.6 13 1.6 19 0v11c-6-1.6-13-1.6-19 0z"/>'),
+    shot:S('<path d="M3 8V5.5A2.5 2.5 0 0 1 5.5 3H8M16 3h2.5A2.5 2.5 0 0 1 21 5.5V8M21 16v2.5a2.5 2.5 0 0 1-2.5 2.5H16M8 21H5.5A2.5 2.5 0 0 1 3 18.5V16"/><rect x="7" y="8.5" width="10" height="7.5" rx="1.5"/><circle cx="12" cy="12.2" r="1.8"/>'),
+    rec:S('<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3.5" fill="currentColor"/>'),
+    anim:S('<path d="m13 4 7 8-7 8-7-8z"/><path d="m9.5 6.5-5.5 5.5 5.5 5.5M7 5 1.5 12 7 19" opacity=".7"/>'),
+    dual:S('<rect x="2.5" y="4" width="14" height="11" rx="2"/><rect x="10" y="11" width="11.5" height="9" rx="2"/><circle cx="15.8" cy="15.5" r="1.8"/>'),
+    fav:S('<path d="M12 20s-7.5-4.6-8.7-9.5C2.5 7 4.7 4.5 7.5 4.5c1.9 0 3.4 1.1 4.5 2.7 1.1-1.6 2.6-2.7 4.5-2.7 2.8 0 5 2.5 4.2 6C19.5 15.4 12 20 12 20z"/>'),
+    hide:S('<path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="3"/><path d="M4 4l16 16"/>'),
+    trash:S('<path d="M4 6.5h16M9.5 6.5V4h5v2.5M6.5 6.5l1 13.5h9l1-13.5M10 10.5v6M14 10.5v6"/>'),
+    dup:S('<rect x="8" y="8" width="12.5" height="12.5" rx="2.5"/><path d="M16 8V5.5A2 2 0 0 0 14 3.5H5.5a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2H8"/>'),
+    rcpt:S('<path d="M5.5 2.5h13v19l-2.2-1.5-2.1 1.5-2.2-1.5-2.2 1.5-2.1-1.5-2.2 1.5z"/><path d="M8.5 7h7M8.5 11h7M8.5 15h4"/>'),
+    pen:S('<path d="m4 20 3.5-1 11-11-2.5-2.5-11 11z"/>'),
+    illu:S('<path d="M4 18c3-1 4-4 6-8s5-6 9-6c-1 4-2 7-6 9s-7 3-9 5z"/><path d="M14 20h6"/>'),
+    qr:S('<rect x="3.5" y="3.5" width="6.5" height="6.5" rx="1"/><rect x="14" y="3.5" width="6.5" height="6.5" rx="1"/><rect x="3.5" y="14" width="6.5" height="6.5" rx="1"/><path d="M14 14h2.5v2.5H14zM18 18h2.5v2.5H18zM18 14h2.5M14 18v2.5"/>'),
+    saved:S('<path d="M8 10.5 12 14.5l4-4M12 4v10.5M4 14v4.5A2.5 2.5 0 0 0 6.5 21h11a2.5 2.5 0 0 0 2.5-2.5V14"/>'),
+    eye:S('<path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="3"/>'),
+    edit:S('<path d="M4 7h10M18 7h2M4 12h3M11 12h9M4 17h11M19 17h1"/><circle cx="16" cy="7" r="2"/><circle cx="9" cy="12" r="2"/><circle cx="17" cy="17" r="2"/>'),
+    shared:S('<path d="M8 8l4-4 4 4M12 4v10.5M4 14v4.5A2.5 2.5 0 0 0 6.5 21h11a2.5 2.5 0 0 0 2.5-2.5V14"/>'),
+    trip:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 3.5h6a1.5 1.5 0 0 1 1.5 1.5v2H19a2.5 2.5 0 0 1 2.5 2.5v9A2.5 2.5 0 0 1 19 21H5a2.5 2.5 0 0 1-2.5-2.5v-9A2.5 2.5 0 0 1 5 7h2.5V5A1.5 1.5 0 0 1 9 3.5zm.5 1.8V7h5V5.3zM7 8.5v11h1.6v-11zm8.4 0v11H17v-11z"/></svg>',
+  }; })();
 const phVis = () => PHOTOS.filter(p => !p.f.includes('d') && !p.f.includes('h'));
 const phTh = p => `assets/ph/t/${p.n}.jpg`;
 const phTile2 = (p, ctx = '') => `<div class="pp-t" data-go="photo|${p.id}${ctx ? '~' + ctx : ''}" style="background-image:url(${phTh(p)})">${p.f.includes('f') ? `<i class="h">${PHI.heartOn}</i>` : ''}</div>`;
@@ -5499,16 +5549,24 @@ Object.assign(R, {
   photos: cols => { cols = +cols || 5; const ps = phVis();
     return { tone:'dark', bg:'#000', cls:'pp pp-lib',
       body:`<div class="pp-grid c${cols}">${ps.map(p => phTile2(p)).join('')}</div><div class="pp-foot"><b>${ps.length} 张照片</b><small>已在 ${ymd(TODAY)} 同步</small></div>`,
-      over:`<div class="pp-hdr"><div><b>图库</b><small>${ps.length} 个项目</small></div><span class="pp-cb" data-tab="photos|${cols === 5 ? 3 : 5}">${PHI.sort}</span><span class="pp-pill" data-toast="长按照片也可以选择">选择</span></div>` + phBar('lib'),
-      refresh:() => R.photos(cols), mount:v => { const s = v.querySelector('.vs'); s.scrollTop = s.scrollHeight; } }; },
+      top:`<div class="pp-hdr"><div><b>图库</b><small id="phrange">${ps.length} 个项目</small></div><span class="pp-cb w" data-tab="photos|${cols === 5 ? 3 : 5}">${PHI.sort}</span><span class="pp-pill" data-toast="长按照片也可以选择">选择</span></div>`,
+      over:phBar('lib'),
+      refresh:() => R.photos(cols), mount:v => { const s = v.querySelector('.vs'), lab = v.querySelector('#phrange'), tiles = [...v.querySelectorAll('.pp-t')];
+        const fmt = (a, b) => { const [y1, m1, d1] = a.split('-').map(Number), [y2, m2, d2] = b.split('-').map(Number);
+          return y1 !== y2 ? `${y1}年${m1}月${d1}日 – ${y2}年${m2}月${d2}日` : m1 !== m2 ? `${y1}年${m1}月${d1}日 – ${m2}月${d2}日` : d1 !== d2 ? `${y1}年${m1}月${d1}日–${d2}日` : `${y1}年${m1}月${d1}日`; };
+        const upd = () => { const top = s.scrollTop, h = s.clientHeight; const vis = tiles.map((t, k) => [t.offsetTop, k]).filter(([y]) => y + t0 > top && y < top + h * .85).map(([, k]) => ps[k]);
+          if (vis.length) lab.textContent = fmt(vis[0].d, vis[vis.length - 1].d); };
+        const t0 = tiles[0] ? tiles[0].offsetHeight : 80;
+        const bottom = () => { s.scrollTop = s.scrollHeight; upd(); }; bottom(); requestAnimationFrame(bottom); setTimeout(bottom, 80); setTimeout(bottom, 400); s.addEventListener('scroll', () => requestAnimationFrame(upd), { passive:true }); } }; },
   /* 精选集 */
   phcol: () => { const ps = phVis(), fav = ps.filter(p => p.f.includes('f'));
-    const sec = (t, inner, go) => `<div class="pp-sec"><div class="pp-st"><b ${go ? `data-go="${go}"` : ''}>${t}${go ? PHI.chevR : ''}</b><i data-toast="可以在「重新排序」里隐藏这一栏">${PHI.chevD}</i></div>${inner}</div>`;
+    const sec = (t, inner, go, _) => `<div class="pp-sec"><div class="pp-st"><b ${go ? `data-go="${go}"` : ''}>${t}${go ? PHI.chevR : ''}</b><i data-fold>${PHI.chevD}</i></div>${inner}</div>`;
     const card = (p, t, sub, go) => `<div class="pp-card" data-go="${go}" style="background-image:url(${p.s.slice(4)})"><b>${t}</b>${sub ? `<small>${sub}</small>` : ''}</div>`;
     const mem = [['首尔的夜晚', '2021 – 2026', 'phmem|night', 18], ['和朋友们', '2024 – 2026', 'phmem|朋友', 73], ['美味佳肴', '2022 – 2026', 'phmem|吃吃喝喝', 27]];
     const recent = [...new Set(ps.map(p => p.d))].sort().reverse().slice(0, 4);
-    const media = [['视频', '▶︎', 0], ['自拍', '◉', ps.filter(p => p.f.includes('e')).length], ['实况照片', PHI.live, ps.filter(p => p.f.includes('l')).length], ['人像', 'ƒ', 0], ['全景照片', '◫', 0], ['截屏', '▣', ps.filter(p => p.f.includes('s')).length], ['录屏', '◎', 0], ['动图', '◌', 0], ['双摄', '⧉', 0]];
-    const util = [['已隐藏', 1], ['最近删除', 1], ['重复项'], ['收据'], ['手写'], ['插图'], ['二维码'], ['最近存储'], ['最近查看'], ['最近编辑'], ['最近共享']];
+    const cnt = f => ps.filter(f).length;
+    const media = [['视频', 'video', 0], ['自拍', 'selfie', cnt(p => p.f.includes('e'))], ['实况照片', 'live', cnt(p => p.f.includes('l'))], ['人像', 'portrait', 0], ['全景照片', 'pano', 0], ['截屏', 'shot', cnt(p => p.f.includes('s'))], ['录屏', 'rec', 0], ['动图', 'anim', 0], ['双摄', 'dual', 0]];
+    const util = [['个人收藏', 'fav'], ['已隐藏', 'hide', 1], ['最近删除', 'trash', 1], ['重复项', 'dup'], ['收据', 'rcpt'], ['手写', 'pen'], ['插图', 'illu'], ['二维码', 'qr'], ['最近存储', 'saved'], ['最近查看', 'eye'], ['最近编辑', 'edit'], ['最近共享', 'shared']];
     return { tone:'dark', bg:'#000', cls:'pp pp-col',
       body:`<div class="pp-ctop"><div><b>精选集</b><small data-toast="iCloud 储存空间已满">储存空间已满 · 获取更多 ›</small></div><span class="pp-cb" data-toast="原型中暂不可用">${PHI.dots}</span><span class="pp-me" style="background-image:url(assets/avatar_anran.jpg)"></span></div>
         ${sec('回忆', `<div class="pp-row big">${mem.map(([t, s, g, n]) => card(PHOTOS.find(p => p.n === n), t, s, g)).join('')}</div>`, 'phmem|night')}
@@ -5518,11 +5576,12 @@ Object.assign(R, {
         ${sec('精选照片', `<div class="pp-row">${[21, 64, 82, 45].map(n => { const p = PHOTOS.find(x => x.n === n); return p && !p.f.includes('d') ? `<div class="pp-sq tall" data-go="photo|${p.id}"><div class="pp-sqi" style="background-image:url(${phTh(p)})"></div></div>` : ''; }).join('')}</div>`, '')}
         ${sec('共享相簿', `<div class="pp-empty"><div class="pp-ei">⧉</div><span class="pp-pill blue" data-toast="原型中不能共享">开始共享</span><b>共享相簿</b><small>与你选择的人共享照片和视频，并让他们添加照片、视频和评论。</small></div>`, '')}
         ${sec('最近几天', `<div class="pp-row">${recent.map(d => { const l = ps.filter(p => p.d === d); return `<div class="pp-sq tall" data-go="phday|${d}"><div class="pp-sqi" style="background-image:url(${phTh(l[l.length - 1])})"><em>${phDay(d)}</em></div></div>`; }).join('')}</div>`, '')}
-        ${sec('旅行', `<div class="pp-empty"><div class="pp-ei">🧳︎</div><b>没有可用的旅行</b><small>当图库中有更多照片和视频时，或在与 iCloud 同步时，旅行将出现在这里。</small></div>`, '')}
-        ${sec('媒体类型', `<div class="pp-list">${media.map(([n, ic, c]) => `<div ${c ? `data-go="phalb|${n}"` : `data-toast="没有${n}"`}><i>${ic}</i><span>${n}</span></div>`).join('')}</div>`, '')}
-        ${sec('实用工具', `<div class="pp-list">${util.map(([n, l]) => `<div ${n === '最近删除' || n === '已隐藏' ? `data-go="phalb|${n}" data-lock="1"` : n === '最近存储' || n === '最近查看' ? 'data-go="phalb|最近项目"' : `data-toast="没有${n}"`}><i>${n === '已隐藏' ? '◌' : n === '最近删除' ? PHI.trash : '▢'}</i><span>${n}</span>${l ? `<em>${PHI.lock}</em>` : ''}</div>`).join('')}</div>`, '')}
-        <div class="pp-sec"><div class="pp-st"><b>墙纸建议${PHI.chevR}</b></div></div><div class="pp-reorder" data-toast="原型中暂不可用">重新排序</div><div class="pp-end"></div>`,
-      over:phBar('col'), refresh:() => R.phcol() }; },
+        ${sec('旅行', `<div class="pp-trip"><i>${PHU.trip}</i><b>没有可用的旅行</b><small>当图库中有更多照片和视频时，或在与 iCloud 同步时，旅行将出现在这里。</small></div>`, '', 1)}
+        ${sec('媒体类型', `<div class="pp-g3">${media.map(([n, ic, c]) => `<div ${c ? `data-go="phalb|${n}"` : `data-toast="没有${n}"`}><i>${PHU[ic]}</i><span>${n}</span></div>`).join('')}</div>`, 'phalb|最近项目')}
+        ${sec('实用工具', `<div class="pp-g3">${util.map(([n, ic, l]) => `<div ${n === '最近删除' || n === '已隐藏' ? `data-go="phalb|${n}" data-lock="1"` : n === '个人收藏' ? 'data-go="phalb|个人收藏"' : n === '最近存储' || n === '最近查看' ? 'data-go="phalb|最近项目"' : `data-toast="没有${n}"`}><i>${PHU[ic]}</i><span>${n}</span>${l ? `<em>${PHI.lock}</em>` : ''}</div>`).join('')}</div>`, 'phalb|个人收藏')}
+        <div class="pp-sec"><div class="pp-st"><b>墙纸建议</b><i class="r" data-toast="原型中暂不可用">${PHI.chevR}</i></div></div><div class="pp-line"></div><div class="pp-reorder" data-toast="原型中暂不可用">重新排序</div><div class="pp-end"></div>`,
+      over:phBar('col'), refresh:() => R.phcol(),
+      mount:v => v.querySelectorAll('[data-fold]').forEach(f => f.addEventListener('click', e => { e.stopPropagation(); f.closest('.pp-sec').classList.toggle('folded'); })) }; },
   /* 相簿 / 回忆 / 某一天 */
   phalb: n => { const ps = phCtxList(n);
     return { tone:'dark', bg:'#000', cls:'pp pp-alb',
