@@ -2115,6 +2115,117 @@ body.standalone .island.np-on{display:flex!important}
 .pp-line{border-top:.5px solid #38383a;margin:calc(14px * var(--k)) calc(16px * var(--k)) 0}
 .pp-reorder{font-size:calc(21px * var(--k));font-weight:800;padding:calc(12px * var(--k)) calc(16px * var(--k)) calc(8px * var(--k))}
 
+/* 图库：标题浮在照片上（往上划能看到被模糊的照片），只有滑到最顶上才留出空白 */
+.pp-lib .vs{padding-top:calc(140px * var(--k))}
+.pp-lib .pp-hdr{position:absolute;left:0;right:0;top:0;padding:calc(58px * var(--k)) calc(16px * var(--k)) calc(14px * var(--k));height:calc(140px * var(--k));box-sizing:border-box;align-items:center;background:linear-gradient(rgba(0,0,0,.72),rgba(0,0,0,.45) 75%,rgba(0,0,0,0));-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);-webkit-mask:linear-gradient(#000 82%,transparent);mask:linear-gradient(#000 82%,transparent)}
+/* ===== 时钟（iOS 26 深色）· NK = N × --k ===== */
+.ck{background:#000;color:#fff;font-size:calc(17px * var(--k));--or:#ff9f0a;--gr:#30d158}
+.ck svg{display:block;flex:none}
+.ck .vs{overscroll-behavior:contain}
+.ck-top{flex:none;display:flex;justify-content:space-between;align-items:center;padding:calc(62px * var(--k)) calc(16px * var(--k)) 0;height:calc(44px * var(--k));box-sizing:content-box}
+.ck-pill{height:calc(38px * var(--k));padding:0 calc(15px * var(--k));border-radius:calc(19px * var(--k));background:rgba(58,58,62,.75);border:.5px solid rgba(255,255,255,.12);display:flex;align-items:center;font-size:calc(16px * var(--k));font-weight:500}
+.ck-cb{width:calc(42px * var(--k));height:calc(42px * var(--k));border-radius:50%;background:rgba(58,58,62,.75);border:.5px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center}
+.ck-cb svg{width:calc(20px * var(--k));height:calc(20px * var(--k))}
+.ck-lt{font-size:calc(31px * var(--k));font-weight:800;padding:calc(10px * var(--k)) calc(20px * var(--k)) calc(8px * var(--k))}
+.ck-stop .ck-top{height:calc(44px * var(--k))}
+.ck-end{height:calc(120px * var(--k))}
+.ck-none{color:#8e8e93;text-align:center;padding:calc(60px * var(--k)) 0}
+/* 世界时钟 */
+.ck-wc{display:flex;align-items:center;margin:0 calc(20px * var(--k));padding:calc(12px * var(--k)) 0;min-height:calc(62px * var(--k));border-top:.5px solid #38383a;gap:calc(12px * var(--k))}
+.ck-wc:last-of-type{border-bottom:.5px solid #38383a}
+.ck-wc>div{flex:1;min-width:0}
+.ck-wc small{display:block;color:#8e8e93;font-size:calc(13px * var(--k))}
+.ck-wc b{display:block;font-size:calc(22px * var(--k));font-weight:500;margin-top:calc(2px * var(--k))}
+.ck-big{font-size:calc(56px * var(--k));font-weight:300;letter-spacing:calc(-1px * var(--k));font-variant-numeric:tabular-nums;line-height:1}
+.ck-wc.ed .ck-big{font-size:calc(44px * var(--k));color:#8e8e93}
+.ck-del{display:flex}.ck-del svg{width:calc(22px * var(--k));height:calc(22px * var(--k))}
+/* 闹钟 */
+.ck-sh{display:flex;align-items:center;gap:calc(6px * var(--k));margin:0 calc(20px * var(--k));padding:calc(14px * var(--k)) 0 calc(10px * var(--k));border-bottom:.5px solid #38383a}
+.ck-sh svg{width:calc(19px * var(--k));height:calc(19px * var(--k))}.ck-sh b{font-size:calc(17px * var(--k));font-weight:700}
+.ck-sh.o{margin-top:calc(30px * var(--k))}
+.ck-sleep{display:flex;justify-content:space-between;align-items:center;margin:0 calc(20px * var(--k));padding:calc(12px * var(--k)) 0;border-bottom:.5px solid #38383a;color:#8e8e93;font-size:calc(15px * var(--k))}
+.ck-sleep em{font-style:normal;color:var(--or);background:#2c2c2e;border-radius:calc(13px * var(--k));padding:calc(4px * var(--k)) calc(10px * var(--k));font-size:calc(13px * var(--k));font-weight:800}
+.ck-al{display:flex;align-items:center;gap:calc(12px * var(--k));margin:0 calc(20px * var(--k));padding:calc(8px * var(--k)) 0 calc(10px * var(--k));border-bottom:.5px solid #38383a;color:#8e8e93}
+.ck-al.on{color:#fff}
+.ck-alt{flex:1}
+.ck-alt b{display:block;font-size:calc(56px * var(--k));font-weight:300;letter-spacing:calc(-1px * var(--k));line-height:1.1;font-variant-numeric:tabular-nums}
+.ck-alt small{display:block;font-size:calc(13px * var(--k));margin-top:calc(-1px * var(--k))}
+.ck-chev{color:#5a5a5e}.ck-chev svg{width:calc(15px * var(--k));height:calc(15px * var(--k))}
+.ck-sw{display:block;width:calc(51px * var(--k));height:calc(31px * var(--k));border-radius:calc(16px * var(--k));background:#39393d;position:relative;transition:background .2s}
+.ck-sw:after{content:'';position:absolute;left:calc(2px * var(--k));top:calc(2px * var(--k));width:calc(27px * var(--k));height:calc(27px * var(--k));border-radius:50%;background:#fff;transition:transform .2s;box-shadow:0 calc(2px * var(--k)) calc(6px * var(--k)) rgba(0,0,0,.25)}
+.ck-sw.on{background:var(--gr)}.ck-sw.on:after{transform:translateX(calc(20px * var(--k)))}
+/* 秒表 */
+.ck-swd{text-align:center;font-size:calc(86px * var(--k));font-weight:200;letter-spacing:calc(-2px * var(--k));font-variant-numeric:tabular-nums;padding:calc(110px * var(--k)) 0 0;line-height:1}
+.ck-btns{display:flex;justify-content:space-between;align-items:center;padding:0 calc(16px * var(--k));margin-top:calc(112px * var(--k))}
+.ck-timer .ck-btns{margin-top:calc(24px * var(--k))}
+.ck-rb{width:calc(78px * var(--k));height:calc(78px * var(--k));border-radius:50%;background:#333;display:flex;align-items:center;justify-content:center;font-size:calc(17px * var(--k));position:relative}
+.ck-rb:after{content:'';position:absolute;inset:calc(-4px * var(--k));border-radius:50%;border:calc(2px * var(--k)) solid #000;box-shadow:0 0 0 calc(1.5px * var(--k)) currentColor;opacity:.25}
+.ck-rb.green{background:#0a3b14;color:var(--gr)}.ck-rb.red{background:#3c0f0c;color:#ff453a}.ck-rb.orange{background:#3d2600;color:var(--or)}
+.ck-rb.dis{color:#8e8e93;opacity:.6}
+.ck-dots{display:flex;gap:calc(7px * var(--k))}.ck-dots i{width:calc(7px * var(--k));height:calc(7px * var(--k));border-radius:50%;background:#5a5a5e}.ck-dots i.on{background:#fff}
+.ck-laps{margin:calc(18px * var(--k)) calc(16px * var(--k)) 0;border-top:.5px solid #38383a;max-height:none}
+.ck-lap{display:flex;justify-content:space-between;padding:calc(11px * var(--k)) calc(4px * var(--k));border-bottom:.5px solid #38383a;font-size:calc(16px * var(--k));font-variant-numeric:tabular-nums}
+.ck-lap.best{color:var(--gr)}.ck-lap.worst{color:#ff453a}
+/* 计时器 */
+.ck-pick{position:relative;display:flex;justify-content:center;align-items:center;height:calc(189px * var(--k));margin-top:calc(28px * var(--k))}
+.ck-bar{position:absolute;left:50%;top:50%;width:calc(300px * var(--k));height:calc(34px * var(--k));margin:calc(-17px * var(--k)) 0 0 calc(-150px * var(--k));border-radius:calc(17px * var(--k));background:#2c2c2e;z-index:0}
+.ck-wh{position:relative;z-index:1;width:calc(56px * var(--k));height:calc(189px * var(--k));-webkit-mask:linear-gradient(transparent,#000 30%,#000 70%,transparent);mask:linear-gradient(transparent,#000 30%,#000 70%,transparent)}
+.ck-whs{height:100%;overflow-y:auto;scroll-snap-type:y mandatory;scrollbar-width:none;padding:calc(81px * var(--k)) 0;box-sizing:border-box;cursor:grab;touch-action:pan-y}
+.ck-whs::-webkit-scrollbar{display:none}
+.ck-whs i{display:block;height:calc(27px * var(--k));line-height:calc(27px * var(--k));text-align:right;padding-right:calc(6px * var(--k));font-style:normal;font-size:calc(20px * var(--k));color:#8e8e93;scroll-snap-align:center;font-variant-numeric:tabular-nums}
+.ck-whs i.on{color:#fff;font-weight:500}
+.ck-pick em{position:relative;z-index:1;font-style:normal;font-size:calc(17px * var(--k));font-weight:600;width:calc(46px * var(--k))}
+.ck-pick.al .ck-wh{width:calc(70px * var(--k))}.ck-pick.al .ck-whs i{text-align:center;padding:0;font-size:calc(22px * var(--k))}
+.ck-pick.al .ck-bar{width:calc(200px * var(--k));margin-left:calc(-100px * var(--k))}
+.ck-grp{margin:calc(26px * var(--k)) calc(16px * var(--k)) 0;background:#1c1c1e;border-radius:calc(24px * var(--k));padding:0 calc(16px * var(--k))}
+.ck-grp>*{display:flex;justify-content:space-between;align-items:center;min-height:calc(50px * var(--k));font-size:calc(16px * var(--k))}
+.ck-grp>*+*{border-top:.5px solid #38383a}
+.ck-grp input{background:none;border:0;outline:0;color:#8e8e93;font:inherit;font-size:calc(16px * var(--k));text-align:right;flex:1;min-width:0;margin-left:calc(12px * var(--k))}
+.ck-grp em{font-style:normal;color:#8e8e93;display:flex;align-items:center;gap:calc(4px * var(--k))}.ck-grp em svg{width:calc(13px * var(--k));height:calc(13px * var(--k))}
+.ck-grp em b{font-weight:400}
+.ck-rh{font-size:calc(20px * var(--k));font-weight:700;margin:calc(34px * var(--k)) calc(20px * var(--k)) 0;padding-bottom:calc(8px * var(--k));border-bottom:.5px solid #38383a}
+.ck-rc{display:flex;align-items:center;margin:0 calc(20px * var(--k));padding:calc(10px * var(--k)) 0;border-bottom:.5px solid #38383a}
+.ck-rc>div{flex:1}
+.ck-rc b{display:block;font-size:calc(52px * var(--k));font-weight:300;letter-spacing:calc(-1px * var(--k));line-height:1.1;font-variant-numeric:tabular-nums}
+.ck-rc small{color:#8e8e93;font-size:calc(13px * var(--k))}
+.ck-rc span{width:calc(56px * var(--k));height:calc(56px * var(--k));border-radius:50%;background:#0a3b14;color:var(--gr);display:flex;align-items:center;justify-content:center}
+.ck-rc span svg{width:calc(24px * var(--k));height:calc(24px * var(--k))}
+.ck-run{position:relative;width:calc(300px * var(--k));height:calc(300px * var(--k));margin:calc(20px * var(--k)) auto 0}
+.ck-run svg{width:100%;height:100%;transform:rotate(-90deg)}
+.ck-run circle{fill:none;stroke-width:7}.ck-run .bg{stroke:#2c2c2e}.ck-run .fg{stroke:var(--or);stroke-linecap:round;stroke-dasharray:590.6;transition:stroke-dashoffset .2s linear}
+.ck-run>div{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:calc(4px * var(--k))}
+.ck-run b{font-size:calc(68px * var(--k));font-weight:200;font-variant-numeric:tabular-nums;letter-spacing:calc(-1px * var(--k))}
+.ck-run small{color:#8e8e93;font-size:calc(15px * var(--k))}
+/* 底部导航（浮动胶囊） */
+.ck-tab{position:absolute;left:calc(20px * var(--k));right:calc(20px * var(--k));bottom:calc(20px * var(--k));z-index:6;height:calc(62px * var(--k));padding:calc(4px * var(--k));box-sizing:border-box;border-radius:calc(31px * var(--k));display:flex;background:rgba(40,40,44,.72);border:.5px solid rgba(255,255,255,.1);-webkit-backdrop-filter:blur(24px) saturate(1.6);backdrop-filter:blur(24px) saturate(1.6)}
+.ck-tab span{flex:1;border-radius:calc(27px * var(--k));display:flex;flex-direction:column;align-items:center;justify-content:center;gap:calc(2px * var(--k));color:#fff}
+.ck-tab svg{width:calc(24px * var(--k));height:calc(24px * var(--k))}
+.ck-tab em{font-style:normal;font-size:calc(10.5px * var(--k));font-weight:700}
+.ck-tab span.on{background:rgba(255,255,255,.12);color:var(--or)}
+/* 弹出表单 */
+.ck-sheet{position:absolute;inset:0;z-index:30}
+.ck-shb{position:absolute;inset:0;background:rgba(0,0,0,.5);opacity:0;transition:opacity .25s}
+.ck-shp{position:absolute;left:0;right:0;bottom:0;top:calc(58px * var(--k));background:#1c1c1e;border-radius:calc(14px * var(--k)) calc(14px * var(--k)) 0 0;transform:translateY(100%);transition:transform .3s cubic-bezier(.3,.9,.3,1);overflow-y:auto;padding-bottom:calc(40px * var(--k))}
+.ck-sheet.on .ck-shb{opacity:1}.ck-sheet.on .ck-shp{transform:none}
+.ck-sht{display:flex;justify-content:space-between;align-items:center;padding:calc(16px * var(--k)) calc(16px * var(--k)) calc(6px * var(--k));font-size:calc(17px * var(--k))}
+.ck-sht span{color:var(--or)}.ck-sht .or{font-weight:600}.ck-sht b{font-weight:600}
+.ck-sht.c{justify-content:center;font-size:calc(13px * var(--k));color:#8e8e93}
+.ck-shp .ck-grp{background:#2c2c2e}
+.ck-delr{color:#ff453a;justify-content:center!important}
+.ck-csr{display:flex;align-items:center;gap:calc(10px * var(--k));padding:calc(6px * var(--k)) calc(16px * var(--k)) calc(10px * var(--k))}
+.ck-csr label{flex:1;height:calc(36px * var(--k));border-radius:calc(10px * var(--k));background:#2c2c2e;display:flex;align-items:center;padding:0 calc(10px * var(--k))}
+.ck-csr input{flex:1;background:none;border:0;outline:0;color:#fff;font:inherit;font-size:calc(16px * var(--k))}
+.ck-csr span{color:var(--or)}
+.ck-cl div{margin-left:calc(16px * var(--k));padding:calc(12px * var(--k)) 0;border-bottom:.5px solid #38383a;font-size:calc(17px * var(--k))}
+/* 响铃 */
+.ck-ring{position:absolute;inset:0;z-index:300;background:rgba(0,0,0,.72);-webkit-backdrop-filter:blur(30px);backdrop-filter:blur(30px);display:flex;align-items:flex-end;color:#fff}
+.ck-ring>div{width:100%;padding:0 calc(24px * var(--k)) calc(90px * var(--k));text-align:center}
+.ck-ring small{display:block;font-size:calc(18px * var(--k));color:#d1d1d6}
+.ck-ring b{display:block;font-size:calc(40px * var(--k));font-weight:700;margin:calc(6px * var(--k)) 0 calc(40px * var(--k))}
+.ck-rbtn{display:flex;flex-direction:column;gap:calc(14px * var(--k))}
+.ck-rbtn span{height:calc(56px * var(--k));border-radius:calc(28px * var(--k));display:flex;align-items:center;justify-content:center;font-size:calc(18px * var(--k));font-weight:600;background:rgba(255,255,255,.18)}
+.ck-rbtn [data-s]{background:#ff9f0a;color:#000}
+
 @media (prefers-reduced-motion: reduce){*{transition-duration:.01s!important;animation:none!important}}
 </style>
 
@@ -2212,7 +2323,7 @@ body.standalone .island.np-on{display:flex!important}
 const $ = s => document.querySelector(s);
 const screen = $('#screen'), home = $('#home'), appwin = $('#appwin'), appbody = $('#appbody');
 let W = 393, H = 852;   // 手机上打开时 H 会按玩家屏幕比例调整
-const state = { locked:true, app:null, page:0, cc:false, airplane:false, wifi:true, bt:true, cell:true, dark:false, flash:false, vol:.5, jiggle:false };
+const state = { locked:true, app:null, page:0, cc:false, airplane:false, wifi:true, bt:true, cell:true, dark:true, flash:false, vol:.5, jiggle:false };
 
 /* ---------- icon art ---------- */
 const g = (bg, svg) => ({ bg, svg });
@@ -4752,7 +4863,7 @@ function snapshot(){
   const posts = {}; POST_LISTS().forEach(([k, a]) => a.forEach((p, i) => { const s = postState(p); if (s !== POST_BASE[k + ':' + i]) posts[k + ':' + i] = JSON.parse(s); }));
   const dm = []; [['main', IG_DM], ['spam', IG_DM_SPAM]].forEach(([acct, arr]) => arr.forEach(t => dm.push({ acct, u:t.u, mine:t.mine || [], unread:t.unread || 0, seen:t.seen || '' })));
   return {
-    v:1, state:{ dark:state.dark, airplane:state.airplane, wifi:state.wifi, bt:state.bt, vol:state.vol },
+    v:1, state:{ dark2:state.dark, airplane:state.airplane, wifi:state.wifi, bt:state.bt, vol:state.vol },
     mp:{ pl:MP.pl, i:MP.i, pos:MP.pos, shuffle:MP.shuffle, repeat:MP.repeat },
     ig:{ me:IG_ME, seen:[...IG_SEEN], posts, dm },
     kk:CHATS.map(c => ({ id:c.id, mine:c.mine || [], unread:c.unread || 0, draft:c.draft || '' })),
@@ -4769,7 +4880,7 @@ function restore(){
   let d; try { d = JSON.parse(localStorage.getItem(SAVE_KEY) || 'null'); } catch (e) { d = null; }
   if (!d || d.v !== 1) return;
   try {
-    Object.assign(state, d.state || {});
+    { const st = Object.assign({}, d.state || {}); delete st.dark; if ('dark2' in st) st.dark = st.dark2; delete st.dark2; Object.assign(state, st); }
     if (d.mp && MU_PLAYLISTS.find(p => p.id === d.mp.pl)) { const p = MU_PLAYLISTS.find(x => x.id === d.mp.pl); MP.list = p.songs; Object.assign(MP, d.mp); MP.i = Math.min(MP.i, p.songs.length - 1); MP.playing = false; }
     if (d.ig) {
       if (d.ig.me) IG_ME = d.ig.me;
@@ -5549,8 +5660,7 @@ Object.assign(R, {
   photos: cols => { cols = +cols || 5; const ps = phVis();
     return { tone:'dark', bg:'#000', cls:'pp pp-lib',
       body:`<div class="pp-grid c${cols}">${ps.map(p => phTile2(p)).join('')}</div><div class="pp-foot"><b>${ps.length} 张照片</b><small>已在 ${ymd(TODAY)} 同步</small></div>`,
-      top:`<div class="pp-hdr"><div><b>图库</b><small id="phrange">${ps.length} 个项目</small></div><span class="pp-cb w" data-tab="photos|${cols === 5 ? 3 : 5}">${PHI.sort}</span><span class="pp-pill" data-toast="长按照片也可以选择">选择</span></div>`,
-      over:phBar('lib'),
+      over:`<div class="pp-hdr"><div><b>图库</b><small id="phrange">${ps.length} 个项目</small></div><span class="pp-cb w" data-tab="photos|${cols === 5 ? 3 : 5}">${PHI.sort}</span><span class="pp-pill" data-toast="长按照片也可以选择">选择</span></div>` + phBar('lib'),
       refresh:() => R.photos(cols), mount:v => { const s = v.querySelector('.vs'), lab = v.querySelector('#phrange'), tiles = [...v.querySelectorAll('.pp-t')];
         const fmt = (a, b) => { const [y1, m1, d1] = a.split('-').map(Number), [y2, m2, d2] = b.split('-').map(Number);
           return y1 !== y2 ? `${y1}年${m1}月${d1}日 – ${y2}年${m2}月${d2}日` : m1 !== m2 ? `${y1}年${m1}月${d1}日 – ${m2}月${d2}日` : d1 !== d2 ? `${y1}年${m1}月${d1}日–${d2}日` : `${y1}年${m1}月${d1}日`; };
@@ -5695,6 +5805,156 @@ R.camera = () => { const last = phVis().slice(-1)[0];
       v.querySelector('.cm-flip').addEventListener('click', e => e.currentTarget.classList.toggle('spin'));
     } }; };
 ROOT.camera = () => R.camera();
+
+/* =========================================================
+   CLOCK — iOS 26 时钟（深色）：世界时钟 / 闹钟 / 秒表 / 计时器
+   按钮都能用：增删城市、新建/编辑/删除闹钟、开关闹钟、秒表计次、计时器倒计时；
+   城市、闹钟、最近计时器会保存（CK_SAVE_KEY）。
+   ========================================================= */
+const CK_SAVE_KEY = 'taesan-phone-clock-v1';
+const CK_CITIES = { '首尔':'Asia/Seoul', '上海':'Asia/Shanghai', '纽约':'America/New_York', '东京':'Asia/Tokyo', '京都':'Asia/Tokyo', '伦敦':'Europe/London', '巴黎':'Europe/Paris', '洛杉矶':'America/Los_Angeles', '悉尼':'Australia/Sydney', '温哥华':'America/Vancouver', '曼谷':'Asia/Bangkok', '大阪':'Asia/Tokyo', '台北':'Asia/Taipei', '香港':'Asia/Hong_Kong', '新加坡':'Asia/Singapore', '柏林':'Europe/Berlin', '多伦多':'America/Toronto', '釜山':'Asia/Seoul' };
+const CK = { cities:['首尔', '上海', '纽约'], alarms:[
+  { t:'06:15', l:'', on:0, r:'' }, { t:'06:25', l:'', on:0, r:'' }, { t:'07:00', l:'考试 ×3 别睡过头', on:1, r:'' }, { t:'07:15', l:'', on:0, r:'' },
+  { t:'07:30', l:'上学', on:0, r:'每个工作日' }, { t:'07:40', l:'', on:0, r:'' }, { t:'22:30', l:'交作品集', on:1, r:'' } ], recents:[[0, 15, 0], [0, 25, 0], [0, 5, 0]], label:'计时器' };
+try { Object.assign(CK, JSON.parse(localStorage.getItem(CK_SAVE_KEY) || '{}')); } catch (e) {}
+const ckSave = () => { if (typeof resetting !== 'undefined' && resetting) return; try { localStorage.setItem(CK_SAVE_KEY, JSON.stringify(CK)); } catch (e) {} };
+const SW = { run:false, t0:0, acc:0, laps:[] };            // 秒表
+const TM = { h:0, m:15, s:0, run:false, paused:false, end:0, left:0, total:0 };   // 计时器
+let ckEdit = false;
+
+const CKI = {
+  world:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.6 3.8 5.6 3.8 9s-1.2 6.4-3.8 9c-2.6-2.6-3.8-5.6-3.8-9S9.4 5.6 12 3zM4.8 7.5h14.4M4.8 16.5h14.4"/></svg>',
+  alarm:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 5.5a8 8 0 1 1 0 16 8 8 0 0 1 0-16zm-.9 3.5v5.2l3.6 2.2.9-1.4-2.7-1.7V9z"/><path d="M3.2 6.6 6.8 3.4l1 1.2-3.6 3.2zM20.8 6.6l-3.6-3.2-1 1.2 3.6 3.2z"/></svg>',
+  stop:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 1.8h4v1.9h-4z"/><path d="M12 5a8.5 8.5 0 1 1 0 17 8.5 8.5 0 0 1 0-17zm-.8 3v6h1.6V8z"/><path d="m18 5.4 1.6 1.4-1 1.1-1.6-1.4z"/></svg>',
+  timer:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 3.5a8.5 8.5 0 1 1-6 2.5"/><path d="M12 3.5V7M12 12 8 8"/></svg>',
+  plus:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>',
+  bed:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M2 6h2v7h18v6h-2v-2.5H4V19H2z"/><path d="M5.5 8.5h5.5v4H5.5zM12 8.5h6.5a3 3 0 0 1 3 3v1.5H12z"/></svg>',
+  play:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l10.5-6.5z"/></svg>',
+  chev:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg>',
+  minus:'<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#ff3b30"/><path d="M7 12h10" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/></svg>',
+};
+const ckTZ = tz => { const f = new Intl.DateTimeFormat('en-GB', { timeZone:tz, hour:'2-digit', minute:'2-digit', year:'numeric', month:'2-digit', day:'2-digit', hour12:false }).formatToParts(new Date()); const g = k => f.find(x => x.type === k).value; return { hm:`${g('hour') === '24' ? '00' : g('hour')}:${g('minute')}`, d:`${g('year')}-${g('month')}-${g('day')}` }; };
+const ckOff = tz => { const n = new Date(); const a = new Date(n.toLocaleString('en-US', { timeZone:tz })), b = new Date(n.toLocaleString('en-US')); return Math.round((a - b) / 36e5); };
+const ckLocalD = () => { const n = new Date(); return `${n.getFullYear()}-${String(n.getMonth() + 1).padStart(2, '0')}-${String(n.getDate()).padStart(2, '0')}`; };
+const swFmt = ms => { const cs = Math.floor(ms / 10) % 100, s = Math.floor(ms / 1000) % 60, m = Math.floor(ms / 60000); return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}.${String(cs).padStart(2, '0')}`; };
+const swNow = () => SW.acc + (SW.run ? performance.now() - SW.t0 : 0);
+const tmLeft = () => TM.run ? (TM.paused ? TM.left : Math.max(0, TM.end - Date.now())) : 0;
+const tmFmt = ms => { const t = Math.ceil(ms / 1000), h = Math.floor(t / 3600), m = Math.floor(t / 60) % 60, s = t % 60; return h ? `${h}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}` : `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`; };
+const ckSw = on => `<i class="ck-sw ${on ? 'on' : ''}"></i>`;
+
+/* 滚轮选择器 */
+const ckWheel = (n, sel, cls = '', fmt = x => x) => `<div class="ck-wh ${cls}" data-sel="${sel}"><div class="ck-whs">${Array.from({ length:n }, (_, i) => `<i>${fmt(i)}</i>`).join('')}</div></div>`;
+function ckWheelMount(root, onChange){
+  root.querySelectorAll('.ck-wh').forEach(w => { const s = w.querySelector('.ck-whs'), items = [...s.children];
+    const ih = () => items[0].offsetHeight || 1;
+    const mark = () => { const k = Math.round(s.scrollTop / ih()); items.forEach((it, j) => it.classList.toggle('on', j === k)); return k; };
+    requestAnimationFrame(() => { s.scrollTop = +w.dataset.sel * ih(); mark(); });
+    let t; s.addEventListener('scroll', () => { const k = mark(); clearTimeout(t); t = setTimeout(() => { w.dataset.sel = k; onChange && onChange(); }, 90); }, { passive:true });
+    items.forEach((it, j) => it.addEventListener('click', e => { e.stopPropagation(); s.scrollTo({ top:j * ih(), behavior:'smooth' }); }));
+    /* 电脑上可以用鼠标拖 */
+    let pid = null, sy = 0, st = 0;
+    s.addEventListener('pointerdown', e => { if (e.pointerType === 'touch' || e.button) return; pid = e.pointerId; sy = e.clientY; st = s.scrollTop; s.style.scrollSnapType = 'none'; e.preventDefault(); });
+    window.addEventListener('pointermove', e => { if (e.pointerId !== pid) return; const k = screen.getBoundingClientRect().width / W; s.scrollTop = st - (e.clientY - sy) / k; });
+    window.addEventListener('pointerup', e => { if (e.pointerId !== pid) return; pid = null; s.style.scrollSnapType = ''; s.scrollTo({ top:Math.round(s.scrollTop / ih()) * ih(), behavior:'smooth' }); });
+  });
+}
+
+const ckTabs = on => `<div class="ck-tab">${[['world', '世界时钟'], ['alarm', '闹钟'], ['stop', '秒表'], ['timer', '计时器']].map(([k, l]) => `<span class="${k === on ? 'on' : ''}" data-tab="clock|${k}">${CKI[k]}<em>${l}</em></span>`).join('')}</div>`;
+const ckTop = (l, r) => `<div class="ck-top">${l ? `<span class="ck-pill" data-ck="edit">${ckEdit ? '完成' : '编辑'}</span>` : '<span></span>'}${r ? `<span class="ck-cb" data-ck="add">${CKI.plus}</span>` : ''}</div>`;
+
+R.clock = tab => { tab = tab || 'world'; let body = '', top = '';
+  if (tab === 'world') { top = ckTop(1, 1); const here = ckLocalD();
+    body = `<div class="ck-lt">世界时钟</div>${CK.cities.map((c, i) => { const z = ckTZ(CK_CITIES[c] || 'Asia/Seoul'), o = ckOff(CK_CITIES[c] || 'Asia/Seoul'), day = z.d === here ? '今天' : z.d > here ? '明天' : '昨天';
+      return `<div class="ck-wc ${ckEdit ? 'ed' : ''}">${ckEdit ? `<i class="ck-del" data-delc="${i}">${CKI.minus}</i>` : ''}<div><small>${day}，${o >= 0 ? '+' : '−'}${Math.abs(o)}小时</small><b>${c}</b></div><span class="ck-big" data-tz="${CK_CITIES[c]}">${z.hm}</span></div>`; }).join('')}
+      ${CK.cities.length ? '' : '<div class="ck-none">没有世界时钟</div>'}`; }
+  else if (tab === 'alarm') { top = ckTop(1, 1); const al = CK.alarms.map((a, i) => [a, i]).sort((x, y) => x[0].t.localeCompare(y[0].t));
+    body = `<div class="ck-lt">闹钟</div><div class="ck-sh">${CKI.bed}<b>睡眠 | 起床闹钟</b></div><div class="ck-sleep"><span>无闹钟</span><em data-toast="请在「健康」中设置睡眠计划">设置</em></div>
+      <div class="ck-sh o"><b>其他</b></div>${al.map(([a, i]) => `<div class="ck-al ${a.on ? 'on' : ''} ${ckEdit ? 'ed' : ''}" data-ali="${i}">${ckEdit ? `<i class="ck-del" data-dela="${i}">${CKI.minus}</i>` : ''}<div class="ck-alt"><b>${a.t}</b><small>${a.l ? esc(a.l) : '闹钟'}${a.r ? '，' + a.r : ''}</small></div>${ckEdit ? `<i class="ck-chev">${CKI.chev}</i>` : `<span data-alsw="${i}">${ckSw(a.on)}</span>`}</div>`).join('')}<div class="ck-end"></div>`; }
+  else if (tab === 'stop') {
+    const laps = SW.laps.map((x, i) => [x, i]); const best = laps.length > 2 ? Math.min(...SW.laps) : -1, worst = laps.length > 2 ? Math.max(...SW.laps) : -1;
+    body = `<div class="ck-swd" id="swd">${swFmt(swNow())}</div>
+      <div class="ck-btns"><span class="ck-rb ${!SW.run && !SW.acc ? 'dis' : ''}" data-ck="lap">${!SW.run && SW.acc ? '复位' : '计次'}</span><span class="ck-dots"><i class="on"></i><i></i></span><span class="ck-rb ${SW.run ? 'red' : 'green'}" data-ck="ss">${SW.run ? '停止' : '启动'}</span></div>
+      <div class="ck-laps" id="laps">${SW.run || SW.acc ? `<div class="ck-lap"><span>计次 ${SW.laps.length + 1}</span><span id="curlap">${swFmt(swNow() - SW.laps.reduce((a, b) => a + b, 0))}</span></div>` : ''}${laps.reverse().map(([x, i]) => `<div class="ck-lap ${x === best ? 'best' : x === worst ? 'worst' : ''}"><span>计次 ${i + 1}</span><span>${swFmt(x)}</span></div>`).join('')}</div>`; }
+  else { top = ckTop(1, 0);
+    if (TM.run) { const left = tmLeft();
+      body = `<div class="ck-lt">计时器</div><div class="ck-run"><svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="94" class="bg"/><circle cx="100" cy="100" r="94" class="fg" id="tmring" style="stroke-dashoffset:${590.6 * (1 - left / TM.total)}"/></svg><div><small>🔔︎ ${CK.label}</small><b id="tmd">${tmFmt(left)}</b><small>${tmFmt(TM.total)}</small></div></div>
+        <div class="ck-btns"><span class="ck-rb" data-ck="tcancel">取消</span><span></span><span class="ck-rb ${TM.paused ? 'green' : 'orange'}" data-ck="tpause">${TM.paused ? '继续' : '暂停'}</span></div>`; }
+    else body = `<div class="ck-lt">计时器</div>
+      <div class="ck-pick">${ckWheel(24, TM.h, 'h')}<em class="l1">小时</em>${ckWheel(60, TM.m, 'm')}<em class="l2">分钟</em>${ckWheel(60, TM.s, 's')}<em class="l3">秒</em><i class="ck-bar"></i></div>
+      <div class="ck-btns"><span class="ck-rb dis">取消</span><span></span><span class="ck-rb green" data-ck="tstart">开始</span></div>
+      <div class="ck-grp"><label><span>标签</span><input id="tml" value="${esc(CK.label)}" placeholder="计时器"></label><div data-toast="提醒声：雷达"><span>计时结束时</span><em>雷达 ${CKI.chev}</em></div></div>
+      <div class="ck-rh">最近</div>${CK.recents.map(([h, m, s], i) => `<div class="ck-rc"><div><b>${h ? h + ':' + String(m).padStart(2, '0') + ':' + String(s).padStart(2, '0') : String(m).padStart(2, '0') + ':' + String(s).padStart(2, '0')}</b><small>${[h ? h + ' 小时' : '', m ? m + ' 分钟' : '', s ? s + ' 秒' : ''].filter(Boolean).join(' ')}</small></div><span data-rc="${i}">${CKI.play}</span></div>`).join('')}<div class="ck-end"></div>`;
+  }
+  return { tone:'dark', bg:'#000', cls:'ck ck-' + tab, top, body, bottom:'', over:ckTabs(tab), refresh:() => R.clock(tab),
+    mount:v => {
+      const re = () => replaceView(R.clock(tab));
+      const ed = v.querySelector('[data-ck="edit"]'); ed && ed.addEventListener('click', e => { e.stopPropagation(); ckEdit = !ckEdit; re(); });
+      const add = v.querySelector('[data-ck="add"]'); add && add.addEventListener('click', e => { e.stopPropagation(); tab === 'world' ? ckCityPicker(v, re) : ckAlarmSheet(v, -1, re); });
+      v.querySelectorAll('[data-delc]').forEach(b => b.addEventListener('click', e => { e.stopPropagation(); CK.cities.splice(+b.dataset.delc, 1); ckSave(); re(); }));
+      v.querySelectorAll('[data-dela]').forEach(b => b.addEventListener('click', e => { e.stopPropagation(); CK.alarms.splice(+b.dataset.dela, 1); ckSave(); re(); }));
+      v.querySelectorAll('[data-alsw]').forEach(b => b.addEventListener('click', e => { e.stopPropagation(); const a = CK.alarms[+b.dataset.alsw]; a.on = a.on ? 0 : 1; ckSave(); b.innerHTML = ckSw(a.on); b.closest('.ck-al').classList.toggle('on', !!a.on); }));
+      v.querySelectorAll('[data-ali]').forEach(r => r.addEventListener('click', e => { if (e.target.closest('[data-alsw],[data-dela]')) return; ckAlarmSheet(v, +r.dataset.ali, re); }));
+      /* 秒表 */
+      const ss = v.querySelector('[data-ck="ss"]'); ss && ss.addEventListener('click', () => { if (SW.run) { SW.acc += performance.now() - SW.t0; SW.run = false; } else { SW.t0 = performance.now(); SW.run = true; } re(); });
+      const lap = v.querySelector('[data-ck="lap"]'); lap && lap.addEventListener('click', () => { if (SW.run) { SW.laps.push(swNow() - SW.laps.reduce((a, b) => a + b, 0)); re(); } else if (SW.acc) { SW.acc = 0; SW.laps = []; re(); } });
+      /* 计时器 */
+      if (tab === 'timer' && !TM.run) ckWheelMount(v, () => { const g = c => +v.querySelector('.ck-wh.' + c).dataset.sel; TM.h = g('h'); TM.m = g('m'); TM.s = g('s'); });
+      const tl = v.querySelector('#tml'); tl && tl.addEventListener('input', () => { CK.label = tl.value || '计时器'; ckSave(); });
+      const startT = (h, m, s) => { const tot = (h * 3600 + m * 60 + s) * 1000; if (!tot) return toast('请先选择时间'); Object.assign(TM, { h, m, s, run:true, paused:false, total:tot, end:Date.now() + tot });
+        CK.recents = [[h, m, s], ...CK.recents.filter(r => r.join() !== [h, m, s].join())].slice(0, 5); ckSave(); re(); };
+      const st = v.querySelector('[data-ck="tstart"]'); st && st.addEventListener('click', () => startT(TM.h, TM.m, TM.s));
+      v.querySelectorAll('[data-rc]').forEach(b => b.addEventListener('click', e => { e.stopPropagation(); const [h, m, s] = CK.recents[+b.dataset.rc]; startT(h, m, s); }));
+      const tc = v.querySelector('[data-ck="tcancel"]'); tc && tc.addEventListener('click', () => { TM.run = false; re(); });
+      const tp = v.querySelector('[data-ck="tpause"]'); tp && tp.addEventListener('click', () => { if (TM.paused) { TM.end = Date.now() + TM.left; TM.paused = false; } else { TM.left = tmLeft(); TM.paused = true; } re(); });
+      /* 实时刷新 */
+      const loop = () => { if (!v.isConnected) return;
+        const d = v.querySelector('#swd'); if (d) { d.textContent = swFmt(swNow()); const c = v.querySelector('#curlap'); if (c) c.textContent = swFmt(swNow() - SW.laps.reduce((a, b) => a + b, 0)); }
+        const td = v.querySelector('#tmd'); if (td) { const l = tmLeft(); td.textContent = tmFmt(l); v.querySelector('#tmring').style.strokeDashoffset = 590.6 * (1 - l / TM.total); if (TM.run && !TM.paused && l <= 0) { TM.run = false; ckRing(CK.label, '计时结束'); re(); return; } }
+        v.querySelectorAll('[data-tz]').forEach(x => { x.textContent = ckTZ(x.dataset.tz).hm; });
+        requestAnimationFrame(loop); };
+      requestAnimationFrame(loop);
+    } }; };
+ROOT.clock = () => R.clock();
+
+/* 底部弹出的表单 */
+function ckSheet(v, html){ const sh = document.createElement('div'); sh.className = 'ck-sheet'; sh.innerHTML = `<div class="ck-shb"></div><div class="ck-shp">${html}</div>`; v.append(sh); requestAnimationFrame(() => sh.classList.add('on'));
+  const close = () => { sh.classList.remove('on'); setTimeout(() => sh.remove(), 300); }; sh.querySelector('.ck-shb').addEventListener('click', close); sh.addEventListener('click', e => e.stopPropagation()); return [sh, close]; }
+function ckAlarmSheet(v, idx, done){
+  const a = idx >= 0 ? CK.alarms[idx] : { t:nowHM(), l:'', on:1, r:'' }; const [hh, mm] = a.t.split(':').map(Number);
+  const [sh, close] = ckSheet(v, `<div class="ck-sht"><span data-x>取消</span><b>${idx >= 0 ? '编辑闹钟' : '添加闹钟'}</b><span class="or" data-ok>存储</span></div>
+    <div class="ck-pick al">${ckWheel(24, hh, 'h', x => String(x).padStart(2, '0'))}${ckWheel(60, mm, 'm', x => String(x).padStart(2, '0'))}<i class="ck-bar"></i></div>
+    <div class="ck-grp"><div data-rep><span>重复</span><em><b id="rep">${a.r || '永不'}</b> ${CKI.chev}</em></div><label><span>标签</span><input id="all" value="${esc(a.l)}" placeholder="闹钟"></label><div data-toast="提醒声：雷达"><span>提醒声</span><em>雷达 ${CKI.chev}</em></div><div><span>稍后提醒</span><span data-snz>${ckSw(1)}</span></div></div>
+    ${idx >= 0 ? '<div class="ck-grp"><div class="ck-delr" data-del>删除闹钟</div></div>' : ''}`);
+  ckWheelMount(sh);
+  const reps = ['永不', '每天', '每个工作日', '每个周末'];
+  sh.querySelector('[data-rep]').addEventListener('click', () => { const r = sh.querySelector('#rep'); r.textContent = reps[(reps.indexOf(r.textContent) + 1) % reps.length]; });
+  sh.querySelector('[data-snz]').addEventListener('click', e => { const on = !e.currentTarget.querySelector('.on'); e.currentTarget.innerHTML = ckSw(on); });
+  sh.querySelector('[data-x]').addEventListener('click', close);
+  sh.querySelector('[data-ok]').addEventListener('click', () => { const g = c => String(sh.querySelector('.ck-wh.' + c).dataset.sel).padStart(2, '0'); const r = sh.querySelector('#rep').textContent;
+    const n = { t:`${g('h')}:${g('m')}`, l:sh.querySelector('#all').value.trim(), on:1, r:r === '永不' ? '' : r };
+    if (idx >= 0) CK.alarms[idx] = n; else CK.alarms.push(n); if (n.t === nowHM()) ckLastFire = n.t; ckSave(); close(); ckEdit = false; setTimeout(done, 280); });
+  const del = sh.querySelector('[data-del]'); del && del.addEventListener('click', () => { CK.alarms.splice(idx, 1); ckSave(); close(); setTimeout(done, 280); });
+}
+function ckCityPicker(v, done){
+  const list = Object.keys(CK_CITIES).filter(c => !CK.cities.includes(c));
+  const [sh, close] = ckSheet(v, `<div class="ck-sht c"><b>选取城市</b></div><div class="ck-csr"><label><input id="cq" placeholder="搜索" autocomplete="off"></label><span data-x>取消</span></div><div class="ck-cl">${list.map(c => `<div data-city="${c}">${c}</div>`).join('')}</div>`);
+  sh.querySelector('.ck-shp').classList.add('tall');
+  const q = sh.querySelector('#cq'); q.addEventListener('input', () => sh.querySelectorAll('[data-city]').forEach(r => { r.hidden = q.value && !r.dataset.city.includes(q.value.trim()); }));
+  sh.querySelector('[data-x]').addEventListener('click', close);
+  sh.querySelectorAll('[data-city]').forEach(r => r.addEventListener('click', () => { CK.cities.push(r.dataset.city); ckSave(); close(); setTimeout(done, 280); }));
+}
+/* 响铃提示（闹钟到点、计时结束） */
+function ckRing(title, sub){
+  if (document.querySelector('.ck-ring')) return;
+  const r = document.createElement('div'); r.className = 'ck-ring';
+  r.innerHTML = `<div><small>${sub}</small><b>${esc(title)}</b><div class="ck-rbtn"><span data-z>稍后提醒</span><span data-s>停止</span></div></div>`;
+  (document.querySelector('#screen') || document.body).append(r);
+  r.addEventListener('click', e => { if (e.target.closest('[data-s],[data-z]')) { if (e.target.closest('[data-z]')) toast('9 分钟后再次提醒'); r.remove(); } });
+}
+let ckLastFire = '';
+setInterval(() => { const hm = nowHM(); if (hm === ckLastFire) return;
+  const a = CK.alarms.find(x => x.on && x.t === hm); if (a) { ckLastFire = hm; ckRing(a.l || '闹钟', hm); }
+  if (TM.run && !TM.paused && tmLeft() <= 0) { TM.run = false; ckRing(CK.label, '计时结束'); } }, 1000);
 
 /* ---------- calculator ---------- */
 function mountCalc(){
