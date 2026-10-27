@@ -1919,6 +1919,136 @@ body.standalone .island.np-on{display:flex!important}
 .xx-rbar input{flex:1;height:100%;font-size:calc(16px * var(--k));font-weight:500}
 .xx-rbar .xx-pill{display:none}.xx-rbar.typing .xx-pill{display:flex}
 .xx-nbr span{display:flex}
+/* ===== 照片（iOS 26 深色）· NK = N × --k ===== */
+.pp{background:#000;color:#fff;font-size:calc(15px * var(--k));--g:rgba(58,58,62,.62);--gb:.5px solid rgba(255,255,255,.14);--blue:#0a84ff;--sub:#98989f}
+.pp svg{display:block;flex:none}
+.pp .vs{overscroll-behavior:contain}
+.pp-cb{width:calc(40px * var(--k));height:calc(40px * var(--k));border-radius:50%;background:var(--g);border:var(--gb);-webkit-backdrop-filter:blur(20px) saturate(1.6);backdrop-filter:blur(20px) saturate(1.6);display:flex;align-items:center;justify-content:center;flex:none;color:#fff}
+.pp-cb svg{width:calc(20px * var(--k));height:calc(20px * var(--k))}
+.pp-pill{height:calc(40px * var(--k));padding:0 calc(16px * var(--k));border-radius:calc(20px * var(--k));background:var(--g);border:var(--gb);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);display:flex;align-items:center;font-weight:600;font-size:calc(15px * var(--k))}
+.pp-pill.blue{background:rgba(10,132,255,.18);border:0;color:var(--blue);height:calc(30px * var(--k));font-size:calc(13px * var(--k));padding:0 calc(12px * var(--k))}
+
+/* 图库 */
+.pp-grid{display:grid;gap:calc(1.5px * var(--k))}
+.pp-grid.c5{grid-template-columns:repeat(5,1fr)}.pp-grid.c3{grid-template-columns:repeat(3,1fr)}
+.pp-t{aspect-ratio:1;background:#1c1c1e center/cover no-repeat;position:relative;cursor:pointer}
+.pp-t .h{position:absolute;left:calc(4px * var(--k));bottom:calc(3px * var(--k));color:#fff;filter:drop-shadow(0 0 2px rgba(0,0,0,.6))}.pp-t .h svg{width:calc(12px * var(--k));height:calc(12px * var(--k))}
+.pp-foot{text-align:center;padding:calc(18px * var(--k)) 0 calc(128px * var(--k));display:flex;flex-direction:column;gap:calc(2px * var(--k))}
+.pp-foot b{font-weight:600}.pp-foot small{color:var(--sub);font-size:calc(13px * var(--k))}
+.pp-hdr{position:absolute;left:0;right:0;top:0;z-index:5;display:flex;align-items:flex-start;gap:calc(10px * var(--k));padding:calc(58px * var(--k)) calc(16px * var(--k)) calc(30px * var(--k));background:linear-gradient(rgba(0,0,0,.78),rgba(0,0,0,.35) 70%,transparent);pointer-events:none}
+.pp-hdr>*{pointer-events:auto}
+.pp-hdr>div{flex:1;display:flex;flex-direction:column;pointer-events:none}
+.pp-hdr b{font-size:calc(32px * var(--k));font-weight:800;line-height:1.1}.pp-hdr small{font-size:calc(13px * var(--k));font-weight:600;color:#e5e5ea}
+.pp-lib:after,.pp-col:after{content:'';position:absolute;left:0;right:0;bottom:0;height:calc(120px * var(--k));background:linear-gradient(transparent,rgba(0,0,0,.7));pointer-events:none;z-index:4}
+.pp-bar{position:absolute;left:calc(18px * var(--k));right:calc(18px * var(--k));bottom:calc(28px * var(--k));z-index:6;display:flex;align-items:center;justify-content:space-between}
+.pp-seg{display:flex;height:calc(60px * var(--k));padding:calc(4px * var(--k));box-sizing:border-box;border-radius:calc(30px * var(--k));background:var(--g);border:var(--gb);-webkit-backdrop-filter:blur(24px) saturate(1.7);backdrop-filter:blur(24px) saturate(1.7)}
+.pp-seg span{width:calc(94px * var(--k));border-radius:calc(26px * var(--k));display:flex;flex-direction:column;align-items:center;justify-content:center;gap:calc(2px * var(--k));color:#fff}
+.pp-seg svg{width:calc(25px * var(--k));height:calc(22px * var(--k))}.pp-seg em{font-style:normal;font-size:calc(11px * var(--k));font-weight:600}
+.pp-seg span.on{background:rgba(255,255,255,.12);color:var(--blue)}
+.pp-sbtn{width:calc(60px * var(--k));height:calc(60px * var(--k));border-radius:50%;background:var(--g);border:var(--gb);-webkit-backdrop-filter:blur(24px);backdrop-filter:blur(24px);display:flex;align-items:center;justify-content:center}
+.pp-sbtn svg{width:calc(24px * var(--k));height:calc(24px * var(--k))}
+
+/* 精选集 */
+.pp-col .vs{padding-top:calc(58px * var(--k))}
+.pp-ctop{display:flex;align-items:flex-start;gap:calc(10px * var(--k));padding:0 calc(16px * var(--k)) calc(6px * var(--k))}
+.pp-ctop>div{flex:1;display:flex;flex-direction:column}
+.pp-ctop b{font-size:calc(32px * var(--k));font-weight:800;line-height:1.1}.pp-ctop small{font-size:calc(13px * var(--k));color:var(--sub);font-weight:600;margin-top:calc(2px * var(--k))}
+.pp-me{width:calc(40px * var(--k));height:calc(40px * var(--k));border-radius:50%;background:#333 center/cover}
+.pp-sec{padding-top:calc(18px * var(--k))}
+.pp-st{display:flex;justify-content:space-between;align-items:center;padding:0 calc(16px * var(--k)) calc(10px * var(--k))}
+.pp-st b{font-size:calc(20px * var(--k));font-weight:700;display:flex;align-items:center;gap:calc(3px * var(--k))}
+.pp-st b svg{width:calc(15px * var(--k));height:calc(15px * var(--k));color:var(--sub)}
+.pp-st i{width:calc(28px * var(--k));height:calc(28px * var(--k));border-radius:50%;background:#1c1c1e;display:flex;align-items:center;justify-content:center;color:var(--sub)}.pp-st i svg{width:calc(14px * var(--k));height:calc(14px * var(--k))}
+.pp-row{display:flex;gap:calc(8px * var(--k));overflow-x:auto;padding:0 calc(16px * var(--k));scrollbar-width:none;touch-action:pan-x pan-y}
+.pp-row::-webkit-scrollbar{display:none}
+.pp-card{flex:none;width:calc(200px * var(--k));height:calc(262px * var(--k));border-radius:calc(16px * var(--k));background:#1c1c1e center/cover;position:relative;overflow:hidden}
+.pp-card:after{content:'';position:absolute;inset:0;background:linear-gradient(transparent 55%,rgba(0,0,0,.55))}
+.pp-card b{position:absolute;left:calc(14px * var(--k));right:calc(14px * var(--k));bottom:calc(30px * var(--k));z-index:1;font-size:calc(20px * var(--k));font-weight:800;line-height:1.15}
+.pp-card small{position:absolute;left:calc(14px * var(--k));bottom:calc(12px * var(--k));z-index:1;font-size:calc(12px * var(--k));font-weight:600;opacity:.9}
+.pp-sq{flex:none;width:calc(116px * var(--k))}
+.pp-sqi{width:calc(116px * var(--k));height:calc(116px * var(--k));border-radius:calc(12px * var(--k));background:#1c1c1e center/cover;position:relative}
+.pp-sq.tall .pp-sqi{height:calc(150px * var(--k))}
+.pp-sqi.map{background:radial-gradient(circle at 60% 45%,#ff453a 0 calc(4px * var(--k)),transparent calc(5px * var(--k))),repeating-linear-gradient(35deg,transparent 0 calc(22px * var(--k)),rgba(255,255,255,.08) calc(22px * var(--k)) calc(24px * var(--k))),repeating-linear-gradient(-55deg,transparent 0 calc(30px * var(--k)),rgba(255,255,255,.06) calc(30px * var(--k)) calc(32px * var(--k))),linear-gradient(135deg,#2c3a33,#1f2a36)}
+.pp-sqi em{position:absolute;left:calc(8px * var(--k));bottom:calc(7px * var(--k));font-style:normal;font-size:calc(13px * var(--k));font-weight:700;text-shadow:0 1px 4px rgba(0,0,0,.6)}
+.pp-sq b{display:block;font-size:calc(14px * var(--k));font-weight:500;margin-top:calc(6px * var(--k))}.pp-sq small{display:block;color:var(--sub);font-size:calc(13px * var(--k))}
+.pp-empty{margin:0 calc(16px * var(--k));background:#1c1c1e;border-radius:calc(18px * var(--k));padding:calc(16px * var(--k));position:relative;display:flex;flex-direction:column;gap:calc(4px * var(--k))}
+.pp-empty .pp-ei{width:calc(44px * var(--k));height:calc(44px * var(--k));border-radius:calc(10px * var(--k));background:#2c2c2e;display:flex;align-items:center;justify-content:center;color:var(--sub);font-size:calc(20px * var(--k));margin-bottom:calc(6px * var(--k))}
+.pp-empty .pp-pill{position:absolute;right:calc(14px * var(--k));top:calc(16px * var(--k))}
+.pp-empty b{font-size:calc(15px * var(--k));font-weight:600}.pp-empty small{font-size:calc(13px * var(--k));color:var(--sub);line-height:1.35}
+.pp-list{display:grid;grid-template-columns:1fr 1fr;gap:calc(8px * var(--k));margin:0 calc(16px * var(--k))}
+.pp-list div{height:calc(44px * var(--k));border-radius:calc(12px * var(--k));background:#1c1c1e;display:flex;align-items:center;gap:calc(9px * var(--k));padding:0 calc(12px * var(--k));font-size:calc(14px * var(--k))}
+.pp-list i{width:calc(20px * var(--k));color:var(--blue);font-style:normal;display:flex;justify-content:center}.pp-list i svg{width:calc(17px * var(--k));height:calc(17px * var(--k))}
+.pp-list span{flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pp-list em{color:var(--sub)}.pp-list em svg{width:calc(13px * var(--k));height:calc(13px * var(--k))}
+.pp-reorder{color:var(--blue);padding:calc(2px * var(--k)) calc(16px * var(--k)) calc(10px * var(--k));font-size:calc(17px * var(--k))}
+.pp-end{height:calc(130px * var(--k))}
+
+/* 相簿 / 回忆 / 搜索 */
+.pp-nav{position:absolute;left:0;right:0;top:0;z-index:5;display:flex;align-items:center;gap:calc(10px * var(--k));padding:calc(56px * var(--k)) calc(16px * var(--k)) calc(14px * var(--k));background:linear-gradient(rgba(0,0,0,.75),transparent)}
+.pp-nav .sp{flex:1}
+.pp-alb .vs{padding-top:calc(108px * var(--k))}
+.pp-memv .vs{padding-top:0}
+.pp-at{padding:0 calc(16px * var(--k)) calc(12px * var(--k));display:flex;flex-direction:column}
+.pp-at b{font-size:calc(30px * var(--k));font-weight:800}.pp-at small{color:var(--sub);font-size:calc(13px * var(--k));font-weight:600}
+.pp-hero{height:calc(340px * var(--k));background:#1c1c1e center/cover;position:relative;margin-bottom:calc(2px * var(--k))}
+.pp-hero:after{content:'';position:absolute;inset:0;background:linear-gradient(transparent 50%,rgba(0,0,0,.65))}
+.pp-hero b{position:absolute;left:calc(18px * var(--k));bottom:calc(38px * var(--k));z-index:1;font-size:calc(28px * var(--k));font-weight:800}
+.pp-hero small{position:absolute;left:calc(18px * var(--k));bottom:calc(16px * var(--k));z-index:1;font-size:calc(13px * var(--k));font-weight:600;opacity:.9}
+.pp-none{text-align:center;color:var(--sub);padding:calc(60px * var(--k)) calc(20px * var(--k))}
+.pp-sh{display:flex;align-items:center;gap:calc(12px * var(--k));padding:calc(58px * var(--k)) calc(16px * var(--k)) calc(10px * var(--k))}
+.pp-sh label{flex:1;height:calc(40px * var(--k));border-radius:calc(20px * var(--k));background:#1c1c1e;display:flex;align-items:center;gap:calc(8px * var(--k));padding:0 calc(12px * var(--k));color:var(--sub)}
+.pp-sh label svg{width:calc(17px * var(--k));height:calc(17px * var(--k))}
+.pp-sh input{flex:1;min-width:0;height:100%;background:none;border:0;outline:0;color:#fff;font:inherit;font-size:calc(16px * var(--k))}
+.pp-sh input::placeholder{color:var(--sub)}
+.pp-sh>span{color:var(--blue);font-size:calc(16px * var(--k))}
+.pp-sug{display:flex;flex-wrap:wrap;gap:calc(8px * var(--k));padding:calc(8px * var(--k)) calc(16px * var(--k))}
+.pp-sug span{background:#1c1c1e;border-radius:calc(16px * var(--k));padding:calc(7px * var(--k)) calc(14px * var(--k));font-size:calc(14px * var(--k))}
+.pp-rc{color:var(--sub);font-size:calc(13px * var(--k));font-weight:600;padding:calc(6px * var(--k)) calc(16px * var(--k)) calc(8px * var(--k))}
+
+/* 单张 */
+.pp-one .vs{overflow:hidden;position:relative}
+.pp-stage{position:absolute;left:0;right:0;top:0;bottom:0;display:flex;align-items:center;justify-content:center;transition:bottom .38s cubic-bezier(.3,.9,.3,1)}
+.pp-stage img{max-width:100%;max-height:100%;width:100%;height:100%;object-fit:contain;display:block}
+.pp-live{position:absolute;left:calc(16px * var(--k));top:calc(110px * var(--k));display:flex;align-items:center;gap:calc(4px * var(--k));font-style:normal;font-size:calc(12px * var(--k));font-weight:600;padding:calc(4px * var(--k)) calc(9px * var(--k));border-radius:calc(12px * var(--k));background:var(--g);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px)}
+.pp-live svg{width:calc(14px * var(--k));height:calc(14px * var(--k))}
+.pp-info{position:absolute;left:0;right:0;top:100%;height:56%;overflow-y:auto;padding:calc(12px * var(--k)) calc(16px * var(--k)) calc(120px * var(--k));box-sizing:border-box;background:#000;transition:top .38s cubic-bezier(.3,.9,.3,1);scrollbar-width:none}
+.pp-one.info .pp-stage{bottom:56%}
+.pp-one.info .pp-stage img{object-fit:cover}
+.pp-one.info .pp-info{top:44%}
+.pp-one.info .pp-strip{display:none}
+.pp-otop{position:absolute;left:0;right:0;top:0;z-index:5;display:flex;align-items:center;justify-content:space-between;padding:calc(56px * var(--k)) calc(16px * var(--k)) 0;transition:opacity .2s}
+.pp-when2{display:flex;flex-direction:column;align-items:center;padding:calc(4px * var(--k)) calc(20px * var(--k));border-radius:calc(22px * var(--k));background:var(--g);border:var(--gb);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px)}
+.pp-when2 b{font-size:calc(15px * var(--k));font-weight:600;line-height:1.2}.pp-when2 small{font-size:calc(11px * var(--k));color:#e5e5ea}
+.pp-obot{position:absolute;left:0;right:0;bottom:0;z-index:5;padding:0 calc(16px * var(--k)) calc(28px * var(--k));transition:opacity .2s}
+.pp-strip{display:flex;justify-content:center;gap:calc(2px * var(--k));margin-bottom:calc(12px * var(--k));height:calc(38px * var(--k));align-items:center}
+.pp-strip i{width:calc(20px * var(--k));height:calc(30px * var(--k));background:#1c1c1e center/cover;flex:none}
+.pp-strip i.on{width:calc(30px * var(--k));height:calc(38px * var(--k));margin:0 calc(4px * var(--k))}
+.pp-tools{display:flex;align-items:center;justify-content:space-between}
+.pp-tools .pp-cb{width:calc(50px * var(--k));height:calc(50px * var(--k))}.pp-tools .pp-cb svg{width:calc(22px * var(--k));height:calc(22px * var(--k))}
+.pp-cap3{display:flex;align-items:center;gap:calc(30px * var(--k));height:calc(50px * var(--k));padding:0 calc(24px * var(--k));border-radius:calc(25px * var(--k));background:var(--g);border:var(--gb);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px)}
+.pp-cap3 span{display:flex}.pp-cap3 svg{width:calc(23px * var(--k));height:calc(23px * var(--k))}
+.pp-one.chrome-off .pp-otop,.pp-one.chrome-off .pp-obot{opacity:0;pointer-events:none}
+.pp-capin{width:100%;background:none;border:0;outline:0;color:#fff;font:inherit;font-size:calc(17px * var(--k));padding:calc(6px * var(--k)) 0 calc(12px * var(--k))}
+.pp-capin::placeholder{color:#636366}
+.pp-when{display:flex;justify-content:space-between;font-size:calc(15px * var(--k));font-weight:600}
+.pp-when em{color:var(--blue);font-style:normal;font-weight:400}
+.pp-fn{color:var(--sub);font-size:calc(14px * var(--k));margin:calc(4px * var(--k)) 0 calc(12px * var(--k))}
+.pp-exif{background:#1c1c1e;border-radius:calc(14px * var(--k));overflow:hidden}
+.pp-eh{display:flex;justify-content:space-between;align-items:center;padding:calc(11px * var(--k)) calc(14px * var(--k)) calc(8px * var(--k))}
+.pp-eh b{font-size:calc(15px * var(--k));font-weight:600}.pp-eh i{background:#3a3a3c;border-radius:calc(5px * var(--k));padding:calc(1px * var(--k)) calc(6px * var(--k));font-size:calc(11px * var(--k));color:#d1d1d6;font-style:normal;font-weight:600}
+.pp-er{padding:0 calc(14px * var(--k)) calc(6px * var(--k));color:var(--sub);font-size:calc(14px * var(--k))}
+.pp-ev{display:flex;justify-content:space-between;border-top:.5px solid #38383a;padding:calc(9px * var(--k)) calc(14px * var(--k));color:var(--sub);font-size:calc(12.5px * var(--k));margin-top:calc(4px * var(--k))}
+.pp-map{margin-top:calc(12px * var(--k));border-radius:calc(14px * var(--k));overflow:hidden;background:#1c1c1e}
+.pp-mapi{height:calc(130px * var(--k));position:relative;background:repeating-linear-gradient(35deg,transparent 0 calc(26px * var(--k)),rgba(255,255,255,.07) calc(26px * var(--k)) calc(28px * var(--k))),repeating-linear-gradient(-55deg,transparent 0 calc(34px * var(--k)),rgba(255,255,255,.05) calc(34px * var(--k)) calc(36px * var(--k))),linear-gradient(135deg,#26332c,#1d2731)}
+.pp-mapi i{position:absolute;left:50%;top:50%;width:calc(44px * var(--k));height:calc(44px * var(--k));margin:calc(-22px * var(--k)) 0 0 calc(-22px * var(--k));border-radius:calc(9px * var(--k));border:calc(2.5px * var(--k)) solid #fff;background:#333 center/cover;box-shadow:0 calc(2px * var(--k)) calc(8px * var(--k)) rgba(0,0,0,.5)}
+.pp-map b{display:block;padding:calc(10px * var(--k)) calc(14px * var(--k));font-size:calc(15px * var(--k));font-weight:600}
+.pp-inal{margin-top:calc(14px * var(--k));display:flex;flex-direction:column;gap:calc(4px * var(--k))}
+.pp-inal small{color:var(--sub);font-size:calc(13px * var(--k))}.pp-inal span{color:var(--blue)}
+.pp-del{position:absolute;inset:0;z-index:40}
+.pp-delb{position:absolute;inset:0;background:rgba(0,0,0,.45)}
+.pp-delp{position:absolute;left:calc(10px * var(--k));right:calc(10px * var(--k));bottom:calc(30px * var(--k));background:#2c2c2e;border-radius:calc(14px * var(--k));text-align:center;overflow:hidden}
+.pp-delp small{display:block;padding:calc(14px * var(--k)) calc(18px * var(--k));color:var(--sub);font-size:calc(13px * var(--k));line-height:1.35}
+.pp-delp b{display:block;border-top:.5px solid #48484a;padding:calc(16px * var(--k));color:#ff453a;font-size:calc(18px * var(--k));font-weight:400}
 
 @media (prefers-reduced-motion: reduce){*{transition-duration:.01s!important;animation:none!important}}
 </style>
@@ -2812,7 +2942,7 @@ const BANK = [
 ];
 
 /* 图片原始尺寸（用于按真实比例显示） */
-const IMG_SIZE = {"assets/av_default.jpg": [240, 240], "assets/av_jian.jpg": [240, 240], "assets/av_keke.jpg": [240, 240], "assets/av_minji.jpg": [240, 240], "assets/av_shuyan.jpg": [240, 240], "assets/av_spam.jpg": [240, 240], "assets/avatar_anran.jpg": [320, 320], "assets/ig_blossom.jpg": [736, 736], "assets/ig_cat.jpg": [736, 981], "assets/ig_chat.jpg": [1080, 1072], "assets/ig_dog.jpg": [735, 824], "assets/ig_pasta.jpg": [1080, 1440], "assets/ig_sunset.jpg": [736, 981], "assets/sp_cake.jpg": [902, 1200], "assets/sp_choco.jpg": [498, 660], "assets/sp_heart.jpg": [921, 1152], "assets/sp_snow.jpg": [736, 981], "assets/sp_walk.jpg": [736, 981], "assets/st_1.jpg": [736, 1307], "assets/st_2.jpg": [736, 1308], "assets/st_3.jpg": [736, 1308], "assets/st_4.jpg": [736, 981], "assets/st_5.jpg": [828, 1470], "assets/st_6.jpg": [737, 1600], "assets/sy_cup.jpg": [963, 1200], "assets/sy_hand.jpg": [900, 1200], "assets/w_bday.jpg": [736, 632], "assets/w_booth.jpg": [740, 1280], "assets/w_cat.jpg": [736, 1308], "assets/w_hair.jpg": [736, 1308], "assets/w_hs.jpg": [828, 1064], "assets/w_ramen.jpg": [736, 981], "assets/wall_home.jpg": [736, 1308], "assets/wall_lock.jpg": [608, 1081], "assets/x/ts_archive.jpg": [400, 400], "assets/x/bnd_banner.jpg": [924, 318], "assets/x/bnd_party.jpg": [1000, 1301], "assets/x/bnd_av.jpg": [360, 360], "assets/x/bnd_animal.jpg": [1200, 675], "assets/x/x_me.jpg": [320, 320], "assets/x/clover.jpg": [400, 400], "assets/x/twt.jpg": [120, 120], "assets/x/fan_cat.jpg": [400, 400], "assets/x/bnd_tako.jpg": [1200, 675]};
+const IMG_SIZE = {"assets/av_default.jpg": [240, 240], "assets/av_jian.jpg": [240, 240], "assets/av_keke.jpg": [240, 240], "assets/av_minji.jpg": [240, 240], "assets/av_shuyan.jpg": [240, 240], "assets/av_spam.jpg": [240, 240], "assets/avatar_anran.jpg": [320, 320], "assets/ig_blossom.jpg": [736, 736], "assets/ig_cat.jpg": [736, 981], "assets/ig_chat.jpg": [1080, 1072], "assets/ig_dog.jpg": [735, 824], "assets/ig_pasta.jpg": [1080, 1440], "assets/ig_sunset.jpg": [736, 981], "assets/sp_cake.jpg": [902, 1200], "assets/sp_choco.jpg": [498, 660], "assets/sp_heart.jpg": [921, 1152], "assets/sp_snow.jpg": [736, 981], "assets/sp_walk.jpg": [736, 981], "assets/st_1.jpg": [736, 1307], "assets/st_2.jpg": [736, 1308], "assets/st_3.jpg": [736, 1308], "assets/st_4.jpg": [736, 981], "assets/st_5.jpg": [828, 1470], "assets/st_6.jpg": [737, 1600], "assets/sy_cup.jpg": [963, 1200], "assets/sy_hand.jpg": [900, 1200], "assets/w_bday.jpg": [736, 632], "assets/w_booth.jpg": [740, 1280], "assets/w_cat.jpg": [736, 1308], "assets/w_hair.jpg": [736, 1308], "assets/w_hs.jpg": [828, 1064], "assets/w_ramen.jpg": [736, 981], "assets/wall_home.jpg": [736, 1308], "assets/wall_lock.jpg": [608, 1081], "assets/x/ts_archive.jpg": [400, 400], "assets/x/bnd_banner.jpg": [924, 318], "assets/x/bnd_party.jpg": [1000, 1301], "assets/x/bnd_av.jpg": [360, 360], "assets/x/bnd_animal.jpg": [1200, 675], "assets/x/x_me.jpg": [320, 320], "assets/x/clover.jpg": [400, 400], "assets/x/twt.jpg": [120, 120], "assets/x/fan_cat.jpg": [400, 400], "assets/x/bnd_tako.jpg": [1200, 675], "assets/ph/69.jpg": [256, 341], "assets/ph/47.jpg": [256, 455], "assets/ph/67.jpg": [256, 341], "assets/ph/52.jpg": [256, 253], "assets/ph/75.jpg": [256, 341], "assets/ph/26.jpg": [256, 256], "assets/ph/42.jpg": [256, 296], "assets/ph/28.jpg": [256, 320], "assets/ph/32.jpg": [256, 244], "assets/ph/20.jpg": [256, 341], "assets/ph/51.jpg": [256, 341], "assets/ph/65.jpg": [256, 384], "assets/ph/55.jpg": [256, 319], "assets/ph/71.jpg": [256, 341], "assets/ph/49.jpg": [256, 341], "assets/ph/41.jpg": [256, 205], "assets/ph/54.jpg": [256, 423], "assets/ph/31.jpg": [256, 316], "assets/ph/58.jpg": [256, 240], "assets/ph/35.jpg": [256, 383], "assets/ph/73.jpg": [256, 341], "assets/ph/37.jpg": [236, 512], "assets/ph/62.jpg": [256, 353], "assets/ph/43.jpg": [256, 341], "assets/ph/80.jpg": [256, 454], "assets/ph/23.jpg": [256, 256], "assets/ph/64.jpg": [256, 452], "assets/ph/68.jpg": [256, 341], "assets/ph/44.jpg": [256, 345], "assets/ph/38.jpg": [256, 341], "assets/ph/59.jpg": [256, 333], "assets/ph/22.jpg": [256, 256], "assets/ph/81.jpg": [256, 341], "assets/ph/60.jpg": [256, 326], "assets/ph/48.jpg": [256, 409], "assets/ph/56.jpg": [256, 198], "assets/ph/39.jpg": [256, 320], "assets/ph/30.jpg": [256, 341], "assets/ph/19.jpg": [256, 341], "assets/ph/18.jpg": [256, 341], "assets/ph/46.jpg": [256, 319], "assets/ph/24.jpg": [256, 341], "assets/ph/74.jpg": [256, 453], "assets/ph/76.jpg": [256, 341], "assets/ph/79.jpg": [256, 336], "assets/ph/40.jpg": [256, 212], "assets/ph/78.jpg": [256, 454], "assets/ph/34.jpg": [256, 455], "assets/ph/50.jpg": [256, 188], "assets/ph/61.jpg": [256, 454], "assets/ph/53.jpg": [256, 341], "assets/ph/36.jpg": [256, 192], "assets/ph/70.jpg": [256, 341], "assets/ph/21.jpg": [256, 341], "assets/ph/33.jpg": [256, 270], "assets/ph/27.jpg": [256, 341], "assets/ph/63.jpg": [256, 455], "assets/ph/25.jpg": [256, 341], "assets/ph/45.jpg": [256, 323], "assets/ph/57.jpg": [256, 455], "assets/ph/82.jpg": [256, 248], "assets/ph/66.jpg": [256, 312], "assets/ph/72.jpg": [256, 455], "assets/ph/29.jpg": [236, 512], "assets/ph/77.jpg": [256, 341]};
 
 /* =========================================================
    APP VIEWS — 每个 App 的页面（结构与交互）
@@ -5207,6 +5337,212 @@ function xDrawerMount(v){
   d.addEventListener('touchend', e => { if (sx != null && sx - e.changedTouches[0].clientX > 50) d.classList.remove('on'); sx = null; });
 }
 ROOT.x = () => R.x();
+
+/* =========================================================
+   PHOTOS — iOS 26 照片（深色）：图库 / 精选集 / 单张 + 信息面板
+   照片是玩家给的真实照片（assets/ph），按剧情时间线排好；
+   收藏、删除、说明文字都会保存（PH_SAVE_KEY）。
+   ========================================================= */
+const PH_SAVE_KEY = 'taesan-phone-photos-v1';
+/* [文件, 时间, 地点, 搜索用描述, 标记(f 收藏 · e 自拍 · l 实况 · s 截屏), 相簿] */
+const PH_SRC = [
+  [67,'2021-09-12 16:03','首尔 中区','地铁 车厢','','首尔'],
+  [76,'2021-09-12 16:31','首尔 中区','公交车','','首尔'],
+  [20,'2021-10-23 07:52','首尔 西大门区','地铁 站台','','首尔'],
+  [77,'2022-02-18 07:41','首尔 麻浦区','清晨 小巷','','首尔'],
+  [68,'2022-04-02 14:05','首尔 西大门区','冰淇淋','','吃吃喝喝'],
+  [43,'2022-08-26 23:12','首尔 麻浦区','猫 便利店','f',''],
+  [57,'2022-11-12 22:40','首尔 龙山区','牵手 车里','f','🖤'],
+  [64,'2022-11-19 17:52','首尔 汉江公园','影子 爱心','f','🖤'],
+  [49,'2022-12-03 15:21','首尔 麻浦区','睡着 沙发','','🖤'],
+  [31,'2022-12-10 23:06','首尔 麻浦区','帽子','','🖤'],
+  [56,'2022-12-17 01:12','首尔 西大门区','头发','e','🖤'],
+  [38,'2023-01-07 20:33','首尔 麻浦区','卫衣','','🖤'],
+  [46,'2023-01-21 21:44','首尔 麻浦区','捂脸','','🖤'],
+  [30,'2023-02-02 02:15','首尔 江南区','录音室 电脑','','🖤'],
+  [42,'2023-02-02 02:21','首尔 江南区','耳机 麦克风','','🖤'],
+  [59,'2023-02-19 23:32','首尔 江南区','黑白 麦克风','f','🖤'],
+  [52,'2023-03-11 16:42','首尔 西大门区','趴在桌上 睡觉','','🖤'],
+  [33,'2023-03-18 14:10','首尔 麻浦区','头发','','🖤'],
+  [53,'2023-03-25 15:12','首尔 麻浦区','咖啡店 睡着','','🖤'],
+  [29,'2023-04-08 13:24','首尔 江南区','黑白 对镜自拍','','🖤'],
+  [61,'2023-04-22 22:13','首尔 江南区','练习室','l','🖤'],
+  [60,'2023-05-06 18:03','首尔 西大门区','剪刀手 影子','','🖤'],
+  [55,'2023-05-29 23:41','首尔 江南区','夜晚','','🖤'],
+  [66,'2023-05-30 19:24','首尔 江南区','比心 涂鸦墙','f','🖤'],
+  [34,'2023-06-24 21:12','首尔 江南区','健身房 对镜自拍','','🖤'],
+  [44,'2023-07-08 20:11','首尔 麻浦区','街道','f','🖤'],
+  [39,'2023-07-08 22:34','首尔 麻浦区','夜晚','','🖤'],
+  [32,'2023-08-10 00:12','首尔 麻浦区','HBD 生日','f','🖤'],
+  [36,'2023-09-16 19:33','首尔 松坡区','体育场 毛线帽','','🖤'],
+  [37,'2023-09-23 23:52','首尔 西大门区','视频通话','','🖤'],
+  [45,'2023-10-14 14:22','首尔 城东区','咖啡店 剪刀手','f','🖤'],
+  [50,'2023-10-29 01:33','首尔 麻浦区','睡着','','🖤'],
+  [54,'2023-11-05 16:04','首尔 麻浦区','眼镜','e','🖤'],
+  [40,'2023-11-21 22:02','首尔 江南区','剪刀手','','🖤'],
+  [48,'2023-12-02 23:31','首尔 江南区','夜晚','','🖤'],
+  [35,'2023-12-09 22:14','首尔 麻浦区','夜晚','','🖤'],
+  [47,'2023-12-16 21:52','首尔 麻浦区','夜晚 长椅','','🖤'],
+  [51,'2024-01-06 15:33','首尔 江南区','午睡','','🖤'],
+  [63,'2024-01-20 00:42','首尔 西大门区','黑白 对镜自拍','e','🖤'],
+  [41,'2024-02-08 19:40','','截屏 推特','s',''],
+  [78,'2024-02-15 22:31','首尔 西大门区','夜晚 路口','',''],
+  [62,'2024-02-17 23:11','首尔 西大门区','路灯','',''],
+  [69,'2024-06-14 23:21','首尔 西大门区','泡面 宿舍','','朋友'],
+  [75,'2024-08-03 01:12','首尔 麻浦区','饮料 深夜','','朋友'],
+  [73,'2025-03-14 20:34','首尔 城北区','聚会','','朋友'],
+  [74,'2025-03-14 23:52','首尔 城北区','外卖 聚会','','朋友'],
+  [65,'2025-05-03 15:02','首尔 龙山区','卫衣','','朋友'],
+  [70,'2025-06-07 00:31','首尔 麻浦区','夜晚 朋友','','朋友'],
+  [72,'2025-09-20 16:12','首尔 城北区','卫衣','','朋友'],
+  [71,'2025-10-31 21:03','首尔 城北区','零食','','朋友'],
+  [80,'2025-12-20 19:44','首尔 城北区','火锅','f','朋友'],
+  [82,'2026-05-23 20:02','首尔 汉江公园','野餐 拉面','','朋友'],
+  [81,'2026-07-18 22:11','首尔 汉江公园','拉面 夜晚','','朋友'],
+  [26,'2026-08-30 11:20','首尔 城东区','牛油果吐司 早午餐','','吃吃喝喝'],
+  [79,'2026-09-05 18:22','首尔 城北区','散步 购物袋','',''],
+  [22,'2026-09-27 15:04','首尔 钟路区','砖墙 长椅','','首尔'],
+  [21,'2026-10-03 18:12','首尔 麻浦区','日落 街道','f','首尔'],
+  [23,'2026-10-14 12:33','首尔 城北区','汤 午饭','','吃吃喝喝'],
+  [18,'2026-10-18 19:42','首尔 江南区','夜晚 街道','','首尔'],
+  [19,'2026-10-18 20:31','首尔 江南区','炸鸡 啤酒','l','吃吃喝喝'],
+  [27,'2026-10-18 21:51','首尔 江南区','순하리 烧酒','l','吃吃喝喝'],
+  [24,'2026-10-20 23:11','首尔 城北区','便利店 零食','',''],
+  [25,'2026-10-22 22:52','首尔 城北区','夜晚 路口','','首尔'],
+  [28,'2026-10-23 01:24','首尔 城北区','蓝色 灯光','',''],
+  [58,'2026-10-23 23:40','','作品集 截屏','s',''],
+];
+/* 换成新照片：沿用 PHOTOS 这个数组（聚焦搜索等地方也在用） */
+PHOTOS.length = 0;
+PH_SRC.forEach(([n, dt, place, c, f, al], i) => PHOTOS.push({ id:i, n, dt, d:dt.slice(0, 10), s:`img:assets/ph/${n}.jpg`, c, p:place, f, al:al ? [al] : [], key:1, cap:'' }));
+PHOTOS.forEach((p, i) => { p.file = p.n === 27 ? 'IMG_4801' : 'IMG_' + String(2210 + i * 41).padStart(4, '0'); });
+
+/* ---------- 保存 ---------- */
+const PS = { fav:{}, del:{}, cap:{} };
+try { Object.assign(PS, JSON.parse(localStorage.getItem(PH_SAVE_KEY) || '{}')); } catch (e) {}
+PHOTOS.forEach(p => { const k = p.n; if (k in PS.fav) p.f = PS.fav[k] ? (p.f.includes('f') ? p.f : p.f + 'f') : p.f.replace('f', ''); if (PS.del[k]) p.f += 'd'; if (PS.cap[k]) p.cap = PS.cap[k]; });
+let phSaveT; const phSave = () => { clearTimeout(phSaveT); phSaveT = setTimeout(() => { if (typeof resetting !== 'undefined' && resetting) return; try { localStorage.setItem(PH_SAVE_KEY, JSON.stringify(PS)); } catch (e) {} }, 200); };
+
+/* ---------- 小工具 ---------- */
+const PHI = {
+  sort:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 7h14M7.5 12h9M10 17h4"/></svg>',
+  lib:'<svg viewBox="0 0 28 24" fill="currentColor"><path d="M4 5.5A3.5 3.5 0 0 1 7.5 2h13A3.5 3.5 0 0 1 24 5.5v11a3.5 3.5 0 0 1-3.5 3.5h-13A3.5 3.5 0 0 1 4 16.5zm4 9.8h12l-3.6-4.8-2.9 3.6-2-2.4zm1.6-6.5a1.8 1.8 0 1 0 0-3.6 1.8 1.8 0 0 0 0 3.6z"/><path d="M2 8v9.5A4.5 4.5 0 0 0 6.5 22H20" fill="none" stroke="currentColor" stroke-width="1.6" opacity=".7"/></svg>',
+  col:'<svg viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="7" width="18" height="14" rx="3"/><rect x="5" y="3.5" width="14" height="2" rx="1" opacity=".75"/></svg>',
+  search:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg>',
+  back:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5 8 12l7 7"/></svg>',
+  dots:'<svg viewBox="0 0 24 24" fill="currentColor"><circle cx="5.5" cy="12" r="1.8"/><circle cx="12" cy="12" r="1.8"/><circle cx="18.5" cy="12" r="1.8"/></svg>',
+  share:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M8 7l4-4 4 4M6 11H5v9h14v-9h-1"/></svg>',
+  heart:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 20s-7.5-4.6-8.7-9.5C2.5 7 4.7 4.5 7.5 4.5c1.9 0 3.4 1.1 4.5 2.7 1.1-1.6 2.6-2.7 4.5-2.7 2.8 0 5 2.5 4.2 6C19.5 15.4 12 20 12 20z"/></svg>',
+  heartOn:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 20s-7.5-4.6-8.7-9.5C2.5 7 4.7 4.5 7.5 4.5c1.9 0 3.4 1.1 4.5 2.7 1.1-1.6 2.6-2.7 4.5-2.7 2.8 0 5 2.5 4.2 6C19.5 15.4 12 20 12 20z"/></svg>',
+  info:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v6"/><circle cx="12" cy="7.6" r=".6" fill="currentColor"/></svg>',
+  infoOn:'<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5" fill="currentColor"/><path d="M12 11v6" stroke="#000" stroke-width="2.2" stroke-linecap="round"/><circle cx="12" cy="7.6" r="1.3" fill="#000"/></svg>',
+  adjust:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2.2"/><circle cx="9" cy="17" r="2.2"/></svg>',
+  trash:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6.5h16M9.5 6.5V4h5v2.5M6.5 6.5l1 13.5h9l1-13.5M10 10.5v6M14 10.5v6"/></svg>',
+  chevR:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m9 5 7 7-7 7"/></svg>',
+  chevD:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>',
+  lock:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 10V7.5a5 5 0 0 1 10 0V10h.5A1.5 1.5 0 0 1 19 11.5v8a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 5 19.5v-8A1.5 1.5 0 0 1 6.5 10zm2 0h6V7.5a3 3 0 0 0-6 0z"/></svg>',
+  live:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="9.5" stroke-dasharray="1.6 2.2"/></svg>',
+};
+const phVis = () => PHOTOS.filter(p => !p.f.includes('d') && !p.f.includes('h'));
+const phTile2 = (p, ctx = '') => `<div class="pp-t" data-go="photo|${p.id}${ctx ? '~' + ctx : ''}" style="background-image:url(${p.s.slice(4)})">${p.f.includes('f') ? `<i class="h">${PHI.heartOn}</i>` : ''}</div>`;
+const phDev = p => p.d >= '2025-09-20' ? ['Apple iPhone 17 Pro Max', '超广角镜头 — 13 mm ƒ2.2', '12 MP · 3024 × 4032'] : p.d >= '2023-09-15' ? ['Apple iPhone 15 Pro', '主摄 — 24 mm ƒ1.78', '24 MP · 4284 × 5712'] : ['Apple iPhone 12', '广角镜头 — 26 mm ƒ1.6', '12 MP · 3024 × 4032'];
+const phDay = d => d === TODAY ? '今天' : d === YESTERDAY ? '昨天' : d.startsWith('2026') ? md(d) : ymd(d);
+const PH_ALBUMS = () => [['最近项目', phVis()], ...['🖤', '朋友', '吃吃喝喝', '首尔'].map(n => [n, phVis().filter(p => p.al.includes(n))])];
+const phCtxList = ctx => { if (!ctx) return phVis(); if (ctx === '个人收藏') return phVis().filter(p => p.f.includes('f')); if (ctx === '最近删除') return PHOTOS.filter(p => p.f.includes('d'));
+  if (ctx === '自拍') return phVis().filter(p => p.f.includes('e')); if (ctx === '实况照片') return phVis().filter(p => p.f.includes('l')); if (ctx === '截屏') return phVis().filter(p => p.f.includes('s'));
+  const a = PH_ALBUMS().find(x => x[0] === ctx); return a ? a[1] : phVis(); };
+const phBar = on => `<div class="pp-bar"><div class="pp-seg"><span class="${on === 'lib' ? 'on' : ''}" data-tab="photos">${PHI.lib}<em>图库</em></span><span class="${on === 'col' ? 'on' : ''}" data-tab="phcol">${PHI.col}<em>精选集</em></span></div><span class="pp-sbtn" data-go="phsearch">${PHI.search}</span></div>`;
+
+Object.assign(R, {
+  /* 图库 */
+  photos: cols => { cols = +cols || 5; const ps = phVis();
+    return { tone:'dark', bg:'#000', cls:'pp pp-lib',
+      body:`<div class="pp-grid c${cols}">${ps.map(p => phTile2(p)).join('')}</div><div class="pp-foot"><b>${ps.length} 张照片</b><small>已在 ${ymd(TODAY)} 同步</small></div>`,
+      over:`<div class="pp-hdr"><div><b>图库</b><small>${ps.length} 个项目</small></div><span class="pp-cb" data-tab="photos|${cols === 5 ? 3 : 5}">${PHI.sort}</span><span class="pp-pill" data-toast="长按照片也可以选择">选择</span></div>` + phBar('lib'),
+      refresh:() => R.photos(cols), mount:v => { const s = v.querySelector('.vs'); s.scrollTop = s.scrollHeight; } }; },
+  /* 精选集 */
+  phcol: () => { const ps = phVis(), fav = ps.filter(p => p.f.includes('f'));
+    const sec = (t, inner, go) => `<div class="pp-sec"><div class="pp-st"><b ${go ? `data-go="${go}"` : ''}>${t}${go ? PHI.chevR : ''}</b><i data-toast="可以在「重新排序」里隐藏这一栏">${PHI.chevD}</i></div>${inner}</div>`;
+    const card = (p, t, sub, go) => `<div class="pp-card" data-go="${go}" style="background-image:url(${p.s.slice(4)})"><b>${t}</b>${sub ? `<small>${sub}</small>` : ''}</div>`;
+    const mem = [['首尔的夜晚', '2021 – 2026', 'phmem|night', 18], ['和朋友们', '2024 – 2026', 'phmem|朋友', 73], ['美味佳肴', '2022 – 2026', 'phmem|吃吃喝喝', 27]];
+    const recent = [...new Set(ps.map(p => p.d))].sort().reverse().slice(0, 4);
+    const media = [['视频', '▶︎', 0], ['自拍', '◉', ps.filter(p => p.f.includes('e')).length], ['实况照片', PHI.live, ps.filter(p => p.f.includes('l')).length], ['人像', 'ƒ', 0], ['全景照片', '◫', 0], ['截屏', '▣', ps.filter(p => p.f.includes('s')).length], ['录屏', '◎', 0], ['动图', '◌', 0], ['双摄', '⧉', 0]];
+    const util = [['已隐藏', 1], ['最近删除', 1], ['重复项'], ['收据'], ['手写'], ['插图'], ['二维码'], ['最近存储'], ['最近查看'], ['最近编辑'], ['最近共享']];
+    return { tone:'dark', bg:'#000', cls:'pp pp-col',
+      body:`<div class="pp-ctop"><div><b>精选集</b><small data-toast="iCloud 储存空间已满">储存空间已满 · 获取更多 ›</small></div><span class="pp-cb" data-toast="原型中暂不可用">${PHI.dots}</span><span class="pp-me" style="background-image:url(assets/avatar_anran.jpg)"></span></div>
+        ${sec('回忆', `<div class="pp-row big">${mem.map(([t, s, g, n]) => card(PHOTOS.find(p => p.n === n), t, s, g)).join('')}</div>`, 'phmem|night')}
+        ${sec('置顶精选集', `<div class="pp-row">${[['个人收藏', fav[fav.length - 1] || ps[0], 'phalb|个人收藏'], ['最近存储', ps[ps.length - 1], 'phalb|最近项目'], ['地图', null, '']].map(([t, p, g]) => `<div class="pp-sq" ${g ? `data-go="${g}"` : 'data-toast="地图：首尔"'}><div class="pp-sqi ${p ? '' : 'map'}" style="${p ? `background-image:url(${p.s.slice(4)})` : ''}"></div><b>${t}</b></div>`).join('')}</div>`, '')}
+        ${sec('相簿', `<div class="pp-row">${PH_ALBUMS().map(([n, l]) => `<div class="pp-sq" data-go="phalb|${n}"><div class="pp-sqi" style="background-image:url(${(l[l.length - 1] || ps[0]).s.slice(4)})"></div><b>${n}</b><small>${l.length}</small></div>`).join('')}</div>`, 'phalb|最近项目')}
+        ${sec('人物', `<div class="pp-row">${[[44, '🖤'], [72, '朋友'], [65, '朋友']].map(([n, g]) => `<div class="pp-sq" data-go="phalb|${g}"><div class="pp-sqi face" style="background-image:url(assets/ph/${n}.jpg)"></div></div>`).join('')}</div>`, 'phalb|🖤')}
+        ${sec('精选照片', `<div class="pp-row">${[21, 64, 82, 45].map(n => { const p = PHOTOS.find(x => x.n === n); return p && !p.f.includes('d') ? `<div class="pp-sq tall" data-go="photo|${p.id}"><div class="pp-sqi" style="background-image:url(${p.s.slice(4)})"></div></div>` : ''; }).join('')}</div>`, '')}
+        ${sec('共享相簿', `<div class="pp-empty"><div class="pp-ei">⧉</div><span class="pp-pill blue" data-toast="原型中不能共享">开始共享</span><b>共享相簿</b><small>与你选择的人共享照片和视频，并让他们添加照片、视频和评论。</small></div>`, '')}
+        ${sec('最近几天', `<div class="pp-row">${recent.map(d => { const l = ps.filter(p => p.d === d); return `<div class="pp-sq tall" data-go="phday|${d}"><div class="pp-sqi" style="background-image:url(${l[l.length - 1].s.slice(4)})"><em>${phDay(d)}</em></div></div>`; }).join('')}</div>`, '')}
+        ${sec('旅行', `<div class="pp-empty"><div class="pp-ei">🧳︎</div><b>没有可用的旅行</b><small>当图库中有更多照片和视频时，或在与 iCloud 同步时，旅行将出现在这里。</small></div>`, '')}
+        ${sec('媒体类型', `<div class="pp-list">${media.map(([n, ic, c]) => `<div ${c ? `data-go="phalb|${n}"` : `data-toast="没有${n}"`}><i>${ic}</i><span>${n}</span></div>`).join('')}</div>`, '')}
+        ${sec('实用工具', `<div class="pp-list">${util.map(([n, l]) => `<div ${n === '最近删除' || n === '已隐藏' ? `data-go="phalb|${n}" data-lock="1"` : n === '最近存储' || n === '最近查看' ? 'data-go="phalb|最近项目"' : `data-toast="没有${n}"`}><i>${n === '已隐藏' ? '◌' : n === '最近删除' ? PHI.trash : '▢'}</i><span>${n}</span>${l ? `<em>${PHI.lock}</em>` : ''}</div>`).join('')}</div>`, '')}
+        <div class="pp-sec"><div class="pp-st"><b>墙纸建议${PHI.chevR}</b></div></div><div class="pp-reorder" data-toast="原型中暂不可用">重新排序</div><div class="pp-end"></div>`,
+      over:phBar('col'), refresh:() => R.phcol() }; },
+  /* 相簿 / 回忆 / 某一天 */
+  phalb: n => { const ps = phCtxList(n);
+    return { tone:'dark', bg:'#000', cls:'pp pp-alb',
+      body:`<div class="pp-at"><b>${n}</b><small>${ps.length} 张照片${n === '最近删除' ? ' · 30 天后永久删除' : ''}</small></div><div class="pp-grid c3">${ps.map(p => phTile2(p, n)).join('')}</div>${ps.length ? '' : `<div class="pp-none">${n === '已隐藏' ? '没有隐藏的照片' : '没有照片'}</div>`}<div class="pp-end"></div>`,
+      refresh:() => R.phalb(n), over:`<div class="pp-nav"><span class="pp-cb" data-back>${PHI.back}</span><span class="sp"></span><span class="pp-pill" data-toast="长按照片也可以选择">选择</span><span class="pp-cb" data-toast="原型中暂不可用">${PHI.dots}</span></div>` }; },
+  phmem: k => { const ps = k === 'night' ? phVis().filter(p => +p.dt.slice(11, 13) >= 19 || +p.dt.slice(11, 13) < 3).filter(p => p.p) : phCtxList(k); const hero = ps[ps.length - 1];
+    return { tone:'dark', bg:'#000', cls:'pp pp-alb pp-memv',
+      body:`<div class="pp-hero" style="background-image:url(${hero.s.slice(4)})"><b>${k === 'night' ? '首尔的夜晚' : k === '朋友' ? '和朋友们' : '美味佳肴'}</b><small>${ymd(ps[0].d)} – ${ymd(hero.d)}</small></div><div class="pp-grid c3">${ps.map(p => phTile2(p)).join('')}</div><div class="pp-end"></div>`,
+      over:`<div class="pp-nav"><span class="pp-cb" data-back>${PHI.back}</span><span class="sp"></span><span class="pp-cb" data-toast="原型中不能播放回忆影片">▶︎</span></div>` }; },
+  phday: d => { const ps = phVis().filter(p => p.d === d);
+    return { tone:'dark', bg:'#000', cls:'pp pp-alb',
+      body:`<div class="pp-at"><b>${phDay(d)}</b><small>${ymd(d)} ${wk(d)} · ${ps[0].p || ''}</small></div><div class="pp-grid c3">${ps.map(p => phTile2(p)).join('')}</div><div class="pp-end"></div>`,
+      over:`<div class="pp-nav"><span class="pp-cb" data-back>${PHI.back}</span></div>` }; },
+  /* 搜索 */
+  phsearch: () => ({ tone:'dark', bg:'#000', cls:'pp pp-srch',
+    body:`<div class="pp-sh"><label>${PHI.search}<input id="phq" placeholder="照片、人物、地点……" autocomplete="off" enterkeyhint="search"></label><span data-back>取消</span></div>
+      <div id="phsr"><div class="pp-sug">${['首尔', '朋友', '夜晚', '拉面', '2023', '汉江公园', '截屏'].map(s => `<span data-q="${s}">${s}</span>`).join('')}</div></div>`,
+    mount:v => { const q = v.querySelector('#phq'), r = v.querySelector('#phsr'), sug = r.innerHTML;
+      const run = () => { const w = q.value.trim(); if (!w) { r.innerHTML = sug; return; } const ps = phVis().filter(p => (p.c + ' ' + p.p + ' ' + p.al.join(' ') + ' ' + p.d + ' ' + p.cap).includes(w));
+        r.innerHTML = ps.length ? `<div class="pp-rc">${ps.length} 张照片</div><div class="pp-grid c3">${ps.map(p => phTile2(p)).join('')}</div>` : `<div class="pp-none">没有“${esc(w)}”的结果</div>`; };
+      q.addEventListener('input', run); v.addEventListener('click', e => { const s = e.target.closest('[data-q]'); if (s) { q.value = s.dataset.q; run(); } }); setTimeout(() => q.focus(), 350); } }),
+  /* 单张照片 */
+  photo: a => { const [id, ctx] = String(a).split('~'); const list = phCtxList(ctx); const p = PHOTOS[+id]; let i = list.indexOf(p); if (i < 0) i = 0;
+    const dev = phDev(p), fav = p.f.includes('f'), [y, mo, dd] = p.d.split('-');
+    const strip = list.slice(Math.max(0, i - 6), i + 7);
+    return { tone:'dark', bg:'#000', cls:'pp pp-one',
+      body:`<div class="pp-stage"><img src="${p.s.slice(4)}" alt="">${p.f.includes('l') ? `<i class="pp-live">${PHI.live}实况</i>` : ''}</div>
+        <div class="pp-info">
+          <input class="pp-capin" id="phcap" placeholder="添加说明" value="${esc(p.cap)}" autocomplete="off">
+          <div class="pp-when"><span>${y}年${+mo}月${+dd}日 ${wk(p.d)} · ${p.dt.slice(11)}</span><em data-toast="原型中不能调整日期">调整</em></div>
+          <div class="pp-fn">${p.f.includes('s') ? '☐ 截屏' : '☁︎ ' + p.file}</div>
+          <div class="pp-exif"><div class="pp-eh"><b>${dev[0]}</b><i>${p.f.includes('s') ? 'PNG' : 'HEIF'}</i></div>
+            ${p.f.includes('s') ? '<div class="pp-er">截屏 · 1320 × 2868 · 2.1 MB</div>' : `<div class="pp-er">${dev[1]}</div><div class="pp-er">${dev[2]} · ${(1 + (p.n % 4)) } MB</div><div class="pp-ev"><span>ISO ${[250, 400, 640, 1000][p.n % 4]}</span><span>${dev[1].match(/\d+ mm/)[0]}</span><span>0 ev</span><span>${dev[1].match(/ƒ[\d.]+/)[0]}</span><span>1/${[30, 60, 120, 15][p.n % 4]} s</span></div>`}</div>
+          ${p.p ? `<div class="pp-map" data-toast="${p.p}"><div class="pp-mapi"><i style="background-image:url(${p.s.slice(4)})"></i></div><b>${p.p}</b></div>` : ''}
+          ${p.al.length ? `<div class="pp-inal"><small>包含在</small><span data-go="phalb|${p.al[0]}">${p.al[0]}</span></div>` : ''}
+        </div>`,
+      over:`<div class="pp-otop"><span class="pp-cb" data-back>${PHI.back}</span><div class="pp-when2"><b>${phDay(p.d)}</b><small>${p.dt.slice(11)}</small></div><span class="pp-cb" data-toast="原型中暂不可用">${PHI.dots}</span></div>
+        <div class="pp-obot"><div class="pp-strip">${strip.map(x => `<i class="${x === p ? 'on' : ''}" data-ph="${x.id}" style="background-image:url(${x.s.slice(4)})"></i>`).join('')}</div>
+          <div class="pp-tools"><span class="pp-cb" data-toast="原型中不能分享">${PHI.share}</span><div class="pp-cap3"><span data-phfav class="${fav ? 'on' : ''}">${fav ? PHI.heartOn : PHI.heart}</span><span data-phinfo>${PHI.info}</span><span data-toast="原型中不能编辑照片">${PHI.adjust}</span></div><span class="pp-cb" data-phdel>${PHI.trash}</span></div></div>`,
+      mount:v => {
+        const go = j => { if (j < 0 || j >= list.length) return; replaceView(R.photo(list[j].id + (ctx ? '~' + ctx : ''))); if (v.classList.contains('info')) topView().classList.add('info'); };
+        v.querySelectorAll('[data-ph]').forEach(t => t.addEventListener('click', e => { e.stopPropagation(); go(list.indexOf(PHOTOS[+t.dataset.ph])); }));
+        let sx = null, sy = 0; const st = v.querySelector('.pp-stage');
+        st.addEventListener('touchstart', e => { sx = e.touches[0].clientX; sy = e.touches[0].clientY; }, { passive:true });
+        st.addEventListener('touchend', e => { if (sx == null) return; const dx = e.changedTouches[0].clientX - sx, dy = e.changedTouches[0].clientY - sy; sx = null;
+          if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) go(i + (dx < 0 ? 1 : -1)); else if (dy < -60) v.classList.add('info'); else if (dy > 60) v.classList.contains('info') ? v.classList.remove('info') : popView(); });
+        st.addEventListener('click', () => v.classList.toggle('chrome-off'));
+        v.querySelector('[data-phinfo]').addEventListener('click', e => { e.stopPropagation(); v.classList.toggle('info'); e.currentTarget.innerHTML = v.classList.contains('info') ? PHI.infoOn : PHI.info; });
+        v.querySelector('[data-phfav]').addEventListener('click', e => { e.stopPropagation(); const on = !p.f.includes('f'); p.f = on ? p.f + 'f' : p.f.replace('f', ''); PS.fav[p.n] = on; phSave(); e.currentTarget.classList.toggle('on', on); e.currentTarget.innerHTML = on ? PHI.heartOn : PHI.heart; });
+        v.querySelector('[data-phdel]').addEventListener('click', e => { e.stopPropagation();
+          if (p.f.includes('d')) { p.f = p.f.replace('d', ''); delete PS.del[p.n]; phSave(); toast('已恢复照片'); popView(); return; }
+          const sh = document.createElement('div'); sh.className = 'pp-del'; sh.innerHTML = `<div class="pp-delb"></div><div class="pp-delp"><small>这张照片将从 iCloud 照片中删除，并会在“最近删除”中保留 30 天。</small><b>删除照片</b></div>`;
+          v.append(sh); sh.addEventListener('click', ev => { ev.stopPropagation(); if (ev.target.closest('b')) { p.f += 'd'; PS.del[p.n] = 1; phSave(); sh.remove(); toast('已移到“最近删除”'); popView(); } else sh.remove(); }); });
+        const cap = v.querySelector('#phcap'); cap.addEventListener('input', () => { p.cap = cap.value; PS.cap[p.n] = cap.value; phSave(); });
+        if (p.f.includes('d')) v.querySelector('[data-phdel]').innerHTML = '<b style="font-size:13px;font-weight:600">恢复</b>';
+      } }; },
+});
+ROOT.photos = () => R.photos();
+/* 旧入口（主屏小组件、快捷操作）跳到新相簿 */
+R.album = n => R.phalb(n === '最近项目' || n === '个人收藏' ? n : '最近项目');
+R.memory = () => R.phmem('night');
 
 /* ---------- calculator ---------- */
 function mountCalc(){
