@@ -1311,6 +1311,8 @@ body .qbtn.fl{left:calc(54px * var(--k))}body .qbtn.cam{right:calc(55px * var(--
 .igp-cap b[data-go],.igp-c1 b[data-go],.igp-lb b[data-go],.igc-m b[data-go],.igc-at,.igc>span[data-go]{cursor:pointer}
 .igc>span[data-go]{display:flex}
 
+.igm-gone{width:112px;height:150px;border-radius:14px;background:#262626;color:#a8a8a8;font-size:var(--fs-cap);display:flex;align-items:center;justify-content:center;text-align:center;padding:0 10px;box-sizing:border-box}
+
 /* =========================================================
    APPLE MUSIC
    ========================================================= */
@@ -2225,6 +2227,84 @@ body.standalone .island.np-on{display:flex!important}
 .ck-rbtn{display:flex;flex-direction:column;gap:calc(14px * var(--k))}
 .ck-rbtn span{height:calc(56px * var(--k));border-radius:calc(28px * var(--k));display:flex;align-items:center;justify-content:center;font-size:calc(18px * var(--k));font-weight:600;background:rgba(255,255,255,.18)}
 .ck-rbtn [data-s]{background:#ff9f0a;color:#000}
+/* 秒表：按真机截图的位置 */
+.ck-stop .ck-swd{padding-top:calc(222px * var(--k));font-size:calc(91px * var(--k));font-weight:300;letter-spacing:calc(-1.5px * var(--k));line-height:1}
+.ck-stop .ck-btns{margin-top:calc(126px * var(--k));padding:0 calc(16px * var(--k))}
+.ck-rb{width:calc(76px * var(--k));height:calc(76px * var(--k))}
+.ck-rb:after{display:none}
+.ck-rb{background:#1c1c1e}
+.ck-rb.dis{opacity:1;color:#8e8e93}
+.ck-rb.green{background:#0b2a13}.ck-rb.red{background:#330e0c}
+.ck-stop .ck-laps{margin-top:calc(16px * var(--k))}
+.ck-dots i{width:calc(8px * var(--k));height:calc(8px * var(--k))}.ck-dots{gap:calc(9px * var(--k))}
+.ck-dots i:not(.on){background:#636366}
+/* ===== 日历（iOS 26 深色）· NK = N × --k ===== */
+.cl{background:#000;color:#fff;--red:#f2454a;--line:#2c2c2e;--hr:calc(38.5px * var(--k))}
+.cl svg{display:block;flex:none}
+.cl .vs{overscroll-behavior:contain}
+.cl-row{display:flex;justify-content:space-between;align-items:center;padding:0 calc(20px * var(--k));height:calc(43px * var(--k))}
+.cl-cap{height:calc(43px * var(--k));border-radius:calc(22px * var(--k));background:rgba(44,44,46,.82);border:.5px solid rgba(255,255,255,.1);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);display:flex;align-items:center;color:#fff}
+.cl-cap.l{padding:0 calc(18px * var(--k)) 0 calc(12px * var(--k));gap:calc(8px * var(--k))}.cl-cap.l svg{width:calc(19px * var(--k));height:calc(19px * var(--k))}.cl-cap.l b{font-size:calc(17px * var(--k));font-weight:500}
+.cl-cap.r{padding:0 calc(6px * var(--k))}.cl-cap.r i{width:calc(52px * var(--k));display:flex;justify-content:center}.cl-cap.r svg{width:calc(22px * var(--k));height:calc(22px * var(--k))}
+.cl-cap.r i:first-child svg{width:calc(26px * var(--k))}
+/* 月视图 */
+.cl-hd{position:absolute;left:0;right:0;top:0;z-index:5;padding-top:calc(62px * var(--k));background:linear-gradient(#000 88%,rgba(0,0,0,.85));border-bottom:.5px solid #38383a}
+.cl-big{font-size:calc(30px * var(--k));font-weight:800;padding:calc(12px * var(--k)) calc(20px * var(--k)) calc(4px * var(--k));line-height:1.15}
+.cl-wd,.cl-g{display:grid;grid-template-columns:repeat(7,1fr)}
+.cl-wd span{text-align:center;font-size:calc(11px * var(--k));font-weight:700;padding:calc(4px * var(--k)) 0 calc(6px * var(--k))}
+.cl-wd span.we{color:#a1a1a6}
+.cl-month .vs{padding-top:calc(184px * var(--k))}
+.cl-mt{height:calc(34px * var(--k));display:flex;align-items:flex-end;padding-bottom:calc(6px * var(--k));box-sizing:border-box;border-bottom:.5px solid var(--line)}
+.cl-mt b{font-size:calc(18.5px * var(--k));font-weight:800;display:block;width:calc(62.8px * var(--k));text-align:center;white-space:nowrap}
+.cl-g span{height:calc(69px * var(--k));position:relative;border-top:.5px solid var(--line);margin-top:-.5px}
+.cl-g span.e{border-top-color:transparent}
+.cl-g b{position:absolute;left:50%;top:calc(28px * var(--k));transform:translate(-50%,-50%);width:calc(38px * var(--k));height:calc(38px * var(--k));border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:calc(17.5px * var(--k));font-weight:700}
+.cl-g span.we b{color:#8e8e93}
+.cl-g span.td b{background:var(--red);color:#fff}
+.cl-g i{position:absolute;left:50%;top:calc(54px * var(--k));width:calc(6px * var(--k));height:calc(6px * var(--k));margin-left:calc(-3px * var(--k));border-radius:50%}
+.cl-end{height:calc(120px * var(--k))}
+.cl-bot{position:absolute;left:calc(28px * var(--k));right:calc(28px * var(--k));bottom:calc(28px * var(--k));z-index:6;display:flex;justify-content:space-between;align-items:center}
+.cl-today{height:calc(46px * var(--k));padding:0 calc(17px * var(--k));border-radius:calc(23px * var(--k));background:rgba(44,44,46,.82);border:.5px solid rgba(255,255,255,.1);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);display:flex;align-items:center;font-size:calc(16.5px * var(--k));font-weight:600}
+.cl-bot .cl-cap{height:calc(46px * var(--k));border-radius:calc(23px * var(--k));padding:0 calc(8px * var(--k))}.cl-bot .cl-cap i{width:calc(56px * var(--k));display:flex;justify-content:center}.cl-bot .cl-cap svg{width:calc(24px * var(--k));height:calc(24px * var(--k))}
+/* 日视图 */
+.cl-dhd{flex:none;padding-top:calc(62px * var(--k));background:#000;position:relative;z-index:3}
+.cl-wk{display:grid;grid-template-columns:repeat(7,1fr);padding:calc(14px * var(--k)) 0 calc(8px * var(--k));border-bottom:.5px solid #38383a;touch-action:pan-y;user-select:none}
+.cl-wk span{display:flex;flex-direction:column;align-items:center;gap:calc(6px * var(--k));cursor:pointer}
+.cl-wk small{font-size:calc(11px * var(--k));font-weight:700}
+.cl-wk b{width:calc(35px * var(--k));height:calc(35px * var(--k));border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:calc(20px * var(--k));font-weight:400}
+.cl-wk span.we b{color:#8e8e93}
+.cl-wk span.td b{color:var(--red)}
+.cl-wk span.sel b{background:var(--red);color:#fff;font-weight:700}
+.cl-wk span.sel:not(.td) b{background:#fff;color:#000}
+.cl-date{text-align:center;font-size:calc(15.5px * var(--k));font-weight:700;padding:calc(11px * var(--k)) 0;border-bottom:.5px solid #38383a}
+.cl-ad{padding:calc(6px * var(--k)) calc(12px * var(--k)) calc(6px * var(--k)) calc(65px * var(--k));border-bottom:.5px solid #38383a;display:flex;flex-direction:column;gap:calc(3px * var(--k))}
+.cl-ad div{background:color-mix(in srgb,var(--c) 30%,#000);border-left:calc(3px * var(--k)) solid var(--c);border-radius:calc(4px * var(--k));padding:calc(3px * var(--k)) calc(8px * var(--k));font-size:calc(13px * var(--k));font-weight:600}
+.cl-ad div.x{text-decoration:line-through;opacity:.6}
+.cl-tl{position:relative;padding-top:calc(12px * var(--k));touch-action:pan-y}
+.cl-hr{height:var(--hr);position:relative}
+.cl-hr small{position:absolute;left:0;width:calc(56px * var(--k));top:calc(-7px * var(--k));text-align:right;font-size:calc(11.5px * var(--k));font-weight:600;color:#8e8e93;font-variant-numeric:tabular-nums}
+.cl-hr:after{content:'';position:absolute;left:calc(65px * var(--k));right:0;top:0;border-top:.5px solid #38383a}
+.cl-blk{position:absolute;left:calc(66px * var(--k));right:calc(8px * var(--k));margin-top:calc(12px * var(--k));min-height:calc(34px * var(--k));box-sizing:border-box;background:color-mix(in srgb,var(--c) 32%,#000);border-left:calc(3.5px * var(--k)) solid var(--c);border-radius:calc(5px * var(--k));padding:calc(4px * var(--k)) calc(8px * var(--k));overflow:hidden}
+.cl-blk b{display:block;font-size:calc(13.5px * var(--k));font-weight:700}.cl-blk small{font-size:calc(11.5px * var(--k));color:#d1d1d6}
+.cl-blk.x b{text-decoration:line-through}.cl-blk.x{opacity:.6}
+.cl-now{position:absolute;left:calc(60px * var(--k));right:0;margin-top:calc(12px * var(--k));border-top:calc(2px * var(--k)) solid var(--red);z-index:2}
+.cl-now:before{content:'';position:absolute;left:calc(-5px * var(--k));top:calc(-6px * var(--k));width:calc(10px * var(--k));height:calc(10px * var(--k));border-radius:50%;background:var(--red)}
+.cl-now em{position:absolute;left:calc(-58px * var(--k));top:calc(-9px * var(--k));font-style:normal;font-size:calc(11.5px * var(--k));font-weight:700;color:var(--red);background:#000;padding:0 calc(2px * var(--k))}
+/* 新建日程 */
+.cl-sheet{position:absolute;inset:0;z-index:30}
+.cl-shb{position:absolute;inset:0;background:rgba(0,0,0,.5);opacity:0;transition:opacity .25s}
+.cl-shp{position:absolute;left:0;right:0;bottom:0;top:calc(58px * var(--k));background:#1c1c1e;border-radius:calc(14px * var(--k)) calc(14px * var(--k)) 0 0;transform:translateY(100%);transition:transform .3s cubic-bezier(.3,.9,.3,1);overflow-y:auto;padding-bottom:calc(40px * var(--k))}
+.cl-sheet.on .cl-shb{opacity:1}.cl-sheet.on .cl-shp{transform:none}
+.cl-sht{display:flex;justify-content:space-between;align-items:center;padding:calc(16px * var(--k)) calc(16px * var(--k)) calc(8px * var(--k));font-size:calc(17px * var(--k))}
+.cl-sht span{color:var(--red)}.cl-sht .ok{font-weight:600}.cl-sht b{font-weight:600}
+.cl-grp{margin:calc(14px * var(--k)) calc(16px * var(--k)) 0;background:#2c2c2e;border-radius:calc(12px * var(--k));overflow:hidden}
+.cl-grp>*{display:flex;align-items:center;gap:calc(8px * var(--k));width:100%;box-sizing:border-box;min-height:calc(46px * var(--k));padding:0 calc(14px * var(--k));background:none;border:0;outline:0;color:#fff;font:inherit;font-size:calc(16px * var(--k))}
+.cl-grp>*+*{border-top:.5px solid #48484a}
+.cl-grp>label>span{flex:1}
+.cl-grp input[type=date],.cl-grp input[type=time]{background:#3a3a3c;border:0;border-radius:calc(7px * var(--k));color:#fff;font:inherit;font-size:calc(15px * var(--k));padding:calc(5px * var(--k)) calc(8px * var(--k));color-scheme:dark}
+.cl-grp textarea{padding:calc(12px * var(--k)) calc(14px * var(--k));resize:none}
+.cl-grp em{font-style:normal;color:#8e8e93;display:flex;align-items:center;gap:calc(6px * var(--k))}.cl-grp em i{width:calc(10px * var(--k));height:calc(10px * var(--k));border-radius:50%}.cl-grp em b{font-weight:400}
+.cl-grp input::placeholder,.cl-grp textarea::placeholder{color:#8e8e93}
 
 @media (prefers-reduced-motion: reduce){*{transition-duration:.01s!important;animation:none!important}}
 </style>
@@ -2474,7 +2554,8 @@ function closeApp(instant){
 /* =========================================================
    STORY DATA — 女主手机 · 内容数据（只改这里就能改剧情）
    ========================================================= */
-const ME = '安然', HOME_CITY = '上海', TODAY = '2026-10-24', YESTERDAY = '2026-10-23';
+const ME = '安然', HOME_CITY = '上海', TODAY = (() => { const n = new Date(), s = `${n.getFullYear()}-${String(n.getMonth() + 1).padStart(2, '0')}-${String(n.getDate()).padStart(2, '0')}`; return s < '2026-10-24' ? '2026-10-24' : s; })(),
+  YESTERDAY = (() => { const n = new Date(TODAY + 'T12:00:00'); n.setDate(n.getDate() - 1); return `${n.getFullYear()}-${String(n.getMonth() + 1).padStart(2, '0')}-${String(n.getDate()).padStart(2, '0')}`; })();
 
 /* ---------- KakaoTalk ----------
    每行：# 日期  |  < 对方  > 我自己  |  群聊里写 "< 名字 时间 | 内容"
@@ -2496,6 +2577,11 @@ const CHATS = [
 < 21:06 | ？？？？？说了什么
 > 21:07 | 没说什么 就一起等车
 < 21:07 | 就一起等车你发我干嘛ㅋㅋㅋㅋ
+# 2022-07-08
+< 19:12 | [photo]img:assets/ph/107.jpg|
+< 19:12 | 电影票我收好了
+> 19:13 | 你那杯是什么味的
+< 19:13 | 抹茶！
 # 2022-10-30
 > 23:40 | 我跟你说一件事 你别叫
 < 23:40 | 你说
@@ -2504,6 +2590,10 @@ const CHATS = [
 < 23:41 | 我就知道！！！
 > 23:42 | 不能告诉别人
 < 23:42 | 我嘴巴最严了你知道的
+# 2023-04-07
+< 17:25 | [photo]img:assets/ph/132.jpg|
+< 17:25 | 我们俩好像落汤鸡ㅋㅋ
+> 17:26 | 都怪你说不会下雨
 # 2023-08-17
 > 21:10 | 今天作品被老师当着全班说了
 > 21:10 | 说我的东西只是好看
@@ -2737,10 +2827,25 @@ const CHATS = [
 > 23:52 | 到了
 < 23:52 | 今天
 < 23:53 | 没什么 晚安
+# 2022-11-12
+> 23:31 | [photo]img:assets/ph/57.jpg|
+> 23:31 | 偷拍成功
+< 23:34 | 删掉ㅋㅋ
+< 23:34 | 开玩笑的 发我
 # 2022-12-24
 > 20:00 | 圣诞快乐
 < 20:05 | 练习到十点 便利店见？
 > 20:05 | 好
+# 2022-12-25
+> 20:15 | [photo]img:assets/ph/137.jpg|
+> 20:15 | 你这张也太可爱了吧
+< 20:18 | 你那张呢 也发我
+# 2023-02-10
+> 12:40 | [photo]img:assets/ph/136.jpg|
+> 12:40 | 学长毕业快乐🎓
+< 12:46 | 以后不能叫学长了吧
+> 12:47 | 那叫什么
+< 12:47 | 你知道的
 # 2023-02-14
 < 23:58 | 今天也没能见面 对不起
 < 23:58 | 巧克力收到了 经纪人哥差点看到
@@ -2748,6 +2853,7 @@ const CHATS = [
 # 2023-05-30
 > 18:42 | 恭喜！！！
 > 18:42 | 舞台我看了十遍
+> 19:30 | [photo]img:assets/ph/66.jpg|
 < 23:55 | 我做到了
 > 23:56 | 我知道
 < 23:57 | 想你
@@ -2761,6 +2867,10 @@ const CHATS = [
 # 2023-07-15
 < 18:30 | 今天能见吗 一个小时也行
 > 18:52 | 不用啦 你好好休息
+# 2023-08-10
+> 00:12 | [photo]img:assets/ph/32.jpg|
+> 00:12 | 生日快乐！！
+< 00:20 | 这是今年最好的礼物
 # 2023-08-17
 > 21:05 | 我今天有点不开心
 < 23:47 | 才看到。怎么了？
@@ -3118,7 +3228,7 @@ const BANK = [
 ];
 
 /* 图片原始尺寸（用于按真实比例显示） */
-const IMG_SIZE = {"assets/av_default.jpg": [240, 240], "assets/av_jian.jpg": [240, 240], "assets/av_keke.jpg": [240, 240], "assets/av_minji.jpg": [240, 240], "assets/av_shuyan.jpg": [240, 240], "assets/av_spam.jpg": [240, 240], "assets/avatar_anran.jpg": [320, 320], "assets/ig_blossom.jpg": [736, 736], "assets/ig_cat.jpg": [736, 981], "assets/ig_chat.jpg": [1080, 1072], "assets/ig_dog.jpg": [735, 824], "assets/ig_pasta.jpg": [1080, 1440], "assets/ig_sunset.jpg": [736, 981], "assets/sp_cake.jpg": [902, 1200], "assets/sp_choco.jpg": [498, 660], "assets/sp_heart.jpg": [921, 1152], "assets/sp_snow.jpg": [736, 981], "assets/sp_walk.jpg": [736, 981], "assets/st_1.jpg": [736, 1307], "assets/st_2.jpg": [736, 1308], "assets/st_3.jpg": [736, 1308], "assets/st_4.jpg": [736, 981], "assets/st_5.jpg": [828, 1470], "assets/st_6.jpg": [737, 1600], "assets/sy_cup.jpg": [963, 1200], "assets/sy_hand.jpg": [900, 1200], "assets/w_bday.jpg": [736, 632], "assets/w_booth.jpg": [740, 1280], "assets/w_cat.jpg": [736, 1308], "assets/w_hair.jpg": [736, 1308], "assets/w_hs.jpg": [828, 1064], "assets/w_ramen.jpg": [736, 981], "assets/wall_home.jpg": [736, 1308], "assets/wall_lock.jpg": [608, 1081], "assets/x/ts_archive.jpg": [400, 400], "assets/x/bnd_banner.jpg": [924, 318], "assets/x/bnd_party.jpg": [1000, 1301], "assets/x/bnd_av.jpg": [360, 360], "assets/x/bnd_animal.jpg": [1200, 675], "assets/x/x_me.jpg": [320, 320], "assets/x/clover.jpg": [400, 400], "assets/x/twt.jpg": [120, 120], "assets/x/fan_cat.jpg": [400, 400], "assets/x/bnd_tako.jpg": [1200, 675], "assets/ph/69.jpg": [256, 341], "assets/ph/47.jpg": [256, 455], "assets/ph/67.jpg": [256, 341], "assets/ph/52.jpg": [256, 253], "assets/ph/75.jpg": [256, 341], "assets/ph/26.jpg": [256, 256], "assets/ph/42.jpg": [256, 296], "assets/ph/28.jpg": [256, 320], "assets/ph/32.jpg": [256, 244], "assets/ph/20.jpg": [256, 341], "assets/ph/51.jpg": [256, 341], "assets/ph/65.jpg": [256, 384], "assets/ph/55.jpg": [256, 319], "assets/ph/71.jpg": [256, 341], "assets/ph/49.jpg": [256, 341], "assets/ph/41.jpg": [256, 205], "assets/ph/54.jpg": [256, 423], "assets/ph/31.jpg": [256, 316], "assets/ph/58.jpg": [256, 240], "assets/ph/35.jpg": [256, 383], "assets/ph/73.jpg": [256, 341], "assets/ph/37.jpg": [236, 512], "assets/ph/62.jpg": [256, 353], "assets/ph/43.jpg": [256, 341], "assets/ph/80.jpg": [256, 454], "assets/ph/23.jpg": [256, 256], "assets/ph/64.jpg": [256, 452], "assets/ph/68.jpg": [256, 341], "assets/ph/44.jpg": [256, 345], "assets/ph/38.jpg": [256, 341], "assets/ph/59.jpg": [256, 333], "assets/ph/22.jpg": [256, 256], "assets/ph/81.jpg": [256, 341], "assets/ph/60.jpg": [256, 326], "assets/ph/48.jpg": [256, 409], "assets/ph/56.jpg": [256, 198], "assets/ph/39.jpg": [256, 320], "assets/ph/30.jpg": [256, 341], "assets/ph/19.jpg": [256, 341], "assets/ph/18.jpg": [256, 341], "assets/ph/46.jpg": [256, 319], "assets/ph/24.jpg": [256, 341], "assets/ph/74.jpg": [256, 453], "assets/ph/76.jpg": [256, 341], "assets/ph/79.jpg": [256, 336], "assets/ph/40.jpg": [256, 212], "assets/ph/78.jpg": [256, 454], "assets/ph/34.jpg": [256, 455], "assets/ph/50.jpg": [256, 188], "assets/ph/61.jpg": [256, 454], "assets/ph/53.jpg": [256, 341], "assets/ph/36.jpg": [256, 192], "assets/ph/70.jpg": [256, 341], "assets/ph/21.jpg": [256, 341], "assets/ph/33.jpg": [256, 270], "assets/ph/27.jpg": [256, 341], "assets/ph/63.jpg": [256, 455], "assets/ph/25.jpg": [256, 341], "assets/ph/45.jpg": [256, 323], "assets/ph/57.jpg": [256, 455], "assets/ph/82.jpg": [256, 248], "assets/ph/66.jpg": [256, 312], "assets/ph/72.jpg": [256, 455], "assets/ph/29.jpg": [236, 512], "assets/ph/77.jpg": [256, 341]};
+const IMG_SIZE = {"assets/av_default.jpg": [240, 240], "assets/av_jian.jpg": [240, 240], "assets/av_keke.jpg": [240, 240], "assets/av_minji.jpg": [240, 240], "assets/av_shuyan.jpg": [240, 240], "assets/av_spam.jpg": [240, 240], "assets/avatar_anran.jpg": [320, 320], "assets/ig_blossom.jpg": [736, 736], "assets/ig_cat.jpg": [736, 981], "assets/ig_chat.jpg": [1080, 1072], "assets/ig_dog.jpg": [735, 824], "assets/ig_pasta.jpg": [1080, 1440], "assets/ig_sunset.jpg": [736, 981], "assets/sp_cake.jpg": [902, 1200], "assets/sp_choco.jpg": [498, 660], "assets/sp_heart.jpg": [921, 1152], "assets/sp_snow.jpg": [736, 981], "assets/sp_walk.jpg": [736, 981], "assets/st_1.jpg": [736, 1307], "assets/st_2.jpg": [736, 1308], "assets/st_3.jpg": [736, 1308], "assets/st_4.jpg": [736, 981], "assets/st_5.jpg": [828, 1470], "assets/st_6.jpg": [737, 1600], "assets/sy_cup.jpg": [963, 1200], "assets/sy_hand.jpg": [900, 1200], "assets/w_bday.jpg": [736, 632], "assets/w_booth.jpg": [740, 1280], "assets/w_cat.jpg": [736, 1308], "assets/w_hair.jpg": [736, 1308], "assets/w_hs.jpg": [828, 1064], "assets/w_ramen.jpg": [736, 981], "assets/wall_home.jpg": [736, 1308], "assets/wall_lock.jpg": [608, 1081], "assets/x/ts_archive.jpg": [400, 400], "assets/x/bnd_banner.jpg": [924, 318], "assets/x/bnd_party.jpg": [1000, 1301], "assets/x/bnd_av.jpg": [360, 360], "assets/x/bnd_animal.jpg": [1200, 675], "assets/x/x_me.jpg": [320, 320], "assets/x/clover.jpg": [400, 400], "assets/x/twt.jpg": [120, 120], "assets/x/fan_cat.jpg": [400, 400], "assets/x/bnd_tako.jpg": [1200, 675], "assets/ph/69.jpg": [736, 981], "assets/ph/47.jpg": [675, 1200], "assets/ph/67.jpg": [1050, 1400], "assets/ph/52.jpg": [500, 495], "assets/ph/75.jpg": [1050, 1400], "assets/ph/26.jpg": [1080, 1080], "assets/ph/42.jpg": [860, 997], "assets/ph/28.jpg": [923, 1154], "assets/ph/32.jpg": [1206, 1150], "assets/ph/20.jpg": [256, 341], "assets/ph/51.jpg": [1050, 1400], "assets/ph/65.jpg": [800, 1200], "assets/ph/55.jpg": [375, 468], "assets/ph/71.jpg": [1050, 1400], "assets/ph/49.jpg": [1050, 1400], "assets/ph/41.jpg": [1080, 869], "assets/ph/54.jpg": [736, 1217], "assets/ph/31.jpg": [1133, 1400], "assets/ph/58.jpg": [1200, 1128], "assets/ph/35.jpg": [860, 1290], "assets/ph/73.jpg": [736, 981], "assets/ph/37.jpg": [449, 974], "assets/ph/62.jpg": [868, 1200], "assets/ph/43.jpg": [814, 1085], "assets/ph/80.jpg": [736, 1308], "assets/ph/23.jpg": [1080, 1080], "assets/ph/64.jpg": [720, 1272], "assets/ph/68.jpg": [1051, 1400], "assets/ph/44.jpg": [793, 1070], "assets/ph/38.jpg": [805, 1074], "assets/ph/59.jpg": [375, 488], "assets/ph/22.jpg": [1078, 1078], "assets/ph/81.jpg": [900, 1200], "assets/ph/60.jpg": [940, 1200], "assets/ph/48.jpg": [874, 1400], "assets/ph/56.jpg": [1199, 928], "assets/ph/39.jpg": [859, 1074], "assets/ph/30.jpg": [939, 1252], "assets/ph/19.jpg": [1050, 1400], "assets/ph/18.jpg": [1050, 1400], "assets/ph/46.jpg": [962, 1200], "assets/ph/24.jpg": [1050, 1400], "assets/ph/74.jpg": [677, 1200], "assets/ph/76.jpg": [1050, 1400], "assets/ph/79.jpg": [1064, 1400], "assets/ph/40.jpg": [1141, 946], "assets/ph/78.jpg": [744, 1320], "assets/ph/34.jpg": [706, 1255], "assets/ph/50.jpg": [736, 543], "assets/ph/61.jpg": [655, 1164], "assets/ph/53.jpg": [768, 1024], "assets/ph/36.jpg": [1143, 857], "assets/ph/70.jpg": [750, 1000], "assets/ph/21.jpg": [1050, 1400], "assets/ph/33.jpg": [1138, 1201], "assets/ph/27.jpg": [1050, 1400], "assets/ph/63.jpg": [685, 1217], "assets/ph/25.jpg": [1050, 1400], "assets/ph/45.jpg": [1080, 1365], "assets/ph/57.jpg": [720, 1280], "assets/ph/82.jpg": [828, 804], "assets/ph/66.jpg": [736, 898], "assets/ph/72.jpg": [643, 1142], "assets/ph/29.jpg": [647, 1400], "assets/ph/77.jpg": [1050, 1400], "assets/ph/134.jpg": [518, 616], "assets/ph/109.jpg": [348, 619], "assets/ph/106.jpg": [441, 588], "assets/ph/141.jpg": [622, 777], "assets/ph/100.jpg": [957, 539], "assets/ph/142.jpg": [720, 900], "assets/ph/154.jpg": [548, 685], "assets/ph/101.jpg": [539, 404], "assets/ph/107.jpg": [445, 583], "assets/ph/112.jpg": [464, 619], "assets/ph/144.jpg": [548, 822], "assets/ph/140.jpg": [658, 822], "assets/ph/110.jpg": [464, 619], "assets/ph/139.jpg": [540, 686], "assets/ph/114.jpg": [339, 600], "assets/ph/148.jpg": [383, 681], "assets/ph/152.jpg": [548, 548], "assets/ph/153.jpg": [548, 731], "assets/ph/113.jpg": [464, 619], "assets/ph/132.jpg": [364, 641], "assets/ph/150.jpg": [359, 390], "assets/ph/145.jpg": [643, 1200], "assets/ph/138.jpg": [658, 687], "assets/ph/115.jpg": [464, 580], "assets/ph/103.jpg": [302, 536], "assets/ph/137.jpg": [367, 648], "assets/ph/105.jpg": [337, 599], "assets/ph/117.jpg": [464, 619], "assets/ph/111.jpg": [464, 619], "assets/ph/131.jpg": [458, 611], "assets/ph/143.jpg": [425, 756], "assets/ph/146.jpg": [828, 1111], "assets/ph/149.jpg": [736, 885], "assets/ph/102.jpg": [536, 402], "assets/ph/130.jpg": [355, 631], "assets/ph/151.jpg": [736, 981], "assets/ph/108.jpg": [330, 586], "assets/ph/116.jpg": [464, 619], "assets/ph/133.jpg": [550, 550], "assets/ph/147.jpg": [494, 877], "assets/ph/104.jpg": [348, 464], "assets/ph/136.jpg": [454, 454], "assets/ph/135.jpg": [401, 535]};
 
 /* =========================================================
    APP VIEWS — 每个 App 的页面（结构与交互）
@@ -3343,7 +3453,8 @@ function bubble(text, me){
   if ((m = text.match(/^\[video\](.*)$/))) return `<div class="k-b k-call"><i class="ci">${SVGI.video}</i><span>视频通话<small>${m[1]}</small></span></div>`;
   if ((m = text.match(/^\[voice\](.*)\|(.*)$/))) { const i = VM.findIndex(v => v.t === m[1]); return `<div class="k-b k-voice" ${i >= 0 ? `data-go="vm|${i}"` : ''}><span class="pl">${SVGI.play}</span><span class="wv">${'<i></i>'.repeat(16)}</span><small>${m[2]}</small></div>`; }
   if ((m = text.match(/^\[file\](.*)\|(.*)$/))) return `<div class="k-b k-file">${SVGI.pdf}<span>${m[1]}<small>${m[2]}</small></span></div>`;
-  if ((m = text.match(/^\[photo\](.*)\|(.*)$/))) return `<div class="k-photo" style="background:${tileBg(m[1])}" data-toast="${esc(m[2])}"></div>`;
+  if ((m = text.match(/^\[photo\](.*)\|(.*)$/))) { const z = m[1].startsWith('img:') && IMG_SIZE[m[1].slice(4)]; const ph = m[1].startsWith('img:assets/ph/') && PHOTOS.find(p => p.s === m[1]);
+    return `<div class="k-photo" style="background:${tileBg(m[1])};${z ? `height:auto;aspect-ratio:${Math.max(.62, Math.min(1.6, z[0] / z[1]))}` : ''}" ${ph ? `data-go="photo|${ph.id}"` : `data-toast="${esc(m[2] || '照片')}"`}></div>`; }
   return `<div class="k-b">${text}</div>`;
 }
 function renderChat(c){
@@ -3831,6 +3942,11 @@ const IG_POSTS = [
          [voice:0:24] · [photo:场景] · [sticker:文字] · [unsent]  · 行尾 {❤️} 表示对这条的回应 */
 const IG_DM = [
 { u:'shuyan.k', unread:4, seen:'', msgs:`
+# 2026-05-23
+> 20:10 | [photo:img:assets/ph/82.jpg]
+> 20:10 | 汉江野餐 下次你必须来
+< 20:15 | 我那天在打工啊啊啊
+< 20:15 | 拉面看起来好好吃 {😭}
 # 2026-10-22
 < 23:10 | [post:screen|memes.design|设计系的周末]
 < 23:10 | 这就是你
@@ -3867,7 +3983,7 @@ const IG_DM = [
 > 11:01 | 加油` },
 { u:'group:25', name:'25级 迎新', members:['minji.k','junho.lee','jian_draws'], msgs:`
 # 2026-09-28
-< 敏智 23:00 | [photo:party]
+< 敏智 23:00 | [photo:img:assets/ph/103.jpg]
 < 敏智 23:00 | 照片发群里了
 < 俊浩 23:02 | 我闭眼了
 > 23:05 | 我也是 ㅋㅋ` },
@@ -3879,7 +3995,7 @@ const IG_DM = [
 > 21:20 | 谢谢分享！` },
 { u:'jaehyun_m', msgs:`
 # 2026-09-15
-< 22:30 | [story:desk|again and again]
+< 22:30 | [story:img:assets/st_4.jpg|again and again]
 < 22:30 | 作品加油
 > 22:41 | 谢谢前辈` },
 { u:'yuna.cn', msgs:`
@@ -3949,7 +4065,7 @@ const IG_DM = [
 > 00:41 | 😊
 < 00:41 | 睡吧
 # 2022-11-19
-> 18:00 | [photo:shadow]
+> 18:00 | [photo:img:assets/ph/64.jpg]
 < 18:05 | 要发吗
 > 18:05 | 嗯 只发影子
 < 18:06 | 好 {❤️}
@@ -4305,15 +4421,20 @@ const igPreview = t => { const m = igLast(t); if (!m) return ''; const x = m.tex
   const p = x === '[unsent]' ? (m.me ? '你撤回了一条消息' : '撤回了一条消息') : x.startsWith('[story:') ? (m.me ? '你回复了 TA 的快拍' : '回复了你的快拍') : x.startsWith('[storyreact') ? '对你的快拍做出了回应' : x.startsWith('[reel') ? '分享了一条 Reels' : x.startsWith('[post') ? '分享了一条帖子' : x.startsWith('[voice') ? '语音消息' : x.startsWith('[photo') ? '发送了一张照片' : x.startsWith('[sticker') ? '发送了一个贴图' : x;
   return (m.me && !x.startsWith('[unsent') && !x.startsWith('[story') ? '你：' : (m.who ? m.who + '：' : '')) + p; };
 const igAgo = d => { if (!d || d === 'now') return '刚刚'; const days = Math.round((new Date(TODAY) - new Date(d)) / 864e5); return days <= 0 ? '9小时' : days < 7 ? days + '天' : days < 30 ? Math.floor(days / 7) + '周' : days < 365 ? Math.floor(days / 30) + '个月' : Math.floor(days / 365) + '年'; };
+/* 快拍 24 小时后消失；放进精选的还能看到 */
+const igStoryGone = (m, scene) => { if (!m.d || m.d === 'now') return false; if (Object.values(IG_HL).some(h => h.items.some(it => it[1] === scene))) return false;
+  return m.d < YESTERDAY || (m.d === YESTERDAY && m.time <= nowHM()); };
 function igBubble(m, u){
   const x = m.text; let k;
   if (x === '[unsent]') return `<div class="igm-sys">${m.me ? '你撤回了一条消息' : '对方撤回了一条消息'}</div>`;
+  if ((k = x.match(/^\[story:(.*?)\|(.*)\]$/)) && igStoryGone(m, k[1])) return `<div class="igm-sref"><small>${m.me ? '你回复了 TA 的快拍' : '回复了你的快拍'}</small><div class="igm-gone">快拍不可用</div></div>`;
+  if ((k = x.match(/^\[storyreact:(.*?)\|(.*)\]$/)) && igStoryGone(m, k[1])) return `<div class="igm-sref"><small>对你的快拍做出了回应</small><div class="igm-gone">快拍不可用</div><span class="igm-big">${k[2]}</span></div>`;
   if ((k = x.match(/^\[story:(.*?)\|(.*)\]$/))) return `<div class="igm-sref"><small>${m.me ? '你回复了 TA 的快拍' : '回复了你的快拍'}</small><div class="igm-sth" style="background:${tileBg(k[1])}">${k[2].trim() ? `<em>${k[2]}</em>` : ''}</div></div>`;
   if ((k = x.match(/^\[storyreact:(.*?)\|(.*)\]$/))) return `<div class="igm-sref"><small>对你的快拍做出了回应</small><div class="igm-sth" style="background:${tileBg(k[1])}"></div><span class="igm-big">${k[2]}</span></div>`;
   if ((k = x.match(/^\[reel:(.*?)\|(.*)\]$/))) return `<div class="igm-card reel"><div class="igm-ch">${igAv(k[2], 22)}<b>${k[2]}</b></div><div class="igm-ci" style="background:${tileBg('studio')}"><i>▶︎</i></div><p>${k[1]}</p></div>`;
   if ((k = x.match(/^\[post:(.*?)\|(.*?)\|(.*)\]$/))) return `<div class="igm-card"><div class="igm-ch">${igAv(k[2], 22)}<b>${k[2]}</b></div><div class="igm-ci sq" style="background:${tileBg(k[1])}"></div>${k[3] ? `<p><b>${k[2]}</b> ${k[3]}</p>` : ''}</div>`;
   if ((k = x.match(/^\[voice:(.*)\]$/))) return `<div class="igm-b igm-voice" data-toast="语音消息 ${k[1]}"><i>▶︎</i><span>${'<em></em>'.repeat(22)}</span><small>${k[1]}</small></div>`;
-  if ((k = x.match(/^\[photo:(.*)\]$/))) return `<div class="igm-photo" style="background:${tileBg(k[1])}"></div>`;
+  if ((k = x.match(/^\[photo:(.*)\]$/))) { const z = k[1].startsWith('img:') && IMG_SIZE[k[1].slice(4)]; return `<div class="igm-photo" style="background:${tileBg(k[1])};${z ? `height:auto;aspect-ratio:${Math.max(.62, Math.min(1.6, z[0] / z[1]))}` : ''}"></div>`; }
   if ((k = x.match(/^\[sticker:(.*)\]$/))) return `<div class="igm-sticker">${k[1]}</div>`;
   if (emojiOnly(x)) return `<div class="igm-big">${x}</div>`;
   return `<div class="igm-b">${x}</div>`;
@@ -4683,7 +4804,7 @@ function saveSoon(){ clearTimeout(saveT); saveT = setTimeout(saveNow, 300); }
 /* ---------- Instagram 私信：记录玩家自己发的消息 ---------- */
 function igAdd(t, texts){
   const L = igParse(t); t.mine = t.mine || [];
-  texts.forEach(text => { const time = nowHM(); L.push({ me:true, who:'', time, d:TODAY, text, rx:'' }); t.mine.push({ time, text }); });
+  texts.forEach(text => { const time = nowHM(); L.push({ me:true, who:'', time, d:TODAY, text, rx:'' }); t.mine.push({ time, text, d:TODAY }); });
   saveSoon();
 }
 
@@ -4888,7 +5009,7 @@ function restore(){
       const lists = Object.fromEntries(POST_LISTS());
       Object.entries(d.ig.posts || {}).forEach(([k, s]) => { const [w, i] = k.split(':'); const p = lists[w] && lists[w][+i]; if (p) { Object.assign(p, s); delete p.cc; } });
       (d.ig.dm || []).forEach(x => { const arr = x.acct === 'spam' ? IG_DM_SPAM : IG_DM; let t = arr.find(y => y.u === x.u); if (!t) { if (!x.mine.length) return; t = { u:x.u, msgs:'' }; arr.unshift(t); }
-        t.unread = x.unread; t.seen = x.seen; if (x.mine.length) { const L = igParse(t); t.mine = x.mine; x.mine.forEach(m => L.push({ me:true, who:'', time:m.time, d:TODAY, text:m.text, rx:'' })); } });
+        t.unread = x.unread; t.seen = x.seen; if (x.mine.length) { const L = igParse(t); t.mine = x.mine; x.mine.forEach(m => L.push({ me:true, who:'', time:m.time, d:m.d || TODAY, text:m.text, rx:'' })); } });
     }
     (d.kk || []).forEach(x => { const c = CHATS.find(y => y.id === x.id); if (!c) return; c.unread = x.unread; c.draft = x.draft; c.mine = x.mine || []; c.mine.forEach(m => kkAdd(c, m.text, m.time, m.d)); c.unread = x.unread; });
     (d.sms || []).forEach((mine, i) => { if (SMS[i] && mine.length) { SMS[i].mine = mine; mine.forEach(t => SMS[i].m.push(['out', t, '已送达'])); SMS[i].d = TODAY; } });
@@ -5522,64 +5643,107 @@ ROOT.x = () => R.x();
 const PH_SAVE_KEY = 'taesan-phone-photos-v1';
 /* [文件, 时间, 地点, 搜索用描述, 标记(f 收藏 · e 自拍 · l 实况 · s 截屏), 相簿] */
 const PH_SRC = [
+  [113,'2021-09-01 08:10','首尔 西大门区','教室 开学 高中','','高中'],
+  [116,'2021-09-06 12:40','首尔 西大门区','走廊 书包 高中','','高中'],
   [67,'2021-09-12 16:03','首尔 中区','地铁 车厢','','首尔'],
   [76,'2021-09-12 16:31','首尔 中区','公交车','','首尔'],
+  [106,'2021-09-14 12:20','首尔 西大门区','食堂 午饭 高中','','高中'],
+  [112,'2021-10-05 17:10','首尔 西大门区','猫','f',''],
   [23,'2021-10-15 12:33','首尔 西大门区','汤 午饭','','吃吃喝喝'],
   [20,'2021-10-23 07:52','首尔 西大门区','地铁 站台','','首尔'],
+  [114,'2021-11-15 07:55','首尔 西大门区','教室 早上 高中','','高中'],
   [22,'2021-11-20 15:04','首尔 钟路区','砖墙 长椅','','首尔'],
+  [130,'2021-12-10 16:00','首尔 西大门区','礼堂 高中','','高中'],
+  [104,'2022-01-12 22:40','首尔 西大门区','紫菜包饭 泡面 夜宵','','吃吃喝喝'],
   [77,'2022-02-18 07:41','首尔 麻浦区','清晨 小巷','','首尔'],
+  [115,'2022-03-21 23:10','首尔 西大门区','网课 学习','',''],
   [68,'2022-04-02 14:05','首尔 西大门区','冰淇淋','','吃吃喝喝'],
+  [111,'2022-04-29 17:30','首尔 西大门区','操场 影子 高中','','高中'],
+  [117,'2022-05-13 16:20','首尔 西大门区','校门 朋友 高中','','高中'],
   [26,'2022-05-21 11:20','首尔 城东区','牛油果吐司 早午餐','','吃吃喝喝'],
+  [105,'2022-06-24 15:40','首尔 麻浦区','冰沙 甜品','','吃吃喝喝'],
+  [107,'2022-07-08 19:10','首尔 麻浦区','饮料 电影票','','朋友'],
   [75,'2022-07-23 01:12','首尔 麻浦区','饮料 深夜','','朋友'],
   [43,'2022-08-26 23:12','首尔 麻浦区','猫 便利店','f',''],
   [21,'2022-09-17 18:12','首尔 麻浦区','日落 街道','f','首尔'],
+  [110,'2022-10-01 21:30','首尔 龙山区','南山 爱情锁 夜景','f','首尔'],
+  [131,'2022-10-12 18:40','首尔 西大门区','下雨 街道','','首尔'],
   [57,'2022-11-12 22:40','首尔 龙山区','牵手 车里','f','🖤'],
   [64,'2022-11-19 17:52','首尔 汉江公园','影子 爱心','f','🖤'],
+  [139,'2022-11-26 16:30','首尔 麻浦区','运动服','','🖤'],
   [49,'2022-12-03 15:21','首尔 麻浦区','睡着 沙发','','🖤'],
+  [142,'2022-12-07 22:05','首尔 麻浦区','帽子 夜晚 街道','','🖤'],
   [31,'2022-12-10 23:06','首尔 麻浦区','帽子','','🖤'],
   [56,'2022-12-17 01:12','首尔 西大门区','头发','e','🖤'],
   [69,'2022-12-22 23:21','首尔 西大门区','泡面 宿舍','','朋友'],
+  [137,'2022-12-25 20:10','首尔 麻浦区','大头贴','f','🖤'],
   [38,'2023-01-07 20:33','首尔 麻浦区','卫衣','','🖤'],
+  [138,'2023-01-14 23:20','首尔 江南区','自拍 绿色','','🖤'],
+  [141,'2023-01-14 23:21','首尔 江南区','自拍 绿色','','🖤'],
   [46,'2023-01-21 21:44','首尔 麻浦区','捂脸','','🖤'],
+  [108,'2023-01-28 23:30','首尔 西大门区','电脑 零食 看剧','',''],
   [30,'2023-02-02 02:15','首尔 江南区','录音室 电脑','','🖤'],
   [42,'2023-02-02 02:21','首尔 江南区','耳机 麦克风','','🖤'],
+  [136,'2023-02-10 12:30','首尔 西大门区','毕业 花 学长','f','🖤'],
   [59,'2023-02-19 23:32','首尔 江南区','黑白 麦克风','f','🖤'],
+  [145,'2023-02-25 14:40','首尔 麻浦区','被子','','🖤'],
   [73,'2023-03-04 20:34','首尔 西大门区','聚会','','朋友'],
   [74,'2023-03-04 23:52','首尔 西大门区','外卖 聚会','','朋友'],
   [52,'2023-03-11 16:42','首尔 西大门区','趴在桌上 睡觉','','🖤'],
   [33,'2023-03-18 14:10','首尔 麻浦区','头发','','🖤'],
   [53,'2023-03-25 15:12','首尔 麻浦区','咖啡店 睡着','','🖤'],
+  [132,'2023-04-07 17:20','首尔 西大门区','雨伞 朋友 高中','','高中'],
   [29,'2023-04-08 13:24','首尔 江南区','黑白 对镜自拍','','🖤'],
+  [140,'2023-04-15 15:10','首尔 江南区','侧脸','','🖤'],
   [61,'2023-04-22 22:13','首尔 江南区','练习室','l','🖤'],
   [60,'2023-05-06 18:03','首尔 西大门区','剪刀手 影子','','🖤'],
+  [151,'2023-05-13 01:20','首尔 麻浦区','','e','🖤'],
   [55,'2023-05-29 23:41','首尔 江南区','夜晚','','🖤'],
   [66,'2023-05-30 19:24','首尔 江南区','比心 涂鸦墙','f','🖤'],
+  [146,'2023-06-03 22:40','首尔 麻浦区','头发','','🖤'],
   [70,'2023-06-10 00:31','首尔 麻浦区','夜晚 朋友','','朋友'],
   [34,'2023-06-24 21:12','首尔 江南区','健身房 对镜自拍','','🖤'],
   [44,'2023-07-08 20:11','首尔 麻浦区','街道','f','🖤'],
   [39,'2023-07-08 22:34','首尔 麻浦区','夜晚','','🖤'],
+  [150,'2023-07-22 19:50','首尔 龙山区','车窗','f','🖤'],
   [32,'2023-08-10 00:12','首尔 麻浦区','HBD 生日','f','🖤'],
+  [152,'2023-08-19 23:10','首尔 麻浦区','剪刀手','','🖤'],
   [79,'2023-08-26 18:22','首尔 麻浦区','散步 购物袋','',''],
+  [147,'2023-09-09 15:30','首尔 麻浦区','乐高','','🖤'],
+  [148,'2023-09-09 18:05','首尔 麻浦区','乐高','','🖤'],
   [36,'2023-09-16 19:33','首尔 松坡区','体育场 毛线帽','','🖤'],
   [37,'2023-09-23 23:52','首尔 西大门区','视频通话','','🖤'],
+  [109,'2023-09-30 23:50','首尔 西大门区','电脑 零食','',''],
+  [153,'2023-10-07 00:40','首尔 麻浦区','托腮','','🖤'],
   [45,'2023-10-14 14:22','首尔 城东区','咖啡店 剪刀手','f','🖤'],
   [65,'2023-10-21 15:02','首尔 龙山区','卫衣','','朋友'],
   [50,'2023-10-29 01:33','首尔 麻浦区','睡着','','🖤'],
   [54,'2023-11-05 16:04','首尔 麻浦区','眼镜','e','🖤'],
+  [144,'2023-11-11 21:30','首尔 江南区','夜晚 大衣','','🖤'],
+  [100,'2023-11-16 22:10','首尔 西大门区','公交车 夜晚 高考','',''],
   [40,'2023-11-21 22:02','首尔 江南区','剪刀手','','🖤'],
   [48,'2023-12-02 23:31','首尔 江南区','夜晚','','🖤'],
   [35,'2023-12-09 22:14','首尔 麻浦区','夜晚','','🖤'],
   [47,'2023-12-16 21:52','首尔 麻浦区','夜晚 长椅','','🖤'],
+  [154,'2023-11-26 23:00','首尔 麻浦区','玩偶','','🖤'],
   [51,'2024-01-06 15:33','首尔 江南区','午睡','','🖤'],
   [63,'2024-01-20 00:42','首尔 西大门区','黑白 对镜自拍','e','🖤'],
   [41,'2024-02-08 19:40','','截屏 推特','s',''],
   [78,'2024-02-15 22:31','首尔 西大门区','夜晚 路口','',''],
   [62,'2024-02-17 23:11','首尔 西大门区','路灯','',''],
+  [101,'2024-03-09 23:40','首尔 江南区','夜景','','首尔'],
+  [102,'2024-03-09 23:41','首尔 江南区','夜景','',''],
   [72,'2024-04-13 16:12','首尔 西大门区','卫衣','','朋友'],
   [80,'2024-12-20 19:44','首尔 西大门区','火锅','f','朋友'],
+  [103,'2025-03-20 21:00','首尔 城北区','烧酒 迎新','','朋友'],
   [71,'2025-10-31 21:03','首尔 城北区','零食','','朋友'],
+  [143,'2025-11-22 16:00','首尔 城北区','鲷鱼烧 零食','','吃吃喝喝'],
   [82,'2026-05-23 20:02','首尔 汉江公园','野餐 拉面','','朋友'],
   [81,'2026-07-18 22:11','首尔 汉江公园','拉面 夜晚','','朋友'],
+  [149,'2026-09-28 22:10','','拍立得 小卡','f',''],
+  [135,'2026-10-02 01:12','','截屏 小时候','s',''],
+  [134,'2026-10-02 01:13','','截屏 学生证','s',''],
+  [133,'2026-10-02 01:15','','截屏 毕业照','s',''],
   [18,'2026-10-18 19:42','首尔 江南区','夜晚 街道','','首尔'],
   [19,'2026-10-18 20:31','首尔 江南区','炸鸡 啤酒','l','吃吃喝喝'],
   [27,'2026-10-18 21:51','首尔 江南区','순하리 烧酒','l','吃吃喝喝'],
@@ -5649,7 +5813,7 @@ const phTh = p => `assets/ph/t/${p.n}.jpg`;
 const phTile2 = (p, ctx = '') => `<div class="pp-t" data-go="photo|${p.id}${ctx ? '~' + ctx : ''}" style="background-image:url(${phTh(p)})">${p.f.includes('f') ? `<i class="h">${PHI.heartOn}</i>` : ''}</div>`;
 const phDev = p => p.d >= '2025-09-20' ? ['Apple iPhone 17 Pro Max', '超广角镜头 — 13 mm ƒ2.2', '12 MP · 3024 × 4032'] : p.d >= '2023-09-15' ? ['Apple iPhone 15 Pro', '主摄 — 24 mm ƒ1.78', '24 MP · 4284 × 5712'] : ['Apple iPhone 12', '广角镜头 — 26 mm ƒ1.6', '12 MP · 3024 × 4032'];
 const phDay = d => d === TODAY ? '今天' : d === YESTERDAY ? '昨天' : d.startsWith('2026') ? md(d) : ymd(d);
-const PH_ALBUMS = () => [['最近项目', phVis()], ...['🖤', '朋友', '吃吃喝喝', '首尔'].map(n => [n, phVis().filter(p => p.al.includes(n))])];
+const PH_ALBUMS = () => [['最近项目', phVis()], ...['🖤', '高中', '朋友', '吃吃喝喝', '首尔'].map(n => [n, phVis().filter(p => p.al.includes(n))])];
 const phCtxList = ctx => { if (!ctx) return phVis(); if (ctx === '个人收藏') return phVis().filter(p => p.f.includes('f')); if (ctx === '最近删除') return PHOTOS.filter(p => p.f.includes('d'));
   if (ctx === '自拍') return phVis().filter(p => p.f.includes('e')); if (ctx === '实况照片') return phVis().filter(p => p.f.includes('l')); if (ctx === '截屏') return phVis().filter(p => p.f.includes('s'));
   const a = PH_ALBUMS().find(x => x[0] === ctx); return a ? a[1] : phVis(); };
@@ -5955,6 +6119,113 @@ let ckLastFire = '';
 setInterval(() => { const hm = nowHM(); if (hm === ckLastFire) return;
   const a = CK.alarms.find(x => x.on && x.t === hm); if (a) { ckLastFire = hm; ckRing(a.l || '闹钟', hm); }
   if (TM.run && !TM.paused && tmLeft() <= 0) { TM.run = false; ckRing(CK.label, '计时结束'); } }, 1000);
+
+/* =========================================================
+   CALENDAR — iOS 26 日历（深色）：月视图（打开就在今天）+ 日视图
+   日视图顶部的一周可以直接点别的日期，左右划换一周；时间轴左右划换一天。
+   新建的日程会保存（CAL_SAVE_KEY）。
+   ========================================================= */
+const CAL_SAVE_KEY = 'taesan-phone-cal-v1';
+let CAL_MINE = [];
+try { CAL_MINE = JSON.parse(localStorage.getItem(CAL_SAVE_KEY) || '[]'); } catch (e) {}
+CAL_MINE.forEach(e => CAL.push(e));
+const calSave = () => { if (typeof resetting !== 'undefined' && resetting) return; try { localStorage.setItem(CAL_SAVE_KEY, JSON.stringify(CAL_MINE)); } catch (e) {} };
+const CLI = {
+  back:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5 8 12l7 7"/></svg>',
+  pill:'<svg viewBox="0 0 28 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="2" y="7.5" width="24" height="9" rx="4.5"/><path d="M8 10v4M12 10v4M16 10v4M20 10v4"/></svg>',
+  list:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><rect x="6.5" y="4.5" width="15" height="6" rx="2"/><rect x="6.5" y="13.5" width="15" height="6" rx="2"/><path d="M2.5 5.5h.1M2.5 9.5h.1M2.5 14.5h.1M2.5 18.5h.1"/></svg>',
+  search:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg>',
+  plus:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>',
+  cal:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4.5" width="18" height="16" rx="3"/><path d="M3 9h18" /><path d="M7.5 12.5h.1M11 12.5h.1M14.5 12.5h.1M18 12.5h.1M7.5 16h.1M11 16h.1M14.5 16h.1" stroke-width="2.4" stroke-linecap="round"/></svg>',
+  inbox:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M3 13.5 5.5 6h13l2.5 7.5V18a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M3 13.5h5l1.5 2.5h5l1.5-2.5h5"/></svg>',
+};
+const calISO = d => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+const calAdd = (ds, n) => { const d = new Date(ds + 'T12:00:00'); d.setDate(d.getDate() + n); return calISO(d); };
+const calEv = ds => CAL.filter(e => e[0] === ds);
+const CAL_WD = '日一二三四五六';
+const calBot = () => `<div class="cl-bot"><span class="cl-today" data-cl="today">今天</span><span class="cl-cap"><i data-toast="日历：${Object.keys(CALS).join('、')}">${CLI.cal}</i><i data-toast="没有新的邀请">${CLI.inbox}</i></span></div>`;
+const calTopR = icon => `<span class="cl-cap r"><i data-go="calList">${icon}</i><i data-toast="可以搜索日程标题">${CLI.search}</i><i data-cl="add">${CLI.plus}</i></span>`;
+
+R.calendar = () => {
+  const now = new Date(TODAY + 'T12:00:00'), months = [];
+  for (let y = 2021, m = 9; ; m === 12 ? (y++, m = 1) : m++) { months.push([y, m]); if (y > now.getFullYear() || (y === now.getFullYear() + 1 && m >= 3)) break; }
+  const body = months.map(([y, m]) => {
+    const first = new Date(y, m - 1, 1).getDay(), days = new Date(y, m, 0).getDate(), cells = [];
+    for (let i = 0; i < first; i++) cells.push('<span class="e"></span>');
+    for (let d = 1; d <= days; d++) { const ds = `${y}-${String(m).padStart(2, '0')}-${String(d).padStart(2, '0')}`, es = calEv(ds), wd = (first + d - 1) % 7;
+      cells.push(`<span class="${wd === 0 || wd === 6 ? 'we' : ''} ${ds === TODAY ? 'td' : ''}" data-go="calday|${ds}"><b>${d}</b>${es.length ? `<i style="background:${calColor(es[0][3])}"></i>` : ''}</span>`); }
+    return `<div class="cl-m" data-ym="${y}-${m}" ${y === now.getFullYear() && m === now.getMonth() + 1 ? 'id="clNow"' : ''}><div class="cl-mt" style="padding-left:calc(${first} * 100% / 7)"><b>${m}月</b></div><div class="cl-g">${cells.join('')}</div></div>`; }).join('');
+  return { tone:'dark', bg:'#000', cls:'cl cl-month',
+    body:body + '<div class="cl-end"></div>',
+    over:`<div class="cl-hd"><div class="cl-row"><span class="cl-cap l" data-toast="年视图"><i>${CLI.back}</i><b id="clY">${now.getFullYear()}</b></span>${calTopR(CLI.pill)}</div><div class="cl-big" id="clM">${now.getMonth() + 1}月</div><div class="cl-wd">${[...CAL_WD].map((w, i) => `<span class="${i === 0 || i === 6 ? 'we' : ''}">${w}</span>`).join('')}</div></div>` + calBot(),
+    refresh:() => R.calendar(),
+    mount:v => {
+      const s = v.querySelector('.vs'), n = v.querySelector('#clNow'), M = v.querySelector('#clM'), Y = v.querySelector('#clY'), ms = [...v.querySelectorAll('.cl-m')];
+      const pad = () => v.querySelector('.cl-hd').offsetHeight;
+      const goNow = smooth => { const wk = v.querySelector('.cl-g .td'); const top = n.offsetTop + (wk ? wk.offsetTop - n.querySelector('.cl-g').offsetTop : 0); s.scrollTo({ top:Math.max(0, n.offsetTop - pad() + n.querySelector('.cl-mt').offsetHeight), behavior:smooth ? 'smooth' : 'auto' }); };
+      const upd = () => { const y0 = s.scrollTop + pad() + 4; let cur = ms[0]; for (const m of ms) { if (m.offsetTop <= y0) cur = m; else break; } const [y, mm] = cur.dataset.ym.split('-'); M.textContent = mm + '月'; Y.textContent = y; };
+      goNow(); requestAnimationFrame(() => { goNow(); upd(); }); setTimeout(() => { goNow(); upd(); }, 120);
+      s.addEventListener('scroll', () => requestAnimationFrame(upd), { passive:true });
+      v.querySelector('[data-cl="today"]').addEventListener('click', e => { e.stopPropagation(); goNow(true); });
+      v.querySelector('[data-cl="add"]').addEventListener('click', e => { e.stopPropagation(); calAddSheet(v, TODAY); });
+    } }; };
+R.calday = ds => {
+  ds = ds || TODAY; const d0 = new Date(ds + 'T12:00:00'), wk0 = calAdd(ds, -d0.getDay());
+  const week = Array.from({ length:7 }, (_, i) => calAdd(wk0, i));
+  const es = calEv(ds), allDay = es.filter(e => !/^\d/.test(e[2])), timed = es.filter(e => /^\d/.test(e[2]));
+  const [y, m, d] = ds.split('-').map(Number);
+  return { tone:'dark', bg:'#000', cls:'cl cl-day',
+    top:`<div class="cl-dhd"><div class="cl-row"><span class="cl-cap l" data-back><i>${CLI.back}</i><b>${m}月</b></span>${calTopR(CLI.list)}</div>
+      <div class="cl-wk" id="clwk">${week.map((w, i) => `<span class="${i === 0 || i === 6 ? 'we' : ''} ${w === ds ? 'sel' : ''} ${w === TODAY ? 'td' : ''}" data-day="${w}"><small>${CAL_WD[i]}</small><b>${+w.slice(8)}</b></span>`).join('')}</div>
+      <div class="cl-date">星期${CAL_WD[d0.getDay()]} – ${y}年${m}月${d}日</div>${allDay.length ? `<div class="cl-ad">${allDay.map(e => `<div style="--c:${calColor(e[3])}" class="${e[4] === 'x' ? 'x' : ''}" data-go="calev|${CAL.indexOf(e)}">${esc(e[1])}</div>`).join('')}</div>` : ''}</div>`,
+    body:`<div class="cl-tl">${Array.from({ length:25 }, (_, h) => `<div class="cl-hr"><small>${String(h % 24).padStart(2, '0')}:00</small></div>`).join('')}
+      ${timed.map(e => { const [h, mi] = e[2].split(':').map(Number); return `<div class="cl-blk ${e[4] === 'x' ? 'x' : ''}" style="--c:${calColor(e[3])};top:calc(${h + mi / 60} * var(--hr))" data-go="calev|${CAL.indexOf(e)}"><b>${esc(e[1])}</b><small>${e[2]}${e[5] && !e[5].includes('\n') ? ' · ' + esc(e[5]) : ''}</small></div>`; }).join('')}
+      ${ds === TODAY ? `<div class="cl-now" id="clnow"><em></em></div>` : ''}</div><div class="cl-end"></div>`,
+    over:calBot(),
+    refresh:() => R.calday(ds),
+    mount:v => {
+      const s = v.querySelector('.vs'), hr = v.querySelector('.cl-hr').offsetHeight || 38;
+      const nowL = v.querySelector('#clnow'); const place = () => { if (!nowL) return; const n = new Date(); nowL.style.top = `${(n.getHours() + n.getMinutes() / 60) * hr}px`; nowL.querySelector('em').textContent = nowHM(); };
+      place(); const it = setInterval(() => { if (!v.isConnected) return clearInterval(it); place(); }, 30000);
+      const first = timed.length ? Math.min(...timed.map(e => +e[2].slice(0, 2))) : ds === TODAY ? new Date().getHours() : 6;
+      requestAnimationFrame(() => { s.scrollTop = Math.max(0, Math.min(first - 1, 6) * hr - 6); });
+      const go = nd => replaceView(R.calday(nd));
+      v.querySelectorAll('[data-day]').forEach(b => b.addEventListener('click', e => { e.stopPropagation(); if (b.dataset.day !== ds) go(b.dataset.day); }));
+      v.querySelector('[data-cl="today"]').addEventListener('click', e => { e.stopPropagation(); if (ds !== TODAY) go(TODAY); else s.scrollTo({ top:Math.max(0, (new Date().getHours() - 1) * hr), behavior:'smooth' }); });
+      v.querySelector('[data-cl="add"]').addEventListener('click', e => { e.stopPropagation(); calAddSheet(v, ds); });
+      /* 左右划：周条换一周，时间轴换一天（手指和鼠标都可以） */
+      const swipe = (el, fn) => { let x0 = null, y0 = 0;
+        const st = (x, y) => { x0 = x; y0 = y; }, en = (x, y) => { if (x0 == null) return; const dx = x - x0, dy = y - y0; x0 = null; if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.3) fn(dx < 0 ? 1 : -1); };
+        el.addEventListener('touchstart', e => st(e.touches[0].clientX, e.touches[0].clientY), { passive:true });
+        el.addEventListener('touchend', e => en(e.changedTouches[0].clientX, e.changedTouches[0].clientY));
+        el.addEventListener('pointerdown', e => { if (e.pointerType !== 'touch') st(e.clientX, e.clientY); });
+        el.addEventListener('pointerup', e => { if (e.pointerType !== 'touch') en(e.clientX, e.clientY); }); };
+      swipe(v.querySelector('#clwk'), k => go(calAdd(ds, 7 * k)));
+      swipe(v.querySelector('.cl-tl'), k => go(calAdd(ds, k)));
+    } }; };
+
+/* 新建日程 */
+function calAddSheet(v, ds){
+  const cals = Object.keys(CALS); let ci = cals.indexOf('个人'); if (ci < 0) ci = 0;
+  const sh = document.createElement('div'); sh.className = 'cl-sheet';
+  sh.innerHTML = `<div class="cl-shb"></div><div class="cl-shp"><div class="cl-sht"><span data-x>取消</span><b>新建日程</b><span class="ok" data-ok>添加</span></div>
+    <div class="cl-grp"><input id="cltt" placeholder="标题"><input id="clloc" placeholder="位置或视频通话"></div>
+    <div class="cl-grp"><label><span>全天</span><i class="ck-sw" id="clall"></i></label><label><span>开始</span><input type="date" id="cld" value="${ds}"><input type="time" id="clt" value="${String(Math.min(23, new Date().getHours() + 1)).padStart(2, '0')}:00"></label></div>
+    <div class="cl-grp"><label data-calc><span>日历</span><em><i style="background:${calColor(cals[ci])}"></i><b>${cals[ci]}</b></em></label></div>
+    <div class="cl-grp"><textarea id="clnote" rows="3" placeholder="备注"></textarea></div></div>`;
+  v.append(sh); requestAnimationFrame(() => sh.classList.add('on'));
+  const close = () => { sh.classList.remove('on'); setTimeout(() => sh.remove(), 300); };
+  sh.addEventListener('click', e => e.stopPropagation());
+  sh.querySelector('.cl-shb').addEventListener('click', close); sh.querySelector('[data-x]').addEventListener('click', close);
+  const all = sh.querySelector('#clall'); all.addEventListener('click', () => { all.classList.toggle('on'); sh.querySelector('#clt').hidden = all.classList.contains('on'); });
+  sh.querySelector('[data-calc]').addEventListener('click', e => { ci = (ci + 1) % cals.length; const em = e.currentTarget.querySelector('em'); em.querySelector('b').textContent = cals[ci]; em.querySelector('i').style.background = calColor(cals[ci]); });
+  sh.querySelector('[data-ok]').addEventListener('click', () => { const t = sh.querySelector('#cltt').value.trim() || '新日程', d = sh.querySelector('#cld').value || ds;
+    const loc = sh.querySelector('#clloc').value.trim(), note = sh.querySelector('#clnote').value.trim();
+    const e = [d, t, all.classList.contains('on') ? '全天' : sh.querySelector('#clt').value || '09:00', cals[ci], '', [loc, note].filter(Boolean).join('\n')];
+    CAL.push(e); CAL_MINE.push(e); calSave(); close(); toast('已添加日程'); setTimeout(() => replaceView(topView()._spec.refresh()), 260); });
+  setTimeout(() => sh.querySelector('#cltt').focus(), 320);
+}
+ROOT.calendar = () => R.calendar();
 
 /* ---------- calculator ---------- */
 function mountCalc(){
