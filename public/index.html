@@ -2875,8 +2875,9 @@ const CHATS = [
 < 21:11 | 你快拍那个便利店 手里只有饮料
 > 21:12 | 你是侦探吗
 < 21:12 | 去买个饭团 拍给我看
-> 21:20 | [photo]store|饭团
+> 21:20 | 买了 两个
 < 21:20 | 乖
+> 21:21 | ？叫谁乖
 # 2022-08-03
 < 01:12 | 睡了吗
 > 01:12 | 没有
@@ -2925,14 +2926,17 @@ const CHATS = [
 > 23:53 | 明明是你问的！
 # 2022-11-12
 > 23:31 | [photo]img:assets/ph/57.jpg|
-> 23:31 | 偷拍成功
-< 23:34 | 删了
-< 23:34 | 开玩笑的 原图发我
+> 23:31 | 证据
+< 23:32 | 什么证据
+> 23:32 | 某人一上车就不撒手的证据
+< 23:33 | 是你先伸过来的
+> 23:33 | 我是要拿手机！！
+< 23:34 | 嗯 拿了二十分钟
+< 23:34 | 原图发我 我要存
 # 2022-11-17
 < 21:02 | 宝宝
 > 21:02 | 干嘛
-< 21:03 | 看这个
-< 21:03 | [photo]store|便利店冰柜里只剩一盒草莓牛奶
+< 21:03 | [photo]img:assets/ph/milk.jpg|
 > 21:03 | 给我买
 < 21:04 | 凭什么
 > 21:04 | 因为你是我男朋友
@@ -2943,13 +2947,22 @@ const CHATS = [
 > 21:06 | 你怎么不早说啊
 # 2022-12-24
 > 20:00 | 圣诞快乐🎄
-< 20:05 | 练到十点 便利店见？
-> 20:05 | 好
+< 20:05 | 练到十点
+< 20:05 | 便利店见？
+> 20:05 | 圣诞节约便利店？？
+< 20:06 | 便利店有暖气 还有关东煮
+> 20:06 | ……行 你请
 # 2022-12-25
 > 20:15 | [photo]img:assets/ph/137.jpg|
-> 20:15 | 这张你也太可爱了吧
-< 20:18 | 删掉
-< 20:18 | 你那张发我
+> 20:15 | 傻子
+< 20:16 | ？
+< 20:16 | 发错人了吧
+> 20:16 | 没有 就是发给傻子的
+< 20:17 | 那个发箍是谁非要我戴的
+> 20:17 | 谁让你真戴了ㅋㅋㅋ
+< 20:18 | 你那张呢 闭眼那张
+> 20:18 | 想得美 已删
+< 20:19 | 没事 拍的时候我偷存了
 # 2023-01-14
 > 23:15 | 在干嘛
 < 23:20 | [photo]img:assets/ph/138.jpg|
@@ -2969,10 +2982,15 @@ const CHATS = [
 < 02:18 | 你先睡
 # 2023-02-10
 > 12:40 | [photo]img:assets/ph/136.jpg|
-> 12:40 | 学长毕业快乐🎓
-< 12:46 | 以后不能叫学长了吧
+> 12:40 | 毕业快乐🎓 抱着花的样子好呆
+< 12:46 | 你挤在一堆家长里拍的？
+> 12:46 | 不然呢 差点被挤到台上
+< 12:47 | 以后不能叫学长了
 > 12:47 | 那叫什么
-< 12:47 | 你知道的
+< 12:48 | 你自己想
+> 12:48 | 东旼同学
+< 12:48 | ……
+< 12:49 | 算了 还是叫学长吧
 # 2023-02-14
 < 23:58 | 今天又没见到 对不起
 < 23:58 | 巧克力收到了 差点被经纪人哥看到
@@ -3058,9 +3076,17 @@ const CHATS = [
 < 07:36 | 嗯
 > 07:37 | 辛苦啦
 # 2023-08-10
-> 00:00 | 生日快乐🎂
+> 00:00 | 生日快乐🎂 我是第一个！
+< 00:01 | 宰铉刚才已经说了
+> 00:01 | ？？？他抢跑
 > 00:12 | [photo]img:assets/ph/32.jpg|
-< 00:20 | 今年最好的礼物
+> 00:12 | 送你的
+< 00:13 | 我脸呢
+> 00:13 | 被 HBD 挡住了 刚好
+< 00:14 | 删了重画
+> 00:14 | 不要 这是限量版
+< 00:20 | ……行 存了
+< 00:20 | 设成锁屏了
 # 2023-08-28
 > 18:40 | [call-miss]
 # 2023-08-29
@@ -3126,7 +3152,6 @@ const CHATS = [
 < 23:19 | 好
 > 23:19 | 说话算话
 < 23:20 | 嗯 盖章
-> 23:20 | [sticker]✅|盖章
 # 2023-11-26
 < 23:00 | [photo]img:assets/ph/154.jpg|
 < 23:00 | 它说想你
@@ -3500,7 +3525,7 @@ const BANK = [
 ];
 
 /* 图片原始尺寸（用于按真实比例显示） */
-const IMG_SIZE = {"assets/av_default.jpg": [240, 240], "assets/av_jian.jpg": [240, 240], "assets/av_keke.jpg": [240, 240], "assets/av_minji.jpg": [240, 240], "assets/av_shuyan.jpg": [240, 240], "assets/av_spam.jpg": [240, 240], "assets/avatar_anran.jpg": [320, 320], "assets/ig_blossom.jpg": [736, 736], "assets/ig_cat.jpg": [736, 981], "assets/ig_chat.jpg": [1080, 1072], "assets/ig_dog.jpg": [735, 824], "assets/ig_pasta.jpg": [1080, 1440], "assets/ig_sunset.jpg": [736, 981], "assets/sp_cake.jpg": [902, 1200], "assets/sp_choco.jpg": [498, 660], "assets/sp_heart.jpg": [921, 1152], "assets/sp_snow.jpg": [736, 981], "assets/sp_walk.jpg": [736, 981], "assets/st_1.jpg": [736, 1307], "assets/st_2.jpg": [736, 1308], "assets/st_3.jpg": [736, 1308], "assets/st_4.jpg": [736, 981], "assets/st_5.jpg": [828, 1470], "assets/st_6.jpg": [737, 1600], "assets/sy_cup.jpg": [963, 1200], "assets/sy_hand.jpg": [900, 1200], "assets/w_bday.jpg": [736, 632], "assets/w_booth.jpg": [740, 1280], "assets/w_cat.jpg": [736, 1308], "assets/w_hair.jpg": [736, 1308], "assets/w_hs.jpg": [828, 1064], "assets/w_ramen.jpg": [736, 981], "assets/wall_home.jpg": [736, 1308], "assets/wall_lock.jpg": [608, 1081], "assets/x/ts_archive.jpg": [400, 400], "assets/x/bnd_banner.jpg": [924, 318], "assets/x/bnd_party.jpg": [1000, 1301], "assets/x/bnd_av.jpg": [360, 360], "assets/x/bnd_animal.jpg": [1200, 675], "assets/x/x_me.jpg": [320, 320], "assets/x/clover.jpg": [400, 400], "assets/x/twt.jpg": [120, 120], "assets/x/fan_cat.jpg": [400, 400], "assets/x/bnd_tako.jpg": [1200, 675], "assets/ph/69.jpg": [736, 981], "assets/ph/47.jpg": [675, 1200], "assets/ph/67.jpg": [1050, 1400], "assets/ph/52.jpg": [500, 495], "assets/ph/75.jpg": [1050, 1400], "assets/ph/26.jpg": [1080, 1080], "assets/ph/42.jpg": [860, 997], "assets/ph/28.jpg": [923, 1154], "assets/ph/32.jpg": [1206, 1150], "assets/ph/20.jpg": [256, 341], "assets/ph/51.jpg": [1050, 1400], "assets/ph/65.jpg": [800, 1200], "assets/ph/55.jpg": [375, 468], "assets/ph/71.jpg": [1050, 1400], "assets/ph/49.jpg": [1050, 1400], "assets/ph/41.jpg": [1080, 869], "assets/ph/54.jpg": [736, 1217], "assets/ph/31.jpg": [1133, 1400], "assets/ph/58.jpg": [1200, 1128], "assets/ph/35.jpg": [860, 1290], "assets/ph/73.jpg": [736, 981], "assets/ph/37.jpg": [449, 974], "assets/ph/62.jpg": [868, 1200], "assets/ph/43.jpg": [814, 1085], "assets/ph/80.jpg": [736, 1308], "assets/ph/23.jpg": [1080, 1080], "assets/ph/64.jpg": [720, 1272], "assets/ph/68.jpg": [1051, 1400], "assets/ph/44.jpg": [793, 1070], "assets/ph/38.jpg": [805, 1074], "assets/ph/59.jpg": [375, 488], "assets/ph/22.jpg": [1078, 1078], "assets/ph/81.jpg": [900, 1200], "assets/ph/60.jpg": [940, 1200], "assets/ph/48.jpg": [874, 1400], "assets/ph/56.jpg": [1199, 928], "assets/ph/39.jpg": [859, 1074], "assets/ph/30.jpg": [939, 1252], "assets/ph/19.jpg": [1050, 1400], "assets/ph/18.jpg": [1050, 1400], "assets/ph/46.jpg": [962, 1200], "assets/ph/24.jpg": [1050, 1400], "assets/ph/74.jpg": [677, 1200], "assets/ph/76.jpg": [1050, 1400], "assets/ph/79.jpg": [1064, 1400], "assets/ph/40.jpg": [1141, 946], "assets/ph/78.jpg": [744, 1320], "assets/ph/34.jpg": [706, 1255], "assets/ph/50.jpg": [736, 543], "assets/ph/61.jpg": [655, 1164], "assets/ph/53.jpg": [768, 1024], "assets/ph/36.jpg": [1143, 857], "assets/ph/70.jpg": [750, 1000], "assets/ph/21.jpg": [1050, 1400], "assets/ph/33.jpg": [1138, 1201], "assets/ph/27.jpg": [1050, 1400], "assets/ph/63.jpg": [685, 1217], "assets/ph/25.jpg": [1050, 1400], "assets/ph/45.jpg": [1080, 1365], "assets/ph/57.jpg": [720, 1280], "assets/ph/82.jpg": [828, 804], "assets/ph/66.jpg": [736, 898], "assets/ph/72.jpg": [643, 1142], "assets/ph/29.jpg": [647, 1400], "assets/ph/77.jpg": [1050, 1400], "assets/ph/134.jpg": [518, 616], "assets/ph/109.jpg": [675, 1200], "assets/ph/106.jpg": [576, 767], "assets/ph/141.jpg": [812, 1014], "assets/ph/100.jpg": [957, 539], "assets/ph/142.jpg": [720, 900], "assets/ph/154.jpg": [548, 685], "assets/ph/101.jpg": [539, 404], "assets/ph/107.jpg": [750, 984], "assets/ph/112.jpg": [606, 808], "assets/ph/144.jpg": [548, 822], "assets/ph/140.jpg": [859, 1073], "assets/ph/110.jpg": [606, 808], "assets/ph/139.jpg": [914, 1161], "assets/ph/114.jpg": [339, 600], "assets/ph/148.jpg": [675, 1200], "assets/ph/152.jpg": [548, 548], "assets/ph/153.jpg": [548, 731], "assets/ph/113.jpg": [606, 808], "assets/ph/132.jpg": [475, 837], "assets/ph/150.jpg": [359, 390], "assets/ph/145.jpg": [643, 1200], "assets/ph/138.jpg": [658, 687], "assets/ph/115.jpg": [464, 580], "assets/ph/103.jpg": [302, 536], "assets/ph/137.jpg": [367, 648], "assets/ph/105.jpg": [440, 781], "assets/ph/117.jpg": [464, 619], "assets/ph/111.jpg": [606, 808], "assets/ph/131.jpg": [598, 797], "assets/ph/143.jpg": [425, 756], "assets/ph/146.jpg": [828, 1111], "assets/ph/149.jpg": [736, 885], "assets/ph/102.jpg": [536, 402], "assets/ph/130.jpg": [463, 823], "assets/ph/151.jpg": [736, 981], "assets/ph/108.jpg": [431, 765], "assets/ph/116.jpg": [464, 619], "assets/ph/133.jpg": [718, 718], "assets/ph/147.jpg": [644, 1145], "assets/ph/104.jpg": [348, 464], "assets/ph/136.jpg": [454, 454], "assets/ph/135.jpg": [401, 535]};
+const IMG_SIZE = {"assets/av_default.jpg": [240, 240], "assets/av_jian.jpg": [240, 240], "assets/av_keke.jpg": [240, 240], "assets/av_minji.jpg": [240, 240], "assets/av_shuyan.jpg": [240, 240], "assets/av_spam.jpg": [240, 240], "assets/avatar_anran.jpg": [320, 320], "assets/ig_blossom.jpg": [736, 736], "assets/ig_cat.jpg": [736, 981], "assets/ig_chat.jpg": [1080, 1072], "assets/ig_dog.jpg": [735, 824], "assets/ig_pasta.jpg": [1080, 1440], "assets/ig_sunset.jpg": [736, 981], "assets/sp_cake.jpg": [902, 1200], "assets/sp_choco.jpg": [498, 660], "assets/sp_heart.jpg": [921, 1152], "assets/sp_snow.jpg": [736, 981], "assets/sp_walk.jpg": [736, 981], "assets/st_1.jpg": [736, 1307], "assets/st_2.jpg": [736, 1308], "assets/st_3.jpg": [736, 1308], "assets/st_4.jpg": [736, 981], "assets/st_5.jpg": [828, 1470], "assets/st_6.jpg": [737, 1600], "assets/sy_cup.jpg": [963, 1200], "assets/sy_hand.jpg": [900, 1200], "assets/w_bday.jpg": [736, 632], "assets/w_booth.jpg": [740, 1280], "assets/w_cat.jpg": [736, 1308], "assets/w_hair.jpg": [736, 1308], "assets/w_hs.jpg": [828, 1064], "assets/w_ramen.jpg": [736, 981], "assets/wall_home.jpg": [736, 1308], "assets/wall_lock.jpg": [608, 1081], "assets/x/ts_archive.jpg": [400, 400], "assets/x/bnd_banner.jpg": [924, 318], "assets/x/bnd_party.jpg": [1000, 1301], "assets/x/bnd_av.jpg": [360, 360], "assets/x/bnd_animal.jpg": [1200, 675], "assets/x/x_me.jpg": [320, 320], "assets/x/clover.jpg": [400, 400], "assets/x/twt.jpg": [120, 120], "assets/x/fan_cat.jpg": [400, 400], "assets/x/bnd_tako.jpg": [1200, 675], "assets/ph/69.jpg": [736, 981], "assets/ph/47.jpg": [675, 1200], "assets/ph/67.jpg": [1050, 1400], "assets/ph/52.jpg": [500, 495], "assets/ph/75.jpg": [1050, 1400], "assets/ph/26.jpg": [1080, 1080], "assets/ph/42.jpg": [860, 997], "assets/ph/28.jpg": [923, 1154], "assets/ph/32.jpg": [1206, 1150], "assets/ph/20.jpg": [256, 341], "assets/ph/51.jpg": [1050, 1400], "assets/ph/65.jpg": [800, 1200], "assets/ph/55.jpg": [375, 468], "assets/ph/71.jpg": [1050, 1400], "assets/ph/49.jpg": [1050, 1400], "assets/ph/41.jpg": [1080, 869], "assets/ph/54.jpg": [736, 1217], "assets/ph/31.jpg": [1133, 1400], "assets/ph/58.jpg": [1200, 1128], "assets/ph/35.jpg": [860, 1290], "assets/ph/73.jpg": [736, 981], "assets/ph/37.jpg": [449, 974], "assets/ph/62.jpg": [868, 1200], "assets/ph/43.jpg": [814, 1085], "assets/ph/80.jpg": [736, 1308], "assets/ph/23.jpg": [1080, 1080], "assets/ph/64.jpg": [720, 1272], "assets/ph/68.jpg": [1051, 1400], "assets/ph/44.jpg": [793, 1070], "assets/ph/38.jpg": [805, 1074], "assets/ph/59.jpg": [375, 488], "assets/ph/22.jpg": [1078, 1078], "assets/ph/81.jpg": [900, 1200], "assets/ph/60.jpg": [940, 1200], "assets/ph/48.jpg": [874, 1400], "assets/ph/56.jpg": [1199, 928], "assets/ph/39.jpg": [859, 1074], "assets/ph/30.jpg": [939, 1252], "assets/ph/19.jpg": [1050, 1400], "assets/ph/18.jpg": [1050, 1400], "assets/ph/46.jpg": [962, 1200], "assets/ph/24.jpg": [1050, 1400], "assets/ph/74.jpg": [677, 1200], "assets/ph/76.jpg": [1050, 1400], "assets/ph/79.jpg": [1064, 1400], "assets/ph/40.jpg": [1141, 946], "assets/ph/78.jpg": [744, 1320], "assets/ph/34.jpg": [706, 1255], "assets/ph/50.jpg": [736, 543], "assets/ph/61.jpg": [655, 1164], "assets/ph/53.jpg": [768, 1024], "assets/ph/36.jpg": [1143, 857], "assets/ph/70.jpg": [750, 1000], "assets/ph/21.jpg": [1050, 1400], "assets/ph/33.jpg": [1138, 1201], "assets/ph/27.jpg": [1050, 1400], "assets/ph/63.jpg": [685, 1217], "assets/ph/25.jpg": [1050, 1400], "assets/ph/45.jpg": [1080, 1365], "assets/ph/57.jpg": [720, 1280], "assets/ph/82.jpg": [828, 804], "assets/ph/66.jpg": [736, 898], "assets/ph/72.jpg": [643, 1142], "assets/ph/29.jpg": [647, 1400], "assets/ph/77.jpg": [1050, 1400], "assets/ph/134.jpg": [518, 616], "assets/ph/109.jpg": [675, 1200], "assets/ph/106.jpg": [576, 767], "assets/ph/141.jpg": [812, 1014], "assets/ph/100.jpg": [957, 539], "assets/ph/142.jpg": [720, 900], "assets/ph/154.jpg": [548, 685], "assets/ph/101.jpg": [539, 404], "assets/ph/107.jpg": [750, 984], "assets/ph/112.jpg": [606, 808], "assets/ph/144.jpg": [548, 822], "assets/ph/140.jpg": [859, 1073], "assets/ph/110.jpg": [606, 808], "assets/ph/139.jpg": [914, 1161], "assets/ph/114.jpg": [339, 600], "assets/ph/148.jpg": [675, 1200], "assets/ph/152.jpg": [548, 548], "assets/ph/153.jpg": [548, 731], "assets/ph/113.jpg": [606, 808], "assets/ph/132.jpg": [475, 837], "assets/ph/150.jpg": [359, 390], "assets/ph/145.jpg": [643, 1200], "assets/ph/138.jpg": [658, 687], "assets/ph/115.jpg": [464, 580], "assets/ph/103.jpg": [302, 536], "assets/ph/137.jpg": [367, 648], "assets/ph/105.jpg": [440, 781], "assets/ph/117.jpg": [464, 619], "assets/ph/111.jpg": [606, 808], "assets/ph/131.jpg": [598, 797], "assets/ph/143.jpg": [425, 756], "assets/ph/146.jpg": [828, 1111], "assets/ph/149.jpg": [736, 885], "assets/ph/102.jpg": [536, 402], "assets/ph/130.jpg": [463, 823], "assets/ph/151.jpg": [736, 981], "assets/ph/108.jpg": [431, 765], "assets/ph/116.jpg": [464, 619], "assets/ph/133.jpg": [718, 718], "assets/ph/147.jpg": [644, 1145], "assets/ph/104.jpg": [348, 464], "assets/ph/136.jpg": [454, 454], "assets/ph/135.jpg": [401, 535], "assets/ph/milk.jpg": [900, 1200]};
 
 /* =========================================================
    APP VIEWS — 每个 App 的页面（结构与交互）
