@@ -2808,6 +2808,17 @@ const CHATS = [
 < 13:30 | 他什么都没说
 < 13:30 | 但他昨天练习的时候一直在看手机
 < 13:31 | 你们好好聊聊吧`},
+{ id:'cdopen', name:'청담고대신전해드립니다', color:'#ffffff', msgs:`
+# 2023-02-07
+> 22:36 | 你好 可以帮忙投稿吗
+< 22:37 | 可以的 请直接发内容 100%匿名
+> 22:41 | 3학년 2반 18번 한동민 좋아한다고 좀 전해주세요
+> 22:42 | 那个…不会写出我是谁吧
+< 22:43 | 当然不会 放心
+< 22:43 | 今晚帮你发
+> 22:44 | 谢谢！！
+< 23:02 | 已经发好了 💌
+< 23:02 | instagram.com/chungdam.highschool`},
 { id:'sanghyuk', name:'常赫前辈', color:'#b8c4b0', msgs:`
 # 2023-05-30
 < 23:59 | 谢谢你来看
@@ -3758,7 +3769,7 @@ const MEMBER_COLORS = { 东旼:'#c5d0dd', 成淏:'#f2c48d', 宰铉:'#9ec5f2', �
 const avColor = (who, c) => MEMBER_COLORS[who] || c.color || '#c5d0dd';
 const kav = (c, who) => (c.id === 'dongmin' && !who) || who === '东旼' && false ? silhouette : (who || c.name).slice(0, 1);
 /* KakaoTalk 头像：大多数人用 Kakao 默认头像；书妍用自己的照片；群聊头像由成员头像拼成 */
-const KK_IMG = { '书妍':'assets/kk_shuyan.jpg' };
+const KK_IMG = { '书妍':'assets/kk_shuyan.jpg', '청담고대신전해드립니다':'assets/cd/av.jpg' };
 const kkOne = n => KK_IMG[n] ? `<i style="background:url(${KK_IMG[n]}) center/cover"></i>` : `<i>${silhouette}</i>`;
 const kkMembers = c => { const m = [...new Set(c.list.filter(x => x.t === 'm' && x.who).map(x => x.who))]; while (m.length < 2) m.push(''); return m.slice(0, 4); };
 const avHTML = (c, who, cls = '') => {
